@@ -1,0 +1,13 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# 编辑器/IDE
+.idea/
+.vscode/
+*.swp
+
+# 临时与日志
+*.log
+tmp/
