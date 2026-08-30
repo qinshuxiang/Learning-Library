@@ -11,3 +11,28 @@
 # 临时与日志
 *.log
 tmp/
+
+# 依赖目录与构建产物
+node_modules/
+.bun/
+dist/
+build/
+out/
+coverage/
+.cache/
+.next/
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+target/
+
+# 敏感配置与密钥
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# WorkBuddy 项目数据（本地会话与记忆，不入库）
+.workbuddy-ai/
