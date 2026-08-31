@@ -1,7 +1,199 @@
 > 温馨提示: 不要试图一次性读完
 > 想看什么, 去目录找
 
-@[TOC]
+## 目录
+
+- [script](#script)
+  - [script 的常用标签](#script-的常用标签)
+  - [async属性](#async属性)
+  - [defer属性](#defer属性)
+  - [noscript](#noscript)
+- [基础语法](#基础语法)
+  - [严格模式](#严格模式)
+  - [变量声明](#变量声明)
+- [String](#string)
+  - [字符串的定义](#字符串的定义)
+  - [String 对象的属性](#string-对象的属性)
+  - [String 对象的方法](#string-对象的方法)
+  - [一些案例](#一些案例)
+  - [字符串练习](#字符串练习)
+  - [...运算符 扩展运算符（展开语法）](#运算符-扩展运算符展开语法)
+- [Array](#array)
+  - [1. 数组简介](#1-数组简介)
+  - [2. 创建数组对象](#2-创建数组对象)
+  - [3. 数组的基本操作](#3-数组的基本操作)
+  - [4. 数组的方法详细介绍](#4-数组的方法详细介绍)
+  - [5. 关于数组的练习](#5-关于数组的练习)
+- [Number](#number)
+  - [parseInt()](#parseint)
+  - [NaN遇到的坑](#nan遇到的坑)
+- [Boolean](#boolean)
+  - [转换结果列举【重要】](#转换结果列举重要)
+- [Object](#object)
+  - [对象的基本操作](#对象的基本操作)
+  - [遍历操作](#遍历操作)
+  - [深拷贝 浅拷贝](#深拷贝-浅拷贝)
+- [Function](#function)
+  - [函数的定义/声明](#函数的定义声明)
+  - [函数的调用](#函数的调用)
+  - [函数的参数：形参和实参](#函数的参数形参和实参)
+  - [函数的返回值](#函数的返回值)
+  - [函数名、函数体和函数加载问题（重要，请记住）](#函数名函数体和函数加载问题重要请记住)
+  - [fn()  和 fn 的区别【重要】](#fn--和-fn-的区别重要)
+  - [break、continue、return](#breakcontinuereturn)
+  - [立即执行函数](#立即执行函数)
+  - [方法](#方法)
+  - [类数组 arguments](#类数组-arguments)
+  - [arguments.length](#argumentslength)
+  - [arguments.callee](#argumentscallee)
+  - [arguments 可以修改元素](#arguments-可以修改元素)
+  - [arguments 的使用](#arguments-的使用)
+  - [函数参数默认值](#函数参数默认值)
+  - [剩余参数 (rest 运算符)](#剩余参数-rest-运算符)
+  - [原型， 原型链](#原型-原型链)
+  - [构造函数](#构造函数)
+  - [面向过程和面向对象](#面向过程和面向对象)
+  - [原型的三角关系](#原型的三角关系)
+  - [继承的演进：从原型链到 class](#继承的演进从原型链到-class)
+  - [instanceof 的原理与手写实现](#instanceof-的原理与手写实现)
+  - [属性判断的四种方式](#属性判断的四种方式)
+  - [闭包的引入](#闭包的引入)
+  - [执行期上下文](#执行期上下文)
+- [Math](#math)
+  - [内置对象：Math](#内置对象math)
+  - [Math 的常用属性（常量）](#math-的常用属性常量)
+  - [Math 的常用方法](#math-的常用方法)
+  - [内置对象：Date](#内置对象date)
+  - [创建Date对象](#创建date对象)
+  - [日期的格式化](#日期的格式化)
+  - [Date对象的方法](#date对象的方法)
+  - [一些关于 Date 方法的测试](#一些关于-date-方法的测试)
+  - [举例：年月日的格式化](#举例年月日的格式化)
+  - [获取时间戳](#获取时间戳)
+  - [getTime()：获取时间戳](#gettime获取时间戳)
+  - [获取 Date 对象的时间戳](#获取-date-对象的时间戳)
+  - [获取当前时间的时间戳](#获取当前时间的时间戳)
+  - [利用时间戳检测代码的执行时间](#利用时间戳检测代码的执行时间)
+  - [举例1：模拟日历](#举例1模拟日历)
+  - [举例2：倒计时](#举例2倒计时)
+- [Set](#set)
+  - [生成 Set 数据结构](#生成-set-数据结构)
+  - [删除元素](#删除元素)
+  - [添加元素](#添加元素)
+  - [判断是否存在元素](#判断是否存在元素)
+  - [size 属性获取 set 的长度](#size-属性获取-set-的长度)
+- [JSON](#json)
+- [Null 与 Undefined](#null-与-undefined)
+  - [Null：空对象](#null空对象)
+  - [undefined：未定义类型](#undefined未定义类型)
+  - [其他区别](#其他区别)
+- [transition](#transition)
+  - [1.2 transition-property](#12-transition-property)
+  - [1.3 transition-duration](#13-transition-duration)
+  - [1.4 transition-timing-function](#14-transition-timing-function)
+  - [1.5 transition-delay](#15-transition-delay)
+  - [1.6 简写属性](#16-简写属性)
+  - [1.7 transition 的不足](#17-transition-的不足)
+  - [1.8 一个简单的样式](#18-一个简单的样式)
+- [2D 转换 (transform)](#2d-转换-transform)
+  - [2.1 缩放：`scale`](#21-缩放scale)
+  - [2.2 位移：translate](#22-位移translate)
+  - [2.3 旋转：rotate](#23-旋转rotate)
+- [3D 转换](#3d-转换)
+  - [3.1 旋转：rotateX、rotateY、rotateZ](#31-旋转rotatexrotateyrotatez)
+  - [3.2 移动：translateX、translateY、translateZ](#32-移动translatextranslateytranslatez)
+  - [3.3 透视：perspective](#33-透视perspective)
+- [animation](#animation)
+  - [4.1 定义动画](#41-定义动画)
+  - [4.2 调用动画](#42-调用动画)
+  - [5.1 按钮抖动动画](#51-按钮抖动动画)
+  - [5.2 背景颜色随鼠标渐变](#52-背景颜色随鼠标渐变)
+- [正则表达式](#正则表达式)
+  - [创建正则表达式的对象](#创建正则表达式的对象)
+  - [正则表达式的简单语法](#正则表达式的简单语法)
+  - [支持正则表达式的 String 对象的方法](#支持正则表达式的-string-对象的方法)
+  - [常见正则表达式举例](#常见正则表达式举例)
+- [promise](#promise)
+  - [Promise 特点](#promise-特点)
+  - [resolve() 的作用](#resolve-的作用)
+  - [我们一般采用下面的写法](#我们一般采用下面的写法)
+  - [reject() 的用法](#reject-的用法)
+  - [all() 多个Promise 一起执行](#all-多个promise-一起执行)
+  - [除此之外还有 race 的 用法](#除此之外还有-race-的-用法)
+  - [读取多个文件 (案例)](#读取多个文件-案例)
+- [async/await](#asyncawait)
+  - [基本使用](#基本使用)
+- [EventLoop](#eventloop)
+- [异步编程（进阶）](#异步编程进阶)
+  - [异步编程的演进路线](#异步编程的演进路线)
+  - [事件循环综合题（含 async/await）](#事件循环综合题含-asyncawait)
+  - [Promise 静态方法全家桶](#promise-静态方法全家桶)
+  - [then 链式调用的 7 条规则](#then-链式调用的-7-条规则)
+  - [手写 Promise（Promise A+ 核心实现）](#手写-promisepromise-a-核心实现)
+  - [async / await 深入](#async--await-深入)
+  - [Generator 与 async/await 的关系](#generator-与-asyncawait-的关系)
+  - [异步实战工具函数](#异步实战工具函数)
+- [ES6](#es6)
+  - [Symbol](#symbol)
+- [ES6+ 新特性（补充）](#es6-新特性补充)
+  - [解构赋值（Destructuring）](#解构赋值destructuring)
+  - [模板字符串与标签模板](#模板字符串与标签模板)
+  - [箭头函数](#箭头函数)
+  - [对象字面量的增强](#对象字面量的增强)
+  - [可选链 ?. 与空值合并 ??（ES2020）](#可选链--与空值合并-es2020)
+  - [Module 模块化](#module-模块化)
+  - [Iterator 与 for...of](#iterator-与-forof)
+  - [Set 与 Map](#set-与-map)
+  - [Proxy 与 Reflect](#proxy-与-reflect)
+  - [ES2016 ~ ES2025 新特性速览](#es2016--es2025-新特性速览)
+  - [将ES6转为ES5 (Babel)](#将es6转为es5-babel)
+- [作用域（Scope）的概念和分类](#作用域scope的概念和分类)
+  - [全局作用域 和 window 对象](#全局作用域-和-window-对象)
+  - [作用域的访问关系](#作用域的访问关系)
+  - [变量的作用域](#变量的作用域)
+  - [作用域的上下级关系](#作用域的上下级关系)
+  - [作用域的预处理](#作用域的预处理)
+  - [全局作用域-变量的声明提前（变量提升）](#全局作用域-变量的声明提前变量提升)
+  - [全局作用域-函数的声明提前](#全局作用域-函数的声明提前)
+  - [函数作用域的预处理](#函数作用域的预处理)
+  - [JavaScript 没有块级作用域（ES6 之前）](#javascript-没有块级作用域es6-之前)
+  - [作用域链](#作用域链)
+  - [块级作用域 (ES6新增)](#块级作用域-es6新增)
+  - [块级作用域有以下几个特点：](#块级作用域有以下几个特点)
+  - [let var 区别](#let-var-区别)
+  - [js 函数预编译](#js-函数预编译)
+  - [一个有意思的案例](#一个有意思的案例)
+  - [推荐](#推荐)
+- [作用域与闭包（进阶）](#作用域与闭包进阶)
+  - [词法作用域 vs 动态作用域](#词法作用域-vs-动态作用域)
+  - [执行上下文与执行栈](#执行上下文与执行栈)
+  - [暂时性死区（TDZ）详解](#暂时性死区tdz详解)
+  - [var / let / const 全面对比](#var--let--const-全面对比)
+  - [闭包的本质](#闭包的本质)
+  - [闭包的典型应用](#闭包的典型应用)
+  - [闭包的代价：内存泄漏](#闭包的代价内存泄漏)
+  - [作用域链 vs 原型链：别再搞混](#作用域链-vs-原型链别再搞混)
+- [Node 节点](#node-节点)
+  - [1. 先解释清楚节点与元素](#1-先解释清楚节点与元素)
+  - [2. 什么是`DOM`](#2-什么是dom)
+  - [3. 获取节点](#3-获取节点)
+  - [4. 节点的操作](#4-节点的操作)
+  - [5. 获取 html 文档的方法](#5-获取-html-文档的方法)
+- [Web 存储与应用缓存](#web-存储与应用缓存)
+  - [H5 中有两种存储的方式](#h5-中有两种存储的方式)
+  - [常见 API](#常见-api)
+  - [案例：记住用户名和密码](#案例记住用户名和密码)
+  - [应用缓存](#应用缓存)
+  - [优势](#优势)
+  - [`cache manifest` 缓存清单文件](#cache-manifest-缓存清单文件)
+  - [使用](#使用)
+- [新增全屏显示](#新增全屏显示)
+  - [开启/关闭全屏显示](#开启关闭全屏显示)
+  - [检测当前是否处于全屏状态](#检测当前是否处于全屏状态)
+  - [全屏的伪类](#全屏的伪类)
+- [音频视频](#音频视频)
+  - [音频](#音频)
+  - [视频](#视频)
 
 # JavaScript [ 1995  Brendan Eich ]
 
@@ -22,7 +214,7 @@
   - `BOM`（浏览器对象模型），提供了与浏览器交互的 `方法` 和 `接口`
   - `ECMAScript` 描述了 `JavaScript` 的语法和基本对象 (核心)
 
-最后还是引用 `JavaScript高级程序设计` 的那段话，” 要真正学好用好 JavaScript，理解其本质、历史及局限性是非常重要的 “ 
+最后还是引用《JavaScript高级程序设计》的那段话："要真正学好用好 JavaScript，理解其本质、历史及局限性是非常重要的"。
 
 **一起共勉～**
 
@@ -36,7 +228,7 @@
 
 ![image-20220329084545991](./assets/0fa4f683ec1e97bffaa6e4c84510fe64-20260830233838601.png)
 
-首先我们先来看一下`` <script> `标签 的几个重要特性：
+首先我们先来看一下 `<script>` 标签的几个重要特性：
 
 - script标签的会阻止文档渲染。相关脚本会立即下载并执行。（不带defer或async属性的情况下）
 - document.currentScript 可以获得当前正在运行的脚本(Chrome 29+, FF4+)。
@@ -51,7 +243,7 @@
 
 ### async属性
 
-async属性是HTML5的新特性，这意味着其兼容性并不乐观（IE10+）。好在 IE 浏览器将在2022年被微软抛弃了
+async属性是HTML5的新特性，早期其兼容性并不乐观（IE10+）。好在 IE 浏览器已于 2022 年 6 月被微软停止支持，如今可以放心使用。
 
 async 表示该 script 标签并不**阻塞**文档解析，也不保证同步顺序执行。
 
@@ -159,13 +351,62 @@ var name = "Reeoo";
 常规方法 “” ‘’ `` 都可以
 
 ```js
-// 一: 以使用一对单引号或者一对双引号来定义一个字符串let str1 = "str1"console.log(str1) // str1let str2 = 'str2'console.log(str2) // str2// 1. 在 JavaScript 中双引号定义的字符串和单引号定义的字符串没有本质区别// 2. 无论是单引号还是双引号，都必须配对使用，不能一个单引号和双引号配对let str3 = "str3'"console.log(str3) //str'// 3. 单引号中的字符串中不能出现单引号，可以出现双引号//    双引号中的字符串中不能出现双引号，可以出现单引号// 4. 单引号和双引号定义字符串时，须在一行内完成,不能换行// 二: 使用模板字符串的方式定义字符串：我们可以使用一对反引号来定义字符串 (tab 键上面的 ``)let str4 = `这是一个普通的字符串`let str5 = `这是一个换行的 字符串`let str6 = 7let str7 = 6// 模板字符串利用 ${} 使用变量let str8 = `这是一个可以解析变量的字符串，例如：${str6 + str7}`console.log(str4) // 这是一个普通的字符串console.log(str5) /* 这是一个换行的 字符串 */console.log(str6) // 7console.log(str7) // 6console.log(str8) // 这是一个可以解析变量的字符串，例如：13// ${varName}或${value}。即${}中可为变量名，也可直接为字面量值(如${123}或${asd})。
+// 一：使用一对单引号或者一对双引号来定义一个字符串
+let str1 = "str1";
+console.log(str1); // str1
+let str2 = 'str2';
+console.log(str2); // str2
+// 1. 在 JavaScript 中双引号定义的字符串和单引号定义的字符串没有本质区别
+// 2. 无论是单引号还是双引号，都必须配对使用，不能一个单引号和双引号配对
+let str3 = "str3'";
+console.log(str3); // str'
+// 3. 单引号中的字符串中不能出现单引号，可以出现双引号
+//    双引号中的字符串中不能出现双引号，可以出现单引号
+// 4. 单引号和双引号定义字符串时，须在一行内完成，不能换行
+// 二：使用模板字符串的方式定义字符串：我们可以使用一对反引号来定义字符串（tab 键上面的 ``）
+let str4 = `这是一个普通的字符串`;
+let str5 = `这是一个换行的 字符串`;
+let str6 = 7;
+let str7 = 6;
+// 模板字符串利用 ${} 使用变量
+let str8 = `这是一个可以解析变量的字符串，例如：${str6 + str7}`;
+console.log(str4); // 这是一个普通的字符串
+console.log(str5); /* 这是一个换行的 字符串 */
+console.log(str6); // 7
+console.log(str7); // 6
+console.log(str8); // 这是一个可以解析变量的字符串，例如：13
+// ${varName} 或 ${value}。即 ${} 中可为变量名，也可直接为字面量值（如 ${123} 或 ${asd}）
 ```
 
 不关心里面的内容是什么,只匹配对应的 “” ‘’ `` 与转义符
 
 ```js
-let str1 = "true";  //把布尔值转换为字符串console.log(str1)let str2 = "123";  //把数值转换为字符串console.log(str2)let str3 = "[1,2,3]";  //把数组转换为字符串console.log(str3)let str4 = "{x : 1; y : 2}";  //把对象转换为字符串console.log(str4)let str5 = "console.log('Hello,World')";  //把可执行表达式转换为字符串console.log(str5)// true// 123// [1,2,3]// {x : 1; y : 2}// console.log('Hello,World')console.log(typeof str1)console.log(typeof str2)console.log(typeof str3)console.log(typeof str4)console.log(typeof str5)// string// string// string// string// string
+let str1 = "true"; // 把布尔值转换为字符串
+console.log(str1);
+let str2 = "123"; // 把数值转换为字符串
+console.log(str2);
+let str3 = "[1,2,3]"; // 把数组转换为字符串
+console.log(str3);
+let str4 = "{x : 1; y : 2}"; // 把对象转换为字符串
+console.log(str4);
+let str5 = "console.log('Hello,World')"; // 把可执行表达式转换为字符串
+console.log(str5);
+// 打印结果：
+// true
+// 123
+// [1,2,3]
+// {x : 1; y : 2}
+// console.log('Hello,World')
+console.log(typeof str1);
+console.log(typeof str2);
+console.log(typeof str3);
+console.log(typeof str4);
+console.log(typeof str5);
+// string
+// string
+// string
+// string
+// string
 ```
 
 转义符: `\`
@@ -183,7 +424,20 @@ let str = " " " // 会直接报语法错误
 但是我们需要这样去使用 , 这个时候可以我们就需要使用 `\` 转义符，例如： 
 
 ```js
-// 在这里使用了\n 来代表换行符// 在这里使用了\"来代表双引号。let str1 = '这是一个换行的\n字符串'let str2 = '这是一个换行的\' 字符串'console.log(str1)console.log(str2)/* 这是一个换行的字符串 */// 这是一个换行的' 字符串let str3 = `123 str3 \"\'`// 如果使用模板字符串的方式定义字符串，可以直接使用回车换行。但是要在其中使用 反引号`，也必须转义console.log(str3)// 123// str3 "'
+// 在这里使用了 \n 来代表换行符
+// 在这里使用了 \" 来代表双引号。
+let str1 = '这是一个换行的\n字符串';
+let str2 = '这是一个换行的\' 字符串';
+console.log(str1);
+console.log(str2);
+/* 这是一个换行的字符串 */
+// 这是一个换行的' 字符串
+let str3 = `123 str3 \"\'`;
+// 如果使用模板字符串的方式定义字符串，可以直接使用回车换行。但是要在其中使用反引号 `，也必须转义
+console.log(str3);
+// 打印结果：
+// 123
+// str3 "'
 ```
 
 ### String 对象的属性
@@ -191,7 +445,14 @@ let str = " " " // 会直接报语法错误
 **字符串可以看成是字符组成的数组**,拥有属性 length ------> 字符串的长度,可以通过for循环进行遍历
 
 ```js
-let  str = 'abcd'for(let i of str) {  console.log(i)}// a// b// c// d
+let str = 'abcd';
+for (let i of str) {
+  console.log(i);
+}
+// a
+// b
+// c
+// d
 ```
 
 **字符串特性:不可变性,字符串的值是不能改变**
@@ -211,7 +472,11 @@ JS字符串在进行大于(小于)比较时，**会根据第一个不同的字�
 下面演示一些案例
 
 ```js
-let a="91";                   let b="390"                    console.log(a.charCodeAt())    // 57console.log(b.charCodeAt())    // 51console.log(a<b)               // false
+let a = "91";
+let b = "390";
+console.log(a.charCodeAt()); // 57
+console.log(b.charCodeAt()); // 51
+console.log(a < b); // false
 ```
 
 **“91” < “390” 结果为 false** 
@@ -223,7 +488,9 @@ let a="91";                   let b="390"                    console.log(a.charC
 a 中第一个字符为 9 , b 中第一个字符为 3 ,两者不同,所以开始比较他们的 ASCII 码位 , a 的 '9' (57) 大于 b 的 '3' (51) 所以 **“91” < “390” 结果为 false**
 
 ```js
-let a = 34let b = "34"console.log( a == b ) //true
+let a = 34;
+let b = "34";
+console.log(a == b); // true
 ```
 
 **如果一个是字符串,一个是数值,会倾向于将字符串转换为数值然后进行比较**
@@ -235,25 +502,58 @@ let a = 34let b = "34"console.log( a == b ) //true
 一般的用法就是 a.localeCompare(b)，浏览器基本都是支持的。
 
 ```js
-let str1 = "123456"let str2 = "1234567"let str3 = "12345678"let str4 = "123478"let str5 = "abcd"let str6 = "dcba"// 返回值大于0：说明当前字符串string大于对比字符串targetString//// 返回值小于0：说明当前字符串string小于对比字符串targetString//// 返回值等于0：说明当前字符串string等于对比字符串targetStringconsole.log(str1.localeCompare(str2)); // -1console.log(str2.localeCompare(str2)); // 0console.log(str3.localeCompare(str2)); // 1console.log(str4.localeCompare(str2)); // 1console.log(str5.localeCompare(str6)); // -1
+let str1 = "123456";
+let str2 = "1234567";
+let str3 = "12345678";
+let str4 = "123478";
+let str5 = "abcd";
+let str6 = "dcba";
+// 返回值大于 0：说明当前字符串 string 大于对比字符串 targetString
+// 返回值小于 0：说明当前字符串 string 小于对比字符串 targetString
+// 返回值等于 0：说明当前字符串 string 等于对比字符串 targetString
+console.log(str1.localeCompare(str2)); // -1
+console.log(str2.localeCompare(str2)); // 0
+console.log(str3.localeCompare(str2)); // 1
+console.log(str4.localeCompare(str2)); // 1
+console.log(str5.localeCompare(str6)); // -1
 ```
 
 #### charCodeAt()
 
 ```js
-// 返回字符串 index 位置的 Unicode 编码 , 默认为 0 号位置console.log("a".charCodeAt(0))console.log("aabb".charCodeAt(2))// 97// 98
+// 返回字符串 index 位置的 Unicode 编码，默认为 0 号位置
+console.log("a".charCodeAt(0));
+console.log("aabb".charCodeAt(2));
+// 97
+// 98
 ```
 
 #### charAt()
 
 ```js
-// charAt（index）// 返回指定位置（index）的字符。// 如果index小于0或者大于等于字符串的长度string.length，它会返回空字符串。let str = "str1"console.log(str.charAt(1))console.log(str.charAt(5))// t// 
+// charAt（index）
+// 返回指定位置（index）的字符。
+// 如果 index 小于 0 或者大于等于字符串的长度 string.length，它会返回空字符串。
+let str = "str1";
+console.log(str.charAt(1));
+console.log(str.charAt(5));
+// 打印结果：
+// t
+// （空字符串）
 ```
 
 #### String.fromCharCode()
 
 ```js
-console.log(String.fromCharCode( 5, 66, 67, 68, 69, 70, 71 ))console.log(String.fromCharCode( 38 ))console.log(String.fromCharCode( 13, 22269 ))console.log(String.fromCharCode())// ║BCDEFG// &// 国// 
+console.log(String.fromCharCode(5, 66, 67, 68, 69, 70, 71));
+console.log(String.fromCharCode(38));
+console.log(String.fromCharCode(13, 22269));
+console.log(String.fromCharCode());
+// 打印结果：
+// ║BCDEFG
+// &
+// 国
+// （空字符串）
 ```
 
 #### slice()
@@ -267,19 +567,66 @@ console.log(String.fromCharCode( 5, 66, 67, 68, 69, 70, 71 ))console.log(String.
 5.   **三者的差别很细,具体仔细看下面案例结果**
 
 ```js
-// slice（start,end）// 截取字符串 start 索引位置到 end 索引位置之前的字符串// start 参数字符串中第一个字符位置为 0, 第二个字符位置为 1, 以此类推，如果是负数表示从尾部截取多少个字符串，slice(-2) 表示提取原数组中的倒数第二个元素到最后一个元素（包含最后一个元素）。// end 参数如果为负数，-1 指字符串的最后一个字符的位置，-2 指倒数第二个字符，以此类推。let str1 = "123456789"console.log(str1.slice(0, str1.length))// 123456789let str2 = "123456789"console.log(str2.slice(1, 3))// 23console.log(str2.slice(-2))// 89// 使用 slice() 原数组不会发生改变console.log(str2)// 123456789console.log(str1.slice(0,-1))// 参数为负数时，处理字符串从末尾开始// 12345678console.log(str1.slice(6, -5))//console.log(str1.slice(3, -5))// 4
+// slice（start, end）
+// 截取字符串 start 索引位置到 end 索引位置之前的字符串
+// start 参数：字符串中第一个字符位置为 0，第二个字符位置为 1，以此类推；如果是负数，表示从尾部截取。slice(-2) 表示提取原字符串的倒数第二个元素到最后一个元素（包含最后一个元素）。
+// end 参数如果为负数：-1 指字符串的最后一个字符的位置，-2 指倒数第二个字符，以此类推。
+let str1 = "123456789";
+console.log(str1.slice(0, str1.length));
+// 123456789
+let str2 = "123456789";
+console.log(str2.slice(1, 3));
+// 23
+console.log(str2.slice(-2));
+// 89
+// 使用 slice() 原字符串不会发生改变
+console.log(str2);
+// 123456789
+console.log(str1.slice(0, -1));
+// 参数为负数时，从字符串末尾开始处理
+// 12345678
+console.log(str1.slice(6, -5));
+// （空字符串）
+console.log(str1.slice(3, -5));
+// 4
 ```
 
 #### substr()
 
 ```js
-// substr（start，length）// 从 start 索引位开始,截取长度为 length 的字符串,若果没有 length,将后面的全部截取let str = "str1"console.log(str.substr(1))console.log(str.substr(1,2))// 对,没错,最后的结果为空字符串console.log(str.substr(1,-1))// tr1// tr// 
+// substr（start，length）
+// 从 start 索引位开始，截取长度为 length 的字符串；如果没有 length，将后面的全部截取
+let str = "str1";
+console.log(str.substr(1));
+console.log(str.substr(1, 2));
+// 对，没错，最后的结果为空字符串
+console.log(str.substr(1, -1));
+// 打印结果：
+// tr1
+// tr
+// （空字符串）
 ```
 
 #### substring()
 
 ```js
-// substring（start，to）let str = "str1"console.log(str.substring(0))console.log(str.substring(1,2))// 如果参数 start 与 end 相等，那么该方法返回的就是一个空串（即长度为 0 的字符串）。console.log(str.substring(1,1))// start => to 如果start的数值大于to的位置 , 可以理解为把两个参数位置颠倒console.log(str.substring(3,1))console.log(str.substring(2,1))console.log(str.substring(4,2))// str1// t//// tr// t// r1
+// substring（start，to）
+let str = "str1";
+console.log(str.substring(0));
+console.log(str.substring(1, 2));
+// 如果参数 start 与 end 相等，那么该方法返回的就是一个空串（即长度为 0 的字符串）
+console.log(str.substring(1, 1));
+// start => to：如果 start 的数值大于 to 的位置，可以理解为把两个参数位置颠倒
+console.log(str.substring(3, 1));
+console.log(str.substring(2, 1));
+console.log(str.substring(4, 2));
+// 打印结果：
+// str1
+// t
+// （空字符串）
+// tr
+// t
+// r1
 ```
 
 #### concat()
@@ -291,7 +638,21 @@ console.log(String.fromCharCode( 5, 66, 67, 68, 69, 70, 71 ))console.log(String.
 #### indexOf()
 
 ```js
-// indexOf（searchString，position）let str1= "123qwe"console.log(str1.indexOf("2"))console.log(str1.indexOf("a"))console.log(str1.indexOf("ad"))console.log(str1.indexOf("ae"))console.log(str1.indexOf("we"))console.log(str1.indexOf("we",5))// 1// -1// -1// -1// 4// -1
+// indexOf（searchString，position）
+let str1 = "123qwe";
+console.log(str1.indexOf("2"));
+console.log(str1.indexOf("a"));
+console.log(str1.indexOf("ad"));
+console.log(str1.indexOf("ae"));
+console.log(str1.indexOf("we"));
+console.log(str1.indexOf("we", 5));
+// 打印结果：
+// 1
+// -1
+// -1
+// -1
+// 4
+// -1
 ```
 
 **案例**：查找字符串"qianguyihao"中，所有 `a` 出现的位置以及次数。
@@ -308,19 +669,49 @@ console.log(String.fromCharCode( 5, 66, 67, 68, 69, 70, 71 ))console.log(String.
 
 
 ```js
-var str = 'qianguyihao';var index = str.indexOf('a');var num = 0;while (index !== -1) {    console.log(index);    num++; // 每打印一次，就计数一次    index = str.indexOf('o', index + 1);}console.log('a 出现的次数是: ' + num);
+var str = 'qianguyihao';
+var index = str.indexOf('a');
+var num = 0;
+while (index !== -1) {
+  console.log(index);
+  num++; // 每打印一次，就计数一次
+  index = str.indexOf('a', index + 1); // 继续向后查找下一个 'a'
+}
+console.log('a 出现的次数是: ' + num);
+// 打印结果：
+// 3
+// a 出现的次数是: 1
 ```
 
 #### lastIndexOf()
 
 ```js
-// lastIndexOf（searchString，position）let str1= "123qwe"// 与indexOf方法类似，只不过它是从该字符串的末尾开始查找而不是从开头。console.log(str1.lastIndexOf("2"))console.log(str1.lastIndexOf("a"))console.log(str1.lastIndexOf("ad"))console.log(str1.lastIndexOf("ae"))console.log(str1.lastIndexOf("we"))console.log(str1.lastIndexOf("we",5))// 1// -1// -1// -1// 4// 4
+// lastIndexOf（searchString，position）
+let str1 = "123qwe";
+// 与 indexOf 方法类似，只不过它是从该字符串的末尾开始查找而不是从开头
+console.log(str1.lastIndexOf("2"));
+console.log(str1.lastIndexOf("a"));
+console.log(str1.lastIndexOf("ad"));
+console.log(str1.lastIndexOf("ae"));
+console.log(str1.lastIndexOf("we"));
+console.log(str1.lastIndexOf("we", 5));
+// 打印结果：
+// 1
+// -1
+// -1
+// -1
+// 4
+// 4
 ```
 
 #### replace()
 
 ```js
-let str1 = "121416"let str2 = "1234567"// 只会替换第一个匹配到的字符console.log(str1.replace("1",str2))// 123456721416
+let str1 = "121416";
+let str2 = "1234567";
+// 只会替换第一个匹配到的字符
+console.log(str1.replace("1", str2));
+// 123456721416
 ```
 
 ```js
@@ -330,37 +721,86 @@ var stringObj="终古，终古人民";var newstr=stringObj.replace("终古","中
 会发现第二个错别字“终古”并没有被替换成“中国”
 
 ```js
-var reg=new RegExp("终古","g"); //创建正则RegExp对象var stringObj="终古，终古人民";var newstr=stringObj.replace(reg,"中国"); // 中国，中国人民
+var reg = new RegExp("终古", "g"); // 创建正则 RegExp 对象
+var stringObj = "终古，终古人民";
+var newstr = stringObj.replace(reg, "中国"); // 中国，中国人民
 ```
 
 #### split()
 
 ```js
-let str1 = "深入 Vue底层，手写一个vuex\n 348\n"// split() 将以传递的参数把字符串分割,最后返回一个数组console.log(str1.split(" "))// [ '深入', 'Vue底层，手写一个vuex\n', '348\n' ]console.log(str1.split("\n"))// [ '深入 Vue底层，手写一个vuex', ' 348', '' ]
+let str1 = '深入 Vue底层，手写一个vuex\n 348\n'; // split() 将以传递的参数把字符串分割，最后返回一个数组
+console.log(str1.split(" "));
+// [ '深入', 'Vue底层，手写一个vuex\n', '348\n' ]
+console.log(str1.split("\n"));
+// [ '深入 Vue底层，手写一个vuex', ' 348', '' ]
 ```
 
 第二个参数代表分割次数
 
 ```js
-let str = "山东省-济南市-市中区"let newStr = str.split('-')console.log(newStr)// ["山东省","济南市","市中区"]//第二个参数times，匹配'-'两次let str = "山东省-济南市-市中区"let newStr = str.split('-',2)console.log(newStr)//["山东省", "济南市"]
+let str = "山东省-济南市-市中区";
+let newStr = str.split('-');
+console.log(newStr);
+// ["山东省","济南市","市中区"]
+// 第二个参数 times：只匹配 '-' 两次
+let str2 = "山东省-济南市-市中区";
+let newStr2 = str2.split('-', 2);
+console.log(newStr2);
+// ["山东省", "济南市"]
 ```
 
 #### includes()
 
 ```js
-// 返回布尔值，表示是否找到了参数字符串。let str = '这是测试字符串';if (str.indexOf('测试') !== -1) {  console.log(true)    //包含} else {  console.log(false)    //不包含}// true
+// 返回布尔值，表示是否找到了参数字符串。
+let str = '这是测试字符串';
+if (str.indexOf('测试') !== -1) {
+  console.log(true); // 包含
+} else {
+  console.log(false); // 不包含
+}
+// true
 ```
 
 #### startsWith()
 
 ```js
-// 返回布尔值，表示参数字符串是否在原字符串的头部。let str = '这是测试字符串';if (str.startsWith('这') === true) {  console.log(true)} else {  console.log(false)}if (str.startsWith('是') === true) {  console.log(true)} else {  console.log(false)}// true// false
+// 返回布尔值，表示参数字符串是否在原字符串的头部。
+let str = '这是测试字符串';
+if (str.startsWith('这') === true) {
+  console.log(true);
+} else {
+  console.log(false);
+}
+if (str.startsWith('是') === true) {
+  console.log(true);
+} else {
+  console.log(false);
+}
+// 打印结果：
+// true
+// false
 ```
 
 #### endsWith()
 
 ```js
-// 返回布尔值，表示参数字符串是否在原字符串的尾部。let str = '这是测试字符串';if (str.endsWith('这') === true) {  console.log(true)} else {  console.log(false)}if (str.endsWith('串') === true) {  console.log(true)} else {  console.log(false)}// false// true
+// 返回布尔值，表示参数字符串是否在原字符串的尾部。
+let str = '这是测试字符串';
+if (str.endsWith('这') === true) {
+  console.log(true);
+} else {
+  console.log(false);
+}
+if (str.endsWith('串') === true) {
+  console.log(true);
+} else {
+  console.log(false);
+}
+// 打印结果：
+// false
+// true
 ```
 
 -   includes() startsWith() endsWith() 这三个方法都支持第二个参数，表示开始搜索的位置。如果repeat的参数是负数或者Infinity，会报错。
@@ -368,7 +808,10 @@ let str = "山东省-济南市-市中区"let newStr = str.split('-')console.log(
 #### repeat()
 
 ```js
-// repeat方法返回一个新字符串，表示将原字符串重复n次。参数如果是小数，会被取整。let str = '这是测试字符串';console.log(str.repeat(3));// 这是测试字符串这是测试字符串这是测试字符串
+// repeat 方法返回一个新字符串，表示将原字符串重复 n 次。参数如果是小数，会被取整。
+let str = '这是测试字符串';
+console.log(str.repeat(3));
+// 这是测试字符串这是测试字符串这是测试字符串
 ```
 
 #### padStart()    padEnd()
@@ -376,7 +819,22 @@ let str = "山东省-济南市-市中区"let newStr = str.split('-')console.log(
 -   ES2017 引入了字符串补全长度的功能。如果某个字符串不够指定长度，会在头部或尾部补全。padStart()用于头部补全，padEnd()用于尾部补全。
 
 ```js
-console.log('x'.padStart(5, 'ab')) // 'ababx'console.log('x'.padStart(4, 'ab')) // 'abax'console.log('x'.padEnd(5, 'ab')) // 'xabab'console.log('x'.padEnd(4, 'ab')) // 'xaba'// 如果原字符串的长度，等于或大于最大长度，则字符串补全不生效，返回原字符串// 如果省略第二个参数，默认使用空格补全长度。// padStart()的常见用途是为数值补全指定位数。下面代码生成 10 位的数值字符串。console.log('1'.padStart(10, '0')) console.log('12'.padStart(10, '0')) console.log('123456'.padStart(10, '0')) // 0000000001// 0000000012// 0000123456// 另一个用途是提示字符串格式。'12'.padStart(10, 'YYYY-MM-DD') // "YYYY-MM-12"'09-12'.padStart(10, 'YYYY-MM-DD') // "YYYY-09-12"
+console.log('x'.padStart(5, 'ab')); // 'ababx'
+console.log('x'.padStart(4, 'ab')); // 'abax'
+console.log('x'.padEnd(5, 'ab')); // 'xabab'
+console.log('x'.padEnd(4, 'ab')); // 'xaba'
+// 如果原字符串的长度，等于或大于最大长度，则字符串补全不生效，返回原字符串
+// 如果省略第二个参数，默认使用空格补全长度。
+// padStart() 的常见用途是为数值补全指定位数。下面代码生成 10 位的数值字符串。
+console.log('1'.padStart(10, '0'));
+console.log('12'.padStart(10, '0'));
+console.log('123456'.padStart(10, '0'));
+// 0000000001
+// 0000000012
+// 0000123456
+// 另一个用途是提示字符串格式。
+console.log('12'.padStart(10, 'YYYY-MM-DD')); // "YYYY-MM-12"
+console.log('09-12'.padStart(10, 'YYYY-MM-DD')); // "YYYY-09-12"
 ```
 
 #### trimStart()，trimEnd()
@@ -395,19 +853,29 @@ search() 方法用于检索字符串中指定的子字符串，或检索与正�
 **search()方法查找时是对大小写敏感的。**
 
 ```js
-let str = "abcd Abcd abc"console.log(str.search("abc"))// 0console.log(str.search("Abc"))// 5
+let str = "abcd Abcd abc";
+console.log(str.search("abc")); // 0
+console.log(str.search("Abc")); // 5
 ```
 
 #### match(正则表达式)
 
 ```js
-let article = "12345657abcdeABCDE123"console.log(article.match("123"));// [ '123', index: 0, input: '12345657abcdeABCDE', groups: undefined ]console.log(article.match("3"));// [ '3', index: 2, input: '12345657abcdeABCDE123', groups: undefined ]
+let article = "12345657abcdeABCDE123";
+console.log(article.match("123"));
+// [ '123', index: 0, input: '12345657abcdeABCDE123', groups: undefined ]
+console.log(article.match("3"));
+// [ '3', index: 2, input: '12345657abcdeABCDE123', groups: undefined ]
 ```
 
 #### toLowerCase() ,toUpperCase()
 
 ```js
-let article = "this is pink"console.log(article.toLowerCase())console.log(article.toUpperCase())// this is pink// THIS IS PINK
+let article = "this is pink";
+console.log(article.toLowerCase());
+console.log(article.toUpperCase());
+// this is pink
+// THIS IS PINK
 ```
 
 ### 一些案例
@@ -415,15 +883,142 @@ let article = "this is pink"console.log(article.toLowerCase())console.log(articl
 检索文章中有多少个单词
 
 ```js
-let article = `ECMAScript (/ˈɛkməskrɪpt/) (or ES)[1] is a general-purpose programming language, standardised by Ecma International according to the document ECMA-262. It is a JavaScript standard meant to ensure the interoperability of web pages across different web browsers.[2] ECMAScript is commonly used for client-side scripting on the World Wide Web, and it is increasingly being used for writing server applications and services using Node.js.`
+let article = `ECMAScript (/ˈɛkməskrɪpt/) (or ES)[1] is a general-purpose programming language, standardised by Ecma International according to the document ECMA-262. It is a JavaScript standard meant to ensure the interoperability of web pages across different web browsers.[2] ECMAScript is commonly used for client-side scripting on the World Wide Web, and it is increasingly being used for writing server applications and services using Node.js.`;
 ```
 
 ```js
-// 方法一 , 但结果并不理想 , 有很多小细节让人不满足let try1 = article.split(' ')console.log(try1)// [//   'ECMAScript',         '(/ˈɛkməskrɪpt/)', '(or',//   'ES)[1]',             'is',              'a',//   'general-purpose',    'programming',     'language,',//   'standardised',       '\nby',            'Ecma',//   'International',      'according',       'to',//   'the',                'document',        'ECMA-262.',//   'It',                 'is',              'a',//   'JavaScript',         'standard',        'meant',//   'to',                 'ensure',          'the',//   '\ninteroperability', 'of',              'web',//   'pages',              'across',          'different',//   'web',                'browsers.[2]',    'ECMAScript',//   'is',                 'commonly',        'used',//   'for',                'client-side',     '\nscripting',//   'on',                 'the',             'World',//   'Wide',               'Web,',            'and',//   'it',                 'is',              'increasingly',//   'being',              'used',            'for',//   'writing',            'server',          'applications',//   'and',                '\nservices',      'using',//   'Node.js.'// ]
+// 方法一，但结果并不理想，有很多小细节让人不满足
+let try1 = article.split(' ');
+console.log(try1);
+// 打印结果：
+// [
+//   'ECMAScript',         '(/ˈɛkməskrɪpt/)', '(or',
+//   'ES)[1]',             'is',              'a',
+//   'general-purpose',    'programming',     'language,',
+//   'standardised',       '\nby',            'Ecma',
+//   'International',      'according',       'to',
+//   'the',                'document',        'ECMA-262.',
+//   'It',                 'is',              'a',
+//   'JavaScript',         'standard',        'meant',
+//   'to',                 'ensure',          'the',
+//   '\ninteroperability', 'of',              'web',
+//   'pages',              'across',          'different',
+//   'web',                'browsers.[2]',    'ECMAScript',
+//   'is',                 'commonly',        'used',
+//   'for',                'client-side',     '\nscripting',
+//   'on',                 'the',             'World',
+//   'Wide',               'Web,',            'and',
+//   'it',                 'is',              'increasingly',
+//   'being',              'used',            'for',
+//   'writing',            'server',          'applications',
+//   'and',                '\nservices',      'using',
+//   'Node.js.'
+// ]
 ```
 
 ```js
-let template = `qwertyuiopasdfghjklzxcvbnm`let word = ''let list = []let obj = {}for (let i = 0; i < article.length; i++) {  if (template.indexOf(article[i].toLowerCase()) !== -1 ) {    word += article[i].toLowerCase()  } else {    if (word !== '') {      list.push(word)      word = ''    }  }}console.log(list)// [//   'ecmascript',       'km',          'skr',//   'pt',               'or',          'es',//   'is',               'a',           'general',//   'purpose',          'programming', 'language',//   'standardised',     'by',          'ecma',//   'international',    'according',   'to',//   'the',              'document',    'ecma',//   'it',               'is',          'a',//   'javascript',       'standard',    'meant',//   'to',               'ensure',      'the',//   'interoperability', 'of',          'web',//   'pages',            'across',      'different',//   'web',              'browsers',    'ecmascript',//   'is',               'commonly',    'used',//   'for',              'client',      'side',//   'scripting',        'on',          'the',//   'world',            'wide',        'web',//   'and',              'it',          'is',//   'increasingly',     'being',       'used',//   'for',              'writing',     'server',//   'applications',     'and',         'services',//   'using',            'node',        'js'// ]list.forEach(function (item) {  if (obj[item] === undefined) {    obj[item] = 1  } else  {    obj[item]++  }})console.log(obj);// {//   ecmascript: 2,//   km: 1,//   skr: 1,//   pt: 1,//   or: 1,//   es: 1,//   is: 4,//   a: 2,//   general: 1,//   purpose: 1,//   programming: 1,//   language: 1,//   standardised: 1,//   by: 1,//   ecma: 2,//   international: 1,//   according: 1,//   to: 2,//   the: 3,//   document: 1,//   it: 2,//   javascript: 1,//   standard: 1,//   meant: 1,//   ensure: 1,//   interoperability: 1,//   of: 1,//   web: 3,//   pages: 1,//   across: 1,//   different: 1,//   browsers: 1,//   commonly: 1,//   used: 2,//   for: 2,//   client: 1,//   side: 1,//   scripting: 1,//   on: 1,//   world: 1,//   wide: 1,//   and: 2,//   increasingly: 1,//   being: 1,//   writing: 1,//   server: 1,//   applications: 1,//   services: 1,//   using: 1,//   node: 1,//   js: 1// }
+let template = `qwertyuiopasdfghjklzxcvbnm`;
+let word = '';
+let list = [];
+let obj = {};
+for (let i = 0; i < article.length; i++) {
+  if (template.indexOf(article[i].toLowerCase()) !== -1) {
+    word += article[i].toLowerCase();
+  } else {
+    if (word !== '') {
+      list.push(word);
+      word = '';
+    }
+  }
+}
+console.log(list);
+// 打印结果：
+// [
+//   'ecmascript',       'km',          'skr',
+//   'pt',               'or',          'es',
+//   'is',               'a',           'general',
+//   'purpose',          'programming', 'language',
+//   'standardised',     'by',          'ecma',
+//   'international',    'according',   'to',
+//   'the',              'document',    'ecma',
+//   'it',               'is',          'a',
+//   'javascript',       'standard',    'meant',
+//   'to',               'ensure',      'the',
+//   'interoperability', 'of',          'web',
+//   'pages',            'across',      'different',
+//   'web',              'browsers',    'ecmascript',
+//   'is',               'commonly',    'used',
+//   'for',              'client',      'side',
+//   'scripting',        'on',          'the',
+//   'world',            'wide',        'web',
+//   'and',              'it',          'is',
+//   'increasingly',     'being',       'used',
+//   'for',              'writing',     'server',
+//   'applications',     'and',         'services',
+//   'using',            'node',        'js'
+// ]
+list.forEach(function (item) {
+  if (obj[item] === undefined) {
+    obj[item] = 1;
+  } else {
+    obj[item]++;
+  }
+});
+console.log(obj);
+// 打印结果：
+// {
+//   ecmascript: 2,
+//   km: 1,
+//   skr: 1,
+//   pt: 1,
+//   or: 1,
+//   es: 1,
+//   is: 4,
+//   a: 2,
+//   general: 1,
+//   purpose: 1,
+//   programming: 1,
+//   language: 1,
+//   standardised: 1,
+//   by: 1,
+//   ecma: 2,
+//   international: 1,
+//   according: 1,
+//   to: 2,
+//   the: 3,
+//   document: 1,
+//   it: 2,
+//   javascript: 1,
+//   standard: 1,
+//   meant: 1,
+//   ensure: 1,
+//   interoperability: 1,
+//   of: 1,
+//   web: 3,
+//   pages: 1,
+//   across: 1,
+//   different: 1,
+//   browsers: 1,
+//   commonly: 1,
+//   used: 2,
+//   for: 2,
+//   client: 1,
+//   side: 1,
+//   scripting: 1,
+//   on: 1,
+//   world: 1,
+//   wide: 1,
+//   and: 2,
+//   increasingly: 1,
+//   being: 1,
+//   writing: 1,
+//   server: 1,
+//   applications: 1,
+//   services: 1,
+//   using: 1,
+//   node: 1,
+//   js: 1
+// }
 ```
 
 ### 字符串练习
@@ -433,13 +1028,46 @@ let template = `qwertyuiopasdfghjklzxcvbnm`let word = ''let list = []let obj = {
 代码实现：
 
 ```javascript
-var str2 = 'smyhvaevaesmyh';for (var i = 0; i < str2.length; i++) {    //如果指定位置的符号=== "o"    //str2[i]    if (str2.charAt(i) === 'm') {        console.log(i);    }}
+var str2 = 'smyhvaevaesmyh';
+for (var i = 0; i < str2.length; i++) {
+  // 如果指定位置的符号 === 'm'
+  // str2[i]
+  if (str2.charAt(i) === 'm') {
+    console.log(i);
+  }
+}
 ```
 
 #### 练习 2：判断一个字符串中出现次数最多的字符，统计这个次数
 
 ```html
-<script>    var str2 = 'smyhvaevaesmyhvae';    //定义一个json，然后判断json中是够有该属性，如果有该属性，那么值+1;否则创建一个该属性，并赋值为1；    var json = {};    for (var i = 0; i < str2.length; i++) {        //判断：如果有该属性，那么值+1;否则创建一个该属性，并赋值为1；        var key = str2.charAt(i);        if (json[key] === undefined) {            json[key] = 1;        } else {            json[key] += 1;        }    }    console.log(json);    console.log('----------------');    //获取json中属性值最大的选项    var maxKey = '';    var maxValue = 0;    for (var k in json) {        if (json[k] > maxValue) {            maxKey = k;            maxValue = json[k];        }    }    console.log(maxKey);    console.log(maxValue);</script>
+<script>
+    var str2 = 'smyhvaevaesmyhvae';
+    // 定义一个 json，然后判断 json 中是否有该属性：如果有该属性，那么值 +1；否则创建一个该属性，并赋值为 1
+    var json = {};
+    for (var i = 0; i < str2.length; i++) {
+        // 判断：如果有该属性，那么值 +1；否则创建一个该属性，并赋值为 1
+        var key = str2.charAt(i);
+        if (json[key] === undefined) {
+            json[key] = 1;
+        } else {
+            json[key] += 1;
+        }
+    }
+    console.log(json);
+    console.log('----------------');
+    // 获取 json 中属性值最大的选项
+    var maxKey = '';
+    var maxValue = 0;
+    for (var k in json) {
+        if (json[k] > maxValue) {
+            maxKey = k;
+            maxValue = json[k];
+        }
+    }
+    console.log(maxKey);
+    console.log(maxValue);
+</script>
 ```
 
 ### ...运算符 扩展运算符（展开语法）
@@ -451,7 +1079,10 @@ var str2 = 'smyhvaevaesmyh';for (var i = 0; i < str2.length; i++) {    //如果�
 代码举例：
 
 ```js
-const arr = [10, 20, 30];...arr // 10, 20, 30      注意，这一行是伪代码，这里用到了扩展运算符console.log(...arr); // 10 20 30console.log(10, 20, 30); // 10 20 30
+const arr = [10, 20, 30];
+// ...arr // 10, 20, 30   （伪代码：这里用到了扩展运算符）
+console.log(...arr); // 10 20 30
+console.log(10, 20, 30); // 10 20 30
 ```
 
 上面的代码要仔细看：
@@ -473,7 +1104,14 @@ let arr2 = [...arr1]; // 将 arr1 赋值给 arr2
 为了理解上面这行代码，我们先来分析一段代码：（将数组 arr1 赋值给 arr2）
 
 ```javascript
-let arr1 = ['www', 'smyhvae', 'com'];let arr2 = arr1; // 将 arr1 赋值给 arr2，其实是让 arr2 指向 arr1 的内存地址console.log('arr1:' + arr1);console.log('arr2:' + arr2);console.log('---------------------');arr2.push('你懂得'); //往 arr2 里添加一部分内容console.log('arr1:' + arr1);console.log('arr2:' + arr2);
+let arr1 = ['www', 'smyhvae', 'com'];
+let arr2 = arr1; // 将 arr1 赋值给 arr2，其实是让 arr2 指向 arr1 的内存地址
+console.log('arr1:' + arr1);
+console.log('arr2:' + arr2);
+console.log('---------------------');
+arr2.push('你懂得'); // 往 arr2 里添加一部分内容
+console.log('arr1:' + arr1);
+console.log('arr2:' + arr2);
 ```
 
 运行结果：
@@ -485,7 +1123,14 @@ let arr1 = ['www', 'smyhvae', 'com'];let arr2 = arr1; // 将 arr1 赋值给 arr2
 如果不想让 arr1 和 arr2 指向同一个内存地址，我们可以借助**扩展运算符**来做：
 
 ```javascript
-let arr1 = ['www', 'smyhvae', 'com'];let arr2 = [...arr1]; //【重要代码】arr2 会重新开辟内存地址console.log('arr1:' + arr1);console.log('arr2:' + arr2);console.log('---------------------');arr2.push('你懂得'); //往arr2 里添加一部分内容console.log('arr1:' + arr1);console.log('arr2:' + arr2);
+let arr1 = ['www', 'smyhvae', 'com'];
+let arr2 = [...arr1]; // 【重要代码】arr2 会重新开辟内存地址
+console.log('arr1:' + arr1);
+console.log('arr2:' + arr2);
+console.log('---------------------');
+arr2.push('你懂得'); // 往 arr2 里添加一部分内容
+console.log('arr1:' + arr1);
+console.log('arr2:' + arr2);
 ```
 
 运行结果：
@@ -501,7 +1146,16 @@ arr1:www,smyhvae,comarr2:www,smyhvae,com---------------------arr1:www,smyhvae,co
 代码举例：
 
 ```js
-let arr1 = ['王一', '王二', '王三'];let arr2 = ['王四', '王五', '王六'];// ...arr1  // '王一','王二','王三'// ...arr2  // '王四','王五','王六'// 方法1let arr3 = [...arr1, ...arr2];console.log(arr3); // ["王一", "王二", "王三", "王四", "王五", "王六"]// 方法2arr1.push(...arr2);console.log(arr1); // ["王一", "王二", "王三", "王四", "王五", "王六"]
+let arr1 = ['王一', '王二', '王三'];
+let arr2 = ['王四', '王五', '王六'];
+// ...arr1  // '王一','王二','王三'
+// ...arr2  // '王四','王五','王六'
+// 方法 1
+let arr3 = [...arr1, ...arr2];
+console.log(arr3); // ["王一", "王二", "王三", "王四", "王五", "王六"]
+// 方法 2
+arr1.push(...arr2);
+console.log(arr1); // ["王一", "王二", "王三", "王四", "王五", "王六"]
 ```
 
 #### 将伪数组或者可遍历对象转换为真正的数组
@@ -533,7 +1187,13 @@ const myDivs = document.getElementsByClassName('div');const divArr = [...myDivs]
 举例：
 
 ```js
-let arr1 = [];   // 创建一个空数组let arr2 = ["arr2"];   // 创建一个包含1个字符串的数组 ("arr2")let arr3 = ["leo","is",18];   // 创建一个包含3项数据的数组var arr1 = []; // 创建一个空的数组var arr2 = [1, 2, 3]; // 创建带初始值的数组
+// 使用字面量创建数组
+let arr1 = []; // 创建一个空数组
+let arr2 = ["arr2"]; // 创建一个包含 1 个字符串的数组 ("arr2")
+let arr3 = ["leo", "is", 18]; // 创建一个包含 3 项数据的数组
+// 使用 var 创建数组
+var arrA = []; // 创建一个空的数组
+var arrB = [1, 2, 3]; // 创建带初始值的数组
 ```
 
 #### 方式二：使用构造函数创建数组
@@ -541,7 +1201,12 @@ let arr1 = [];   // 创建一个空数组let arr2 = ["arr2"];   // 创建一个�
 语法：
 
 ```js
-let arr = new Array(参数);let arr = Array(参数);let arr1 = new Array();   // 创建一个空数组let arr2 = new Array("leo");   // 创建一个包含1个字符串的数组let arr3 = new Array("leo","is","nice");   // 创建一个包含3个字符串的数组
+// 伪代码：new Array(参数) 和 Array(参数) 都可以创建数组
+// let arr = new Array(参数);
+// let arr = Array(参数);
+let arr1 = new Array(); // 创建一个空数组
+let arr2 = new Array("leo"); // 创建一个包含 1 个字符串的数组
+let arr3 = new Array("leo", "is", "nice"); // 创建一个包含 3 个字符串的数组
 ```
 
 如果**参数为空**，则表示创建一个空数组；如果参数是**一个数值**时，表示数组的长度；如果有多个参数时，表示数组中的元素。
@@ -551,7 +1216,18 @@ let arr = new Array(参数);let arr = Array(参数);let arr1 = new Array();   //
 来举个例子：
 
 ```javascript
-// 方式一var arr1 = [11, 12, 13];// 方式二var arr2 = new Array(); // 参数为空var arr3 = new Array(4); // 参数为一个数值var arr4 = new Array(15, 16, 17); // 参数为多个数值console.log(typeof arr1); // 打印结果：object// JSON.stringify(arr1)) 的目的是将数组转化为字符串console.log('arr1 = ' + JSON.stringify(arr1));console.log('arr2 = ' + JSON.stringify(arr2));console.log('arr3 = ' + JSON.stringify(arr3));console.log('arr4 = ' + JSON.stringify(arr4));
+// 方式一：使用字面量创建数组
+var arr1 = [11, 12, 13];
+// 方式二：使用构造函数创建数组
+var arr2 = new Array(); // 参数为空
+var arr3 = new Array(4); // 参数为一个数值
+var arr4 = new Array(15, 16, 17); // 参数为多个数值
+console.log(typeof arr1); // 打印结果：object
+// JSON.stringify(arr1) 的目的是将数组转化为字符串
+console.log('arr1 = ' + JSON.stringify(arr1));
+console.log('arr2 = ' + JSON.stringify(arr2));
+console.log('arr3 = ' + JSON.stringify(arr3));
+console.log('arr4 = ' + JSON.stringify(arr4));
 ```
 
 打印结果：
@@ -567,7 +1243,12 @@ object;arr1 = [11, 12, 13];arr2 = [];// 主要注意这里arr3 = [null, null, nu
 Array.of()方法总会创建一个包含所有传入参数的数组，而不管参数的数量与类型
 
 ```js
-let arr = Array.of(1,2);console.log(arr.length);   // 2console.log(arr[0]);   // 1 let arr1 = Array.of("leo");console.log(arr1.length);   // 1console.log(arr1[0]);   // "leo"
+let arr = Array.of(1, 2);
+console.log(arr.length); // 2
+console.log(arr[0]); // 1
+let arr1 = Array.of("leo");
+console.log(arr1.length); // 1
+console.log(arr1[0]); // "leo"
 ```
 
 #### Array.from 方式
@@ -575,7 +1256,9 @@ let arr = Array.of(1,2);console.log(arr.length);   // 2console.log(arr[0]);   //
 Array.from() 将可迭代对象或者类数组对象作为第一个参数传入，就能返回一个数组
 
 ```js
-console.log(Array.from('foo'));// expected output: Array ["f", "o", "o"]console.log(Array.from([1, 2, 3], x => x + x));// expected output: Array [2, 4, 6]
+console.log(Array.from('foo')); // expected output: Array ["f", "o", "o"]
+console.log(Array.from([1, 2, 3], (x) => x + x));
+// expected output: Array [2, 4, 6]
 ```
 
 #### 数组中的元素的类型
@@ -613,7 +1296,14 @@ const arr2 = [    [11, 12, 13],    [21, 22, 23],];
 代码举例：
 
 ```javascript
-var arr = [];// 向数组中添加元素arr[0] = 10;arr[1] = 20;arr[2] = 30;arr[3] = 40;arr[5] = 50;console.log(JSON.stringify(arr));
+var arr = [];
+// 向数组中添加元素
+arr[0] = 10;
+arr[1] = 20;
+arr[2] = 30;
+arr[3] = 40;
+arr[5] = 50;
+console.log(JSON.stringify(arr));
 ```
 
 打印结果：
@@ -647,7 +1337,7 @@ var arr = [21, 22, 23];console.log(arr[0]); // 打印结果：21console.log(arr[
 语法：
 
 ```javascript
-数组的长度 = 数组名.length；
+// 伪代码：数组的长度 = 数组名.length;
 ```
 
 代码举例：
@@ -672,7 +1362,14 @@ var arr = [21, 22, 23];console.log(arr.length); // 打印结果：3
 代码举例：
 
 ```javascript
-var arr1 = [11, 12, 13];var arr2 = [21, 22, 23];// 修改数组 arr1 的 lengtharr1.length = 1;console.log(JSON.stringify(arr1));// 修改数组 arr2 的 lengtharr2.length = 5;console.log(JSON.stringify(arr2));
+var arr1 = [11, 12, 13];
+var arr2 = [21, 22, 23];
+// 修改数组 arr1 的 length
+arr1.length = 1;
+console.log(JSON.stringify(arr1));
+// 修改数组 arr2 的 length
+arr2.length = 5;
+console.log(JSON.stringify(arr2));
 ```
 
 打印结果：
@@ -691,7 +1388,10 @@ var arr1 = [11, 12, 13];var arr2 = [21, 22, 23];// 修改数组 arr1 的 lengtha
 最简单的做法是通过 for 循环，遍历数组中的每一项。举例：
 
 ```javascript
-var arr = [10, 20, 30, 40, 50];for (var i = 0; i < arr.length; i++) {    console.log(arr[i]); // 打印出数组中的每一项}
+var arr = [10, 20, 30, 40, 50];
+for (var i = 0; i < arr.length; i++) {
+  console.log(arr[i]); // 打印出数组中的每一项
+}
 ```
 
 ### 4. 数组的方法详细介绍
@@ -778,13 +1478,31 @@ Array2 的位置可以有多个数组,最后都将合并
 **arrayObject.concat(arrayX,arrayX,......,arrayX)**
 
 ```js
-let Array1 = [1,2,3,4,5]let Array2 = ['a','b','c','d','e']let Array3 = Array1.concat(Array2)console.log(Array3);// [//   1,   2,   3,   4,   5,//   'a', 'b', 'c', 'd', 'e'// ]// 原数组不改变console.log(Array1)// [ 1, 2, 3, 4, 5 ]// 可以拼接多个数组console.log(Array1.concat(Array2,Array1))// [//   1,   2,   3,   4,   5, 'a',//   'b', 'c', 'd', 'e', 1, 2,//   3,   4,   5// ]
+let Array1 = [1, 2, 3, 4, 5];
+let Array2 = ['a', 'b', 'c', 'd', 'e'];
+let Array3 = Array1.concat(Array2);
+console.log(Array3);
+// 打印结果：
+// [ 1, 2, 3, 4, 5, 'a', 'b', 'c', 'd', 'e' ]
+// 原数组不改变
+console.log(Array1);
+// [ 1, 2, 3, 4, 5 ]
+// 可以拼接多个数组
+console.log(Array1.concat(Array2, Array1));
+// [ 1, 2, 3, 4, 5, 'a', 'b', 'c', 'd', 'e', 1, 2, 3, 4, 5 ]
 ```
 
 当然,拼接数组一般可以选择更简单的方式 `... `
 
 ```js
-let arr1 = [1, 2, 3, 4]let arr2 = [5, 6, 7, 8, 9, 1]arr1.push( ...arr2 )console.log(arr1)console.log(arr2)// [//   1, 2, 3, 4, 5,//   6, 7, 8, 9, 1// ]// [ 5, 6, 7, 8, 9, 1 ]
+let arr1 = [1, 2, 3, 4];
+let arr2 = [5, 6, 7, 8, 9, 1];
+arr1.push(...arr2);
+console.log(arr1);
+console.log(arr2);
+// 打印结果：
+// [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 1 ]
+// [ 5, 6, 7, 8, 9, 1 ]
 ```
 
 注意: 
@@ -808,7 +1526,17 @@ console.log(arr1.push(...arr2));// 返回的是数组的长度
 | end    | 选填。停止复制的索引位置。默认为array.length。如果为负值，表示倒数。 |
 
 ```js
-let Array1 = [1,2,3,4,5,6]let Array2 = ['a','b','c','d','e','f']let Array3 = Array1.concat(Array2).copyWithin(1,3,5)console.log(Array3);// [//   1,   4,   5,   4,   5,//   6,   'a', 'b', 'c', 'd',//   'e', 'f'// ]// 省略第三个参数 , 将会从第二个参数到最后全部修改console.log(Array1.copyWithin(0,1))// [ 2, 3, 4, 5, 6, 6 ][1, 2, 3, 4, 5].copyWithin(0, -2, -1)// [4, 2, 3, 4, 5]
+let Array1 = [1, 2, 3, 4, 5, 6];
+let Array2 = ['a', 'b', 'c', 'd', 'e', 'f'];
+let Array3 = Array1.concat(Array2).copyWithin(1, 3, 5);
+console.log(Array3);
+// 打印结果：
+// [ 1, 4, 5, 4, 5, 6, 'a', 'b', 'c', 'd', 'e', 'f' ]
+// 省略第三个参数，将会从第二个参数到最后全部修改
+console.log(Array1.copyWithin(0, 1));
+// [ 2, 3, 4, 5, 6, 6 ]
+console.log([1, 2, 3, 4, 5].copyWithin(0, -2, -1));
+// [ 4, 2, 3, 4, 5 ]
 ```
 
 #### every()
@@ -820,7 +1548,14 @@ js中every和some都是对数组进行迭代操作的函数
 **Array1.every((item) => {return condition})**
 
 ```js
-let Array1 = [1,2,3,4,5,6]let Array2 = [2,3,4,5]let Array3 = Array1.concat(Array2)Array3 = Array3.every((item) => {  return item >= 2})console.log(Array3);// false
+let Array1 = [1, 2, 3, 4, 5, 6];
+let Array2 = [2, 3, 4, 5];
+let Array3 = Array1.concat(Array2);
+Array3 = Array3.every((item) => {
+  return item >= 2;
+});
+console.log(Array3);
+// false
 ```
 
 #### some()
@@ -830,7 +1565,14 @@ let Array1 = [1,2,3,4,5,6]let Array2 = [2,3,4,5]let Array3 = Array1.concat(Array
 **Array1.some((item) => {return condition})**
 
 ```js
-let Array1 = [1,2,3,4,5,6]let Array2 = [2,3,4,5]let Array3 = Array1.concat(Array2)Array3 = Array3.some((item) => {  return item >= 2})console.log(Array3);// true
+let Array1 = [1, 2, 3, 4, 5, 6];
+let Array2 = [2, 3, 4, 5];
+let Array3 = Array1.concat(Array2);
+Array3 = Array3.some((item) => {
+  return item >= 2;
+});
+console.log(Array3);
+// true
 ```
 
 #### fill()
@@ -840,7 +1582,19 @@ let Array1 = [1,2,3,4,5,6]let Array2 = [2,3,4,5]let Array3 = Array1.concat(Array
 **Array1.fill(value,start,end)**
 
 ```js
-let Array1 = [1,2,3,4,5,6]let Array2 = [2,3,4,5]let Array3 = Array1.concat(Array2)Array3 = Array3.fill("x",1,2)console.log(Array3);// [//   1, 'x', 3, 4, 5,//   6, 2,   3, 4, 5// ]let arr1 = [1, 2, 3, 4, 56, 7, 7, 8, 9];arr1.fill(4, 2, 5);console.log(arr1)  //   [1, 2, 4, 4, 4, 7, 7, 8, 9]let arr2 = [1, 2, 3, 4, 56, 7, 7, 8, 9];arr2.fill(4);console.log(arr2)  //  [4, 4, 4, 4, 4, 4, 4, 4, 4]
+let Array1 = [1, 2, 3, 4, 5, 6];
+let Array2 = [2, 3, 4, 5];
+let Array3 = Array1.concat(Array2);
+Array3 = Array3.fill("x", 1, 2);
+console.log(Array3);
+// 打印结果：
+// [ 1, 'x', 3, 4, 5, 6, 2, 3, 4, 5 ]
+let arr1 = [1, 2, 3, 4, 56, 7, 7, 8, 9];
+arr1.fill(4, 2, 5);
+console.log(arr1); // [1, 2, 4, 4, 4, 7, 7, 8, 9]
+let arr2 = [1, 2, 3, 4, 56, 7, 7, 8, 9];
+arr2.fill(4);
+console.log(arr2); // [4, 4, 4, 4, 4, 4, 4, 4, 4]
 ```
 
 #### filter()
@@ -850,7 +1604,16 @@ let Array1 = [1,2,3,4,5,6]let Array2 = [2,3,4,5]let Array3 = Array1.concat(Array
 **Array1.filter((item) => {return condition})**
 
 ```js
-let Array1 = [1,2,3,4,5,6]let Array2 = [2,3,4,5]let Array3 = Array1.concat(Array2)Array3 = Array3.fill("1",1,2)let Array4 = Array3.filter((item) => {  return item >= 2})console.log(Array4);// [//   3, 4, 5, 6,//   2, 3, 4, 5// ]
+let Array1 = [1, 2, 3, 4, 5, 6];
+let Array2 = [2, 3, 4, 5];
+let Array3 = Array1.concat(Array2);
+Array3 = Array3.fill("1", 1, 2);
+let Array4 = Array3.filter((item) => {
+  return item >= 2;
+});
+console.log(Array4);
+// 打印结果：
+// [ 3, 4, 5, 6, 2, 3, 4, 5 ]
 ```
 
 #### find()
@@ -870,7 +1633,13 @@ find((item, index, arr) => {    return true;});
 **Array1.find((item) => {return condition})**
 
 ```js
-let Array2 = [2,3,4,5]console.log(Array2.find((item) => {  return item >= 3}));// 3
+let Array2 = [2, 3, 4, 5];
+console.log(
+  Array2.find((item) => {
+    return item >= 3;
+  })
+);
+// 3
 ```
 
 #### findindex()
@@ -879,8 +1648,14 @@ let Array2 = [2,3,4,5]console.log(Array2.find((item) => {  return item >= 3}));/
 
 **Array1.findIndex((item) => {return condition})**
 
-```JS
-let Array2 = [2,3,4,5]console.log(Array2.findIndex((item) => {  return item >= 3}));// 1
+```js
+let Array2 = [2, 3, 4, 5];
+console.log(
+  Array2.findIndex((item) => {
+    return item >= 3;
+  })
+);
+// 1
 ```
 
 #### forEach()
@@ -890,7 +1665,15 @@ let Array2 = [2,3,4,5]console.log(Array2.findIndex((item) => {  return item >= 3
 **Array2.forEach((item,index,arr) => {return condition})**
 
 ```js
-let Array2 = [2,3,4,5]Array2.forEach((item,index,arr) => {  item = item * index  console.log(item)})// 0// 3// 8// 15
+let Array2 = [2, 3, 4, 5];
+Array2.forEach((item, index, arr) => {
+  item = item * index;
+  console.log(item);
+});
+// 0
+// 3
+// 8
+// 15
 ```
 
 forEach可以使用return中止这一层循环后续的代码执行 , **但是不能使用break**
@@ -910,7 +1693,11 @@ forEach无法在所有元素都传递给调用的函数之前终止（而for循�
 includes可以包含两个参数，**第二个参数表示判断的起始位置,起始位置第一个数字是0。**
 
 ```js
-console.log([1,2,3,4].includes(1))   //trueconsole.log([1,2,3,4].includes(5))   //falseconsole.log([1,2,3,4].includes(1,0))   //trueconsole.log([1,2,3,4].includes(2,2))   //falseconsole.log([1,2,3,4].includes(3,2))   //true
+console.log([1, 2, 3, 4].includes(1)); // true
+console.log([1, 2, 3, 4].includes(5)); // false
+console.log([1, 2, 3, 4].includes(1, 0)); // true
+console.log([1, 2, 3, 4].includes(2, 2)); // false
+console.log([1, 2, 3, 4].includes(3, 2)); // true
 ```
 
 #### indexOf()
@@ -943,7 +1730,11 @@ let arr=["a","b","c","a","b","c"];console.log(Array.isArray(arr)); // true
 **传入undefined会默认用逗号分隔。**
 
 ```js
-let arr=["a","b","c","a","b","c"];console.log(arr.join())   // a,b,c,a,b,cconsole.log(arr.join(","))   // a,b,c,a,b,cconsole.log(arr.join("."))   // a.b.c.a.b.cconsole.log(arr.join("-"))   // a-b-c-a-b-c
+let arr = ['a', 'b', 'c', 'a', 'b', 'c'];
+console.log(arr.join()); // a,b,c,a,b,c
+console.log(arr.join(",")); // a,b,c,a,b,c
+console.log(arr.join(".")); // a.b.c.a.b.c
+console.log(arr.join("-")); // a-b-c-a-b-c
 ```
 
 #### lastIndexOf()
@@ -952,7 +1743,9 @@ let arr=["a","b","c","a","b","c"];console.log(arr.join())   // a,b,c,a,b,cconsol
 **数组的检索位置从0开始。**
 
 ```js
-let arr=["a","b","c","a","b","c"];console.log(arr.lastIndexOf("a")) // 3console.log(arr.lastIndexOf("a",2)) // 0
+let arr = ["a", "b", "c", "a", "b", "c"];
+console.log(arr.lastIndexOf("a")); // 3
+console.log(arr.lastIndexOf("a", 2)); // 0
 ```
 
 #### map()
@@ -960,13 +1753,32 @@ let arr=["a","b","c","a","b","c"];console.log(arr.lastIndexOf("a")) // 3console.
 **通过指定函数处理数组的每个元素，并返回处理后的数组。**
 
 ```js
-let arr=["a","b","c","a","b","c"];let Array1 = arr.map((item) => {  return item = item + 1})console.log(Array1);// [ 'a1', 'b1', 'c1', 'a1', 'b1', 'c1' ]let array1 = [1, 4, 9, 16];const map1 = array1.map(x => {  if (x === 4) {    return x * 2;  }});console.log(map1);// [ undefined, 8, undefined, undefined ]
+let arr = ["a", "b", "c", "a", "b", "c"];
+let Array1 = arr.map((item) => {
+  return (item = item + 1);
+});
+console.log(Array1);
+// [ 'a1', 'b1', 'c1', 'a1', 'b1', 'c1' ]
+let array1 = [1, 4, 9, 16];
+const map1 = array1.map((x) => {
+  if (x === 4) {
+    return x * 2;
+  }
+});
+console.log(map1);
+// [ undefined, 8, undefined, undefined ]
 ```
 
 map()方法创建了一个新数组，但新数组并不是在遍历完array1后才被赋值的，而是**每遍历一次就得到一个值**
 
 ```js
-var array1 = [1, 4, 9, 16]; const map1 = array1.map(x => {    if (x == 4) {        return x * 2;    }}); console.log(map1);// > Array [undefined, 8, undefined, undefined]
+var array1 = [1, 4, 9, 16];
+const map1 = array1.map((x) => {
+    if (x == 4) {
+        return x * 2;
+    }
+});
+console.log(map1); // > Array [undefined, 8, undefined, undefined]
 ```
 
 #### pop()
@@ -996,7 +1808,14 @@ let arr=["a","b","c","a","b","c"];console.log(arr.shift()); //a
 **push()向数组的末尾添加一个或多个元素，并返回该数组的新长度。**
 
 ```js
-let arr=["a","b","c","a","b","c"];console.log(arr.push("1")); // 7let Array1 = arr.push("b")console.log(Array1); // 8let array1 = [1, 4, 9, 16];array1.push("1","2","3","4")console.log(array1);// [//    1,   4,   9,   16,//   '1', '2', '3', '4'// ]
+let arr = ['a', 'b', 'c', 'a', 'b', 'c'];
+console.log(arr.push('1')); // 7
+let Array1 = arr.push("b");
+console.log(Array1); // 8
+let array1 = [1, 4, 9, 16];
+array1.push("1", "2", "3", "4");
+console.log(array1);
+// [ 1, 4, 9, 16, '1', '2', '3', '4' ]
 ```
 
 #### unshift()
@@ -1022,19 +1841,51 @@ console.log(arr); // [ 'a', 'a', 'b', 'c', 'a', 'b', 'c' ]
 相当于一个累加的效果,将前面运算的结果与当前的值进行运算
 
 ```js
-let arr=["a","b","c","a","b","c"];let Array = arr.reduce((pre,now,index,arr) => {  return pre + now},0)console.log(Array);// 0abcabcArray = arr.reduce((pre,now,index,arr) => {  return pre + pre},0)console.log(Array);// 0arr=[1,2,3,4,5,6,10];Array = arr.reduce((pre,now,index,arr) => {  return pre + now},0)console.log(Array);// 31
+let arr = ["a", "b", "c", "a", "b", "c"];
+let Array = arr.reduce((pre, now, index, arr) => {
+  return pre + now;
+}, 0);
+console.log(Array);
+// 0abcabc
+Array = arr.reduce((pre, now, index, arr) => {
+  return pre + pre;
+}, 0);
+console.log(Array);
+// 0
+arr = [1, 2, 3, 4, 5, 6, 10];
+Array = arr.reduce((pre, now, index, arr) => {
+  return pre + now;
+}, 0);
+console.log(Array);
+// 31
 ```
 
 一个数组去重的实现
 
 ```js
-let arr = [1, 2, 3, 3, 4, 2]let newArr = arr.reduce((pre, cur) => {  if (!pre.includes(cur)) {    return pre.concat(cur)  } else {    return pre  }}, [])console.log(newArr)
+let arr = [1, 2, 3, 3, 4, 2];
+let newArr = arr.reduce((pre, cur) => {
+  if (!pre.includes(cur)) {
+    return pre.concat(cur);
+  } else {
+    return pre;
+  }
+}, []);
+console.log(newArr);
 ```
 
 在对象中的使用
 
 ```js
-let arr = [  {subject: 'math', score: 10},  {subject: 'chinese', score: 20},  {subject: 'english', score: 310}]let sum = arr.reduce((pre, cur) => {  return cur.score + pre}, 0)console.log(sum) //340
+let arr = [
+  { subject: 'math', score: 10 },
+  { subject: 'chinese', score: 20 },
+  { subject: 'english', score: 310 },
+];
+let sum = arr.reduce((pre, cur) => {
+  return cur.score + pre;
+}, 0);
+console.log(sum); // 340
 ```
 
 ######## reduce() 的常见应用
@@ -1044,7 +1895,12 @@ let arr = [  {subject: 'math', score: 10},  {subject: 'chinese', score: 20},  {s
 计算数组中所有元素项的总和。代码实现：
 
 ```javascript
-const arr = [2, 0, 1, 9, 6];// 数组求和const total = arr.reduce((prev, item) => {    return prev + item;});console.log('total:' + total); // 打印结果：18
+const arr = [2, 0, 1, 9, 6];
+// 数组求和
+const total = arr.reduce((prev, item) => {
+  return prev + item;
+});
+console.log('total:' + total); // 打印结果：18
 ```
 
 **举例 2**、统计某个元素出现的次数：
@@ -1052,7 +1908,16 @@ const arr = [2, 0, 1, 9, 6];// 数组求和const total = arr.reduce((prev, item)
 代码实现：
 
 ```js
-// 定义方法：统一 value 这个元素在数组 arr 中出现的次数function repeatCount(arr, value) {    if (!arr || arr.length == 0) return 0;    return arr.reduce((totalCount, item) => {        totalCount += item == value ? 1 : 0;        return totalCount;    }, 0);}let arr1 = [1, 2, 6, 5, 6, 1, 6];console.log(repeatCount(arr1, 6)); // 打印结果：3
+// 定义方法：统计 value 这个元素在数组 arr 中出现的次数
+function repeatCount(arr, value) {
+  if (!arr || arr.length == 0) return 0;
+  return arr.reduce((totalCount, item) => {
+    totalCount += item == value ? 1 : 0;
+    return totalCount;
+  }, 0);
+}
+let arr1 = [1, 2, 6, 5, 6, 1, 6];
+console.log(repeatCount(arr1, 6)); // 打印结果：3
 ```
 
 **举例 3**、求元素的最大值：
@@ -1060,7 +1925,12 @@ const arr = [2, 0, 1, 9, 6];// 数组求和const total = arr.reduce((prev, item)
 代码实现：
 
 ```js
-const arr = [2, 0, 1, 9, 6];// 数组求最大值const maxValue = arr.reduce((prev, item) => {    return prev > item ? prev : item;});console.log(maxValue); // 打印结果：9
+const arr = [2, 0, 1, 9, 6];
+// 数组求最大值
+const maxValue = arr.reduce((prev, item) => {
+  return prev > item ? prev : item;
+});
+console.log(maxValue); // 打印结果：9
 ```
 
 
@@ -1111,7 +1981,12 @@ var minx = [8,13,5,7,0,20,6,1,"Banana", "Orange", "Apple", "Mango"];minx.sort();
 
 
 ```js
-let arr = ['General','Tom','Bob','John','Army'];let resArr = arr.sort();console.log(resArr);//输出   ["Army", "Bob", "General", "John", "Tom"]let arr2 = [30,10,111,35,1899,50,45];let resArr2 = arr2.sort();console.log(resArr2);//输出   [10, 111, 1899, 30, 35, 45, 50]
+let arr = ['General', 'Tom', 'Bob', 'John', 'Army'];
+let resArr = arr.sort();
+console.log(resArr); // 输出：["Army", "Bob", "General", "John", "Tom"]
+let arr2 = [30, 10, 111, 35, 1899, 50, 45];
+let resArr2 = arr2.sort();
+console.log(resArr2); // 输出：[10, 111, 1899, 30, 35, 45, 50]
 ```
 
 使用数字排序，你必须通过一个函数作为参数来调用。
@@ -1129,19 +2004,54 @@ let arr = ['General','Tom','Bob','John','Army'];let resArr = arr.sort();console.
 **升序排列**
 
 ```js
-let arr=[20,20,4,22,23];console.log(arr.sort(function (a, b) { //升序  return a - b}));  // [ 4, 20, 20, 22, 23 ]
+let arr = [20, 20, 4, 22, 23];
+console.log(
+  arr.sort(function (a, b) {
+    // 升序
+    return a - b;
+  })
+); // [ 4, 20, 20, 22, 23 ]
 ```
 
 **降序排列**
 
 ```js
-let arr=[20,20,4,22,23];console.log(arr.sort(function (a, b) { //降序  return b - a}));  // [ 23, 22, 20, 20, 4 ]
+let arr = [20, 20, 4, 22, 23];
+console.log(
+  arr.sort(function (a, b) {
+    // 降序
+    return b - a;
+  })
+); // [ 23, 22, 20, 20, 4 ]
 ```
 
 **多排序**
 
 ```js
-let arr6 = [{id:10,age:2},{id:5,age:4},{id:6,age:10},{id:9,age:6},{id:2,age:8},{id:10,age:9}];	arr6.sort(function(a,b){		if(a.id === b.id){//如果id相同，按照age的降序			return b.age - a.age		}else{			return a.id - b.id		}	})	console.log(arr6);	//输出新的排序	//		{id: 2, age: 8}	//		{id: 5, age: 4}	//		{id: 6, age: 10}	//		{id: 9, age: 6}	//		{id: 10, age: 9}	//		{id: 10, age: 2}
+let arr6 = [
+  { id: 10, age: 2 },
+  { id: 5, age: 4 },
+  { id: 6, age: 10 },
+  { id: 9, age: 6 },
+  { id: 2, age: 8 },
+  { id: 10, age: 9 },
+];
+arr6.sort(function (a, b) {
+  if (a.id === b.id) {
+    // 如果 id 相同，按照 age 的降序
+    return b.age - a.age;
+  } else {
+    return a.id - b.id;
+  }
+});
+console.log(arr6);
+// 输出新的排序：
+// {id: 2, age: 8}
+// {id: 5, age: 4}
+// {id: 6, age: 10}
+// {id: 9, age: 6}
+// {id: 10, age: 9}
+// {id: 10, age: 2}
 ```
 
 
@@ -1160,7 +2070,10 @@ let arr=["b","o","a","m"];arr.sort(); //字母升序arr.reverse(); //反转顺�
 如果是负数，则表示从数组尾部开始算起
 
 ```js
-let arr=["b","o","a","m"];console.log(arr.slice(1,3)); // [ 'o', 'a' ]arr=["b","o","a","m"];console.log(arr.slice(1)); // [ 'o', 'a', 'm' ]
+let arr = ["b", "o", "a", "m"];
+console.log(arr.slice(1, 3)); // [ 'o', 'a' ]
+arr = ["b", "o", "a", "m"];
+console.log(arr.slice(1)); // [ 'o', 'a', 'm' ]
 ```
 
 ```js
@@ -1180,7 +2093,15 @@ let arr=["b","o","a","m","c"];console.log(arr.slice(-3, -1));  //[ 'a', 'm' ]
 splice(0) 会把原数组清空。
 
 ```js
-let arr=["b","o","a","m"];arr.splice(0)console.log(arr);// []let array = ["a", "b", "c", "d", "e", "1"]console.log(array.splice(0, 2));console.log(array)// [ 'a', 'b' ]// [ 'c', 'd', 'e', '1' ]
+let arr = ["b", "o", "a", "m"];
+arr.splice(0);
+console.log(arr);
+// []
+let array = ["a", "b", "c", "d", "e", "1"];
+console.log(array.splice(0, 2));
+console.log(array);
+// [ 'a', 'b' ]
+// [ 'c', 'd', 'e', '1' ]
 ```
 
 > 举例4\：（删除指定元素，用得很多）
@@ -1194,13 +2115,21 @@ const arr4 = ['a', 'b', 'c', 'd'];arr4.splice(arr4.indexOf('c'), 1); // 删除�
 **2. 增加操作**
 
 ```js
-let array = ["a", "b", "c", "d", "e", "1"]console.log(array.splice(0, 0,"23"));console.log(array)// []// [//   '23', 'a', 'b',//   'c',  'd', 'e',//   '1'// ]
+let array = ["a", "b", "c", "d", "e", "1"];
+console.log(array.splice(0, 0, "23"));
+console.log(array);
+// []
+// [ '23', 'a', 'b', 'c', 'd', 'e', '1' ]
 ```
 
 **3. 修改操作**
 
 ```js
-let array = ["a", "b", "c", "d", "e", "1"]console.log(array.splice(2, 0,"23"));console.log(array)// []// [//   'a', 'b', '23',//   'c', 'd', 'e',//   '1'// ]
+let array = ["a", "b", "c", "d", "e", "1"];
+console.log(array.splice(2, 0, "23"));
+console.log(array);
+// []
+// [ 'a', 'b', '23', 'c', 'd', 'e', '1' ]
 ```
 
 ######## splice()练习：数组去重
@@ -1208,7 +2137,27 @@ let array = ["a", "b", "c", "d", "e", "1"]console.log(array.splice(2, 0,"23"));c
 代码实现：
 
 ```javascript
-//创建一个数组var arr = [1, 2, 3, 2, 2, 1, 3, 4, 2, 5];//去除数组中重复的数字//获取数组中的每一个元素for (var i = 0; i < arr.length; i++) {    //console.log(arr[i]);    /*获取当前元素后的所有元素*/    for (var j = i + 1; j < arr.length; j++) {        //console.log("---->"+arr[j]);        //判断两个元素的值是否相等        if (arr[i] == arr[j]) {            //如果相等则证明出现了重复的元素，则删除j对应的元素            arr.splice(j, 1);            //当删除了当前j所在的元素以后，后边的元素会自动补位            //此时将不会在比较这个元素，我需要再比较一次j所在位置的元素            //使j自减            j--;        }    }}console.log(arr);
+// 创建一个数组
+var arr = [1, 2, 3, 2, 2, 1, 3, 4, 2, 5];
+// 去除数组中重复的数字
+// 获取数组中的每一个元素
+for (var i = 0; i < arr.length; i++) {
+  // console.log(arr[i]);
+  /* 获取当前元素后的所有元素 */
+  for (var j = i + 1; j < arr.length; j++) {
+    // console.log("---->" + arr[j]);
+    // 判断两个元素的值是否相等
+    if (arr[i] == arr[j]) {
+      // 如果相等则证明出现了重复的元素，则删除 j 对应的元素
+      arr.splice(j, 1);
+      // 当删除了当前 j 所在的元素以后，后边的元素会自动补位
+      // 此时将不会再比较这个元素，我需要再比较一次 j 所在位置的元素
+      // 使 j 自减
+      j--;
+    }
+  }
+}
+console.log(arr);
 ```
 
 
@@ -1230,13 +2179,41 @@ let arr=["b","o","a","m"];console.log(arr.toString())// b,o,a,m
 **注意下面的三种结果差别**
 
 ```js
-let json1 = {  "0": "123",  "1": "123",  "2": "123"}let json2 = {  "1": "123",  "2": "123",  "3": "123",  length: 3}let json3 = {  "0": "123",  "1": "123",  "2": "123",  length: 3}let arr1 = Array.from(json1)let arr2 = Array.from(json2)let arr3 = Array.from(json3)console.log(arr1);console.log(arr2);console.log(arr3);// []// [ undefined, '123', '123' ]// [ '123', '123', '123' ]
+let json1 = {
+  "0": "123",
+  "1": "123",
+  "2": "123",
+};
+let json2 = {
+  "1": "123",
+  "2": "123",
+  "3": "123",
+  length: 3,
+};
+let json3 = {
+  "0": "123",
+  "1": "123",
+  "2": "123",
+  length: 3,
+};
+let arr1 = Array.from(json1);
+let arr2 = Array.from(json2);
+let arr3 = Array.from(json3);
+console.log(arr1);
+console.log(arr2);
+console.log(arr3);
+// []
+// [ undefined, '123', '123' ]
+// [ '123', '123', '123' ]
 ```
 
 将字符串转换为数组
 
 ```js
-let array1 = "alone to find"console.log(Array.from(array1))// [//   'a', 'l', 'o', 'n',//   'e', ' ', 't', 'o',//   ' ', 'f', 'i', 'n',//   'd'// ]
+let array1 = "alone to find";
+console.log(Array.from(array1));
+// 打印结果：
+// [ 'a', 'l', 'o', 'n', 'e', ' ', 't', 'o', ' ', 'f', 'i', 'n', 'd' ]
 ```
 
 伪数组的举例
@@ -1244,7 +2221,16 @@ let array1 = "alone to find"console.log(Array.from(array1))// [//   'a', 'l', 'o
 ######## 
 
 ```html
-<body>    <button>按钮1</button>    <button>按钮2</button>    <button>按钮3</button>    <script>        let btnArray = document.getElementsByTagName('button');        console.log(btnArray);        console.log(btnArray[0]);    </script></body>
+<body>
+    <button>按钮1</button>
+    <button>按钮2</button>
+    <button>按钮3</button>
+    <script>
+        let btnArray = document.getElementsByTagName('button');
+        console.log(btnArray);
+        console.log(btnArray[0]);
+    </script>
+</body>
 ```
 
 上面的布局中，有三个 button 标签，我们通过`getElementsByTagName`获取到的`btnArray`实际上是**伪数组**，并不是真实的数组
@@ -1264,7 +2250,18 @@ Array.from(btnArray);
 **将一组值转变为数组**
 
 ```js
-let arr1 = Array.of(1,2,3)let arr2 = Array.of([1,2,3])let arr3 = Array.of({"1":"1"})let arr4 = Array.of()console.log(arr1)console.log(arr2)console.log(arr3)console.log(arr4)// [ 1, 2, 3 ]// [ [ 1, 2, 3 ] ]// [ { '1': '1' } ]// []
+let arr1 = Array.of(1, 2, 3);
+let arr2 = Array.of([1, 2, 3]);
+let arr3 = Array.of({ "1": "1" });
+let arr4 = Array.of();
+console.log(arr1);
+console.log(arr2);
+console.log(arr3);
+console.log(arr4);
+// [ 1, 2, 3 ]
+// [ [ 1, 2, 3 ] ]
+// [ { '1': '1' } ]
+// []
 ```
 
 补充：`new Array()`和 `Array.of()`的区别在于：当参数只有一个时，前者表示数组的长度，后者表示数组中的内容。
@@ -1274,7 +2271,28 @@ let arr1 = Array.of(1,2,3)let arr2 = Array.of([1,2,3])let arr3 = Array.of({"1":"
 这三个方法都是返回一个遍历器对象，可用for...of循环遍历，**唯一区别：keys()是对键名的遍历、values()对键值的遍历、entries()是对键值对的遍历。**
 
 ```js
-let arr = ["a","b","c","d"];for(let i of arr.keys()){  console.log(i);}// 0// 1// 2// 3for(let i of arr.values()){  console.log(i);}// a// b// c// dfor(let i of arr.entries()){  console.log(i);}// [ 0, 'a' ]// [ 1, 'b' ]// [ 2, 'c' ]// [ 3, 'd' ]
+let arr = ['a', 'b', 'c', 'd'];
+for (let i of arr.keys()) {
+  console.log(i);
+}
+// 0
+// 1
+// 2
+// 3
+for (let i of arr.values()) {
+  console.log(i);
+}
+// a
+// b
+// c
+// d
+for (let i of arr.entries()) {
+  console.log(i);
+}
+// [ 0, 'a' ]
+// [ 1, 'b' ]
+// [ 2, 'c' ]
+// [ 3, 'd' ]
 ```
 
 
@@ -1294,7 +2312,30 @@ arr = [   1,  2,   3,  4,  4,  3,   4,  3, 123, 23, 12, 23,  34, 12,  22,  1]
 实现方法:
 
 ```js
-let arr = [[1,2,3,4],[4,3,4,3],[[[123,23],[12,23,34]],[12,22,1]]]function flat(arr) {  let result = []  arr.map(item => {    if (Array.isArray(item)) {      result = result.concat(flat(item))    } else {      result.push(item)    }  })  return result}console.log(flat(arr));// [//    1,  2,   3,  4,  4,  3,//    4,  3, 123, 23, 12, 23,//   34, 12,  22,  1// ]
+let arr = [
+  [1, 2, 3, 4],
+  [4, 3, 4, 3],
+  [
+    [
+      [123, 23],
+      [12, 23, 34],
+    ],
+    [12, 22, 1],
+  ],
+];
+function flat(arr) {
+  let result = [];
+  arr.map((item) => {
+    if (Array.isArray(item)) {
+      result = result.concat(flat(item));
+    } else {
+      result.push(item);
+    }
+  });
+  return result;
+}
+console.log(flat(arr));
+// [ 1, 2, 3, 4, 4, 3, 4, 3, 123, 23, 12, 23, 34, 12, 22, 1 ]
 ```
 
 ## Number
@@ -1308,14 +2349,23 @@ let arr = [[1,2,3,4],[4,3,4,3],[[[123,23],[12,23,34]],[12,22,1]]]function flat(a
 比如：
 
 ```javascript
-var a = 168.23;console.log(parseInt(a)); //打印结果：168  （因为是先将 a 转为字符串"168.23"，然后然后再操作）var b = true;console.log(parseInt(b)); //打印结果：NaN （因为是先将 b 转为字符串"true"，然后然后再操作）var c = null;console.log(parseInt(c)); //打印结果：NaN  （因为是先将 c 转为字符串"null"，然后然后再操作）var d = undefined;console.log(parseInt(d)); //打印结果：NaN  （因为是先将 d 转为字符串"undefined"，然后然后再操作）
+var a = 168.23;
+console.log(parseInt(a)); // 打印结果：168 （因为是先将 a 转为字符串 "168.23"，然后再操作）
+var b = true;
+console.log(parseInt(b)); // 打印结果：NaN （因为是先将 b 转为字符串 "true"，然后再操作）
+var c = null;
+console.log(parseInt(c)); // 打印结果：NaN （因为是先将 c 转为字符串 "null"，然后再操作）
+var d = undefined;
+console.log(parseInt(d)); // 打印结果：NaN （因为是先将 d 转为字符串 "undefined"，然后再操作）
 ```
 
 
 （2）**只保留字符串最开头的数字**，后面的中文自动消失。例如：
 
 ```javascript
-console.log(parseInt('2017在公众号上写了6篇文章')); //打印结果：2017console.log(parseInt('2017.01在公众号上写了6篇文章')); //打印结果仍是：2017   （说明只会取整数）console.log(parseInt('aaa2017.01在公众号上写了6篇文章')); //打印结果：NaN （因为不是以数字开头）
+console.log(parseInt('2017在公众号上写了6篇文章')); // 打印结果：2017
+console.log(parseInt('2017.01在公众号上写了6篇文章')); // 打印结果仍是：2017 （说明只会取整数）
+console.log(parseInt('aaa2017.01在公众号上写了6篇文章')); // 打印结果：NaN （因为不是以数字开头）
 ```
 
 
@@ -1364,7 +2414,9 @@ var a = '110';var num = parseInt(a, 16); // 【重要】将 a 当成 十六进�
 我们来看下面的代码，打印结果继续震惊。
 
 ```javascript
-var a = '5';var num = parseInt(a, 2); // 将 a 当成 二进制 来看待，转换成 十进制 的 numconsole.log(num); // 打印结果：NaN。因为 二进制中没有 5 这个数，转换失败。
+var a = '5';
+var num = parseInt(a, 2); // 将 a 当成二进制来看待，转换成十进制的 num
+console.log(num); // 打印结果：NaN。因为二进制中没有 5 这个数，转换失败。
 ```
 
 ---
@@ -1380,7 +2432,10 @@ var a = '5';var num = parseInt(a, 2); // 将 a 当成 二进制 来看待，转�
 **举例 1**：
 
 ```javascript
-var a = 'abc';a++;console.log(typeof a); // 打印结果：numberconsole.log(a); // 打印结果：NaN。因为 Number('abc')的结果为 NaN，再自增后，结果依然是 NaN
+var a = 'abc';
+a++;
+console.log(typeof a); // 打印结果：number
+console.log(a); // 打印结果：NaN。因为 Number('abc') 的结果为 NaN，再自增后，结果依然是 NaN
 ```
 
 ## Boolean
@@ -1428,13 +2483,20 @@ var obj = new Object();
 举例：
 
 ```javascript
-var obj = new Object();//向obj中添加一个name属性obj.name = '孙悟空';//向obj中添加一个gender属性obj.gender = '男';//向obj中添加一个age属性obj.age = 18;console.log(JSON.stringify(obj)); // 将 obj 以字符串的形式打印出来
+var obj = new Object();
+// 向 obj 中添加一个 name 属性
+obj.name = '孙悟空';
+// 向 obj 中添加一个 gender 属性
+obj.gender = '男';
+// 向 obj 中添加一个 age 属性
+obj.age = 18;
+console.log(JSON.stringify(obj)); // 将 obj 以字符串的形式打印出来
 ```
 
 打印结果：
 
-```jS
-	{		"name":"孙悟空",		"gender":"男",		"age":18	}
+```
+{ "name": "孙悟空", "gender": "男", "age": 18 }
 ```
 
 #### 获取对象中的属性
@@ -1452,7 +2514,16 @@ var obj = new Object();//向obj中添加一个name属性obj.name = '孙悟空';/
 举例：
 
 ```javascript
-var obj = new Object();//向obj中添加一个name属性obj.name = '孙悟空';//向obj中添加一个gender属性obj.gender = '男';//向obj中添加一个age属性obj.age = 18;// 获取对象中的属性，并打印出来console.log(obj.gender); // 打印结果：男console.log(obj.color); // 打印结果：undefined
+var obj = new Object();
+// 向 obj 中添加一个 name 属性
+obj.name = '孙悟空';
+// 向 obj 中添加一个 gender 属性
+obj.gender = '男';
+// 向 obj 中添加一个 age 属性
+obj.age = 18;
+// 获取对象中的属性，并打印出来
+console.log(obj.gender); // 打印结果：男
+console.log(obj.color); // 打印结果：undefined
 ```
 
 **方式 2**：可以使用`[]`这种形式去操作属性
@@ -1516,7 +2587,9 @@ delete obj.name;
 当然，还有一种写法可以达到上述目的：
 
 ```js
-if (obj.name) {    // 如果对象 obj 中有name属性，我就继续做某某事情。}
+if (obj.name) {
+  // 如果对象 obj 中有 name 属性，我就继续做某某事情。
+}
 ```
 
 #### Object.freeze() 冻结对象
@@ -1526,7 +2599,12 @@ Object.freeze() 方法可以冻结一个对象。一个被冻结的对象再也�
 代码举例：
 
 ```js
-const params = {    name: 'ximingx',    port: '8899',}Object.freeze(params); // 冻结对象 paramsparams.port = '8080';// 修改无效
+const params = {
+  name: 'ximingx',
+  port: '8899',
+};
+Object.freeze(params); // 冻结对象 params
+params.port = '8080'; // 修改无效
 ```
 
 > 注意：对象字面量里各属性之间要用**逗号**分隔，不是分号。上方代码第一行原文误写成了 `name: 'ximingx';`，会直接报语法错误。
@@ -1575,7 +2653,10 @@ for (const 变量 in 对象) {}
 语法举例：
 
 ```javascript
-for (var key in obj) {    console.log(key); // 这里的 key 是：对象属性的键（也就是属性名）    console.log(obj[key]); // 这里的 obj[key] 是：对象属性的值（也就是属性值）}
+for (var key in obj) {
+  console.log(key); // 这里的 key 是：对象属性的键（也就是属性名）
+  console.log(obj[key]); // 这里的 obj[key] 是：对象属性的值（也就是属性值）
+}
 ```
 
 #### for in 遍历数组（不建议）
@@ -1583,13 +2664,19 @@ for (var key in obj) {    console.log(key); // 这里的 key 是：对象属性�
 另外，for in 当然也可以用来遍历数组（只是不建议），此时的 key 是数组的索引。举例如下：
 
 ```js
-const arr = ['hello1', 'hello2', 'hello3'];for (const key in arr) {    console.log('属性名：' + key);    console.log('属性值：' + arr[key]);}
+const arr = ['hello1', 'hello2', 'hello3'];
+for (const key in arr) {
+  console.log('属性名：' + key);
+  console.log('属性值：' + arr[key]);
+}
 ```
 
 打印结果：
 
-```js
-属性名：0属性值：hello1属性名：1属性值：hello2属性名：2属性值：hello3
+```
+属性名：0 属性值：hello1
+属性名：1 属性值：hello2
+属性名：2 属性值：hello3
 ```
 
 ### 深拷贝 浅拷贝
@@ -1606,20 +2693,28 @@ const arr = ['hello1', 'hello2', 'hello3'];for (const key in arr) {    console.l
 
 深拷贝会把对象里**所有的数据**重新复制到新的内存空间，是最彻底的拷贝。
 
-#### 浅拷贝的实现方式
-
 #### 用 for in 实现浅拷贝（比较繁琐）
 
 ```js
-const obj1 = {    name: 'ximingx',    age: 28,    info: {        msg: '~ ~ ~',    },};const obj2 = {};//  用 for in 将 obj1 的值拷贝给 obj2for (let key in obj1) {    obj2[key] = obj1[key];}console.log('obj2:' + JSON.stringify(obj2));obj1.age = 20;obj1.info.msg = 'aw'; // 当修改 obj1 的第二层数据时，obj2的值也会被改变。所以  for in 是浅拷贝console.log('obj2:' + JSON.stringify(obj2));
+const obj1 = { name: 'ximingx', age: 28, info: { msg: '~ ~ ~' } };
+const obj2 = {};
+// 用 for in 将 obj1 的值拷贝给 obj2
+for (let key in obj1) {
+  obj2[key] = obj1[key];
+}
+console.log('obj2:' + JSON.stringify(obj2));
+obj1.age = 20;
+obj1.info.msg = 'aw'; // 当修改 obj1 的第二层数据时，obj2 的值也会被改变。所以 for in 是浅拷贝
+console.log('obj2:' + JSON.stringify(obj2));
 ```
 
 上方代码中，用 for in 做拷贝时，只能做到浅拷贝。也就是说，在 obj2 中， name 和 age 这两个属性会单独存放在新的内存地址中，和 obj1 没有关系。但是，`obj2.info` 属性，跟 `obj1.info` 属性，**它俩指向的是同一个堆内存地址**。所以，当我修改 `obj1.info.msg` 里的值之后，`obj2.info.msg` 的值也会被修改。
 
 打印结果如下：
 
-```js
-obj2:{"name":"ximingx","age":28,"info":{"msg":"~ ~ ~"}}obj2:{"name":"ximingx","age":28,"info":{"msg":"aw"}}
+```
+obj2:{"name":"ximingx","age":28,"info":{"msg":"~ ~ ~"}}
+obj2:{"name":"ximingx","age":28,"info":{"msg":"aw"}}
 ```
 
 #### 用 Object.assign() 实现浅拷贝（推荐的方式）
@@ -1633,8 +2728,8 @@ obj2:{"name":"ximingx","age":28,"info":{"msg":"~ ~ ~"}}obj2:{"name":"ximingx","a
 ```js
 // 语法1
 obj2 = Object.assign(obj2, obj1);
-// 语法2
-Object.assign(目标对象, 源对象1, 源对象2...);
+// 语法2（伪代码：目标对象、源对象1、源对象2……）
+// Object.assign(目标对象, 源对象1, 源对象2...);
 ```
 
 **解释**：将`obj1` 拷贝给 `obj2`。执行完毕后，obj2 的值会被更新。
@@ -1646,15 +2741,21 @@ Object.assign(目标对象, 源对象1, 源对象2...);
 **例 1**：
 
 ```js
-const obj1 = {    name: 'ximingx',    age: 20,    info: {        desc: 'hello',    },};// 浅拷贝：把 obj1 拷贝给 obj2。如果 obj1 只有一层数据，那么，obj1 和 obj2 则互不影响const obj2 = Object.assign({}, obj1);console.log('obj2:' + JSON.stringify(obj2));obj1.info.desc = 'aw'; // 由于 Object.assign() 只是浅拷贝，所以当修改 obj1 的第二层数据时，obj2 对应的值也会被改变。console.log('obj2:' + JSON.stringify(obj2));
+const obj1 = { name: 'ximingx', age: 20, info: { desc: 'hello' } };
+// 浅拷贝：把 obj1 拷贝给 obj2。如果 obj1 只有一层数据，那么 obj1 和 obj2 则互不影响
+const obj2 = Object.assign({}, obj1);
+console.log('obj2:' + JSON.stringify(obj2));
+obj1.info.desc = 'aw'; // 由于 Object.assign() 只是浅拷贝，所以当修改 obj1 的第二层数据时，obj2 对应的值也会被改变
+console.log('obj2:' + JSON.stringify(obj2));
 ```
 
 代码解释：由于 Object.assign() 只是浅拷贝，所以在当前这个案例中， obj2 中的 name 属性和 age 属性是单独存放在新的堆内存地址中的，和 obj1 没有关系；但是，`obj2.info` 属性，跟 `obj1.info`属性，**它俩指向的是同一个堆内存地址**。所以，当我修改 `obj1.info` 里的值之后，`obj2.info`的值也会被修改。
 
 打印结果：
 
-```js
-obj2:{"name":"ximingx","age":20,"info":{"desc":"hello"}}obj2:{"name":"ximingx","age":20,"info":{"desc":"aw"}}
+```
+obj2:{"name":"ximingx","age":20,"info":{"desc":"hello"}}
+obj2:{"name":"ximingx","age":20,"info":{"desc":"aw"}}
 ```
 
 **例 2**：
@@ -1686,7 +2787,11 @@ console.log(obj31 === obj32); // true
 **例 3**：
 
 ```js
-let obj1 = { name: 'ximingx', age: 126 };let obj2 = { city: 'shanxi', age: 28 };let obj3 = {};Object.assign(obj3, obj1, obj2); // 将 obj1、obj2的内容赋值给 obj3console.log(obj3); // {name: "ximingx", age: 28, city: "shanxi"}
+let obj1 = { name: 'ximingx', age: 126 };
+let obj2 = { city: 'shanxi', age: 28 };
+let obj3 = {};
+Object.assign(obj3, obj1, obj2); // 将 obj1、obj2 的内容赋值给 obj3
+console.log(obj3); // {name: "ximingx", age: 28, city: "shanxi"}
 ```
 
 上面的代码，可以理解成：将多个对象（obj1和obj2）合并成一个对象 obj3。
@@ -1694,12 +2799,16 @@ let obj1 = { name: 'ximingx', age: 126 };let obj2 = { city: 'shanxi', age: 28 };
 **例4**：【重要】
 
 ```js
-const obj1 = {    name: 'ximingx',    age: 28,    desc: 'hello world',};const obj2 = {    name: 'luoyue',    sex: '男',};// 浅拷贝：把 obj1 赋值给 obj2。这一行，是关键代码。这行代码的返回值也是 obj2Object.assign(obj2, obj1);console.log(JSON.stringify(obj2));
+const obj1 = { name: 'ximingx', age: 28, desc: 'hello world' };
+const obj2 = { name: 'luoyue', sex: '男' };
+// 浅拷贝：把 obj1 赋值给 obj2。这一行，是关键代码。这行代码的返回值也是 obj2
+Object.assign(obj2, obj1);
+console.log(JSON.stringify(obj2));
 ```
 
 打印结果：
 
-```js
+```
 {"name":"ximingx","sex":"男","age":28,"desc":"hello world"}
 ```
 
@@ -1714,13 +2823,47 @@ const obj1 = {    name: 'ximingx',    age: 28,    desc: 'hello world',};const ob
 代码实现：
 
 ```js
-let obj1 = {    name: 'qianguyihao',    age: 28,    info: {        desc: 'hello',    },    color: ['red', 'blue', 'green'],};let obj2 = {};deepCopy(obj2, obj1);console.log(obj2);obj1.info.desc = 'github';console.log(obj2);// 方法：深拷贝function deepCopy(newObj, oldObj) {    for (let key in oldObj) {        // 获取属性值 oldObj[key]        let item = oldObj[key];        // 判断这个值是否是数组        if (item instanceof Array) {            newObj[key] = [];            deepCopy(newObj[key], item);        } else if (item instanceof Object) {            // 判断这个值是否是对象            newObj[key] = {};            deepCopy(newObj[key], item);        } else {            // 简单数据类型，直接赋值            newObj[key] = item;        }    }}
+let obj1 = {
+  name: 'qianguyihao',
+  age: 28,
+  info: { desc: 'hello' },
+  color: ['red', 'blue', 'green'],
+};
+let obj2 = {};
+deepCopy(obj2, obj1);
+console.log(obj2);
+obj1.info.desc = 'github';
+console.log(obj2);
+// 方法：深拷贝
+function deepCopy(newObj, oldObj) {
+  for (let key in oldObj) {
+    // 获取属性值 oldObj[key]
+    let item = oldObj[key];
+    // 判断这个值是否是数组
+    if (item instanceof Array) {
+      newObj[key] = [];
+      deepCopy(newObj[key], item);
+    } else if (item instanceof Object) {
+      // 判断这个值是否是对象
+      newObj[key] = {};
+      deepCopy(newObj[key], item);
+    } else {
+      // 简单数据类型，直接赋值
+      newObj[key] = item;
+    }
+  }
+}
 ```
 
 还有一种类似的方法，就是用JSON进行转换
 
 ```js
-var p1 = {    name: 'jack',    age:12} var p2 = JSON.parse(JSON.stringify(p1)); p2.name = 'rose';
+var p1 = {
+  name: 'jack',
+  age: 12,
+};
+var p2 = JSON.parse(JSON.stringify(p1));
+p2.name = 'rose';
 ```
 
 > **注意 JSON 方式的局限**：`JSON.stringify` 会丢失函数、`undefined`、Symbol 类型的属性；`Date` 会被转成字符串、`NaN`/`Infinity` 会变成 `null`；循环引用会直接报错。有这些需求时应使用递归深拷贝或 structuredClone()（ES2022 新增，但不支持函数）。
@@ -1744,7 +2887,13 @@ var p1 = {    name: 'jack',    age:12} var p2 = JSON.parse(JSON.stringify(p1)); 
 来看个例子：
 
 ```javascript
-console.log("你好");sayHello();	// 调用函数// 定义函数function sayHello(){	console.log("欢迎");	console.log("welcome");}
+console.log("你好");
+sayHello(); // 调用函数
+// 定义函数
+function sayHello() {
+  console.log("欢迎");
+  console.log("welcome");
+}
 ```
 
 ### 函数的定义/声明
@@ -1754,13 +2903,19 @@ console.log("你好");sayHello();	// 调用函数// 定义函数function sayHell
 使用`函数声明`来创建一个函数（也就是 function 关键字）。语法：
 
 ```javascript
-function 函数名([形参1,形参2...形参N]){  // 备注：语法中的中括号，表示“可选”	语句...}
+// 伪代码：函数声明语法
+// function 函数名([形参1, 形参2...形参N]) {
+//   语句...
+// }
+// 备注：语法中的中括号，表示"可选"
 ```
 
 举例：
 
 ```javascript
-function fun1(a, b){	return a+b;}
+function fun1(a, b) {
+  return a + b;
+}
 ```
 
 解释如下：
@@ -1780,13 +2935,18 @@ PS：在有些编辑器中，方法写完之后，我们在方法的前面输入
 使用`函数表达式`来创建一个函数。语法：
 
 ```javascript
-var 变量名  = function([形参1,形参2...形参N]){	语句....}
+// 伪代码：函数表达式语法
+// var 变量名 = function([形参1, 形参2...形参N]) {
+//   语句...
+// }
 ```
 
 举例：
 
 ```javascript
-var fun2 = function() {	console.log("我是匿名函数中封装的代码");};
+var fun2 = function () {
+  console.log("我是匿名函数中封装的代码");
+};
 ```
 
 解释如下：
@@ -1807,7 +2967,8 @@ var fun2 = function() {	console.log("我是匿名函数中封装的代码");};
 语法：
 
 ```javascript
-var 变量名/函数名  = new Function('形参1', '形参2', '函数体');
+// 伪代码：使用 new Function 创建函数
+// var 变量名 = new Function('形参1', '形参2', '函数体');
 ```
 
 注意，Function 里面的参数都必须是**字符串**格式。也就是说，形参也必须放在**字符串**里；函数体也是放在**字符串**里包裹起来，放在 Function 的最后一个参数的位置。
@@ -1815,7 +2976,8 @@ var 变量名/函数名  = new Function('形参1', '形参2', '函数体');
 代码举例：
 
 ```javascript
-var fun3 = new Function('a', 'b', 'console.log("我是函数内部的内容");  console.log(a + b);');fun3(1, 2); // 调用函数
+var fun3 = new Function('a', 'b', 'console.log("我是函数内部的内容");  console.log(a + b);');
+fun3(1, 2); // 调用函数
 ```
 
 打印结果：
@@ -1861,13 +3023,26 @@ var fun3 = new Function('a', 'b', 'console.log("我是函数内部的内容");  
 代码举例：
 
 ```javascript
-function fn1() {	console.log('我是函数体里面的内容1');}function fn2() {	console.log('我是函数体里面的内容2');}fn1(); // 调用函数fn2.call(); // 调用函数
+function fn1() {
+  console.log('我是函数体里面的内容1');
+}
+function fn2() {
+  console.log('我是函数体里面的内容2');
+}
+fn1(); // 调用函数
+fn2.call(); // 调用函数
 ```
 
 #### 方式2：通过对象的方法来调用
 
 ```javascript
-var obj = {	a: 'qianguyihao',	fn2: function() {		console.log('千古壹号，永不止步!');	},};obj.fn2(); // 调用函数
+var obj = {
+  a: 'qianguyihao',
+  fn2: function () {
+    console.log('千古壹号，永不止步!');
+  },
+};
+obj.fn2(); // 调用函数
 ```
 
 如果一个函数是作为一个对象的属性保存，那么，我们称这个函数是这个对象的**方法**。
@@ -1878,7 +3053,9 @@ var obj = {	a: 'qianguyihao',	fn2: function() {		console.log('千古壹号，永
 代码举例：
 
 ```javascript
-(function() {	console.log('我是立即执行函数');})();
+(function () {
+  console.log('我是立即执行函数');
+})();
 ```
 
 立即执行函数在定义后，会自动调用。
@@ -1888,7 +3065,10 @@ var obj = {	a: 'qianguyihao',	fn2: function() {		console.log('千古壹号，永
 代码举例：
 
 ```javascript
-function Fun3() {	console.log('千古壹号，永不止步~');}new Fun3();
+function Fun3() {
+  console.log('千古壹号，永不止步~');
+}
+new Fun3();
 ```
 
 这种方式用得不多。
@@ -1899,7 +3079,24 @@ function Fun3() {	console.log('千古壹号，永不止步~');}new Fun3();
 
 
 ```html
-<!DOCTYPE html><html lang="en">    <head>        <meta charset="UTF-8" />        <meta name="viewport" content="width=device-width, initial-scale=1.0" />        <title>Document</title>    </head>    <body>        <div id="btn">我是按钮，请点击我</div>        <script>            var btn = document.getElementById('btn');            //2.绑定事件            btn.onclick = function() {                console.log('点击按钮后，要做的事情');            };        </script>    </body></html>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div id="btn">我是按钮，请点击我</div>
+        <script>
+            var btn = document.getElementById('btn');
+            // 2.绑定事件
+            btn.onclick = function () {
+                console.log('点击按钮后，要做的事情');
+            };
+        </script>
+    </body>
+</html>
 ```
 
 
@@ -1935,13 +3132,20 @@ function Fun3() {	console.log('千古壹号，永不止步~');}new Fun3();
 举例：
 
 ```javascript
-// 调用函数sum(3,4);sum("3",4);sum("Hello","World");// 定义函数：求和function sum(a, b) {	console.log(a + b);}
+// 调用函数
+sum(3, 4);
+sum("3", 4);
+sum("Hello", "World");
+// 定义函数：求和
+function sum(a, b) {
+  console.log(a + b);
+}
 ```
 
 控制台输出结果：
 
-```js
-734helloworld
+```
+734 helloworld
 ```
 
 #### 实参的类型
@@ -1961,12 +3165,17 @@ function Fun3() {	console.log('千古壹号，永不止步~');}new Fun3();
 代码举例：
 
 ```javascript
-	function sum(a, b) {		console.log(a + b);	}	sum(1, 2);	sum(1, 2, 3);	sum(1);
+function sum(a, b) {
+  console.log(a + b);
+}
+sum(1, 2);
+sum(1, 2, 3);
+sum(1);
 ```
 
 打印结果：
 
-```ja
+```
 33NaN
 ```
 
@@ -1977,7 +3186,11 @@ function Fun3() {	console.log('千古壹号，永不止步~');}new Fun3();
 举例：
 
 ```javascript
-console.log(sum(3, 4)); // 将函数的返回值打印出来//函数：求和function sum(a, b) {	return a + b;}
+console.log(sum(3, 4)); // 将函数的返回值打印出来
+// 函数：求和
+function sum(a, b) {
+  return a + b;
+}
 ```
 
 return 的作用是结束方法（终止函数）。
@@ -2001,7 +3214,14 @@ return 的作用是结束方法（终止函数）。
 我们要记住：**函数名 == 整个函数**。举例：
 
 ```javascript
-console.log(fn) == console.log(function fn(){alert(1)});//定义fn方法function fn(){	alert(1)};
+console.log(fn) ==
+  console.log(function fn() {
+    alert(1);
+  });
+// 定义 fn 方法
+function fn() {
+  alert(1);
+}
 ```
 
 我们知道，当我们在调用一个函数时，通常使用`函数()`这种格式；可如果，我们是直接使用`函数`这种格式，它的作用相当于整个函数。
@@ -2028,13 +3248,19 @@ console.log(fn) == console.log(function fn(){alert(1)});//定义fn方法function
 现有匿名函数如下：
 
 ```javascript
-	function(a, b) {		console.log("a = " + a);		console.log("b = " + b);	};
+var fn = function (a, b) {
+  console.log("a = " + a);
+  console.log("b = " + b);
+};
 ```
 
 立即执行函数如下：
 
 ```javascript
-	(function(a, b) {		console.log("a = " + a);		console.log("b = " + b);	})(123, 456);
+(function (a, b) {
+  console.log("a = " + a);
+  console.log("b = " + b);
+})(123, 456);
 ```
 
 立即执行函数：函数定义完，立即被调用，这种函数叫做立即执行函数。
@@ -2050,13 +3276,15 @@ console.log(fn) == console.log(function fn(){alert(1)});//定义fn方法function
 函数举例：
 
 ```javascript
-	// 调用函数	fn();
+// 调用函数
+fn();
 ```
 
 方法举例：
 
 ```javascript
-	// 调用方法	obj.fn();
+// 调用方法
+obj.fn();
 ```
 
 我们可以这样说，如果直接是`fn()`，那就说明是函数调用。如果是`XX.fn()`的这种形式，那就说明是**方法**调用。
@@ -2094,7 +3322,15 @@ arguments.length 可以用来获取**实参的长度**。
 举例：
 
 ```javascript
-fn(2, 4);fn(2, 4, 6);fn(2, 4, 6, 8);function fn(a, b) {    console.log(arguments);    console.log(fn.length); //获取形参的个数    console.log(arguments.length); //获取实参的个数    console.log('----------------');}
+fn(2, 4);
+fn(2, 4, 6);
+fn(2, 4, 6, 8);
+function fn(a, b) {
+  console.log(arguments);
+  console.log(fn.length); // 获取形参的个数
+  console.log(arguments.length); // 获取实参的个数
+  console.log('----------------');
+}
 ```
 
 打印结果：
@@ -2109,7 +3345,10 @@ fn(2, 4);fn(2, 4, 6);fn(2, 4, 6, 8);function fn(a, b) {    console.log(arguments
 arguments 里边有一个属性叫做 callee，这个属性对应一个函数对象，就是**当前正在指向的函数对象**。
 
 ```javascript
-function fun() {    console.log(arguments.callee == fun); //打印结果为true}fun('hello');
+function fun() {
+  console.log(arguments.callee == fun); // 打印结果为 true
+}
+fun('hello');
 ```
 
 在使用函数**递归**调用时，推荐使用 arguments.callee 代替函数名本身。
@@ -2119,7 +3358,13 @@ function fun() {    console.log(arguments.callee == fun); //打印结果为true}
 之所以说 arguments 是伪数组，是因为：**arguments 可以修改元素，但不能改变数组的长短**。举例：
 
 ```javascript
-fn(2, 4);fn(2, 4, 6);fn(2, 4, 6, 8);function fn(a, b) {    arguments[0] = 99; //将实参的第一个数改为99    arguments.push(8); //此方法不通过，因为无法增加元素}
+fn(2, 4);
+fn(2, 4, 6);
+fn(2, 4, 6, 8);
+function fn(a, b) {
+  arguments[0] = 99; // 将实参的第一个数改为 99
+  arguments.push(8); // 此方法不通过，因为无法增加元素
+}
 ```
 
 
@@ -2140,7 +3385,17 @@ arguments的展示形式是一个**伪数组**。伪数组具有以下特点：
 代码实现：
 
 ```javascript
-	function getMaxValue() {		var max = arguments[0];		// 通过 arguments 遍历实参		for (var i = 0; i < arguments.length; i++) {			if (max < arguments[i]) {				max = arguments[i];			}		}		return max;	}	console.log(getMaxValue(1, 3, 7, 5));
+function getMaxValue() {
+  var max = arguments[0];
+  // 通过 arguments 遍历实参
+  for (var i = 0; i < arguments.length; i++) {
+    if (max < arguments[i]) {
+      max = arguments[i];
+    }
+  }
+  return max;
+}
+console.log(getMaxValue(1, 3, 7, 5));
 ```
 
 ### 函数参数默认值
@@ -2168,7 +3423,12 @@ function fn(param = 'hello') {    console.log(param);}
 如下：
 
 ```javascript
-var fn2 = (a, b = 5) => {    console.log('haha');    return a + b;};console.log(fn2(1)); //第二个参数使用默认值 5。输出结果：6console.log(fn2(1, 8)); //输出结果：9
+var fn2 = (a, b = 5) => {
+  console.log('haha');
+  return a + b;
+};
+console.log(fn2(1)); // 第二个参数使用默认值 5。输出结果：6
+console.log(fn2(1, 8)); // 输出结果：9
 ```
 
 **提醒 1**：默认值的后面，不能再有**没有默认值的变量**。比如`(a,b,c)`这三个参数，如果我给 b 设置了默认值，那么就一定要给 c 设置默认值。
@@ -2202,7 +3462,13 @@ let x = 'smyh';function fn(z, y = x) {    console.log(z, y);}fn('vae');
 ES5 中，在定义方法时，参数要确定个数，如下：（程序会报错）
 
 ```javascript
-function fn(a, b, c) {    console.log(a);    console.log(b);    console.log(c);    console.log(d);}fn(1, 2, 3);
+function fn(a, b, c) {
+  console.log(a);
+  console.log(b);
+  console.log(c);
+  console.log(d);
+}
+fn(1, 2, 3);
 ```
 
 上方代码中，报错并不是因为"实参和形参个数不匹配"——JS 本身**不检查参数个数**（多传的实参被忽略，少传的形参是 undefined）。真正报错的原因是函数体里引用了一个从未声明过的变量 `d`：`ReferenceError: d is not defined`。
@@ -2214,7 +3480,15 @@ function fn(a, b, c) {    console.log(a);    console.log(b);    console.log(c); 
 ES6 中，我们有了剩余参数，就不用担心报错的问题了。代码可以这样写：
 
 ```javascript
-const fn = (...args) => {    //当不确定方法的参数时，可以使用剩余参数    console.log(args[0]);    console.log(args[1]);    console.log(args[2]);    console.log(args[3]);};fn(1, 2);fn(1, 2, 3); //方法的定义中了四个参数，但调用函数时只使用了三个参数，ES6 中并不会报错。
+const fn = (...args) => {
+  // 当不确定方法的参数时，可以使用剩余参数
+  console.log(args[0]);
+  console.log(args[1]);
+  console.log(args[2]);
+  console.log(args[3]);
+};
+fn(1, 2);
+fn(1, 2, 3); // 方法的定义中有四个参数，但调用函数时只使用了三个参数，ES6 中并不会报错
 ```
 
 打印结果：
@@ -2228,7 +3502,11 @@ const fn = (...args) => {    //当不确定方法的参数时，可以使用剩�
 下面这段代码，也是利用到了剩余参数：
 
 ```js
-function fn1(first, ...args) {    console.log(first); // 10    console.log(args); // 数组：[20, 30]}fn1(10, 20, 30);
+function fn1(first, ...args) {
+  console.log(first); // 10
+  console.log(args); // 数组：[20, 30]
+}
+fn1(10, 20, 30);
 ```
 
 #### 剩余参数的举例：参数求和
@@ -2236,7 +3514,12 @@ function fn1(first, ...args) {    console.log(first); // 10    console.log(args)
 代码举例：
 
 ```js
-const sum = (...args) => {    let total = 0;    args.forEach(item => total += item); // 注意 forEach里面的代码，写得 很精简    return total;};console.log(sum(10, 20, 30));
+const sum = (...args) => {
+  let total = 0;
+  args.forEach((item) => (total += item)); // 注意 forEach 里面的代码，写得很精简
+  return total;
+};
+console.log(sum(10, 20, 30));
 ```
 
 打印结果：60
@@ -2246,7 +3529,10 @@ const sum = (...args) => {    let total = 0;    args.forEach(item => total += it
 代码举例：
 
 ```js
-const students = ['张三', '李四', '王五'];let [s1, ...s2] = students;console.log(s1); // '张三'console.log(s2); // ['李四', '王五']
+const students = ['张三', '李四', '王五'];
+let [s1, ...s2] = students;
+console.log(s1); // '张三'
+console.log(s2); // ['李四', '王五']
 ```
 
 
@@ -2256,7 +3542,21 @@ const students = ['张三', '李四', '王五'];let [s1, ...s2] = students;conso
 #### 原型对象
 
 ```javascript
-        function Person(name, age, gender) {            this.name = name;            this.age = age;            this.gender = gender;            //向对象中添加一个方法            this.sayName = function () {                console.log("我是" + this.name);            }        }        //创建一个Person的实例        var per = new Person("孙悟空", 18, "男");        var per2 = new Person("猪八戒", 28, "男");        per.sayName();        per2.sayName();        console.log(per.sayName == per2.sayName);  //打印结果为false
+function Person(name, age, gender) {
+  this.name = name;
+  this.age = age;
+  this.gender = gender;
+  // 向对象中添加一个方法
+  this.sayName = function () {
+    console.log("我是" + this.name);
+  };
+}
+// 创建一个 Person 的实例
+var per = new Person("孙悟空", 18, "男");
+var per2 = new Person("猪八戒", 28, "男");
+per.sayName();
+per2.sayName();
+console.log(per.sayName == per2.sayName); // 打印结果为 false
 ```
 
 **分析如下**：
@@ -2270,7 +3570,20 @@ const students = ['张三', '李四', '王五'];let [s1, ...s2] = students;conso
 还有一种方式是，将sayName方法在全局作用域中定义：（不建议。原因看注释）
 
 ```javascript
-        function Person(name, age, gender) {            this.name = name;            this.age = age;            this.gender = gender;            this.sayName = fun;        }        //将sayName方法在全局作用域中定义        /*         * 将函数定义在全局作用域，污染了全局作用域的命名空间         *  而且定义在全局作用域中也很不安全         */        function fun() {            alert("Hello大家好，我是:" + this.name);        };
+function Person(name, age, gender) {
+  this.name = name;
+  this.age = age;
+  this.gender = gender;
+  this.sayName = fun;
+}
+// 将 sayName 方法在全局作用域中定义
+/*
+ * 将函数定义在全局作用域，污染了全局作用域的命名空间
+ * 而且定义在全局作用域中也很不安全
+ */
+function fun() {
+  alert("Hello大家好，我是:" + this.name);
+}
 ```
 
 比较好的方式是，在原型中添加sayName方法：
@@ -2292,7 +3605,12 @@ const students = ['张三', '李四', '王五'];let [s1, ...s2] = students;conso
 代码举例：
 
 ```javascript
-	// 定义构造函数	function Person() {}	var per1 = new Person();	var per2 = new Person();	console.log(Person.prototype); // 打印结果：{}	console.log(per1.__proto__ == Person.prototype); // 打印结果：true
+// 定义构造函数
+function Person() {}
+var per1 = new Person();
+var per2 = new Person();
+console.log(Person.prototype); // 打印结果：{}
+console.log(per1.__proto__ == Person.prototype); // 打印结果：true
 ```
 
 上方代码的最后一行：打印结果表明，`实例.__proto__` 和 `构造函数.prototype`都指的是原型对象。
@@ -2326,7 +3644,9 @@ const students = ['张三', '李四', '王五'];let [s1, ...s2] = students;conso
 > 1. 所有的引用类型（数组、对象、函数），都具有对象特性，都可以**自由扩展属性**。null 除外。
 
 ```js
-let a = {}a.name = "ximingx"console.log(a.name)
+let a = {};
+a.name = "ximingx";
+console.log(a.name);
 ```
 
 ![在这里插入图片描述](./assets/75a3044cc0abadf8c2e99d2c441e1f2d-20260830233838675.png)
@@ -2334,7 +3654,9 @@ let a = {}a.name = "ximingx"console.log(a.name)
 > 2. 所有的**引用类型**（数组、对象、函数），都有一个`__proto__`属性（注意：前后各两个下划线），属性值是一个**普通的对象**。`__proto__`的含义是隐式原型。
 
 ```js
-let a = {}a.name = "ximingx"console.log(a.__proto__)
+let a = {};
+a.name = "ximingx";
+console.log(a.__proto__);
 ```
 
 ![在这里插入图片描述](./assets/4a1344c2dae8e168a80b6ff92e3eafa6-20260830233838684.png)
@@ -2342,7 +3664,8 @@ let a = {}a.name = "ximingx"console.log(a.__proto__)
 > 3. 所有的**函数**（不包括数组、对象），都有一个`prototype`属性，属性值是一个**普通的对象**。`prototype`的含义是**显式原型**。（实例没有这个属性）
 
 ```js
-let a = function () {}console.log(a.prototype)
+let a = function () {};
+console.log(a.prototype);
 ```
 
 ![在这里插入图片描述](./assets/7ebcc3a7c4a7dd56304b71e5781330ae-20260830233838675.png)
@@ -2350,7 +3673,8 @@ let a = function () {}console.log(a.prototype)
 > 4. 所有的**引用类型**（数组、对象、函数），`__proto__`属性指向它的**构造函数**的`prototype`值。
 
 ```js
-let a = {}console.log(a.__proto__ === Object.prototype)
+let a = {};
+console.log(a.__proto__ === Object.prototype);
 ```
 
 ![在这里插入图片描述](./assets/ea18220d10230915e6993cd9ab99f269-20260830233838755.png)
@@ -2358,7 +3682,17 @@ let a = {}console.log(a.__proto__ === Object.prototype)
 > 5. 当试图获取一个对象的某个属性时，如果这个对象本身没有这个属性，那么会去它的`__proto__`中寻找（即它的构造函数的`prototype`）。
 
 ```js
-//创建方法function Foo(name) {    this.name = name;}Foo.prototype.alertName = function () {    // 既然 Foo.prototype 是普通的对象，那也允许给它添加额外的属性 alertName    console.log(this.name);};// 测试let fn = new Foo("ximingx")fn.alertName(); //输出结果：ximingx
+// 创建方法
+function Foo(name) {
+  this.name = name;
+}
+Foo.prototype.alertName = function () {
+  // 既然 Foo.prototype 是普通的对象，那也允许给它添加额外的属性 alertName
+  console.log(this.name);
+};
+// 测试
+let fn = new Foo("ximingx");
+fn.alertName(); // 输出结果：ximingx
 ```
 
 上方代码中，虽然 alertName 不是 fn 自身的属性，但是会从它的构造函数的`prototype`里面找。
@@ -2368,7 +3702,20 @@ let a = {}console.log(a.__proto__ === Object.prototype)
 #### 代码引入
 
 ```javascript
-// 创建一个构造函数，专门用来创建Person对象function Person(name, age, gender) {    this.name = name;    this.age = age;    this.gender = gender;    this.sayName = function () {        alert(this.name);    };}var per = new Person('ximingx', 18, '男');var per2 = new Person('luotyue', 16, '女');// 创建一个构造函数，专门用来创建 Dog 对象function Dog() {}var dog = new Dog();
+// 创建一个构造函数，专门用来创建 Person 对象
+function Person(name, age, gender) {
+  this.name = name;
+  this.age = age;
+  this.gender = gender;
+  this.sayName = function () {
+    alert(this.name);
+  };
+}
+var per = new Person('ximingx', 18, '男');
+var per2 = new Person('luotyue', 16, '女');
+// 创建一个构造函数，专门用来创建 Dog 对象
+function Dog() {}
+var dog = new Dog();
 ```
 
 #### 构造函数的概念
@@ -2406,7 +3753,11 @@ new 在执行时，会做下面这四件事：
 因为 this 指的是 new 一个 Object 之后的对象实例。于是，下面这段代码：
 
 ```javascript
-// 创建一个函数function createStudent(name) {    var student = new Object();    student.name = name; //第一个name指的是student对象定义的变量。第二个name指的是createStudent函数的参数。二者不一样}
+// 创建一个函数
+function createStudent(name) {
+  var student = new Object();
+  student.name = name; // 第一个 name 指的是 student 对象定义的变量；第二个 name 指的是 createStudent 函数的参数。二者不一样
+}
 ```
 
 可以改进为：
@@ -2446,7 +3797,13 @@ JavaScript 的构造函数中可以添加一些成员，可以在构造函数本
 **代码举例**：
 
 ```javascript
-function Person() {}function Dog() {}var person1 = new Person();var dog1 = new Dog();console.log(person1 instanceof Person); // 打印结果： trueconsole.log(dog1 instanceof Person); // 打印结果：falseconsole.log(dog1 instanceof Object); // 所有的对象都是Object的后代。因此，打印结果为：true
+function Person() {}
+function Dog() {}
+var person1 = new Person();
+var dog1 = new Dog();
+console.log(person1 instanceof Person); // 打印结果：true
+console.log(dog1 instanceof Person); // 打印结果：false
+console.log(dog1 instanceof Object); // 所有的对象都是 Object 的后代。因此，打印结果为：true
 ```
 
 根据上方代码中的最后一行，需要补充一点：**所有的对象都是 Object 的后代，因此 `任何对象 instanceof Object` 的返回结果都是 true**。
@@ -2831,10 +4188,10 @@ console.log(Object.keys(C.prototype)); // []  —— bar 不可枚举
 
 ```js
 // 链 1：实例的原型链（对象角度）
-c.__proto__ → Child.prototype → Parent.prototype → Object.prototype → null
-
+// c.__proto__ → Child.prototype → Parent.prototype → Object.prototype → null
+//
 // 链 2：构造函数自身的原型链（类角度，实现静态方法继承）
-Child.__proto__ → Parent → Function.prototype → Object.prototype → null
+// Child.__proto__ → Parent → Function.prototype → Object.prototype → null
 ```
 
 所以 `Child.staticMethod()` 能调用成功，靠的是链 2。
@@ -2916,7 +4273,11 @@ console.log(Object.keys(obj)); // ['a']
 比如下面这样的代码：
 
 ```js
-function foo() {    let a = 1;}foo();console.log(a); // 打印报错：Uncaught ReferenceError: a is not defined
+function foo() {
+  let a = 1;
+}
+foo();
+console.log(a); // 打印报错：Uncaught ReferenceError: a is not defined
 ```
 
 上方代码中，由于变量 `a` 是函数内的局部变量，所以外部无法访问。
@@ -2952,7 +4313,14 @@ function fn1() {    let a = 10;    function fn2() {        console.log(a);    } 
 我们来看看下面这段闭包的代码：
 
 ```js
-function fn1() {    let a = 20;    function fn2() {        console.log(a);    }    return fn2;}const foo = fn1(); // 执行 fn1() 之后，会得到一个返回值。foo 代表的就是 fn2 函数foo();
+function fn1() {
+    let a = 20;
+    function fn2() {
+        console.log(a);
+    }
+    return fn2;
+}
+const foo = fn1(); // 执行 fn1() 之后，会得到一个返回值。foo 代表的就是 fn2 函数foo();
 ```
 
 上方代码中，foo 代表的就是整个 fn2 函数。当执行了 `foo()` 语句之后（相当于执行了 `fn2()`），fn1 函数内就产生了闭包。
@@ -2966,7 +4334,13 @@ function fn1() {    let a = 20;    function fn2() {        console.log(a);    } 
 上面的代码也可以简写成：
 
 ```js
-function fn1() {    let a = 20;    return function () {        console.log(a);    };}const foo = fn1(); // 执行 fn1() 之后，会得到一个返回值。这个返回值是函数foo();
+function fn1() {
+  let a = 20;
+  return function () {
+    console.log(a);
+  };
+}
+const foo = fn1(); // 执行 fn1() 之后，会得到一个返回值。这个返回值是函数 foo
 ```
 
 ### 执行期上下文
@@ -3004,13 +4378,19 @@ function fn1() {    let a = 20;    return function () {        console.log(a);  
 **针对第 1 条的举例**：
 
 ```javascript
-function fun() {    console.log(this);    console.log(this.name);}var obj1 = {    name: 'ximingx',    sayName: fun,};var obj2 = {    name: 'luoyue',    sayName: fun,};var name = '全局的name属性';//以函数形式调用，this是windowfun(); //可以理解成 window.fun()
+function fun() {
+    console.log(this);
+    console.log(this.name);
+}
+var obj1 = { name: 'ximingx', sayName: fun };
+var obj2 = { name: 'luoyue', sayName: fun };
+var name = '全局的name属性'; //以函数形式调用，this是windowfun(); //可以理解成 window.fun()
 ```
 
 打印结果：
 
-```js
-    Window    全局的name属性
+```
+Window    全局的 name 属性
 ```
 
 上面的举例可以看出，this 指向的是 window 对象，所以 this.name 指的是全局的 name。
@@ -3018,13 +4398,19 @@ function fun() {    console.log(this);    console.log(this.name);}var obj1 = {  
 **第 2 条的举例**：
 
 ```javascript
-function fun() {    console.log(this);    console.log(this.name);}var obj1 = {    name: 'ximingx',    sayName: fun,};var obj2 = {    name: 'luoyue',    sayName: fun,};var name = '全局的name属性';//以方法的形式调用，this是调用方法的对象obj2.sayName();
+function fun() {
+    console.log(this);
+    console.log(this.name);
+}
+var obj1 = { name: 'ximingx', sayName: fun };
+var obj2 = { name: 'luoyue', sayName: fun };
+var name = '全局的name属性'; //以方法的形式调用，this是调用方法的对象obj2.sayName();
 ```
 
 打印结果：
 
-```js
-    Object    luoyue
+```
+Object    luoyue
 ```
 
 上面的举例可以看出，this 指向的是 对象 obj2 ，所以 this.name 指的是 obj2.name。
@@ -3057,7 +4443,12 @@ fn1.call(想要将this指向哪里, 函数实参1, 函数实参2);
 **举例 1**、通过 call() 调用函数：
 
 ```js
-const obj1 = {    nickName: 'ximingx',    age: 28,};function fn1() {    console.log(this);    console.log(this.nickName);}fn1.call(this); // this的指向并没有被改变，此时相当于 fn1();
+const obj1 = { nickName: 'ximingx', age: 28 };
+function fn1() {
+    console.log(this);
+    console.log(this.nickName);
+}
+fn1.call(this); // this的指向并没有被改变，此时相当于 fn1();
 ```
 
 上方代码的打印结果：
@@ -3071,7 +4462,13 @@ windowundefined
 **举例 2**、通过 call() 改变 this 指向：
 
 ```js
-var obj1 = {    nickName: 'ximingx',    age: 28,};function fn1(a, b) {    console.log(this);    console.log(this.nickName);    console.log(a + b);}fn1.call(obj1, 2, 4); // 先将 this 指向 obj1，然后执行 fn1() 函数
+var obj1 = { nickName: 'ximingx', age: 28 };
+function fn1(a, b) {
+    console.log(this);
+    console.log(this.nickName);
+    console.log(a + b);
+}
+fn1.call(obj1, 2, 4); // 先将 this 指向 obj1，然后执行 fn1() 函数
 ```
 
 上方代码的打印结果：
@@ -3083,14 +4480,25 @@ obj1ximingx6
 **举例 3**、通过 call() 实现继承：
 
 ```js
-// 给 Father 增加 name 和 age 属性function Father(myName, myAge) {    this.name = myName;    this.age = myAge;}function Son(myName, myAge) {    // 【下面这一行，重要代码】    // 通过这一步，将 father 里面的 this 修改为 Son 里面的 this；另外，给 Son 加上相应的参数，让 Son 自动拥有 Father 里的属性。最终实现继承    Father.call(this, myName, myAge);}const son1 = new Son('ximingx', 28);console.log(JSON.stringify(son1));
+// 给 Father 增加 name 和 age 属性
+function Father(myName, myAge) {
+  this.name = myName;
+  this.age = myAge;
+}
+function Son(myName, myAge) {
+  // 【下面这一行，重要代码】
+  // 通过这一步，将 Father 里面的 this 修改为 Son 里面的 this；另外，给 Son 加上相应的参数，让 Son 自动拥有 Father 里的属性。最终实现继承
+  Father.call(this, myName, myAge);
+}
+const son1 = new Son('ximingx', 28);
+console.log(JSON.stringify(son1));
 ```
 
 上方代码中，通过 call() 方法，让 Son 继承了 Father 里面的 name 和 age 属性。
 
 打印结果：
 
-```js
+```
 {"name":"ximingx","age":28}
 ```
 
@@ -3098,8 +4506,6 @@ obj1ximingx6
 > 因为 `Father` 内部写的是 `this.name = myName`，等号左边的 `this.name` 才决定属性名，等号右边的 `myName` 只是形参名。这一点在手写继承时非常容易写错。
 
 同时也要注意，这种方式（借用构造函数）**只能继承构造函数内部的属性，继承不了 `Father.prototype` 上的方法**，后面「原型与继承」一节会详细讲。
-
-#### apply() 方法
 
 #### apply() 方法的作用
 
@@ -3122,7 +4528,13 @@ fn1.apply(想要将this指向哪里, [函数实参1, 函数实参2]);
 **举例**、通过 apply() 改变 this 指向：
 
 ```js
-var obj1 = {    nickName: 'ximingx',    age: 28,};function fn1(a) {    console.log(this);    console.log(this.nickName);    console.log(a);}fn1.apply(obj1, ['hello']); // 先将 this 指向 obj1，然后执行 fn1() 函数
+var obj1 = { nickName: 'ximingx', age: 28 };
+function fn1(a) {
+    console.log(this);
+    console.log(this.nickName);
+    console.log(a);
+}
+fn1.apply(obj1, ['hello']); // 先将 this 指向 obj1，然后执行 fn1() 函数
 ```
 
 注意，上方代码中，**apply()** 里面传实参时，需要以数组的形式。即便是只传一个实参，也需要传数组。（原文写作 call()，此处为笔误，call() 是逐个传参的）
@@ -3142,7 +4554,13 @@ obj1ximingxhello
 **举例**：求数组中多个元素的最大值：
 
 ```js
-const arr1 = [3, 7, 10, 8];// 下面这一行代码的目的，无需改变 this 指向，所以：第一个参数填 null，或者填 Math，或者填 this 都可以。// 补充：非严格模式下传 null，this 会被自动替换成 window；严格模式下传 null，this 就是 null 本身（不会被替换），但都不影响 Math.max 的计算结果。const maxValue = Math.max.apply(Math, arr1); // 求数组 arr1 中元素的最大值console.log(maxValue);const minValue = Math.min.apply(Math, arr1); // 求数组 arr1 中元素的最小值console.log(minValue);
+const arr1 = [3, 7, 10, 8];
+// 下面这一行代码的目的，无需改变 this 指向，所以：第一个参数填 null，或者填 Math，或者填 this 都可以。
+// 补充：非严格模式下传 null，this 会被自动替换成 window；严格模式下传 null，this 就是 null 本身（不会被替换），但都不影响 Math.max 的计算结果。
+const maxValue = Math.max.apply(Math, arr1); // 求数组 arr1 中元素的最大值
+console.log(maxValue);
+const minValue = Math.min.apply(Math, arr1); // 求数组 arr1 中元素的最小值
+console.log(minValue);
 ```
 
 打印结果：
@@ -3174,9 +4592,68 @@ bind() 方法**不会调用函数**，但是可以改变函数内部的 this 指
 
 ## Math
 
+### 内置对象：Math
+
+Math 是 JavaScript 的内置对象，提供**数学计算**相关的常量与方法。与 Date 不同，**Math 不是构造函数，不需要实例化**，直接通过 `Math.方法名()` 调用即可。
+
+### Math 的常用属性（常量）
+
+| 属性 | 值 | 说明 |
+| --- | --- | --- |
+| `Math.PI` | 3.14159… | 圆周率 π |
+| `Math.E` | 2.71828… | 自然对数的底数 e |
+
+### Math 的常用方法
+
+#### 1. 取整相关
+
+| 方法 | 说明 | 示例 |
+| --- | --- | --- |
+| `Math.ceil(x)` | 向上取整（天花板） | `Math.ceil(2.1)` → 3 |
+| `Math.floor(x)` | 向下取整（地板） | `Math.floor(2.9)` → 2 |
+| `Math.round(x)` | 四舍五入 | `Math.round(2.5)` → 3 |
+| `Math.trunc(x)` | 直接截断小数部分（ES6 新增） | `Math.trunc(2.9)` → 2 |
+
+代码举例：
+
+```js
+console.log(Math.ceil(2.1));  // 3
+console.log(Math.floor(2.9)); // 2
+console.log(Math.round(2.5)); // 3
+console.log(Math.trunc(2.9)); // 2
+```
+
+#### 2. 最值
+
+| 方法 | 说明 | 示例 |
+| --- | --- | --- |
+| `Math.max(a, b, ...)` | 取最大值 | `Math.max(1, 5, 3)` → 5 |
+| `Math.min(a, b, ...)` | 取最小值 | `Math.min(1, 5, 3)` → 1 |
+
+#### 3. 幂、开方与绝对值
+
+| 方法 | 说明 | 示例 |
+| --- | --- | --- |
+| `Math.pow(x, y)` | x 的 y 次幂 | `Math.pow(2, 10)` → 1024 |
+| `Math.sqrt(x)` | 平方根 | `Math.sqrt(9)` → 3 |
+| `Math.abs(x)` | 绝对值 | `Math.abs(-5)` → 5 |
+
+#### 4. 随机数
+
+- `Math.random()`：返回 **[0, 1)** 之间的随机小数（包含 0，不包含 1）。
+
+代码举例：生成 [min, max] 之间的随机整数：
+
+```js
+function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+console.log(getRandomInt(1, 10)); // 1~10 之间的随机整数
+```
+
+> 其他常用方法：`Math.sin()` / `Math.cos()` / `Math.tan()`（三角函数）、`Math.log()`（自然对数）、`Math.sign(x)`（返回数字的符号：-1 / 0 / 1，ES6 新增）、`Math.hypot()`（平方和的平方根）等。
 
 
-## Date
 
 ### 内置对象：Date
 
@@ -3226,21 +4703,39 @@ Sat Mar 05 2022 10:21:22 GMT+0800 (中国标准时间)VM102:3 object
 **举例1：（参数是字符串）**
 
 ```js
-const date11 = new Date('2020/02/17 21:00:00');console.log(date11); // Mon Feb 17 2020 21:00:00 GMT+0800 (中国标准时间)const date12 = new Date('2020/04/19'); // 返回的就是四月console.log(date12); // Sun Apr 19 2020 00:00:00 GMT+0800 (中国标准时间)const date13 = new Date('2020-05-20');console.log(date13); // Wed May 20 2020 08:00:00 GMT+0800 (中国标准时间)const date14 = new Date('Wed Jan 27 2017 12:00:00 GMT+0800 (中国标准时间)');console.log(date14); // Fri Jan 27 2017 12:00:00 GMT+0800 (中国标准时间)
+const date11 = new Date('2020/02/17 21:00:00');
+console.log(date11); // Mon Feb 17 2020 21:00:00 GMT+0800 (中国标准时间)
+const date12 = new Date('2020/04/19'); // 返回的就是四月
+console.log(date12); // Sun Apr 19 2020 00:00:00 GMT+0800 (中国标准时间)
+const date13 = new Date('2020-05-20');
+console.log(date13); // Wed May 20 2020 08:00:00 GMT+0800 (中国标准时间)
+const date14 = new Date('Wed Jan 27 2017 12:00:00 GMT+0800 (中国标准时间)');
+console.log(date14); // Fri Jan 27 2017 12:00:00 GMT+0800 (中国标准时间)
 ```
 
 
 举例2：（参数是多个数字）
 
 ```js
-const date21 = new Date(2020, 2, 18); // 注意，第二个参数返回的是三月，不是二月console.log(date21); // Wed Mar 18 2020 00:00:00 GMT+0800 (中国标准时间)const date22 = new Date(2020, 3, 18, 22, 59, 58);console.log(date22); // Sat Apr 18 2020 22:59:58 GMT+0800 (中国标准时间)const params = [2020, 06, 12, 16, 20, 59];const date23 = new Date(...params);console.log(date23); // Sun Jul 12 2020 16:20:59 GMT+0800 (中国标准时间)
+const date21 = new Date(2020, 2, 18); // 注意，第二个参数返回的是三月，不是二月
+console.log(date21); // Wed Mar 18 2020 00:00:00 GMT+0800 (中国标准时间)
+const date22 = new Date(2020, 3, 18, 22, 59, 58);
+console.log(date22); // Sat Apr 18 2020 22:59:58 GMT+0800 (中国标准时间)
+const params = [2020, 06, 12, 16, 20, 59];
+const date23 = new Date(...params);
+console.log(date23); // Sun Jul 12 2020 16:20:59 GMT+0800 (中国标准时间)
 ```
 
 
 举例3：（参数是时间戳）
 
 ```js
-const date31 = new Date(1591950413388);console.log(date31); // Fri Jun 12 2020 16:26:53 GMT+0800 (中国标准时间)// 先把时间对象转换成时间戳，然后把时间戳转换成时间对象const timestamp = new Date().getTime();const date32 = new Date(timestamp);console.log(date32); // Fri Jun 12 2020 16:28:21 GMT+0800 (中国标准时间)
+const date31 = new Date(1591950413388);
+console.log(date31); // Fri Jun 12 2020 16:26:53 GMT+0800 (中国标准时间)
+// 先把时间对象转换成时间戳，然后把时间戳转换成时间对象
+const timestamp = new Date().getTime();
+const date32 = new Date(timestamp);
+console.log(date32); // Fri Jun 12 2020 16:28:21 GMT+0800 (中国标准时间)
 ```
 
 
@@ -3322,7 +4817,20 @@ console.log(date.toLocaleString());  // 2023/2/20 上午11:56:36
 
 
 ```javascript
-	// 我在执行这行代码时，当前时间为 2019年2月4日，周一，13:23:52	var myDate = new Date();	console.log(myDate); // 打印结果：Mon Feb 04 2019 13:23:52 GMT+0800 (中国标准时间)	console.log(myDate.getFullYear()); // 打印结果：2019	console.log(myDate.getMonth() + 1); // 打印结果：2	console.log(myDate.getDate()); // 打印结果：4	var dayArr  = ['星期日', '星期一', '星期二', '星期三', '星期四','星期五', '星期六'];	console.log(myDate.getDay()); // 打印结果：1	console.log(dayArr[myDate.getDay()]); // 打印结果：星期一	console.log(myDate.getHours()); // 打印结果：13	console.log(myDate.getMinutes()); // 打印结果：23	console.log(myDate.getSeconds()); // 打印结果：52	console.log(myDate.getMilliseconds()); // 打印结果：393	console.log(myDate.getTime()); // 获取时间戳。打印结果：1549257832393
+// 我在执行这行代码时，当前时间为 2019年2月4日，周一，13:23:52
+var myDate = new Date();
+console.log(myDate); // 打印结果：Mon Feb 04 2019 13:23:52 GMT+0800 (中国标准时间)
+console.log(myDate.getFullYear()); // 打印结果：2019
+console.log(myDate.getMonth() + 1); // 打印结果：2
+console.log(myDate.getDate()); // 打印结果：4
+var dayArr = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+console.log(myDate.getDay()); // 打印结果：1
+console.log(dayArr[myDate.getDay()]); // 打印结果：星期一
+console.log(myDate.getHours()); // 打印结果：13
+console.log(myDate.getMinutes()); // 打印结果：23
+console.log(myDate.getSeconds()); // 打印结果：52
+console.log(myDate.getMilliseconds()); // 打印结果：393
+console.log(myDate.getTime()); // 获取时间戳。打印结果：1549257832393
 ```
 
 获取了日期和时间的指定部分之后，我们把它们用字符串拼接起来，就可以按照自己想要的格式，来展示日期。
@@ -3332,7 +4840,27 @@ console.log(date.toLocaleString());  // 2023/2/20 上午11:56:36
 代码举例：
 
 ```js
-console.log(formatDate());/*    方法：日期格式化。    格式要求：今年是：2020年02月02日 08:57:09 星期日*/function formatDate() {    var date = new Date();    var year = date.getFullYear(); // 年    var month = date.getMonth() + 1; // 月    var day = date.getDate(); // 日    var week = date.getDay(); // 星期几    var weekArr = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];    var hour = date.getHours(); // 时    hour = hour < 10 ? '0' + hour : hour; // 如果只有一位，则前面补零    var minute = date.getMinutes(); // 分    minute = minute < 10 ? '0' + minute : minute; // 如果只有一位，则前面补零    var second = date.getSeconds(); // 秒    second = second < 10 ? '0' + second : second; // 如果只有一位，则前面补零    var result = '今天是：' + year + '年' + month + '月' + day + '日 ' + hour + ':' + minute + ':' + second + ' ' + weekArr[week];    return result;}
+console.log(formatDate());
+/*
+  方法：日期格式化。
+  格式要求：今年是：2020年02月02日 08:57:09 星期日
+*/
+function formatDate() {
+  var date = new Date();
+  var year = date.getFullYear(); // 年
+  var month = date.getMonth() + 1; // 月
+  var day = date.getDate(); // 日
+  var week = date.getDay(); // 星期几
+  var weekArr = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+  var hour = date.getHours(); // 时
+  hour = hour < 10 ? '0' + hour : hour; // 如果只有一位，则前面补零
+  var minute = date.getMinutes(); // 分
+  minute = minute < 10 ? '0' + minute : minute; // 如果只有一位，则前面补零
+  var second = date.getSeconds(); // 秒
+  second = second < 10 ? '0' + second : second; // 如果只有一位，则前面补零
+  var result = '今天是：' + year + '年' + month + '月' + day + '日 ' + hour + ':' + minute + ':' + second + ' ' + weekArr[week];
+  return result;
+}
 ```
 
 
@@ -3350,7 +4878,8 @@ console.log(formatDate());/*    方法：日期格式化。    格式要求：�
 我们再来看下面这样的代码：
 
 ```javascript
-	var myDate = new Date("1970/01/01 0:0:0");	console.log(myDate.getTime()); // 获取时间戳
+var myDate = new Date("1970/01/01 0:0:0");
+console.log(myDate.getTime()); // 获取时间戳
 ```
 
 打印结果（可能会让你感到惊讶）
@@ -3372,7 +4901,21 @@ console.log(formatDate());/*    方法：日期格式化。    格式要求：�
 代码演示：
 
 ```js
-// 方式一：获取 Date 对象的时间戳（最常用的写法）const timestamp1 = +new Date();console.log(timestamp1); // 打印结果举例：1589448165370// 方式二：获取 Date 对象的时间戳（较常用的写法）const timestamp2 = new Date().getTime();console.log(timestamp2); // 打印结果举例：1589448165370// 方式三：获取 Date 对象的时间戳const timestamp3 = new Date().valueOf();console.log(timestamp3); // 打印结果举例：1589448165370// 方式4：获取 Date 对象的时间戳const timestamp4 = new Date() * 1;console.log(timestamp4); // 打印结果举例：1589448165370// 方式5：获取 Date 对象的时间戳const timestamp5 = Number(new Date());console.log(timestamp5); // 打印结果举例：1589448165370
+// 方式一：获取 Date 对象的时间戳（最常用的写法）
+const timestamp1 = +new Date();
+console.log(timestamp1); // 打印结果举例：1589448165370
+// 方式二：获取 Date 对象的时间戳（较常用的写法）
+const timestamp2 = new Date().getTime();
+console.log(timestamp2); // 打印结果举例：1589448165370
+// 方式三：获取 Date 对象的时间戳
+const timestamp3 = new Date().valueOf();
+console.log(timestamp3); // 打印结果举例：1589448165370
+// 方式四：获取 Date 对象的时间戳
+const timestamp4 = new Date() * 1;
+console.log(timestamp4); // 打印结果举例：1589448165370
+// 方式五：获取 Date 对象的时间戳
+const timestamp5 = Number(new Date());
+console.log(timestamp5); // 打印结果举例：1589448165370
 ```
 
 上面这五种写法都可以获取任意 Date 对象的时间戳，最常见的写法是**方式一**，其次是方式二。
@@ -3387,7 +4930,7 @@ console.log(formatDate());/*    方法：日期格式化。    格式要求：�
 // 方式六：获取当前时间的时间戳（很常用的写法）console.log(Date.now()); // 打印结果举例：1589448165370
 ```
 
-上面这种方式六，用得也很多。只不过，`Date.now()`是H5标准中新增的特性，如果你的项目需要兼容低版本的IE浏览器，就不要用了。
+上面这种方式六，用得也很多。`Date.now()` 是 ES5 中新增的特性，如今所有现代浏览器（含 IE9+）均已支持，可以直接使用。
 
 
 ### 利用时间戳检测代码的执行时间
@@ -3401,7 +4944,45 @@ console.log(formatDate());/*    方法：日期格式化。    格式要求：�
 代码实现：
 
 ```html
-<!DOCTYPE html><html>    <head lang="en">        <meta charset="UTF-8" />        <title></title>        <style>            div {                width: 800px;                margin: 200px auto;                color: red;                text-align: center;                font: 600 30px/30px 'simsun';            }        </style>    </head>    <body>        <div></div>        <script>            //模拟日历            //需求：每天打开这个页面都能定时显示年月日和星期几            function getCurrentDate() {                //1.创建一个当前日期的日期对象                const date = new Date();                //2.然后获取其中的年、月、日和星期                const year = date.getFullYear();                const month = date.getMonth();                const hao = date.getDate();                const week = date.getDay();                //        console.log(year+" "+month+" "+hao+" "+week);                //3.赋值给div                const arr = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];                const div = document.getElementsByTagName('div')[0];                return '今天是：' + year + '年' + (month + 1) + '月' + hao + '日 ' + arr[week];            }            const div = document.getElementsByTagName('div')[0];            div.innerText = getCurrentDate();        </script>    </body></html>
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="UTF-8" />
+        <title></title>
+        <style>
+            div {
+                width: 800px;
+                margin: 200px auto;
+                color: red;
+                text-align: center;
+                font: 600 30px/30px 'simsun';
+            }
+        </style>
+    </head>
+    <body>
+        <div></div>
+        <script>
+            // 模拟日历
+            // 需求：每天打开这个页面都能定时显示年月日和星期几
+            function getCurrentDate() {
+                // 1.创建一个当前日期的日期对象
+                const date = new Date();
+                // 2.然后获取其中的年、月、日和星期
+                const year = date.getFullYear();
+                const month = date.getMonth();
+                const hao = date.getDate();
+                const week = date.getDay();
+                // console.log(year + " " + month + " " + hao + " " + week);
+                // 3.赋值给 div
+                const arr = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+                const div = document.getElementsByTagName('div')[0];
+                return '今天是：' + year + '年' + (month + 1) + '月' + hao + '日 ' + arr[week];
+            }
+            const div = document.getElementsByTagName('div')[0];
+            div.innerText = getCurrentDate();
+        </script>
+    </body>
+</html>
 ```
 
 ![在这里插入图片描述](./assets/f5b51fb49a8694ad21165ec3b1df2e63-20260830233838684.png)
@@ -3418,7 +4999,59 @@ console.log(formatDate());/*    方法：日期格式化。    格式要求：�
 代码实现：
 
 ```html
-<!DOCTYPE html><html>    <head lang="en">        <meta charset="UTF-8" />        <title></title>        <style>            div {                width: 1210px;                margin: 200px auto;                color: red;                text-align: center;                font: 600 30px/30px 'simsun';             }        </style>    </head>    <body>        <div></div>        <script>            var div = document.getElementsByTagName('div')[0];            var timer = setInterval(() => {                countDown('2022/06/07 09:00:00');            }, 1);            function countDown(myTime) {                var nowTime = new Date();                var future = new Date(myTime);                var timeSum = future.getTime() - nowTime.getTime(); //获取时间差：发布会时间减去此刻的毫秒值                var day = parseInt(timeSum / 1000 / 60 / 60 / 24); // 天                var hour = parseInt((timeSum / 1000 / 60 / 60) % 24); // 时                var minu = parseInt((timeSum / 1000 / 60) % 60); // 分                var sec = parseInt((timeSum / 1000) % 60); // 秒                var millsec = parseInt(timeSum % 1000); // 毫秒                //细节处理：所有的时间小于10的时候，在前面自动补0，毫秒值要补双0（比如如，把 8 秒改成 08 秒）                day = day < 10 ? '0' + day : day; //day小于10吗？如果小于，就补0；如果不小于，就是day本身                hour = hour < 10 ? '0' + hour : hour;                minu = minu < 10 ? '0' + minu : minu;                sec = sec < 10 ? '0' + sec : sec;                if (millsec < 10) {                    millsec = '00' + millsec;                } else if (millsec < 100) {                    millsec = '0' + millsec;                }                // 兜底处理                if (timeSum < 0) {                    div.innerHTML = '祝你未来可期';                    clearInterval(timer);                    return;                }                // 前端要显示的文案                div.innerHTML = day + '天' + hour + '小时' + minu + '分' + sec + '秒' + millsec + '毫秒';            }        </script>    </body></html>
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="UTF-8" />
+        <title></title>
+        <style>
+            div {
+                width: 1210px;
+                margin: 200px auto;
+                color: red;
+                text-align: center;
+                font: 600 30px/30px 'simsun';
+            }
+        </style>
+    </head>
+    <body>
+        <div></div>
+        <script>
+            var div = document.getElementsByTagName('div')[0];
+            var timer = setInterval(() => {
+                countDown('2022/06/07 09:00:00');
+            }, 1);
+            function countDown(myTime) {
+                var nowTime = new Date();
+                var future = new Date(myTime);
+                var timeSum = future.getTime() - nowTime.getTime(); // 获取时间差：发布会时间减去此刻的毫秒值
+                var day = parseInt(timeSum / 1000 / 60 / 60 / 24); // 天
+                var hour = parseInt((timeSum / 1000 / 60 / 60) % 24); // 时
+                var minu = parseInt((timeSum / 1000 / 60) % 60); // 分
+                var sec = parseInt((timeSum / 1000) % 60); // 秒
+                var millsec = parseInt(timeSum % 1000); // 毫秒
+                // 细节处理：所有的时间小于 10 的时候，在前面自动补 0，毫秒值要补双 0（比如，把 8 秒改成 08 秒）
+                day = day < 10 ? '0' + day : day; // day 小于 10 吗？如果小于，就补 0；如果不小于，就是 day 本身
+                hour = hour < 10 ? '0' + hour : hour;
+                minu = minu < 10 ? '0' + minu : minu;
+                sec = sec < 10 ? '0' + sec : sec;
+                if (millsec < 10) {
+                    millsec = '00' + millsec;
+                } else if (millsec < 100) {
+                    millsec = '0' + millsec;
+                }
+                // 兜底处理
+                if (timeSum < 0) {
+                    div.innerHTML = '祝你未来可期';
+                    clearInterval(timer);
+                    return;
+                }
+                // 前端要显示的文案
+                div.innerHTML = day + '天' + hour + '小时' + minu + '分' + sec + '秒' + millsec + '毫秒';
+            }
+        </script>
+    </body>
+</html>
 ```
 
 ![在这里插入图片描述](./assets/eb339818cd3064aa55ed888dbea69f82-20260830233838714.png)
@@ -3442,7 +5075,14 @@ const set1 = new Set();console.log(set1.size); // 打印结果：0
 **举例 2**、可以接收一个**数组**作为参数，实现**数组去重**：
 
 ```js
-const set2 = new Set(['张三', '李四', '王五', '张三']); // 注意，这个数组里有重复的值// 注意，这里的 set2 并不是数组，而是一个单纯的 Set 数据结构// 是一种对象的形式console.log(set2); // {"张三", "李四", "王五"}// 通过...扩展运算符，拿到 set 中的元素（用逗号分隔的序列）// ...set2 //  "张三", "李四", "王五"// 注意，到这一步，才获取到了真正的数组console.log([...set2]); // ["张三", "李四", "王五"]
+const set2 = new Set(['张三', '李四', '王五', '张三']); // 注意，这个数组里有重复的值
+// 注意，这里的 set2 并不是数组，而是一个单纯的 Set 数据结构
+// 是一种对象的形式
+console.log(set2); // {"张三", "李四", "王五"}
+// 通过 ... 扩展运算符，拿到 set 中的元素（用逗号分隔的序列）
+// ...set2 // "张三", "李四", "王五"
+// 注意，到这一步，才获取到了真正的数组
+console.log([...set2]); // ["张三", "李四", "王五"]
 ```
 
 注意上方的第一行代码，虽然参数里传递的是数组结构，但拿到的 `set2` 不是数组结构，而是 Set 结构，而且里面元素是去重了的。通过 `[...set2]`就可以拿到`set2`对应的数组。
@@ -3450,7 +5090,7 @@ const set2 = new Set(['张三', '李四', '王五', '张三']); // 注意，这�
 ### 删除元素
 
 ```js
-set.delete（item）
+// 伪代码：set.delete(item)
 ```
 
 ### 添加元素
@@ -3497,7 +5137,7 @@ set.size
 
 `typeof json字符串`的返回结果是string。
 
-## Null  Undefined
+## Null 与 Undefined
 
 ### Null：空对象
 
@@ -3610,7 +5250,22 @@ animation 的学习之前 其实需要顺便提一下 transition
 默认值为 `all` 也就是所有的元素都应用过渡效果。
 
 ```html
-<template>  <div id="test">        </div></template><script>export default {  name: "Test"}</script><style scoped>div{  width: 200px;  height: 200px;  background-color: dodgerblue;  transition-property: width, height;}div:hover {  width: 400px;  height: 400px;}</style>
+<template><div id="test"></div></template>
+<script>
+    export default { name: 'Test' };
+</script>
+<style scoped>
+    div {
+        width: 200px;
+        height: 200px;
+        background-color: dodgerblue;
+        transition-property: width, height;
+    }
+    div:hover {
+        width: 400px;
+        height: 400px;
+    }
+</style>
 ```
 
 ![\[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-s5i6WknW-1637112573576)(D:/start/image-20211117090918168.png)\]](https://i-blog.csdnimg.cn/blog_migrate/7bcd91578ef3115470a3367797a80c7d.png)
@@ -3648,7 +5303,18 @@ animation 的学习之前 其实需要顺便提一下 transition
 一个完整的案例
 
 ```css
-div{  width: 200px;  height: 200px;  background-color: #000000;  transition-property: width;  transition-duration: 3s;  transition-timing-function: linear;  transition-delay: 0.5s;}div:hover {  width: 400px;}
+div {
+    width: 200px;
+    height: 200px;
+    background-color: #000000;
+    transition-property: width;
+    transition-duration: 3s;
+    transition-timing-function: linear;
+    transition-delay: 0.5s;
+}
+div:hover {
+    width: 400px;
+}
 ```
 
 ### 1.6 简写属性
@@ -3669,7 +5335,59 @@ CSS Animation就是为了解决这些问题而提出的,完美的解决了这些
 ### 1.8 一个简单的样式
 
 ```html
-<!DOCTYPE html><html lang="en"><head>  <meta charset="UTF-8">  <title>CSS 过渡</title>  <style>      body {          margin: 0;          padding: 0;          background-color: #eeeeee;      }      .content {          width: 800px;          height: 320px;          padding-left: 20px;          margin: 80px auto;      }      .item {          width: 230px;          height: 300px;          text-align: center;          margin-right: 20px;          background-color: #FFF;          float: left;          position: relative;          top: 0;          overflow: hidden; /* 让溢出的内容隐藏起来。意思是让下方的橙色方形先躲起来 */          transition: all .5s; /* 从最初到鼠标悬停时的过渡 */      }      .item .desc {          position: absolute;          left: 0;          bottom: -80px;          width: 100%;          height: 80px;          background-color: #ff6700;          transition: all .5s;      }      /* 鼠标悬停时，让 item 整体往上移动5px，且加一点阴影 */      .item:hover {          top: -5px;          box-shadow: 0 0 15px #AAA;      }      /* 鼠标悬停时，让下方的橙色方形现身 */      .item:hover .desc {          bottom: 0;      }  </style></head><body><div class="content">  <div class="item">    <span class="desc"></span>  </div></div></body></html>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>CSS 过渡</title>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                background-color: #eeeeee;
+            }
+            .content {
+                width: 800px;
+                height: 320px;
+                padding-left: 20px;
+                margin: 80px auto;
+            }
+            .item {
+                width: 230px;
+                height: 300px;
+                text-align: center;
+                margin-right: 20px;
+                background-color: #fff;
+                float: left;
+                position: relative;
+                top: 0;
+                overflow: hidden; /* 让溢出的内容隐藏起来。意思是让下方的橙色方形先躲起来 */
+                transition: all 0.5s; /* 从最初到鼠标悬停时的过渡 */
+            }
+            .item .desc {
+                position: absolute;
+                left: 0;
+                bottom: -80px;
+                width: 100%;
+                height: 80px;
+                background-color: #ff6700;
+                transition: all 0.5s;
+            } /* 鼠标悬停时，让 item 整体往上移动5px，且加一点阴影 */
+            .item:hover {
+                top: -5px;
+                box-shadow: 0 0 15px #aaa;
+            } /* 鼠标悬停时，让下方的橙色方形现身 */
+            .item:hover .desc {
+                bottom: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="content">
+            <div class="item"><span class="desc"></span></div>
+        </div>
+    </body>
+</html>
 ```
 
 ![在这里插入图片描述](./assets/e8e84526a641487b38a721af6d46bfb8-20260830233838738.gif)
@@ -3688,8 +5406,9 @@ CSS Animation就是为了解决这些问题而提出的,完美的解决了这些
 
 格式：
 
-```javascript
-	transform: scale(x, y);	transform: scale(2, 0.5);
+```css
+/* transform: scale(x, y); */
+/* transform: scale(2, 0.5); */
 ```
 
 参数解释： x：表示水平方向的缩放倍数。y：表示垂直方向的缩放倍数。如果只写一个值就是等比例缩放。
@@ -3701,8 +5420,9 @@ CSS Animation就是为了解决这些问题而提出的,完美的解决了这些
 格式：
 
 
-```javascript
-	transform: translate(水平位移, 垂直位移);	transform: translate(-50%, -50%);
+```css
+/* transform: translate(水平位移, 垂直位移); */
+/* transform: translate(-50%, -50%); */
 ```
 
 参数解释：
@@ -3715,8 +5435,9 @@ CSS Animation就是为了解决这些问题而提出的,完美的解决了这些
 
 格式：
 
-```javascript
-	transform: rotate(角度);	transform: rotate(45deg);
+```css
+/* transform: rotate(角度); */
+/* transform: rotate(45deg); */
 ```
 
 参数解释：正值 顺时针；负值：逆时针。
@@ -3724,8 +5445,10 @@ CSS Animation就是为了解决这些问题而提出的,完美的解决了这些
 rotate 旋转时，默认是以盒子的正中心为坐标原点的。如果想**改变旋转的坐标原点**，可以用`transform-origin`属性。格式如下：
 
 
-```javascript
-	transform-origin: 水平坐标 垂直坐标;	transform-origin: 50px 50px;	transform-origin: center bottom;   //旋转时，以盒子底部的中心为坐标原点
+```css
+/* transform-origin: 水平坐标 垂直坐标; */
+/* transform-origin: 50px 50px; */
+/* transform-origin: center bottom; // 旋转时，以盒子底部的中心为坐标原点 */
 ```
 
 
@@ -3741,19 +5464,23 @@ rotate 旋转时，默认是以盒子的正中心为坐标原点的。如果想*
 
 **格式：**
 
-```javascript
-	transform: rotateX(360deg);    //绕 X 轴旋转360度	transform: rotateY(360deg);    //绕 Y 轴旋转360度	transform: rotateZ(360deg);    //绕 Z 轴旋转360度
+```css
+/* transform: rotateX(360deg); // 绕 X 轴旋转 360 度 */
+/* transform: rotateY(360deg); // 绕 Y 轴旋转 360 度 */
+/* transform: rotateZ(360deg); // 绕 Z 轴旋转 360 度 */
 ```
 
 ### 3.2 移动：translateX、translateY、translateZ
 
 **格式：**
 
-```javascript
-	transform: translateX(100px);    //沿着 X 轴移动	transform: translateY(360px);    //沿着 Y 轴移动	transform: translateZ(360px);    //沿着 Z 轴移动
+```css
+/* transform: translateX(100px); // 沿着 X 轴移动 */
+/* transform: translateY(360px); // 沿着 Y 轴移动 */
+/* transform: translateZ(360px); // 沿着 Z 轴移动 */
 ```
 
-###### 3.3 透视：perspective
+### 3.3 透视：perspective
 
 电脑显示屏是一个 2D 平面，图像之所以具有立体感（3D效果），其实只是一种视觉呈现，通过透视可以实现此目的。
 
@@ -3784,7 +5511,7 @@ perspective: 500px;
 
 ### 4.1 定义动画
 
-###### @keyframes(关键帧) 用于 定义动画
+#### @keyframes(关键帧) 用于 定义动画
 
 ```css
 @keyframes animation01 {    0% {        margin-top: 10px;    }    100% {        margin-top: 20px;    }}
@@ -3807,7 +5534,7 @@ perspective: 500px;
 
 要调用动画,必须要得给他添加一些必要的属性: 
 
-###### 时间函数（animation-timing-function）
+#### 时间函数（animation-timing-function）
 
 animation-timing-function 属性定义了动画的播放速度曲线。
 
@@ -3861,7 +5588,7 @@ https://cubic-bezier.com/##.17,.67,.83,.67
 
 ---
 
-###### 动画方向（animation-direction）
+#### 动画方向（animation-direction）
 
 animation-direction: normal 正序播放  起点=>终点
 animation-direction: reverse 倒序播放  终点=>起点
@@ -3870,14 +5597,14 @@ animation-direction: alternate-reverse 反向交替播放
 
 ---
 
-###### 动画延迟（animation-delay）
+#### 动画延迟（animation-delay）
 
 animation-delay属性定义动画是从何时开始播放，即动画应用在元素上的到动画开始的这段时间的长度。默认值0s，表示动画在该元素上后立即开始执行。该值以秒(s)或者毫秒(ms)为单位。
 
 ---
 
 
-###### 动画迭代次数（animation-iteration-count）
+#### 动画迭代次数（animation-iteration-count）
 
 animation-iteration-count该属性就是定义我们的动画播放的次数。次数可以是1次或者无限循环。默认值只播放一次。
 
@@ -3887,7 +5614,7 @@ single-animation-iteration-count = infinite | number
 ---
 
 
-###### 动画填充模式（animation-fill-mode）
+#### 动画填充模式（animation-fill-mode）
 
 animation-fill-mode是指给定动画播放前后应用元素的样式。
 
@@ -3902,7 +5629,7 @@ animation-fill-mode: both 动画将会执行 forwards 和 backwards 执行的动
 ---
 
 
-###### 动画播放状态（animation-play-state）
+#### 动画播放状态（animation-play-state）
 
 animation-play-state: 定义动画是否运行或者暂停。可以确定查询它来确定动画是否运行。默认值为running
 
@@ -3915,7 +5642,7 @@ paused 动画暂停播放
 ---
 
 
-###### 简写
+#### 简写
 
 ```css
 animation:动画名称 持续时间 运动曲线 何时开始 播放次数 是否反方向 动画起始或者结束的状态;
@@ -3923,20 +5650,101 @@ animation:动画名称 持续时间 运动曲线 何时开始 播放次数 是�
 
 但是需要注意: 简写属性里面不包含 **animation- play-state**
 
-#### 补充动画
-
 ### 5.1 按钮抖动动画
 
-```js
-<template>  <div :class="{ shake: disabled }">    <button @click="warnDisabled">Click me</button>    <span v-if="disabled">This feature is disabled!</span>  </div></template><script>export default {  name: 'ShakeButton',  data() {    return {      disabled: false    }  },  methods: {    warnDisabled() {      this.disabled = true      setTimeout(() => {        this.disabled = false      }, 1500)    }  }}</script><style>.shake {  animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;  transform: translate3d(0, 0, 0);}@keyframes shake {  10%,  90% {    transform: translate3d(-1px, 0, 0);  }  20%,  80% {    transform: translate3d(2px, 0, 0);  }  30%,  50%,  70% {    transform: translate3d(-4px, 0, 0);  }  40%,  60% {    transform: translate3d(4px, 0, 0);  }}</style>
+```html
+<template>
+  <div :class="{ shake: disabled }">
+    <button @click="warnDisabled">Click me</button>
+    <span v-if="disabled">This feature is disabled!</span>
+  </div>
+</template>
+<script>
+export default {
+  name: 'ShakeButton',
+  data() {
+    return {
+      disabled: false,
+    };
+  },
+  methods: {
+    warnDisabled() {
+      this.disabled = true;
+      setTimeout(() => {
+        this.disabled = false;
+      }, 1500);
+    },
+  },
+};
+</script>
+<style>
+.shake {
+  animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  transform: translate3d(0, 0, 0);
+}
+@keyframes shake {
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0);
+  }
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+  40%,
+  60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+</style>
 ```
 
-###### 5.2 背景颜色随鼠标渐变
+### 5.2 背景颜色随鼠标渐变
 
 [演示地址](http://ximingx.com/TransitionColor22_3_24/index.html)
 
-```js
-<template>  <div      @mousemove="onMousemove"      :style="{ backgroundColor: `hsl(${x}, 80%, 50%)` }"      class="movearea"  >    <p>Move your mouse across this div...</p>    <p>x: {{ x }}</p>  </div></template><script>export default {  name: 'ShakeButton',  data() {    return {      x: 0    }  },  methods: {    onMousemove(e) {      this.x = e.clientX    }  }}</script><style>* {  padding: 0;  margin: 0;}.movearea {  width: 100vw;  height: 100vh;  transition: 0.3s background-color ease;}</style>
+```html
+<template>
+  <div
+    @mousemove="onMousemove"
+    :style="{ backgroundColor: `hsl(${x}, 80%, 50%)` }"
+    class="movearea"
+  >
+    <p>Move your mouse across this div...</p>
+    <p>x: {{ x }}</p>
+  </div>
+</template>
+<script>
+export default {
+  name: 'ShakeButton',
+  data() {
+    return {
+      x: 0,
+    };
+  },
+  methods: {
+    onMousemove(e) {
+      this.x = e.clientX;
+    },
+  },
+};
+</script>
+<style>
+* {
+  padding: 0;
+  margin: 0;
+}
+.movearea {
+  width: 100vw;
+  height: 100vh;
+  transition: 0.3s background-color ease;
+}
+</style>
 ```
 
 ## 正则表达式
@@ -3952,7 +5760,9 @@ animation:动画名称 持续时间 运动曲线 何时开始 播放次数 是�
 语法：
 
 ```javascript
-	var 变量 = new RegExp("正则表达式"); // 注意，参数是字符串	var 变量 = new RegExp("正则表达式", "匹配模式"); // 注意，两个参数都是字符串
+// 伪代码：创建正则表达式对象（注意，参数是字符串）
+// var 变量 = new RegExp("正则表达式");
+// var 变量 = new RegExp("正则表达式", "匹配模式");
 ```
 
 备注：`RegExp`的意思是 **Regular expression**。使用typeof检查正则对象，会返回object。
@@ -3968,7 +5778,8 @@ animation:动画名称 持续时间 运动曲线 何时开始 播放次数 是�
 **正则表达式的`test()`方法**：【重要】
 
 ```javascript
-	myReg.test(str); // 判断字符串 str 是否符合 指定的 myReg 这个正则表达式的规则
+// 伪代码：判断字符串 str 是否符合指定的 myReg 这个正则表达式的规则
+// myReg.test(str);
 ```
 
 解释：使用`test()`这个方法可以用来检查一个字符串是否符合正则表达式的规则，**如果符合则返回true，否则返回false**。
@@ -3982,7 +5793,12 @@ animation:动画名称 持续时间 运动曲线 何时开始 播放次数 是�
 代码举例：
 
 ```javascript
-	var reg = new RegExp("x"); // 定义一个正则表达式：检查一个字符串中是否含有 x	var str1 = "ximingx";	var str2 = "bawd";	// 通过 test()方法，判断字符串是否符合 上面定义的 reg 规则	console.log(reg.test(str1)); // 打印结果：true	console.log(reg.test(str2)); // 打印结果：false
+var reg = new RegExp('x'); // 定义一个正则表达式：检查一个字符串中是否含有 x
+var str1 = "ximingx";
+var str2 = "bawd";
+// 通过 test() 方法，判断字符串是否符合上面定义的 reg 规则
+console.log(reg.test(str1)); // 打印结果：true
+console.log(reg.test(str2)); // 打印结果：false
 ```
 
 注意，上面的例子中，我们是先定义了一个正则表达式的规则，然后通过正则表达式的`test()`方法来判断字符串是否符合之前定义的规则。
@@ -3998,7 +5814,9 @@ animation:动画名称 持续时间 运动曲线 何时开始 播放次数 是�
 代码举例：
 
 ```javascript
-    var reg = new RegExp('M', 'i');    var str = 'ximingx';    console.log(reg.test(str)); // 打印结果：true
+var reg = new RegExp('M', 'i');
+var str = 'ximingx';
+console.log(reg.test(str)); // 打印结果：true
 ```
 
 #### 方式二：使用字面量创建正则表达式
@@ -4008,13 +5826,19 @@ animation:动画名称 持续时间 运动曲线 何时开始 播放次数 是�
 语法：
 
 ```javascript
-	var 变量 = /正则表达式/;  	var 变量 = /正则表达式/匹配模式;  // 注意，这个语法里没有引号
+// 伪代码：创建正则表达式
+// var 变量 = /正则表达式/;
+// var 变量 = /正则表达式/匹配模式;
+// 注意，这个语法里没有引号
 ```
 
 代码举例：
 
 ```javascript
-	var reg = /X/i; // 定义正则表达式的规则：检查一个字符串中是否含有 X。忽略大小写。	var str = "ximingx";	console.log(typeof reg);  // 打印结果：object	console.log(reg.test(str)); // 打印结果：true
+var reg = /X/i; // 定义正则表达式的规则：检查一个字符串中是否含有 X。忽略大小写。
+var str = "ximingx";
+console.log(typeof reg); // 打印结果：object
+console.log(reg.test(str)); // 打印结果：true
 ```
 
 #### 以上两种方式的对比
@@ -4026,7 +5850,8 @@ animation:动画名称 持续时间 运动曲线 何时开始 播放次数 是�
 代码举例：
 
 ```javascript
-	var reg = new RegExp("a", "i"); // 方式一	var reg = /a/i; // 方式二
+var reg = new RegExp("a", "i"); // 方式一
+var reg2 = /a/i; // 方式二
 ```
 
 上面这两行代码的作用是等价的。
@@ -4036,7 +5861,11 @@ animation:动画名称 持续时间 运动曲线 何时开始 播放次数 是�
 对于非全局匹配的正则表达式，`test()`只会检测**是否存在某个目标字符串**（只要存在就为 true），多次检测的结果都相同。例如：
 
 ```javascript
-const reg = /test/;const str = '_test_test';reg.test(str) // truereg.test(str) // truereg.test(str) // true
+const reg = /test/;
+const str = '_test_test';
+reg.test(str); // true
+reg.test(str); // true
+reg.test(str); // true
 ```
 
 重点来了。
@@ -4044,7 +5873,16 @@ const reg = /test/;const str = '_test_test';reg.test(str) // truereg.test(str) /
 当设置全局标志 `/g` 时，一旦字符串中还存在匹配，test() 方法都将返回 true，同时匹配成功后将把 `lastIndex` 属性的值**设置为上次匹配成功结果之后的第一个字符所在的位置**，下次匹配将从 `lastIndex` 指示的位置开始；匹配不成功时返回 false，同时将 lastIndex 属性的值重置为 0。
 
 ```javascript
-const reg = /test/g;const str = '_test_test_test';console.log(reg.test(str)); // trueconsole.log(reg.lastIndex); // 5console.log(reg.test(str)); // trueconsole.log(reg.lastIndex); // 10console.log(reg.test(str)); // trueconsole.log(reg.lastIndex); // 15console.log(reg.test(str)); // falseconsole.log(reg.lastIndex); // 0
+const reg = /test/g;
+const str = '_test_test_test';
+console.log(reg.test(str)); // true
+console.log(reg.lastIndex); // 5
+console.log(reg.test(str)); // true
+console.log(reg.lastIndex); // 10
+console.log(reg.test(str)); // true
+console.log(reg.lastIndex); // 15
+console.log(reg.test(str)); // false
+console.log(reg.lastIndex); // 0
 ```
 
 **总结**：
@@ -4060,7 +5898,7 @@ const reg = /test/g;const str = '_test_test_test';console.log(reg.test(str)); //
 **写法1**：
 
 ```javascript
-	var reg = /a|b/;
+// 伪代码：var reg = /a|b/;
 ```
 
 解释：使用 `|` 表示`或`的意思。
@@ -4068,7 +5906,7 @@ const reg = /test/g;const str = '_test_test_test';console.log(reg.test(str)); //
 **写法2**：
 
 ```javascript
-	var reg = /[ab]/;  // 跟上面的那行语法，是等价的
+// 伪代码：var reg = /[ab]/;（跟上面的那行语法是等价的）
 ```
 
 解释：这里的`[]`也是表示`或`的意思。
@@ -4096,13 +5934,19 @@ const reg = /test/g;const str = '_test_test_test';console.log(reg.test(str)); //
 举例1：
 
 ```javascript
-  var reg = /[^ab]/; // 规则：字符串中，除了a、b之外，还有没有其他的字符内容？  var str = "acb";  console.log(reg.test(str)); // 打印结果：true
+var reg = /[^ab]/; // 规则：字符串中，除了 a、b 之外，还有没有其他的字符内容？
+var str = "acb";
+console.log(reg.test(str)); // 打印结果：true
 ```
 
 举例2：（可以用来验证某字符串是否为 纯数字）
 
 ```javascript
-	var reg = /[^0-9]/;  // 规则：字符串中，除了数字之外，还有没有其他的内容？	var str1 = "1991";	var str2 = "199a1";	console.log(reg.test(str1)); // 打印结果：false （如果字符串是 纯数字，则返回 false）	console.log(reg.test(str2)); // 打印结果：true
+var reg = /[^0-9]/; // 规则：字符串中，除了数字之外，还有没有其他的内容？
+var str1 = "1991";
+var str2 = "199a1";
+console.log(reg.test(str1)); // 打印结果：false （如果字符串是纯数字，则返回 false）
+console.log(reg.test(str2)); // 打印结果：true
 ```
 
 ### 支持正则表达式的 String 对象的方法
@@ -4127,7 +5971,9 @@ const reg = /test/g;const str = '_test_test_test';console.log(reg.test(str)); //
 代码实现：（通过正则）
 
 ```javascript
-	var str = "1a2b3c4d5e6f7g";	var result = str.split(/[A-z]/); // 参数是一个正则表达式：表示所有字母	console.log(result);
+var str = "1a2b3c4d5e6f7g";
+var result = str.split(/[A-z]/); // 参数是一个正则表达式：表示所有字母
+console.log(result);
 ```
 
 打印结果：
@@ -4145,7 +5991,12 @@ const reg = /test/g;const str = '_test_test_test';console.log(reg.test(str)); //
 **举例**：
 
 ```javascript
-	var str = "hello abc hello aec afc";	/*	* 搜索字符串中是否含有abc 或 aec 或 afc	*/	result = str.search(/a[bef]c/);	console.log(result); // 打印结果：6
+var str = "hello abc hello aec afc";
+/*
+ * 搜索字符串中是否含有 abc 或 aec 或 afc
+ */
+result = str.search(/a[bef]c/);
+console.log(result); // 打印结果：6
 ```
 
 #### match()
@@ -4159,7 +6010,13 @@ const reg = /test/g;const str = '_test_test_test';console.log(reg.test(str)); //
 **代码举例**：
 
 ```javascript
-	var str = "1a2a3a4a5e6f7A8B9C";	var result1 = str.match(/[a-z]/);   // 找到符合要求的第一个内容，然后返回	var result2 = str.match(/[a-z]/g);  // 设置为“全局匹配”模式，匹配字符串中 所有的小写字母	var result3 = str.match(/[a-z]/gi); // 设置多个匹配模式，匹配字符串中 所有的字母（忽略大小写）	console.log(result1); // 打印结果：["a"]	console.log(result2); // 打印结果：["a", "a", "a", "a", "e", "f"]	console.log(result3); // 打印结果：["a", "a", "a", "a", "e", "f", "A", "B", "C"]
+var str = '1a2a3a4a5e6f7A8B9C';
+var result1 = str.match(/[a-z]/); // 找到符合要求的第一个内容，然后返回
+var result2 = str.match(/[a-z]/g); // 设置为"全局匹配"模式，匹配字符串中所有的小写字母
+var result3 = str.match(/[a-z]/gi); // 设置多个匹配模式，匹配字符串中所有的字母（忽略大小写）
+console.log(result1); // 打印结果：["a"]
+console.log(result2); // 打印结果：["a", "a", "a", "a", "e", "f"]
+console.log(result3); // 打印结果：["a", "a", "a", "a", "e", "f", "A", "B", "C"]
 ```
 
 **总结**：
@@ -4173,7 +6030,7 @@ match()这个方法还是很实用的，可以在一个很长的字符串中，�
 语法：
 
 ```javascript
-	新的字符串 = str.replace(被替换的内容，新的内容);
+// 伪代码：新的字符串 = str.replace(被替换的内容，新的内容);
 ```
 
 参数解释：
@@ -4185,7 +6042,11 @@ match()这个方法还是很实用的，可以在一个很长的字符串中，�
 代码举例：
 
 ```javascript
-    //replace()方法：替换    var str2 = "Today is fine day,today is fine day !!!"    console.log(str2);    console.log(str2.replace("today","tomorrow"));  //只能替换第一个today    console.log(str2.replace(/today/gi,"tomorrow")); //这里用到了正则，且为“全局匹配”模式，才能替换所有的today
+// replace() 方法：替换
+var str2 = "Today is fine day,today is fine day !!!";
+console.log(str2);
+console.log(str2.replace("today", "tomorrow")); // 只能替换第一个 today
+console.log(str2.replace(/today/gi, "tomorrow")); // 这里用到了正则，且为"全局匹配"模式，才能替换所有的 today
 ```
 
 ### 常见正则表达式举例
@@ -4203,7 +6064,9 @@ match()这个方法还是很实用的，可以在一个很长的字符串中，�
 正则实现：
 
 ```javascript
-	var phoneStr = "13067890123";	var phoneReg = /^1[3-9][0-9]{9}$/;	console.log(phoneReg.test(phoneStr));
+var phoneStr = "13067890123";
+var phoneReg = /^1[3-9][0-9]{9}$/;
+console.log(phoneReg.test(phoneStr));
 ```
 
 **备注**：如果在正则表达式中同时使用`^`和`$`符号，则要求字符串必须完全符合正则表达式。
@@ -4213,13 +6076,14 @@ match()这个方法还是很实用的，可以在一个很长的字符串中，�
 正则实现：
 
 ```javascript
-	str = str.replace(/^\s*|\s*$/g,"");
+str = str.replace(/^\s*|\s*$/g, "");
 ```
 
 解释如下：
 
 ```javascript
-	str = str.replace(/^\s*/, ""); //去 除开头的空格	str = str.replace(/\s*$/, ""); //去除结尾的空格
+str = str.replace(/^\s*/, ""); // 去除开头的空格
+str = str.replace(/\s*$/, ""); // 去除结尾的空格
 ```
 
 #### 判断字符串是否为电子邮件
@@ -4227,7 +6091,9 @@ match()这个方法还是很实用的，可以在一个很长的字符串中，�
 正则实现：
 
 ```javascript
-	var emailReg = /^\w{3,}(\.\w+)*@[A-z0-9]+(\.[A-z]{2,5}){1,2}$/;	var email = "abchello@163.com";	console.log(emailReg.test(email));
+var emailReg = /^\w{3,}(\.\w+)*@[A-z0-9]+(\.[A-z]{2,5}){1,2}$/;
+var email = "abchello@163.com";
+console.log(emailReg.test(email));
 ```
 
 ## promise
@@ -4258,7 +6124,16 @@ match()这个方法还是很实用的，可以在一个很长的字符串中，�
 以下案例均在 vue 的代码中演示
 
 ```js
-  mounted() {    let promise1 = new Promise(function(resolve, reject){      //做一些异步操作 ( 可以是网络请求,定时器,回调函数,事件绑定 )      setTimeout(function(){        console.log('完成异步操作');        resolve('返回任意的数据');        // 会在两秒之后返回打印值      }, 2000);    })  }
+mounted() {
+  let promise1 = new Promise(function (resolve, reject) {
+    // 做一些异步操作（可以是网络请求、定时器、回调函数、事件绑定）
+    setTimeout(function () {
+      console.log('完成异步操作');
+      resolve('返回任意的数据');
+      // 会在两秒之后返回打印值
+    }, 2000);
+  });
+}
 ```
 
 **这里我们 new 了一个 Promise , 在 Promise 里面执行异步操作的代码** 
@@ -4274,7 +6149,21 @@ match()这个方法还是很实用的，可以在一个很长的字符串中，�
 所以我们用Promise的时候一般是包在一个函数中，在需要的时候去运行这个函数 , 这里演示一下
 
 ```js
-  methods: {    test:function () {      return new Promise(function(resolve, reject){        //做一些异步操作 ( 可以是网络请求,定时器,回调函数,事件绑定 )        setTimeout(function(){          console.log('完成异步操作');          resolve('返回任意的数据');          // 会在两秒之后返回打印值        }, 2000);      })    }  },  mounted() {    this.test()  }
+methods: {
+  test: function () {
+    return new Promise(function (resolve, reject) {
+      // 做一些异步操作（可以是网络请求、定时器、回调函数、事件绑定）
+      setTimeout(function () {
+        console.log('完成异步操作');
+        resolve('返回任意的数据');
+        // 会在两秒之后返回打印值
+      }, 2000);
+    });
+  },
+},
+mounted() {
+  this.test();
+}
 ```
 
 可以看到 在这里 我们直接 return 出  Promise对象 , 这将在在之后给我们非常大的便利 , **可以让我们直接链式调用它的方法**
@@ -4284,7 +6173,17 @@ match()这个方法还是很实用的，可以在一个很长的字符串中，�
 先看一段代码和结果
 
 ```js
-mounted() {  let promise = new Promise(function(resolve, reject){    //做一些异步操作 ( 可以是网络请求,定时器,回调函数,事件绑定 )    setTimeout(function(){      resolve('返回任意的数据');      // 会在两秒之后返回打印值    }, 2000);  }).then((data) => {    console.log(data)  })}
+mounted() {
+  let promise = new Promise(function (resolve, reject) {
+    // 做一些异步操作（可以是网络请求、定时器、回调函数、事件绑定）
+    setTimeout(function () {
+      resolve('返回任意的数据');
+      // 会在两秒之后返回打印值
+    }, 2000);
+  }).then((data) => {
+    console.log(data);
+  });
+}
 ```
 
 
@@ -4297,7 +6196,37 @@ mounted() {  let promise = new Promise(function(resolve, reject){    //做一些
 但是 + - +
 
 ```js
-  mounted() {    return new Promise(function (resolve, reject) {      if (1 < 2) {        resolve(true)      } else {        console.log("error")      }    }).then((data) => {      console.log(data)      return new Promise(function (resolve, reject) {        if (2 < 3) {          resolve(true)        } else {          console.log("error")        }      })    }).then((data) => {      console.log(data)      return new Promise(function (resolve, reject) {        if (2 < 3) {          resolve(true)        } else {          console.log("error")        }      }).then((data) => {        console.log(data)      })    })  }
+mounted() {
+  return new Promise(function (resolve, reject) {
+    if (1 < 2) {
+      resolve(true);
+    } else {
+      console.log("error");
+    }
+  })
+    .then((data) => {
+      console.log(data);
+      return new Promise(function (resolve, reject) {
+        if (2 < 3) {
+          resolve(true);
+        } else {
+          console.log("error");
+        }
+      });
+    })
+    .then((data) => {
+      console.log(data);
+      return new Promise(function (resolve, reject) {
+        if (2 < 3) {
+          resolve(true);
+        } else {
+          console.log("error");
+        }
+      }).then((data) => {
+        console.log(data);
+      });
+    });
+}
 ```
 
 上面这样子的代码  是不是很丑 , 很难看懂 + - + , 而且和之前的回调地狱一样不方便读懂代码
@@ -4307,7 +6236,34 @@ mounted() {  let promise = new Promise(function(resolve, reject){    //做一些
 ### 我们一般采用下面的写法
 
 ```js
-  methods: {    test:function () {      return new Promise((resolve, reject) => {        setTimeout(() => {          resolve(1);        },1000)      })    }  },  mounted() {    this.test()        .then((data) => {          console.log(data)          // 返回 Promise 对象, 使其继续进行链式调用           return this.test()        })        .then((data) => {          console.log(data)          return this.test()        })        .then((data) => {          console.log(data)          return this.test()        })        .then((data) => {          console.log(data)        })  }
+methods: {
+  test: function () {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve(1);
+      }, 1000);
+    });
+  },
+},
+mounted() {
+  this.test()
+    .then((data) => {
+      console.log(data);
+      // 返回 Promise 对象，使其继续进行链式调用
+      return this.test();
+    })
+    .then((data) => {
+      console.log(data);
+      return this.test();
+    })
+    .then((data) => {
+      console.log(data);
+      return this.test();
+    })
+    .then((data) => {
+      console.log(data);
+    });
+}
 ```
 
 这样就能够按顺序,输出每个异步回调中的内容
@@ -4322,7 +6278,48 @@ mounted() {  let promise = new Promise(function(resolve, reject){    //做一些
 那么，**reject就是失败的时候的回调，他把promise的状态修改为rejected**，这样我们就可以在 .then中 捕捉到，然后执行“失败”情况的回调
 
 ```js
-  methods: {    test:function () {      return new Promise((resolve, reject) => {        setTimeout(() => {          resolve(1);        },1000)      })    }  },  mounted() {    this.test()        .then((data) => {          console.log(data)          return this.test()        })        .then((data) => {          console.log(data)          return this.test()        })        .then((data) => {          console.log(data)          return this.test()        })        .then((data) => {          console.log(data)          return new Promise((resolve, reject) => {            if ( 1 !== 1) {              reject(1);            } else {              resolve(2);            }          })        })       .then((data) => {         console.log(data)       },(info) => {         console.log(info)       })  }
+methods: {
+  test: function () {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve(1);
+      }, 1000);
+    });
+  },
+},
+mounted() {
+  this.test()
+    .then((data) => {
+      console.log(data);
+      return this.test();
+    })
+    .then((data) => {
+      console.log(data);
+      return this.test();
+    })
+    .then((data) => {
+      console.log(data);
+      return this.test();
+    })
+    .then((data) => {
+      console.log(data);
+      return new Promise((resolve, reject) => {
+        if (1 !== 1) {
+          reject(1);
+        } else {
+          resolve(2);
+        }
+      });
+    })
+    .then(
+      (data) => {
+        console.log(data);
+      },
+      (info) => {
+        console.log(info);
+      }
+    );
+}
 ```
 
 这里在最后一次调用 promise 返回的结果时 , 执行力 resolve(2) , 最后打印台显示的结果也是 2 ,
@@ -4334,7 +6331,46 @@ mounted() {  let promise = new Promise(function(resolve, reject){    //做一些
 接下来我们再看一下 .catch 和 直接在 .then 中传入第二个参数的区别
 
 ```js
-methods: {  test: function () {    return new Promise((resolve, reject) => {      setTimeout(() => {        resolve(1);      }, 1000)    })  }},mounted() {  this.test()      .then((data) => {        console.log(data)        return this.test()      })      .then((data) => {        console.log(data)        return this.test()      })      .then((data) => {        console.log(data)        return this.test()      })      .then((data) => {        console.log(data)        return new Promise((resolve, reject) => {          if (1 !== 1) {            reject(1);          } else {            resolve(2);          }        })      })      .then((data) => {        console.log(data)      })      .catch((info) => {        console.log(info)      })}
+methods: {
+  test: function () {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve(1);
+      }, 1000);
+    });
+  },
+},
+mounted() {
+  this.test()
+    .then((data) => {
+      console.log(data);
+      return this.test();
+    })
+    .then((data) => {
+      console.log(data);
+      return this.test();
+    })
+    .then((data) => {
+      console.log(data);
+      return this.test();
+    })
+    .then((data) => {
+      console.log(data);
+      return new Promise((resolve, reject) => {
+        if (1 !== 1) {
+          reject(1);
+        } else {
+          resolve(2);
+        }
+      });
+    })
+    .then((data) => {
+      console.log(data);
+    })
+    .catch((info) => {
+      console.log(info);
+    });
+}
 ```
 
 我们可以看到: 两次结果是一样的 , 但是我们需要明白 , 在 .then 中写第二个参数 和 用 .catch 是有区别的
@@ -4345,14 +6381,36 @@ methods: {  test: function () {    return new Promise((resolve, reject) => {    
 ### all() 多个Promise 一起执行
 
 ```js
-  methods: {    test1: function () {      return new Promise((resolve, reject) => {        setTimeout(() => {          resolve(1);        }, 1000)      })    },    test2: function () {      return new Promise((resolve, reject) => {        setTimeout(() => {          resolve(1);        }, 1000)      })    },    test3: function () {      return new Promise((resolve, reject) => {        setTimeout(() => {          resolve(1);        }, 1000)      })    }  },  mounted() {
-      // 用一个数组包裹。注意：这里传的是【调用后返回的 Promise 实例】，必须带小括号
-    Promise.all([this.test1(), this.test2(), this.test3()])
-        .then((res) => {
-          console.log(res)
-          console.log(res.length)
-        })
-  }
+methods: {
+  test1: function () {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve(1);
+      }, 1000);
+    });
+  },
+  test2: function () {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve(1);
+      }, 1000);
+    });
+  },
+  test3: function () {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve(1);
+      }, 1000);
+    });
+  },
+},
+mounted() {
+  // 用一个数组包裹。注意：这里传的是【调用后返回的 Promise 实例】，必须带小括号
+  Promise.all([this.test1(), this.test2(), this.test3()]).then((res) => {
+    console.log(res);
+    console.log(res.length);
+  });
+}
 ```
 
 > **易错点**：上面必须写 `this.test1()` 而不是 `this.test1`。
@@ -4374,7 +6432,35 @@ Promise.all来执行多个异步操作，**all接收一个数组参数**，这�
 all是等所有的异步操作都执行完了再执行then方法，那么race方法就是相反的，**谁先执行完成就先执行回调**。先执行完的不管是进行了race的成功回调还是失败回调，**其余的将不会再进入race的任何回调**
 
 ```js
-methods: {  test1: function () {    return new Promise((resolve, reject) => {      setTimeout(() => {        resolve(1);      }, 1000)    })  },  test2: function () {    return new Promise((resolve, reject) => {      setTimeout(() => {        resolve(1);      }, 2000)    })  },  test3: function () {    return new Promise((resolve, reject) => {      setTimeout(() => {        resolve(1);      }, 3000)    })  }},mounted() {  // 同样要传调用后的 Promise 实例  Promise.race([this.test1(), this.test2(), this.test3()])      .then((res) => {        console.log(res)      })}
+methods: {
+  test1: function () {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve(1);
+      }, 1000);
+    });
+  },
+  test2: function () {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve(1);
+      }, 2000);
+    });
+  },
+  test3: function () {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve(1);
+      }, 3000);
+    });
+  },
+},
+mounted() {
+  // 同样要传调用后的 Promise 实例
+  Promise.race([this.test1(), this.test2(), this.test3()]).then((res) => {
+    console.log(res);
+  });
+}
 ```
 
 这次只是 将 Promise.all 修改为了 Promise.race , 返回的结果中 只有最先执行结束的结果
@@ -4385,19 +6471,127 @@ methods: {  test1: function () {    return new Promise((resolve, reject) => {   
 
 
 ```js
-// Promise 用于解决回调地狱// Promise 是一个构造函数const fs = require('fs')// 在 promise 容器 里的函数 里放置异步操作// promise 容器一旦创建就开始执行里面的代码new Promise(function (resolve, reject) {  fs.readFile('./package.json', 'utf8', function (err, data) {    if (err) {     reject(err)    } else {      resolve(data)    }  })}).then(data => {  console.log(data);  // -----------------------------------------------------------------------  new Promise(function (resolve,reject) {    fs.readFile('./package.json', 'utf8', function (err, data) {      if (err) {        reject(err)      } else {        resolve(data)      }    })  }).then(data => {    console.log(data);  }).catch (err => {    console.log(err);  })  // -----------------------------------------------------------------------}).catch(err => {  console.log(err);})
+// Promise 用于解决回调地狱
+// Promise 是一个构造函数
+const fs = require('fs');
+// 在 promise 容器里的函数里放置异步操作
+// promise 容器一旦创建就开始执行里面的代码
+new Promise(function (resolve, reject) {
+  fs.readFile('./package.json', 'utf8', function (err, data) {
+    if (err) {
+      reject(err);
+    } else {
+      resolve(data);
+    }
+  });
+})
+  .then((data) => {
+    console.log(data);
+    // -----------------------------------------------------------------------
+    new Promise(function (resolve, reject) {
+      fs.readFile('./package.json', 'utf8', function (err, data) {
+        if (err) {
+          reject(err);
+        } else {
+          resolve(data);
+        }
+      });
+    })
+      .then((data) => {
+        console.log(data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    // -----------------------------------------------------------------------
+  })
+  .catch((err) => {
+    console.log(err);
+  });
 ```
 
 **异步的处理方式**
 
 ```js
-const fs = require("fs");const p1 = new Promise((resolve, reject) => {  fs.readFile('./a.txt', "utf8", (err, data) => {    if (err) {      reject(err)    } else {      resolve(data)    }  })})const p2 = new Promise((resolve, reject) => {  fs.readFile('./b.txt', "utf8", (err, data) => {    if (err) {      reject(err)    } else {      resolve(data)    }  })})const p3 = new Promise((resolve, reject) => {  fs.readFile('./c.txt', "utf8", (err, data) => {    if (err) {      reject(err)    } else {      resolve(data)    }  })})p1.then((data) => {    console.log(data);  // 这里的 return p2 会将 p2 的 resolve 结果 传递给下面的 .then  // 当 return 一个 promise 对象时,后续的 .then 中方法的第一个参数会作为 返回的 promise (p2) 的 resolve    return p2})  .catch((err) => {    console.log(err);  })  .then(data => {    console.log(data);    return p3  })  .catch((err) => {    console.log(err);  })  .then(data => {    console.log(data);  })  .catch((err) => {    console.log(err);  })
+const fs = require('fs');
+const p1 = new Promise((resolve, reject) => {
+  fs.readFile('./a.txt', 'utf8', (err, data) => {
+    if (err) {
+      reject(err);
+    } else {
+      resolve(data);
+    }
+  });
+});
+const p2 = new Promise((resolve, reject) => {
+  fs.readFile('./b.txt', 'utf8', (err, data) => {
+    if (err) {
+      reject(err);
+    } else {
+      resolve(data);
+    }
+  });
+});
+const p3 = new Promise((resolve, reject) => {
+  fs.readFile('./c.txt', 'utf8', (err, data) => {
+    if (err) {
+      reject(err);
+    } else {
+      resolve(data);
+    }
+  });
+});
+p1.then((data) => {
+  console.log(data);
+  // 这里的 return p2 会将 p2 的 resolve 结果传递给下面的 .then
+  // 当 return 一个 promise 对象时，后续的 .then 中方法的第一个参数会作为返回的 promise (p2) 的 resolve
+  return p2;
+})
+  .catch((err) => {
+    console.log(err);
+  })
+  .then((data) => {
+    console.log(data);
+    return p3;
+  })
+  .catch((err) => {
+    console.log(err);
+  })
+  .then((data) => {
+    console.log(data);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
 ```
 
 **异步函数的封装**
 
 ```js
-const fs = require('fs')function pReadFile(filePath) {  return new Promise(function (resolve, reject) {    fs.readFile(filePath, "utf8", function (err, data) {      if (err) {        reject(err)      } else {        resolve(data)      }    })  })}pReadFile('./a.txt')  .then(data => {    console.log(data);    return pReadFile('./b.txt')  })  .then((data) => {    console.log(data);    return pReadFile('./c.txt')  })  .then((data) => {    console.log(data);  })
+const fs = require('fs');
+function pReadFile(filePath) {
+  return new Promise(function (resolve, reject) {
+    fs.readFile(filePath, 'utf8', function (err, data) {
+      if (err) {
+        reject(err);
+      } else {
+        resolve(data);
+      }
+    });
+  });
+}
+pReadFile('./a.txt')
+  .then((data) => {
+    console.log(data);
+    return pReadFile('./b.txt');
+  })
+  .then((data) => {
+    console.log(data);
+    return pReadFile('./c.txt');
+  })
+  .then((data) => {
+    console.log(data);
+  });
 ```
 
 **Promise 在创建后会立马执行**
@@ -4405,7 +6599,14 @@ const fs = require('fs')function pReadFile(filePath) {  return new Promise(funct
 注意结果的输出顺序
 
 ```js
-let promise = new Promise(function(resolve, reject) {  console.log('Promise');  resolve();});promise.then(function() {  console.log('resolved.');});console.log('Hi!');// Promise// Hi!// resolved
+let promise = new Promise(function (resolve, reject) {
+    console.log('Promise');
+    resolve();
+});
+promise.then(function () {
+    console.log('resolved.');
+});
+console.log('Hi!'); // Promise// Hi!// resolved
 ```
 
 ---
@@ -4421,7 +6622,16 @@ npm install then-fs
 调用 then-fs 提供的 `readFile()` 方法，可以异步地读取文件的内容，它的返回值是 Promise 的实例对象。因此可以调用 `.then()` 方法为每个 Promise 异步操作指定成功和失败之后的回调函数。示例代码如下：
 
 ```js
-import thenFS from 'then-fs'thenFS.readFile("./1.text", "utf8").then(r1 => {    console.log(r1)})thenFS.readFile("./1.text", "utf8").then(r2 => {    console.log(r2)})thenFS.readFile("./1.text", "utf8").then(r3 => {    console.log(r3)})
+import thenFS from 'then-fs';
+thenFS.readFile('./1.text', 'utf8').then((r1) => {
+  console.log(r1);
+});
+thenFS.readFile('./1.text', 'utf8').then((r2) => {
+  console.log(r2);
+});
+thenFS.readFile('./1.text', 'utf8').then((r3) => {
+  console.log(r3);
+});
 ```
 
 上述的代码无法保证文件的读取顺序，需要做进一步的改进！
@@ -4429,7 +6639,23 @@ import thenFS from 'then-fs'thenFS.readFile("./1.text", "utf8").then(r1 => {    
 `Promise` 支持链式调用，从而来解决回调地狱的问题。示例代码如下：
 
 ```js
-import thenFS from 'then-fs'thenFS.readFile("./1.text", "utf8")  .catch(err => {    console.log(err)})  .then(r1 => {    console.log(r1)    return thenFS.readFile("./2.text", "utf8")}).then(r2 => {    console.log(r2)    return thenFS.readFile("./3.text", "utf8")}).then(r3 => {    console.log(r3)})
+import thenFS from 'then-fs';
+thenFS
+  .readFile('./1.text', 'utf8')
+  .catch((err) => {
+    console.log(err);
+  })
+  .then((r1) => {
+    console.log(r1);
+    return thenFS.readFile('./2.text', 'utf8');
+  })
+  .then((r2) => {
+    console.log(r2);
+    return thenFS.readFile('./3.text', 'utf8');
+  })
+  .then((r3) => {
+    console.log(r3);
+  });
 ```
 
 
@@ -4445,7 +6671,16 @@ import thenFS from 'then-fs'thenFS.readFile("./1.text", "utf8")  .catch(err => {
 使用 `async/await` 简化 Promise 异步操作的示例代码如下
 
 ```js
-const thenFs = require("then-fs");async function get() {  const r1 =  await thenFs.readFile("./yarn.lock");  console.log(r1.toString());  const r2 =  await thenFs.readFile("./1.js");  console.log(r2.toString());  const r3 =  await thenFs.readFile("./1.html");  console.log(r3.toString());}get();
+const thenFs = require('then-fs');
+async function get() {
+    const r1 = await thenFs.readFile('./yarn.lock');
+    console.log(r1.toString());
+    const r2 = await thenFs.readFile('./1.js');
+    console.log(r2.toString());
+    const r3 = await thenFs.readFile('./1.html');
+    console.log(r3.toString());
+}
+get();
 ```
 
 **如果在 function 中使用了 await，则 function 必须被 async 修饰；**
@@ -4513,7 +6748,32 @@ JavaScript 是一门单线程执行的编程语言。也就是说，同一时间
 > 一个更贴切的比喻是：宏任务是"一节课"，微任务是"这节课的随堂作业"——作业必须在本节课结束时全部做完，才能上下一节课。
 
 ```js
-console.log(1)setTimeout(() => {  console.log(2)  new Promise(function (resolve) {    console.log(3)    resolve()  }).then(() => {    console.log(4)  })})new Promise((resolve) => {  console.log(5)  resolve()}).then(() => {  console.log(6)})setTimeout(() => {  console.log(7)  new Promise(function (resolve) {    console.log(8)    resolve()  }).then(() => {    console.log(9)  })})// 156234789
+console.log(1);
+setTimeout(() => {
+  console.log(2);
+  new Promise(function (resolve) {
+    console.log(3);
+    resolve();
+  }).then(() => {
+    console.log(4);
+  });
+});
+new Promise((resolve) => {
+  console.log(5);
+  resolve();
+}).then(() => {
+  console.log(6);
+});
+setTimeout(() => {
+  console.log(7);
+  new Promise(function (resolve) {
+    console.log(8);
+    resolve();
+  }).then(() => {
+    console.log(9);
+  });
+});
+// 打印结果：156234789
 ```
 
 ---
@@ -4563,7 +6823,7 @@ console.log('script end');
 
 打印结果：
 
-```js
+```
 script start
 async1 start
 async2
@@ -5186,7 +7446,7 @@ Promise.allSettled(urls.map(loadImage))
     .then((results) => console.log(results.filter((r) => r.status === 'fulfilled').length));
 ```
 
-## ES 6
+## ES6
 
 ### Symbol
 
@@ -5209,13 +7469,19 @@ Promise.allSettled(urls.map(loadImage))
 Symbol是函数，但并不是构造函数。创建一个Symbol数据类型：
 
 ```javascript
-    let mySymbol = Symbol();    console.log(typeof mySymbol);  //打印结果：symbol    console.log(mySymbol);         //打印结果：Symbol()
+let mySymbol = Symbol();
+console.log(typeof mySymbol); // 打印结果：symbol
+console.log(mySymbol); // 打印结果：Symbol()
 ```
 
 #### 2. 将Symbol作为对象的属性值
 
 ```javascript
-    let mySymbol = Symbol();    let obj = {        name: 'smyhvae',        age: 26    };    //obj.mySymbol = 'male'; //错误：不能用 . 这个符号给对象添加 Symbol 属性。    obj[mySymbol] = 'hello';    //正确：通过属性选择器给对象添加 Symbol 属性。后面的属性值随便写。    console.log(obj);
+let mySymbol = Symbol();
+let obj = { name: 'smyhvae', age: 26 };
+// obj.mySymbol = 'male'; // 错误：不能用 . 这个符号给对象添加 Symbol 属性。
+obj[mySymbol] = 'hello'; // 正确：通过属性选择器给对象添加 Symbol 属性。后面的属性值随便写。
+console.log(obj);
 ```
 
 上面的代码中，我们尝试给obj添加一个Symbol类型的属性值，但是添加的时候，不能采用`.`这个符号，而是应该用`属性选择器`的方式。
@@ -5225,7 +7491,11 @@ Symbol是函数，但并不是构造函数。创建一个Symbol数据类型：
 如果我通过 Symbol()函数创建了两个值，这两个值是不一样的：
 
 ```javascript
-    let mySymbol1 = Symbol();    let mySymbol2 = Symbol();    console.log(mySymbol1 == mySymbol2); //打印结果：false    console.log(mySymbol1);         //打印结果：Symbol()    console.log(mySymbol2);         //打印结果：Symbol()
+let mySymbol1 = Symbol();
+let mySymbol2 = Symbol();
+console.log(mySymbol1 == mySymbol2); // 打印结果：false
+console.log(mySymbol1); // 打印结果：Symbol()
+console.log(mySymbol2); // 打印结果：Symbol()
 ```
 
 上面代码中，倒数第三行的打印结果也就表明了，二者的值确实是不相等的。
@@ -5236,7 +7506,13 @@ Symbol是函数，但并不是构造函数。创建一个Symbol数据类型：
 
 
 ```javascript
-    //在括号里加入参数，来标识不同的Symbol    let mySymbol1 = Symbol('one');    let mySymbol2 = Symbol('two');    console.log(mySymbol1 == mySymbol2); //打印结果：false    console.log(mySymbol1);         //打印结果：Symbol(one)    console.log(mySymbol2);         //打印结果：Symbol(two)    console.log(mySymbol2.toString());//打印结果：Symbol(two)
+// 在括号里加入参数，来标识不同的 Symbol
+let mySymbol1 = Symbol('one');
+let mySymbol2 = Symbol('two');
+console.log(mySymbol1 == mySymbol2); // 打印结果：false
+console.log(mySymbol1); // 打印结果：Symbol(one)
+console.log(mySymbol2); // 打印结果：Symbol(two)
+console.log(mySymbol2.toString()); // 打印结果：Symbol(two)
 ```
 
 #### 4. 定义常量
@@ -5993,7 +8269,8 @@ babel 的作用是将 ES6 语法转为 ES5 语法，支持低端浏览器。
 在 index.js 写入
 
 ```js
-let a = item => item + 2console.log(a(4))
+let a = (item) => item + 2;
+console.log(a(4));
 ```
 
 这个文件是一个 ES6 语法 的 js 文件，稍后，我们尝试把这个 ES6 语法的 js 文件转化为 ES5 的 js 文件。
@@ -6013,7 +8290,16 @@ let a = item => item + 2console.log(a(4))
 上方代码中，`-y` 代表全部默认同意，就不用一次次按回车了（稍后再根据需要，在文件中手动修改）。命令执行完成后，会在项目的根目录下生成 package.json 文件：
 
 ```json
-{  "name": "babel",  "version": "1.0.0",  "description": "",  "main": "index.js",  "scripts": {    "test": "echo \"Error: no test specified\" && exit 1"  },  "keywords": [],  "author": "",  "license": "ISC"}
+{
+    "name": "babel",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": { "test": "echo \"Error: no test specified\" && exit 1" },
+    "keywords": [],
+    "author": "",
+    "license": "ISC"
+}
 ```
 
 #### 3. 本地安装
@@ -6026,8 +8312,11 @@ let a = item => item + 2console.log(a(4))
 
 在根目录下新建文件`.babelrc`，输入如下内容：
 
-```js
-{    "presets":[        "es2015"    ],    "plugins":[]}
+```json
+{
+  "presets": ["es2015"],
+  "plugins": []
+}
 ```
 
 #### 5. 开始转换：
@@ -6090,7 +8379,13 @@ let a = item => item + 2console.log(a(4))
 代码举例：
 
 ```javascript
-var a = 'aaa';function foo() {    var b = 'bbb';    console.log(a); // 打印结果：aaa。说明 内层作用域 可以访问 外层作用域 里的变量}foo();console.log(b); // 报错：Uncaught ReferenceError: b is not defined。说明 外层作用域 无法访问 内层作用域 里的变量
+var a = 'aaa';
+function foo() {
+  var b = 'bbb';
+  console.log(a); // 打印结果：aaa。说明 内层作用域 可以访问 外层作用域 里的变量
+}
+foo();
+console.log(b); // 报错：Uncaught ReferenceError: b is not defined。说明 外层作用域 无法访问 内层作用域 里的变量
 ```
 
 ### 变量的作用域
@@ -6106,7 +8401,15 @@ var a = 'aaa';function foo() {    var b = 'bbb';    console.log(a); // 打印结
 -   **特殊情况：在函数内不使用 var 声明的变量也是全局变量（不建议这么用）。** (~ ~ ~最好不要哇, 因为他还有一个条件: 必须先调用函数之后才可以使用该变量)
 
 ```js
-function outFun1() {    variable1 = "未定义直接赋值的变量";}function outFun2() {    variable2 = "未定义直接赋值的变量";}outFun2();//要先执行这个函数，否则根本不知道里面是啥console.log(variable2); //未定义直接赋值的变量console.log(variable1); //variable1 is not defined
+function outFun1() {
+  variable1 = '未定义直接赋值的变量';
+}
+function outFun2() {
+  variable2 = '未定义直接赋值的变量';
+}
+outFun2(); // 要先执行这个函数，否则根本不知道里面是啥
+console.log(variable2); // 未定义直接赋值的变量
+console.log(variable1); // variable1 is not defined
 ```
 
 **局部变量**：
@@ -6210,7 +8513,13 @@ fn1(); // 虽然 函数 fn1 的定义是在后面，但是因为被提前声明�
 举例：
 
 ```javascript
-var a = 1;function foo() {    console.log(a);    a = 2; // 此处的a相当于window.a}foo();console.log(a); //打印结果是2
+var a = 1;
+function foo() {
+  console.log(a);
+  a = 2; // 此处的 a 相当于 window.a
+}
+foo();
+console.log(a); // 打印结果是 2
 ```
 
 上方代码中，执行 foo() 后，函数里面的打印结果是`1`。如果去掉第一行代码，执行 foo() 后，函数里面的打印结果是`Uncaught ReferenceError: a is not defined`。
@@ -6218,13 +8527,24 @@ var a = 1;function foo() {    console.log(a);    a = 2; // 此处的a相当于wi
 2、定义形参就相当于在函数作用域中声明了变量。
 
 ```javascript
-function fun6(e) {    // 这个函数中，因为有了形参 e，此时就相当于在函数内部的第一行代码里，写了 var e;    console.log(e);}fun6(); //打印结果为 undefinedfun6(123); //打印结果为123
+function fun6(e) {
+  // 这个函数中，因为有了形参 e，此时就相当于在函数内部的第一行代码里，写了 var e;
+  console.log(e);
+}
+fun6(); // 打印结果为 undefined
+fun6(123); // 打印结果为 123
 ```
 
 注意一些重复声明时的问题
 
 ```js
-var scope = "global";function fn(){    console.log(scope);//undefined    var scope = "local";    console.log(scope);//local;}fn();
+var scope = "global";
+function fn() {
+  console.log(scope); // undefined
+  var scope = "local";
+  console.log(scope); // local
+}
+fn();
 ```
 
 
@@ -6243,7 +8563,11 @@ System.out.print(num); // 报错：num cannot be resolved，块外已经超出�
 但是，在 JS 中没有块级作用域（ES6 之前）。举例如下：
 
 ```javascript
-if (true) {    var num = 123;    console.log(123); //123}console.log(num); //123（可以正常打印）
+if (true) {
+  var num = 123;
+  console.log(123); // 123
+}
+console.log(num); // 123（可以正常打印）
 ```
 
 ### 作用域链
@@ -6263,7 +8587,17 @@ if (true) {    var num = 123;    console.log(123); //123}console.log(num); //123
 代码举例：
 
 ```javascript
-var num = 10;function fn() {    // 外部函数    var num = 20;    function fun() {        // 内部函数        console.log(num);    }    fun();}fn();
+var num = 10;
+function fn() {
+  // 外部函数
+  var num = 20;
+  function fun() {
+    // 内部函数
+    console.log(num);
+  }
+  fun();
+}
+fn();
 ```
 
 打印结果：20。
@@ -6302,7 +8636,22 @@ var定义的变量，没有块的概念，可以跨块访问, 不能跨函数访
 let, const 定义的变量，只能在块作用域里访问，不能跨块访问，也不能跨函数访问。
 
 ```js
-{    var a = 1;    let b = 2;    const c = 3;    {        console.log(a);		// 1	子作用域可以访问到父作用域的变量        console.log(b);		// 2	子作用域可以访问到父作用域的变量        console.log(c);		// 3	子作用域可以访问到父作用域的变量        var aa = 11;        let bb = 22;        const cc = 33;    }    console.log(aa);	// 11	// 可以跨块访问到子 块作用域 的变量    // console.log(bb);	// 报错	bb is not defined    // console.log(cc);	// 报错	cc is not defined}
+{
+  var a = 1;
+  let b = 2;
+  const c = 3;
+  {
+    console.log(a); // 1  子作用域可以访问到父作用域的变量
+    console.log(b); // 2  子作用域可以访问到父作用域的变量
+    console.log(c); // 3  子作用域可以访问到父作用域的变量
+    var aa = 11;
+    let bb = 22;
+    const cc = 33;
+  }
+  console.log(aa); // 11  // 可以跨块访问到子块作用域的变量
+  // console.log(bb); // 报错  bb is not defined
+  // console.log(cc); // 报错  cc is not defined
+}
 ```
 
 ### js 函数预编译
@@ -6327,43 +8676,77 @@ let, const 定义的变量，只能在块作用域里访问，不能跨块访问
 
 
 ```js
- function fn(a){    console.log(a);    var a = 123;    console.log(a);        function a(){};    console.log(a);        var b = function(){};    console.log(b);        function d(){}; }  //调用函数 fn(1);
+function fn(a) {
+    console.log(a);
+    var a = 123;
+    console.log(a);
+    function a() {}
+    console.log(a);
+    var b = function () {};
+    console.log(b);
+    function d() {}
+} //调用函数 fn(1);
 ```
 
 创建AO对象
 
 ```js
-AO{    //空对象    }
+// AO {
+//   （空对象）
+// }
 ```
 
 找形参和变量声明
 
 ```js
-AO{    a : undefined,    b : undefined}
+// AO {
+//   a: undefined,
+//   b: undefined
+// }
 ```
 
 只将实参赋值给形参
 
 ```js
-AO{    a : 1,    b : undefined}
+// AO {
+//   a: 1,
+//   b: undefined
+// }
 ```
 
 找函数声明, 覆盖
 
 ```js
-AO{    a : function a(){},    b : undefined,    d : function d(){}}
+// AO {
+//   a: function a() {},
+//   b: undefined,
+//   d: function d() {}
+// }
 ```
 
 预编译环节就此结束，此时的AO对象已经更新为：
 
 ```js
-AO{    a : function a(){},    b : undefined,    d : function d(){}}
+// AO {
+//   a: function a() {},
+//   b: undefined,
+//   d: function d() {}
+// }
 ```
 
 函数开始逐行顺序执行：
 
 ```js
- function fn(a){    console.log(a);// 输出functiona(){}    var a = 123;//执行到这里重新对a赋，AO对象再一次更新    console.log(a);// 输出123        function a(){};//预编译环节已经进行了变量提升，故执行时不在看这行代码    console.log(a);// 输出123        var b = function(){};//这个是函数表达式不是函数声明，故不能提升，会对AO中的b重新赋值    console.log(b);//输出function(){}        function d(){}; }
+function fn(a) {
+  console.log(a); // 输出 function a() {}
+  var a = 123; // 执行到这里重新对 a 赋值，AO 对象再一次更新
+  console.log(a); // 输出 123
+  function a() {} // 预编译环节已经进行了变量提升，故执行时不再看这行代码
+  console.log(a); // 输出 123
+  var b = function () {}; // 这个是函数表达式不是函数声明，故不能提升，会对 AO 中的 b 重新赋值
+  console.log(b); // 输出 function() {}
+  function d() {}
+}
 ```
 
 至此，函数执行完毕，销毁AO对象。
@@ -6371,13 +8754,20 @@ AO{    a : function a(){},    b : undefined,    d : function d(){}}
 ### 一个有意思的案例
 
 ```js
-function foo() {    var a = b = 100; // 连续赋值}foo();console.log(window.b); // 在全局范围内访问 bconsole.log(b); // 在全局范围内访问 b，但是前面没有加 window 这个关键字console.log(window.a); // 在全局范围内访问 aconsole.log(a); // 在全局范围内访问 a，但是前面没有加 window 这个关键字
+function foo() {
+  var a = (b = 100); // 连续赋值
+}
+foo();
+console.log(window.b); // 在全局范围内访问 b
+console.log(b); // 在全局范围内访问 b，但是前面没有加 window 这个关键字
+console.log(window.a); // 在全局范围内访问 a
+console.log(a); // 在全局范围内访问 a，但是前面没有加 window 这个关键字
 ```
 
 结果: 
 
-```js
-100100undefined（会报错，提示 Uncaught ReferenceError: a is not defined）
+```
+100 100 undefined（会报错，提示 Uncaught ReferenceError: a is not defined）
 ```
 
 **解释**：
@@ -7024,7 +9414,7 @@ HTML加载完毕，渲染引擎会在内存中把HTML文档，生成一个DOM树
 
 `document.documentElement`表示文档的html标签。也就是说，基本结构当中的 `html 标签`而是通过`document.documentElement`访问的，并不是通过 document.html 去访问的。
 
-## Web 存储 应用缓存
+## Web 存储与应用缓存
 
 ### H5 中有两种存储的方式
 
@@ -7075,7 +9465,59 @@ HTML加载完毕，渲染引擎会在内存中把HTML文档，生成一个DOM树
 ### 案例：记住用户名和密码
 
 ```html
-<html lang="en"><head>  <meta charset="UTF-8">  <meta http-equiv="X-UA-Compatible" content="IE=edge">  <meta name="viewport" content="width=device-width, initial-scale=1.0">  <title>Document</title></head><body><!DOCTYPE html><html><head lang="en">  <meta charset="UTF-8">  <title></title></head><body>  <label for="">    用户名：<input type="text" class="userName" />  </label>  <br /><br />  <label for="">    密 码：<input type="text" class="pwd" />  </label>  <br /><br />  <label for="">    <input type="checkbox" class="check" id="" />记住密码  </label>  <br /><br />  <button>登录</button>  <script>    var userName = document.querySelector('.userName');    var pwd = document.querySelector('.pwd');    var chk = document.querySelector('.check');    var btn = document.querySelector('button');    //        当点击登录的时候 如果勾选“记住密码”，就存储密码；否则就清除密码    btn.onclick = function () {      if (chk.checked) {        //                记住数据        window.localStorage.setItem('userName', userName.value);        window.localStorage.setItem('pwd', pwd.value);      } else {        //                清除数据        window.localStorage.removeItem('userName');        window.localStorage.removeItem('pwd');      }    }    //        下次登录时，如果记录的有数据，就直接填充    window.onload = function () {      userName.value = window.localStorage.getItem('userName');      pwd.value = window.localStorage.getItem('pwd');    }  </script></body></html></body></html>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <label for="">
+            用户名：
+            <input type="text" class="userName" />
+        </label>
+        <br />
+        <br />
+        <label for="">
+            密 码：
+            <input type="text" class="pwd" />
+        </label>
+        <br />
+        <br />
+        <label for="">
+            <input type="checkbox" class="check" id="" />
+            记住密码
+        </label>
+        <br />
+        <br />
+        <button>登录</button>
+        <script>
+            var userName = document.querySelector('.userName');
+            var pwd = document.querySelector('.pwd');
+            var chk = document.querySelector('.check');
+            var btn = document.querySelector('button');
+            // 当点击登录的时候，如果勾选"记住密码"，就存储密码；否则就清除密码
+            btn.onclick = function () {
+                if (chk.checked) {
+                    // 记住数据
+                    window.localStorage.setItem('userName', userName.value);
+                    window.localStorage.setItem('pwd', pwd.value);
+                } else {
+                    // 清除数据
+                    window.localStorage.removeItem('userName');
+                    window.localStorage.removeItem('pwd');
+                }
+            };
+            // 下次登录时，如果记录的有数据，就直接填充
+            window.onload = function () {
+                userName.value = window.localStorage.getItem('userName');
+                pwd.value = window.localStorage.getItem('pwd');
+            };
+        </script>
+    </body>
+</html>
 ```
 
 ### 应用缓存
@@ -7095,6 +9537,8 @@ HTML5中我们可以轻松的构建一个离线（无网络状态）应用，只
 
 ### `cache manifest` 缓存清单文件
 
+> **⚠️ 重要提示：应用缓存（Application Cache）已被废弃并从所有现代浏览器中移除**（Chrome 88+、Firefox、Safari 均已不再支持）。该技术的现代替代方案是 **Service Worker + Cache API**（配合 manifest 文件，可实现完全可控的离线缓存）。以下内容仅作历史了解，**新项目请不要再使用**。
+
 缓存清单文件中列出了浏览器应缓存，以供离线访问的资源。**推荐使用 `.appcache`作为后缀名，另外还要添加MIME类型。**
 
 **缓存清单文件里的内容怎样写：**
@@ -7107,7 +9551,7 @@ HTML5中我们可以轻松的构建一个离线（无网络状态）应用，只
 
 （4）**FALLBACK**: 换行 当被缓存的文件找不到时的备用资源（当访问不到某个资源时，自动由另外一个资源替换）。
 
-```appcache
+```
 CACHE MANIFESTCACHE:#要缓存的文件./img/1.jpg./img/2.jpg./img/3.jpgNETWORK:#指定必须联网才能访问的文件./js/1.js./js/2.js./js/3.jsFALLBACK:./css/1.css ./css a.css
 ```
 
@@ -7133,18 +9577,19 @@ CACHE MANIFESTCACHE:#要缓存的文件./img/1.jpg./img/2.jpg./img/3.jpgNETWORK:
 方法如下：（注意 screen 是小写）
 
 ```javascript
-	requestFullscreen()   //让元素开启全屏显示	exitFullscreen()     //让元素关闭全屏显示（注意：是 exit，不是 cancle）
+requestFullscreen(); // 让元素开启全屏显示
+exitFullscreen(); // 让元素关闭全屏显示（注意：是 exit，不是 cancel）
 ```
 
-> 备注：不同浏览器 historically 有带前缀的版本，如 `webkitRequestFullscreen`、`mozRequestFullscreen`，兼容写法见下方示例。
+> 备注：**现代浏览器已无需前缀**，直接调用 `requestFullscreen()` / `exitFullscreen()` 即可；早期不同浏览器有带前缀的版本（如 `webkitRequestFullscreen`、`mozRequestFullscreen`），兼容写法见下方示例。
 
 ### 检测当前是否处于全屏状态
 
 方法如下：
 
 ```js
-	document.fullscreenElement   // 全屏时返回当前全屏的元素，非全屏时返回 null
-	// document.fullScreen 是早期草案的写法，已废弃，不要再用
+document.fullscreenElement; // 全屏时返回当前全屏的元素，非全屏时返回 null
+// document.fullScreen 是早期草案的写法，已废弃，不要再用
 ```
 
 
@@ -7158,8 +9603,22 @@ CACHE MANIFESTCACHE:#要缓存的文件./img/1.jpg./img/2.jpg./img/3.jpgNETWORK:
 
 比如说，当元素处于全屏状态时，改变它的样式。这时就可以用到伪类。
 
-```js
-<script>    var box = document.querySelector('.box');    // box.requestFullscreen();       //直接这样写是没有效果的。浏览器的机制，必须要点一下才可以实现全屏功能。    document.querySelector('.box').onclick = function () {        // 开启全屏显示的兼容写法        if (box.requestFullscreen) {          //如果支持全屏，那就让元素全屏            box.requestFullscreen();        } else if (box.webkitRequestFullScreen) {            box.webkitRequestFullScreen();        } else if (box.mozRequestFullScreen) {            box.mozRequestFullScreen();        }    }</script>
+```html
+<script>
+    var box = document.querySelector('.box');
+    // box.requestFullscreen(); // 直接这样写是没有效果的。浏览器的机制，必须要点一下才可以实现全屏功能。
+    document.querySelector('.box').onclick = function () {
+        // 开启全屏显示的兼容写法
+        if (box.requestFullscreen) {
+            // 如果支持全屏，那就让元素全屏
+            box.requestFullscreen();
+        } else if (box.webkitRequestFullScreen) {
+            box.webkitRequestFullScreen();
+        } else if (box.mozRequestFullScreen) {
+            box.mozRequestFullScreen();
+        }
+    };
+</script>
 ```
 
 ## 音频视频
@@ -7167,11 +9626,22 @@ CACHE MANIFESTCACHE:#要缓存的文件./img/1.jpg./img/2.jpg./img/3.jpgNETWORK:
 ### 音频
 
 ```html
-<!--推荐的兼容写法：--><audio controls loop>    <source src="music/yinyue.mp3"/>    <source src="music/yinyue.ogg"/>    <source src="music/yinyue.wav"/>    抱歉，你的浏览器暂不支持此音频格式</audio>
+<!--推荐的兼容写法：-->
+<audio controls loop>
+    <source src="music/yinyue.mp3" />
+    <source src="music/yinyue.ogg" />
+    <source src="music/yinyue.wav" />
+    抱歉，你的浏览器暂不支持此音频格式
+</audio>
 ```
 
 ### 视频
 
 ```html
-    <video controls autoplay>        <source src="video/movie.mp4"/>        <source src="video/movie.ogg"/>        <source src="video/movie.webm"/>        抱歉，不支持此视频    </video>
+<video controls autoplay>
+    <source src="video/movie.mp4" />
+    <source src="video/movie.ogg" />
+    <source src="video/movie.webm" />
+    抱歉，不支持此视频
+</video>
 ```
