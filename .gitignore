@@ -36,3 +36,4 @@ target/
 
 # WorkBuddy 项目数据（本地会话与记忆，不入库）
 .workbuddy-ai/
+.workbuddy/
