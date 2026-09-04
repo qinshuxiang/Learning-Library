@@ -314,6 +314,191 @@
 
     // 4) 站内 .md 链接点击委托（交给全局监听，此处不绑）
     decorateMdLinks(docEl, baseDir, path);
+
+    // 5) 依据已生成 id 的标题，重建右侧目录
+    buildToc();
+  }
+
+  /* ============================================================
+     右侧目录（TOC）：自动提取正文标题 → 点击平滑滚动 → scrollspy 高亮
+     纯原生实现：DOM 遍历 + scroll 事件 + rAF 节流，不依赖任何库
+     ============================================================ */
+  var tocEl = document.getElementById('toc');
+  var tocListEl = document.getElementById('toc-list');
+  var tocFab = document.getElementById('toc-fab');
+  var tocMask = document.getElementById('toc-mask');
+  var tocClose = document.getElementById('toc-close');
+
+  var NARROW_MQ = window.matchMedia ? window.matchMedia('(max-width: 1180px)') : null;
+  function isNarrow() { return NARROW_MQ ? NARROW_MQ.matches : window.innerWidth <= 1180; }
+
+  var tocItems = [];        // { id, level, text, el, target }
+  var SPY_OFFSET = 18;      // 判定“当前章节”的顶部容差
+  var GO_OFFSET = 14;       // 点击滚动后标题距容器顶部的留白
+  var spyLockUntil = 0;     // 程序滚动期间暂时锁定 scrollspy，避免高亮乱跳
+  var spyTarget = -1;       // 程序滚动的目标位置；到达即解锁（比死等超时更准）
+
+  /* 提取标题（H2~H6；H1 由文档标题占用，不进目录） */
+  function collectHeadings() {
+    var hs = docEl.querySelectorAll('h2,h3,h4,h5,h6');
+    var minLevel = 6;
+    var list = [];
+    for (var i = 0; i < hs.length; i++) {
+      var h = hs[i];
+      var lv = parseInt(h.tagName.charAt(1), 10);
+      if (lv < minLevel) minLevel = lv;
+      list.push({ id: h.id, level: lv, text: headingText(h), target: h });
+    }
+    // 以最小层级为基准压平缩进（如文档只有 H3/H4，则 H3 顶格）
+    for (var j = 0; j < list.length; j++) list[j].depth = list[j].level - minLevel;
+    return list;
+  }
+  // 标题文本：去掉尾部追加的锚点符号 ¶
+  function headingText(h) {
+    var clone = h.cloneNode(true);
+    var a = clone.querySelector('.anchor');
+    if (a) a.parentNode.removeChild(a);
+    return (clone.textContent || '').replace(/\s+/g, ' ').trim();
+  }
+
+  function buildToc() {
+    tocItems = collectHeadings();
+    tocListEl.innerHTML = '';
+    spyLockUntil = 0;          // 换文档时清除遗留的滚动锁定
+    spyTarget = -1;
+
+    if (!tocItems.length) {
+      var empty = document.createElement('div');
+      empty.id = 'toc-empty';
+      empty.textContent = '本文无小节标题';
+      tocListEl.appendChild(empty);
+      tocEl.classList.add('is-empty');
+      return;
+    }
+    tocEl.classList.remove('is-empty');
+
+    var frag = document.createDocumentFragment();
+    for (var i = 0; i < tocItems.length; i++) {
+      var it = tocItems[i];
+      var a = document.createElement('a');
+      a.className = 'toc-link toc-lv' + (it.depth + 1);
+      a.href = '#' + it.id;                 // 保留锚点语义；点击被 preventDefault 接管
+      a.textContent = it.text;
+      a.title = it.text;
+      a.dataset.target = it.id;
+      a.setAttribute('role', 'button');
+      frag.appendChild(a);
+      it.el = a;
+    }
+    tocListEl.appendChild(frag);
+    tocListEl.scrollTop = 0;
+    syncTocActive(tocItems[0].id);
+  }
+
+  /* 点击目录项 → 平滑滚动定位（滚动容器是 .content-scroll，不是 window） */
+  tocListEl.addEventListener('click', function (e) {
+    var a = e.target.closest ? e.target.closest('.toc-link') : null;
+    if (!a || !tocListEl.contains(a)) return;
+    e.preventDefault();
+    var id = a.dataset.target;
+    var h = document.getElementById(id);
+    if (!h) return;
+    var cTop = contentScroll.getBoundingClientRect().top;
+    var hTop = h.getBoundingClientRect().top;
+    var top = contentScroll.scrollTop + (hTop - cTop) - GO_OFFSET;
+    spyTarget = top;                          // 到达目标即解锁
+    spyLockUntil = Date.now() + 900;          // 超时兜底
+    syncTocActive(id);
+    smoothScrollTo(top);
+    if (isNarrow()) closeTocDrawer();
+  });
+
+  function smoothScrollTo(top) {
+    if (top < 0) top = 0;
+    spyTarget = top;                          // 以 clamp 后的最终值为准
+    try {
+      contentScroll.scrollTo({ top: top, behavior: 'smooth' });
+    } catch (err) {
+      contentScroll.scrollTop = top;           // 不支持平滑滚动时直接定位
+    }
+  }
+
+  /* scrollspy：滚动时高亮当前所在章节 */
+  var spyTicking = false;
+  contentScroll.addEventListener('scroll', function () {
+    if (spyTicking) return;
+    spyTicking = true;
+    window.requestAnimationFrame(function () {
+      spyTicking = false;
+      // 程序滚动已到位 → 立即解锁并同步高亮
+      if (spyTarget >= 0 && Math.abs(contentScroll.scrollTop - spyTarget) <= 2) {
+        spyTarget = -1; spyLockUntil = 0; updateSpy(); return;
+      }
+      if (Date.now() < spyLockUntil) return;
+      updateSpy();
+    });
+  }, { passive: true });
+
+  function updateSpy() {
+    if (!tocItems.length) return;
+    var cTop = contentScroll.getBoundingClientRect().top;
+    var current = tocItems[0];
+    for (var i = 0; i < tocItems.length; i++) {
+      var t = tocItems[i].target;
+      if (!t || !t.isConnected) continue;
+      if (t.getBoundingClientRect().top - cTop - SPY_OFFSET <= 0) current = tocItems[i];
+      else break;
+    }
+    // 滚到底部时强制高亮最后一项，避免末节因高度不足永不激活
+    if (contentScroll.scrollTop + contentScroll.clientHeight >= contentScroll.scrollHeight - 4) {
+      current = tocItems[tocItems.length - 1];
+    }
+    syncTocActive(current.id);
+  }
+
+  function syncTocActive(id) {
+    if (!id) return;
+    for (var i = 0; i < tocItems.length; i++) {
+      if (tocItems[i].el) tocItems[i].el.classList.toggle('active', tocItems[i].id === id);
+    }
+    var act = tocListEl.querySelector('.toc-link.active');
+    if (!act) return;
+    // 让高亮项始终留在目录可视区内（目录自身可独立滚动）
+    var lr = tocListEl.getBoundingClientRect();
+    var ar = act.getBoundingClientRect();
+    if (ar.top < lr.top + 4) tocListEl.scrollTop -= (lr.top + 4 - ar.top);
+    else if (ar.bottom > lr.bottom - 4) tocListEl.scrollTop += (ar.bottom - (lr.bottom - 4));
+  }
+
+  /* 目录的展开 / 收起：宽屏为常驻栏可手动收起，窄屏自动折叠为抽屉 */
+  function openTocDrawer() {
+    if (isNarrow()) {
+      tocEl.classList.add('open');
+      tocMask.hidden = false;
+    } else {
+      document.body.classList.remove('toc-off');
+    }
+  }
+  function closeTocDrawer() {
+    if (isNarrow()) {
+      tocEl.classList.remove('open');
+      tocMask.hidden = true;
+    } else {
+      document.body.classList.add('toc-off');
+    }
+  }
+  tocFab.addEventListener('click', function () { openTocDrawer(); });
+  tocClose.addEventListener('click', function () { closeTocDrawer(); });
+  tocMask.addEventListener('click', function () { closeTocDrawer(); });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && tocEl.classList.contains('open')) closeTocDrawer();
+  });
+  // 视口变化时清理抽屉状态（如从窄屏拉宽）
+  if (NARROW_MQ && NARROW_MQ.addEventListener) {
+    NARROW_MQ.addEventListener('change', function () {
+      tocEl.classList.remove('open');
+      tocMask.hidden = true;
+    });
   }
 
   /* 让正文中的 .md 相对链接指向本地文档；其余链接保留但阻止默认跳转并提示 */

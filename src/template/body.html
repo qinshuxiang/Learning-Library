@@ -10,7 +10,7 @@
     <div id="search-results" hidden></div>
   </aside>
 
-  <!-- 右侧正文 -->
+  <!-- 中间正文 -->
   <main id="content">
     <div class="content-scroll">
       <article id="doc" class="markdown-body"></article>
@@ -20,4 +20,21 @@
       </footer>
     </div>
   </main>
+
+  <!-- 右侧目录（Table of Contents，由正文标题自动提取） -->
+  <aside id="toc" aria-label="文章目录">
+    <div id="toc-head">
+      <span id="toc-title">目录</span>
+      <button id="toc-close" type="button" title="收起目录" aria-label="收起目录">×</button>
+    </div>
+    <nav id="toc-list"></nav>
+  </aside>
 </div>
+
+<!-- 窄屏 / 目录收起时的悬浮按钮 -->
+<button id="toc-fab" type="button" title="打开目录" aria-label="打开目录">
+  <svg viewBox="0 0 16 16" width="17" height="17" aria-hidden="true" fill="currentColor">
+    <path d="M2 3.5h12v1.2H2zM4.4 7.4h9.6v1.2H4.4zM6.8 11.3h7.2v1.2H6.8z"/>
+  </svg>
+</button>
+<div id="toc-mask" hidden></div>
