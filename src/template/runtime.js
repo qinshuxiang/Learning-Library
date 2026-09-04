@@ -91,7 +91,7 @@
       frow.dataset.path = node.path;
       frow.title = node.path;
       var fi = document.createElement('span');
-      fi.className = 'ico f'; fi.textContent = '\u25CF';
+      fi.className = 'ico f'; fi.textContent = '\u2013';
       var fn = document.createElement('span');
       fn.className = 'nm'; fn.textContent = stripNum(node.name);
       frow.appendChild(fi); frow.appendChild(fn);

@@ -79,7 +79,7 @@ body {
   font-size: 11px; transition: transform .12s ease; }
 .trow.folder .ico.caret { color: #777; }
 .trow.open > .ico.caret { transform: rotate(90deg); }
-.trow.file .ico.f { color: #a99; font-size: 13px; }
+.trow.file .ico.f { width: 12px; flex: 0 0 12px; color: #a99; font-size: 13px; line-height: 1; transform: translateY(-1px); }
 .trow .nm { overflow: hidden; text-overflow: ellipsis; }
 .trow .badge {
   margin-left: auto; padding: 0 6px; border-radius: 9px;
