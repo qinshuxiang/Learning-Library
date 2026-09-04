@@ -6,8 +6,7 @@ node_modules/
 jspm_packages/
 
 # 构建产物与输出目录
-# 单文件浏览器产物（由 npm run build 生成）
-学习库.html
+# 注意：学习库.html 是本项目主要交付物，需纳入版本控制（不忽略）
 dist/
 build/
 out/
