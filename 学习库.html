@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="zh-CN" data-page-node-id="H3tjg40EhJZbp72jWtHDf9">
+<head data-page-node-id="QN36GaJGGWkpPsMgH3hPrV">
+<meta charset="utf-8" data-page-node-id="HfxcvDWvxD5DoWqBGAJJuY">
+<meta name="viewport" content="width=device-width, initial-scale=1" data-page-node-id="Pwu3ofGeovP1bAdVwN9pOA">
 <title>学习资料库 · Markdown 阅读器</title>
 
 <style>/* ============================================================
@@ -44,6 +44,11 @@ body {
   padding: 0 3px; border-radius: 4px; }
 #search-clear:hover { color: #666; }
 #searchbox.none-clear #search-clear { display: none; }
+/* Ctrl/Cmd+F 快捷键提示：有输入内容时让位给清空按钮 */
+#search-kbd { flex: 0 0 auto; font-size: 10px; line-height: 1.4; color: #a6adb6;
+  border: 1px solid #e2e6eb; border-radius: 4px; padding: 0 4px;
+  background: #fbfbfc; font-family: inherit; user-select: none; cursor: default; }
+#searchbox.has-text #search-kbd { display: none; }
 
 #tree {
   flex: 1; overflow-y: auto; padding: 4px 6px 30px;
@@ -462,55 +467,56 @@ body.toc-off #toc { flex-basis: 0; width: 0; border-left: 0; }
 }
 </style>
 </head>
-<body>
-<div id="app">
+<body data-page-node-id="7KbNco5tBcZQVBkFI9C1o0">
+<div id="app" data-page-node-id="nPPPsvRHK0bnqCL6C6aByC">
   <!-- 左侧栏 -->
-  <aside id="sidebar">
-    <div id="searchbox">
-      <svg class="sicon" viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path fill="currentColor" d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 1 0-.7.7l.27.28v.79l5 4.99L20.49 19zm-6 0A4.5 4.5 0 1 1 14 9.5 4.5 4.5 0 0 1 9.5 14z"/></svg>
-      <input id="search" type="search" placeholder="搜索文件名 / 正文…" autocomplete="off" spellcheck="false">
-      <span id="search-clear" title="清空">×</span>
+  <aside id="sidebar" data-page-node-id="4gMIuyf7OCnjS1JPubtpNc">
+    <div id="searchbox" data-page-node-id="9ZcVxFfn5JXgq8zeT0NVB8">
+      <svg class="sicon" viewBox="0 0 24 24" width="15" height="15" aria-hidden="true" data-page-node-id="sFQpsZqjIcjpCWvfPEgxcX"><path fill="currentColor" d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 1 0-.7.7l.27.28v.79l5 4.99L20.49 19zm-6 0A4.5 4.5 0 1 1 14 9.5 4.5 4.5 0 0 1 9.5 14z" data-page-node-id="7MWP1u1iG7Nj1zfwC5NtUa"/></svg>
+      <input id="search" type="search" placeholder="搜索文件名 / 正文…" title="站内搜索（快捷键：Ctrl / Cmd + F；再按一次交还浏览器查找）" autocomplete="off" spellcheck="false" data-page-node-id="1zsOP13KOaW6WVDtAAwg75">
+      <kbd id="search-kbd" title="站内搜索快捷键" data-page-node-id="YCnclcsb7TuD3FDvLRofzr">Ctrl F</kbd>
+      <span id="search-clear" title="清空" data-page-node-id="dG3SgG0E4DKnbKjpGlf0FM">×</span>
     </div>
-    <div id="tree"></div>
-    <div id="search-results" hidden></div>
+    <div id="tree" data-page-node-id="ZOHOJxRzTdzTr8guZ0qZRA"></div>
+    <div id="search-results" hidden data-page-node-id="zDMJV4yShygn72KVUQSekj"></div>
   </aside>
 
   <!-- 中间正文 -->
-  <main id="content">
-    <div class="content-scroll">
+  <main id="content" data-page-node-id="Ydn3PFeWuZ7FG3mf0vfHEg">
+    <div class="content-scroll" data-page-node-id="MHyXBHBno3a1kI2fgVkrab">
       <!-- 搜索结果导航条（始终位于正文之前，sticky 钉在视口顶部） -->
-      <nav id="hl-nav" role="region" aria-label="搜索结果导航" hidden>
-        <span class="hl-tag">搜索</span>
-        <span id="hl-count">0 / 0</span>
-        <button id="hl-prev" type="button" title="上一个匹配（快捷键：Shift+Enter 或 Alt+↑）">‹ 上一个</button>
-        <button id="hl-next" type="button" title="下一个匹配（快捷键：Enter 或 Alt+↓）">下一个 ›</button>
-        <button id="hl-close" type="button" title="退出搜索高亮（清空搜索框亦可）">退出</button>
+      <nav id="hl-nav" role="region" aria-label="搜索结果导航" hidden data-page-node-id="mfQqCsRfAHwDzuqE7q3cRc">
+        <span class="hl-tag" data-page-node-id="Tr2ogYQUJOaGGVPySNPBWh">搜索</span>
+        <span id="hl-count" data-page-node-id="YvL5tjfihfEyh7eHfszIpe">0 / 0</span>
+        <button id="hl-prev" type="button" title="上一个匹配（快捷键：Shift+Enter 或 Alt+↑）" data-page-node-id="cXUZJp5KzwgNzve8zvAkFo">‹ 上一个</button>
+        <button id="hl-next" type="button" title="下一个匹配（快捷键：Enter 或 Alt+↓）" data-page-node-id="5jJaFH7skD8NIyhjZFsRnW">下一个 ›</button>
+        <button id="hl-close" type="button" title="退出搜索高亮（清空搜索框亦可）" data-page-node-id="mBqxc7YEPzLAubrjZ9ARaP">退出</button>
       </nav>
-      <article id="doc" class="markdown-body"></article>
-      <footer id="foot">
-        <span id="foot-path"></span>
-        <span id="foot-meta"></span>
+      <article id="doc" class="markdown-body" data-page-node-id="EnpAYyko5CaGQvDYdbSDce"></article>
+      <footer id="foot" data-page-node-id="Ph60ERy4mkLL19qmBy9Xlv">
+        <span id="foot-path" data-page-node-id="JtpHmBwu8MnzYgEm0YkZ9Z"></span>
+        <span id="foot-meta" data-page-node-id="VYZC50kIxPCDZXZr6mAcPT"></span>
       </footer>
     </div>
   </main>
 
   <!-- 右侧目录（Table of Contents，由正文标题自动提取） -->
-  <aside id="toc" aria-label="文章目录">
-    <div id="toc-head">
-      <span id="toc-title">目录</span>
-      <button id="toc-close" type="button" title="收起目录" aria-label="收起目录">×</button>
+  <aside id="toc" aria-label="文章目录" data-page-node-id="19MaKBWgxBJWwgi37yfc1J">
+    <div id="toc-head" data-page-node-id="mDoDgnaE0iYLtBpqfmbR6B">
+      <span id="toc-title" data-page-node-id="sJ1yKLjIy12GsJ87Rf4rbG">目录</span>
+      <button id="toc-close" type="button" title="收起目录" aria-label="收起目录" data-page-node-id="SfrRFTfN85CPA7VCwu00xZ">×</button>
     </div>
-    <nav id="toc-list"></nav>
+    <nav id="toc-list" data-page-node-id="ckQEHBc8KxmZfUCnM0IiAF"></nav>
   </aside>
 </div>
 
 <!-- 窄屏 / 目录收起时的悬浮按钮 -->
-<button id="toc-fab" type="button" title="打开目录" aria-label="打开目录">
-  <svg viewBox="0 0 16 16" width="17" height="17" aria-hidden="true" fill="currentColor">
-    <path d="M2 3.5h12v1.2H2zM4.4 7.4h9.6v1.2H4.4zM6.8 11.3h7.2v1.2H6.8z"/>
+<button id="toc-fab" type="button" title="打开目录" aria-label="打开目录" data-page-node-id="H5cHBGCKdyhLVBsZxAjPa1">
+  <svg viewBox="0 0 16 16" width="17" height="17" aria-hidden="true" fill="currentColor" data-page-node-id="zPioj894b4wFPEaXwxhepi">
+    <path d="M2 3.5h12v1.2H2zM4.4 7.4h9.6v1.2H4.4zM6.8 11.3h7.2v1.2H6.8z" data-page-node-id="wntOo2GSu80K0Hfc1Snbkw"/>
   </svg>
 </button>
-<div id="toc-mask" hidden></div>
+<div id="toc-mask" hidden data-page-node-id="MPaTjibvfc38wlChe4VBba"></div>
 
 <script>/**
  * marked v12.0.2 - a markdown parser
@@ -2115,6 +2121,7 @@ className:"string",begin:/'/,end:/'/},{match:/\\'/},t]}}})()
   var resEl = document.getElementById('search-results');
   var searchInput = document.getElementById('search');
   var searchClear = document.getElementById('search-clear');
+  var searchBox = document.getElementById('searchbox');
 
   function countDocs(node) {
     if (node.type === 'file') return 1;
@@ -2657,6 +2664,7 @@ className:"string",begin:/'/,end:/'/},{match:/\\'/},t]}}})()
     treeEl.hidden = q.length > 0;
     resEl.hidden = q.length === 0;
     searchClear.style.visibility = q.length ? 'visible' : 'hidden';
+    if (searchBox) searchBox.classList.toggle('has-text', q.length > 0);
     if (!q) {
       // 清空查询：搜索结果面板收起、正文高亮清除、导航条隐藏
       refreshDocHighlight();
@@ -2727,6 +2735,48 @@ className:"string",begin:/'/,end:/'/},{match:/\\'/},t]}}})()
     searchInput.value = '';
     runSearch();
     searchInput.focus();
+  });
+
+  /* Ctrl / Cmd + F：接管浏览器查找，定位到站内搜索框
+     规则：
+       1) 焦点已在搜索框内 → 不拦截，交还浏览器自带查找（逃生通道）
+       2) 正文有选中的短语 → 带入搜索框并立即执行搜索
+       3) 其余一律阻止浏览器默认查找，聚焦并全选，便于直接改写关键词 */
+  function focusSearchBox(prefill) {
+    if (prefill) {
+      searchInput.value = prefill;
+      runSearch();
+    }
+    searchInput.focus();
+    searchInput.select();
+  }
+  document.addEventListener('keydown', function (e) {
+    var key = (e.key || '').toLowerCase();
+    var isFind = (e.ctrlKey || e.metaKey) && !e.altKey && (key === 'f' || (e.keyCode || e.which) === 70);
+    if (!isFind) return;
+    if (e.target === searchInput) return;            // 已在搜索框：放行浏览器查找
+    e.preventDefault();
+    var sel = '';
+    try {
+      var s = window.getSelection();
+      if (s && !s.isCollapsed) sel = String(s).replace(/\s+/g, ' ').trim();
+    } catch (err) { sel = ''; }
+    focusSearchBox(sel && sel.length <= 120 ? sel : '');
+  });
+
+  // 搜索框内快捷键：Enter 下一个匹配、Shift+Enter 上一个、Esc 清空并退出高亮
+  searchInput.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter') {
+      if (!currentHL.marks.length) return;
+      e.preventDefault();
+      gotoOffset(e.shiftKey ? -1 : +1);
+    } else if (e.key === 'Escape') {
+      e.preventDefault();
+      searchInput.value = '';
+      runSearch();
+      refreshDocHighlight();
+      searchInput.blur();
+    }
   });
   resEl.addEventListener('click', function (e) {
     var it = e.target.closest ? e.target.closest('.sresult') : null;

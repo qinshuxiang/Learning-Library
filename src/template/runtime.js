@@ -69,6 +69,7 @@
   var resEl = document.getElementById('search-results');
   var searchInput = document.getElementById('search');
   var searchClear = document.getElementById('search-clear');
+  var searchBox = document.getElementById('searchbox');
 
   function countDocs(node) {
     if (node.type === 'file') return 1;
@@ -611,6 +612,7 @@
     treeEl.hidden = q.length > 0;
     resEl.hidden = q.length === 0;
     searchClear.style.visibility = q.length ? 'visible' : 'hidden';
+    if (searchBox) searchBox.classList.toggle('has-text', q.length > 0);
     if (!q) {
       // 清空查询：搜索结果面板收起、正文高亮清除、导航条隐藏
       refreshDocHighlight();
@@ -681,6 +683,48 @@
     searchInput.value = '';
     runSearch();
     searchInput.focus();
+  });
+
+  /* Ctrl / Cmd + F：接管浏览器查找，定位到站内搜索框
+     规则：
+       1) 焦点已在搜索框内 → 不拦截，交还浏览器自带查找（逃生通道）
+       2) 正文有选中的短语 → 带入搜索框并立即执行搜索
+       3) 其余一律阻止浏览器默认查找，聚焦并全选，便于直接改写关键词 */
+  function focusSearchBox(prefill) {
+    if (prefill) {
+      searchInput.value = prefill;
+      runSearch();
+    }
+    searchInput.focus();
+    searchInput.select();
+  }
+  document.addEventListener('keydown', function (e) {
+    var key = (e.key || '').toLowerCase();
+    var isFind = (e.ctrlKey || e.metaKey) && !e.altKey && (key === 'f' || (e.keyCode || e.which) === 70);
+    if (!isFind) return;
+    if (e.target === searchInput) return;            // 已在搜索框：放行浏览器查找
+    e.preventDefault();
+    var sel = '';
+    try {
+      var s = window.getSelection();
+      if (s && !s.isCollapsed) sel = String(s).replace(/\s+/g, ' ').trim();
+    } catch (err) { sel = ''; }
+    focusSearchBox(sel && sel.length <= 120 ? sel : '');
+  });
+
+  // 搜索框内快捷键：Enter 下一个匹配、Shift+Enter 上一个、Esc 清空并退出高亮
+  searchInput.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter') {
+      if (!currentHL.marks.length) return;
+      e.preventDefault();
+      gotoOffset(e.shiftKey ? -1 : +1);
+    } else if (e.key === 'Escape') {
+      e.preventDefault();
+      searchInput.value = '';
+      runSearch();
+      refreshDocHighlight();
+      searchInput.blur();
+    }
   });
   resEl.addEventListener('click', function (e) {
     var it = e.target.closest ? e.target.closest('.sresult') : null;
