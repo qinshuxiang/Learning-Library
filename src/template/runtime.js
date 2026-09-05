@@ -253,6 +253,7 @@
     updateFoot(path);
     refreshActiveInResults();
     contentScroll.scrollTop = 0;
+    refreshDocHighlight(true);   // 新打开文档：自动跳到首个命中
 
     // 记录 hash（不触发重复渲染）
     if (location.hash !== ('#doc=' + encodeURIComponent(path))) {
@@ -606,10 +607,15 @@
 
   function runSearch() {
     var q = searchInput.value.trim().toLowerCase();
+    searchQuery = q;
     treeEl.hidden = q.length > 0;
     resEl.hidden = q.length === 0;
     searchClear.style.visibility = q.length ? 'visible' : 'hidden';
-    if (!q) return;
+    if (!q) {
+      // 清空查询：搜索结果面板收起、正文高亮清除、导航条隐藏
+      refreshDocHighlight();
+      return;
+    }
 
     resEl.innerHTML = '';
     var hits = searchDocs(q);
@@ -624,28 +630,31 @@
       empty.id = 'search-empty';
       empty.innerHTML = '未找到与 “' + escapeHtml(q) + '” 相关的文档';
       resEl.appendChild(empty);
-      return;
-    }
-    for (var i = 0; i < hits.length; i++) {
-      var path = hits[i];
-      var item = document.createElement('div');
-      item.className = 'sresult' + (path === currentOpenPath ? ' active' : '');
-      item.dataset.path = path;
-      var nm = document.createElement('div');
-      nm.className = 'r-name';
-      nm.innerHTML = highlight(escapeHtml(docDisplayName(path)), escReg(q));
-      var pt = document.createElement('div');
-      pt.className = 'r-path'; pt.textContent = dirOf(path) ? dirOf(path) + '/' : '';
-      item.appendChild(nm); item.appendChild(pt);
-      // 正文片段（若命中正文）
-      if (docIdxLookup(path).name.indexOf(q) === -1) {
-        var sn = document.createElement('div');
-        sn.className = 'r-snippet';
-        sn.innerHTML = makeSnippet(docIdxLookup(path).text, q);
-        item.appendChild(sn);
+    } else {
+      for (var i = 0; i < hits.length; i++) {
+        var path = hits[i];
+        var item = document.createElement('div');
+        item.className = 'sresult' + (path === currentOpenPath ? ' active' : '');
+        item.dataset.path = path;
+        var nm = document.createElement('div');
+        nm.className = 'r-name';
+        nm.innerHTML = highlight(escapeHtml(docDisplayName(path)), escReg(q));
+        var pt = document.createElement('div');
+        pt.className = 'r-path'; pt.textContent = dirOf(path) ? dirOf(path) + '/' : '';
+        item.appendChild(nm); item.appendChild(pt);
+        // 正文片段（若命中正文）
+        if (docIdxLookup(path).name.indexOf(q) === -1) {
+          var sn = document.createElement('div');
+          sn.className = 'r-snippet';
+          sn.innerHTML = makeSnippet(docIdxLookup(path).text, q);
+          item.appendChild(sn);
+        }
+        resEl.appendChild(item);
       }
-      resEl.appendChild(item);
     }
+
+    // 关键词已变更：对当前打开文档重算高亮（无论有无结果均刷新，确保切关键词时旧 mark 全部清除）
+    refreshDocHighlight();
   }
   var currentOpenPath = '';
   function refreshActiveInResults() {
@@ -678,6 +687,186 @@
     if (!it || !it.dataset.path) return;
     if (DOCS[it.dataset.path]) selectDoc(it.dataset.path);
   });
+
+  /* ============================================================
+     搜索高亮（HTML 安全 + 状态化导航条）
+     设计原则：仅修改文本节点、不触碰元素；TreeWalker 跳过
+     script/style/textarea 与已存在的 .ll-hl，确保多次刷新无累积。
+     状态由 searchQuery 与 currentHL 联合持有；切文档/清关键词时清空。
+     ============================================================ */
+  var NAV = {
+    wrap: null, count: null,
+    prev: null, next: null, close: null
+  };
+  var currentHL = { marks: [], idx: -1, total: 0, query: '' };
+  var searchQuery = '';
+  var HL_LIMIT = 5000;          // 单文档最大高亮个数，避免极端查询卡死
+
+  function initHighlightNav() {
+    NAV.wrap = document.getElementById('hl-nav');
+    NAV.count = document.getElementById('hl-count');
+    NAV.prev = document.getElementById('hl-prev');
+    NAV.next = document.getElementById('hl-next');
+    NAV.close = document.getElementById('hl-close');
+    if (!NAV.wrap) return;
+    NAV.prev.addEventListener('click', function () { gotoOffset(-1); });
+    NAV.next.addEventListener('click', function () { gotoOffset(+1); });
+    NAV.close.addEventListener('click', function () {
+      searchInput.value = '';
+      runSearch();                       // 会同步清空 searchQuery 并刷新高亮
+      refreshDocHighlight();
+      searchInput.focus();
+    });
+    // 键盘：聚焦于正文区域时支持 Enter / Shift+Enter / Alt+↑↓
+    document.addEventListener('keydown', function (e) {
+      if (e.target && (e.target === searchInput || (e.target.closest && e.target.closest('input,textarea')))) return;
+      if (!currentHL.marks.length) return;
+      if (e.altKey && e.key === 'ArrowDown') { gotoOffset(+1); e.preventDefault(); }
+      else if (e.altKey && e.key === 'ArrowUp') { gotoOffset(-1); e.preventDefault(); }
+      else if (e.key === 'Enter' && !e.shiftKey && !e.ctrlKey && !e.metaKey) { gotoOffset(+1); e.preventDefault(); }
+      else if (e.key === 'Enter' && e.shiftKey) { gotoOffset(-1); e.preventDefault(); }
+    });
+  }
+
+  function clearHighlight() {
+    var marks = docEl.querySelectorAll('.ll-hl');
+    for (var i = 0; i < marks.length; i++) {
+      var m = marks[i];
+      var parent = m.parentNode;
+      if (!parent) continue;
+      while (m.firstChild) parent.insertBefore(m.firstChild, m);
+      parent.removeChild(m);
+    }
+    currentHL.marks = [];
+    currentHL.idx = -1;
+    currentHL.total = 0;
+    currentHL.query = '';
+  }
+
+  function applyHighlight(query) {
+    if (!query) return [];
+    var pattern = new RegExp(escReg(query), 'gi');
+    var marks = [];
+    var counter = 0;
+
+    var walker = document.createTreeWalker(docEl, NodeFilter.SHOW_TEXT, {
+      acceptNode: function (n) {
+        var p = n.parentNode;
+        while (p && p !== docEl) {
+          var tn = p.nodeName;
+          if (tn === 'SCRIPT' || tn === 'STYLE' || tn === 'NOSCRIPT' || tn === 'TEXTAREA') {
+            return NodeFilter.FILTER_REJECT;
+          }
+          if (p.classList && p.classList.contains('ll-hl')) return NodeFilter.FILTER_REJECT;
+          p = p.parentNode;
+        }
+        if (!n.nodeValue || !/\S/.test(n.nodeValue)) return NodeFilter.FILTER_SKIP;
+        pattern.lastIndex = 0;
+        if (!pattern.test(n.nodeValue)) return NodeFilter.FILTER_SKIP;
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+
+    var nodes = [];
+    var node;
+    while ((node = walker.nextNode())) nodes.push(node);
+
+    for (var i = 0; i < nodes.length; i++) {
+      if (counter >= HL_LIMIT) break;
+      var tn = nodes[i];
+      if (!tn.parentNode) continue;
+      var text = tn.nodeValue;
+      pattern.lastIndex = 0;
+      var frag = document.createDocumentFragment();
+      var last = 0;
+      var m;
+      while ((m = pattern.exec(text)) !== null) {
+        if (m.index > last) {
+          frag.appendChild(document.createTextNode(text.slice(last, m.index)));
+        }
+        var mk = document.createElement('mark');
+        mk.className = 'll-hl';
+        mk.dataset.hlIdx = String(counter);
+        mk.textContent = m[0];
+        frag.appendChild(mk);
+        marks.push(mk);
+        counter++;
+        last = pattern.lastIndex;
+        if (m[0].length === 0) pattern.lastIndex++;
+        if (counter >= HL_LIMIT) break;
+      }
+      if (last < text.length) {
+        frag.appendChild(document.createTextNode(text.slice(last)));
+      }
+      if (!frag.childNodes.length) continue;
+      if (frag.childNodes.length === 1 && frag.firstChild.nodeType === 3) continue;
+      var parent = tn.parentNode;
+      parent.replaceChild(frag, tn);
+    }
+    return marks;
+  }
+
+  function showNav(total) {
+    if (!NAV.wrap) return;
+    NAV.wrap.hidden = false;
+    NAV.count.textContent = '1 / ' + total;
+    NAV.prev.disabled = false;
+    NAV.next.disabled = false;
+  }
+  function hideNav() {
+    if (!NAV.wrap) return;
+    NAV.wrap.hidden = true;
+    NAV.prev.disabled = true;
+    NAV.next.disabled = true;
+  }
+
+  function goToMatch(idx, opts) {
+    if (!currentHL.marks.length) return;
+    var n = currentHL.marks.length;
+    var i = ((idx % n) + n) % n;
+    var mark = currentHL.marks[i];
+    if (currentHL.idx >= 0 && currentHL.marks[currentHL.idx] && currentHL.marks[currentHL.idx] !== mark) {
+      currentHL.marks[currentHL.idx].classList.remove('current');
+    }
+    mark.classList.add('current');
+    currentHL.idx = i;
+    NAV.count.textContent = (i + 1) + ' / ' + n;
+
+    var cTop = contentScroll.getBoundingClientRect().top;
+    var mTop = mark.getBoundingClientRect().top;
+    var navH = (!NAV.wrap || NAV.wrap.hidden) ? 0 : NAV.wrap.offsetHeight;
+    var target = contentScroll.scrollTop + (mTop - cTop) - GO_OFFSET - navH;
+    if (target < 0) target = 0;
+    var behavior = (opts && opts.smooth) ? 'smooth' : 'auto';
+    try { contentScroll.scrollTo({ top: target, behavior: behavior }); }
+    catch (err) { contentScroll.scrollTop = target; }
+  }
+  function gotoOffset(delta) {
+    if (!currentHL.marks.length) return;
+    goToMatch(currentHL.idx + delta, { smooth: true });
+  }
+
+  function refreshDocHighlight(autoJump) {
+    clearHighlight();
+    if (!searchQuery) { hideNav(); return; }
+    var marks = applyHighlight(searchQuery);
+    if (!marks.length) { hideNav(); return; }
+    currentHL.marks = marks;
+    currentHL.total = marks.length;
+    currentHL.query = searchQuery;
+    showNav(marks.length);
+    // 仅在打开新文档时自动跳到首个命中；输入式过滤不应打断阅读位置
+    if (autoJump) {
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () { goToMatch(0, { smooth: false }); });
+      });
+    } else {
+      // 仅把首个匹配设为当前项，但不滚动（用户可点导航条主动跳转）
+      currentHL.idx = 0;
+      marks[0].classList.add('current');
+      NAV.count.textContent = '1 / ' + marks.length;
+    }
+  }
 
   /* ---------------- 全局点击委托（站内 md 链接 / 页内锚点） ---------------- */
   docEl.addEventListener('click', function (e) {
@@ -714,6 +903,7 @@
 
   /* ---------------- 启动 ---------------- */
   function start() {
+    initHighlightNav();
     buildTree();
     var init = routeFromHash();
     var docToOpen = init || (DOCS['编写规范.md'] ? '编写规范.md' : firstDoc(TREE));

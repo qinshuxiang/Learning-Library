@@ -13,6 +13,14 @@
   <!-- 中间正文 -->
   <main id="content">
     <div class="content-scroll">
+      <!-- 搜索结果导航条（始终位于正文之前，sticky 钉在视口顶部） -->
+      <nav id="hl-nav" role="region" aria-label="搜索结果导航" hidden>
+        <span class="hl-tag">搜索</span>
+        <span id="hl-count">0 / 0</span>
+        <button id="hl-prev" type="button" title="上一个匹配（快捷键：Shift+Enter 或 Alt+↑）">‹ 上一个</button>
+        <button id="hl-next" type="button" title="下一个匹配（快捷键：Enter 或 Alt+↓）">下一个 ›</button>
+        <button id="hl-close" type="button" title="退出搜索高亮（清空搜索框亦可）">退出</button>
+      </nav>
       <article id="doc" class="markdown-body"></article>
       <footer id="foot">
         <span id="foot-path"></span>

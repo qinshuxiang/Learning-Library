@@ -330,6 +330,52 @@ body.toc-off #toc-fab { display: flex; }
 .markdown-body mark { background-color: #ebffeb; border-radius: 2px; padding: 2px 4px; margin: 0 2px; color: #222; font-weight: 500; }
 .markdown-body del { padding: 1px 2px; }
 
+/* 搜索词高亮（与正文 mark 不同：由右侧 nav 条控制当前项） */
+.markdown-body .ll-hl {
+  background: #ffe79a; color: #6b4a00;
+  border-radius: 2px; padding: 0 1px; margin: 0 1px;
+  box-shadow: 0 0 0 0 transparent;
+  transition: background-color .15s ease, box-shadow .15s ease;
+}
+.markdown-body .ll-hl.current {
+  background: #f08400; color: #fff;
+  box-shadow: 0 0 0 2px rgba(240, 132, 0, .25);
+  border-radius: 2px;
+}
+/* 在浅金色（非当前）高亮下确保滚动偏移不会被深色边框吃掉首字符 */
+.markdown-body .ll-hl { scroll-margin-top: 56px; }
+
+/* 搜索结果导航条（sticky，始终位于正文之上，滚动时不被遮挡） */
+#hl-nav {
+  position: sticky; top: 0; z-index: 4;
+  display: flex; align-items: center; gap: 8px;
+  margin: 0 -40px 0;
+  padding: 8px 40px;
+  background: rgba(255, 248, 228, .97);
+  border-bottom: 1px solid #f0d9a0;
+  font-size: 13px; color: #7a5a13;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+#hl-nav[hidden] { display: none; }
+#hl-nav .hl-tag {
+  font-weight: 700; letter-spacing: .04em;
+  padding: 2px 6px; border-radius: 3px;
+  background: #f08400; color: #fff; font-size: 11px;
+}
+#hl-nav #hl-count { font-variant-numeric: tabular-nums; font-weight: 600; }
+#hl-nav button {
+  border: 1px solid #d9b86d; background: #fff;
+  color: #6b4a00; cursor: pointer; font-size: 12.5px; line-height: 1;
+  padding: 5px 10px; border-radius: 4px;
+  font-family: inherit;
+  transition: background-color .12s ease, color .12s ease, border-color .12s ease;
+}
+#hl-nav button:hover { background: #fff3d6; border-color: #c79a3f; }
+#hl-nav button:active { background: #fbe3a3; }
+#hl-nav button:disabled { color: #c2b48a; cursor: not-allowed; background: #fffaf0; border-color: #ecd9a9; }
+#hl-nav #hl-close { margin-left: auto; }
+
 /* 任务列表复选框 */
 .markdown-body li.task-item, .markdown-body li.task-list-item { list-style: none; }
 .markdown-body li.task-item input[type="checkbox"], .markdown-body li.task-list-item input[type="checkbox"] {
