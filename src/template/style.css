@@ -235,6 +235,20 @@ body.toc-off #toc-fab { display: flex; }
 .markdown-body strong { padding: 0 1px; }
 .markdown-body em { padding: 0 5px 0 2px; }
 
+/* 图片：与正文同宽上限、居中、浅描边；图注紧跟其后 */
+.markdown-body img {
+  display: block; max-width: 100%; height: auto; margin: 1.1rem auto .4rem;
+  border: 1px solid #eceff1; border-radius: 3px; background: #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,.08);
+}
+.markdown-body img + blockquote { margin-top: .2rem; text-align: center; border-left: 0; }
+.markdown-body img + blockquote p { color: #7f8c9a; font-size: .92rem; }
+.markdown-body img.img-missing { display: none; }
+.markdown-body .img-missing-tip {
+  display: block; margin: .9rem 0; padding: 10px 12px; border-radius: 3px;
+  border: 1px dashed #e0b4b4; background: #fdf6f6; color: #b5534f; font-size: .92rem;
+}
+
 .markdown-body p, .markdown-body blockquote, .markdown-body ul,
 .markdown-body ol, .markdown-body dl, .markdown-body table { margin: .8em 0; }
 
@@ -314,7 +328,7 @@ body.toc-off #toc-fab { display: flex; }
 .markdown-body li { line-height: 1.6rem; }
 .markdown-body ol li { padding-left: .5rem; }
 
-/* 表格（编写规范.md 等元文档使用） */
+/* 表格（规范.md 等元文档使用） */
 .markdown-body table { border-collapse: collapse; border-spacing: 0; padding: 0; word-break: initial; }
 .markdown-body tr { border-top: 1px solid #dfe2e5; margin: 0; padding: 0; }
 .markdown-body tr:nth-child(2n), .markdown-body thead { background-color: #fafafa; }

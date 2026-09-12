@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 430" width="720" height="430" role="img" aria-label="子网划分示意：把一个 C 类网段划分为四个子网">
+  <rect width="720" height="430" fill="#ffffff"/>
+  <text x="360" y="26" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="15" font-weight="600" fill="#2c3e50">子网划分：把 192.168.1.0/24 借 2 位主机号，划分为 4 个 /26 子网</text>
+
+  <!-- 32 位地址结构 -->
+  <text x="40" y="62" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12.5" font-weight="600" fill="#5b6b7b">地址结构（共 32 位）</text>
+
+  <rect x="40" y="74" width="480" height="44" rx="4" fill="#eaf7f1" stroke="#b7e0cd"/>
+  <rect x="520" y="74" width="60" height="44" fill="#fdf5e6" stroke="#f0d9a8"/>
+  <rect x="580" y="74" width="100" height="44" rx="4" fill="#eef3fb" stroke="#c3d6f0"/>
+  <text x="280" y="101" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="13" font-weight="600" fill="#2c6e54">网络号：192.168.1（24 位，前 3 段）</text>
+  <text x="550" y="94" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" font-weight="600" fill="#9a6b16">子网号</text>
+  <text x="550" y="111" text-anchor="middle" font-family="'PingFang SC',sans-serif" font-size="11" fill="#b08a3c">2 位</text>
+  <text x="630" y="94" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" font-weight="600" fill="#2b5d9e">主机号</text>
+  <text x="630" y="111" text-anchor="middle" font-family="'PingFang SC',sans-serif" font-size="11" fill="#6a86ac">6 位 → 64 个地址</text>
+
+  <text x="40" y="142" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#8a97a4">子网掩码由 /24 变为 /26，即 255.255.255.0 → 255.255.255.192（二进制 11000000，高 2 位为子网号）</text>
+
+  <!-- 四个子网 -->
+  <g font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12.5">
+    <rect x="40" y="164" width="640" height="46" rx="6" fill="#f3fbf7" stroke="#cfeade"/>
+    <text x="58" y="184" font-weight="600" fill="#2c6e54">子网一：192.168.1.0/26</text>
+    <text x="58" y="202" fill="#5b6b7b">子网号 00　网络地址 .0　广播地址 .63　可用主机 192.168.1.1 至 192.168.1.62</text>
+
+    <rect x="40" y="218" width="640" height="46" rx="6" fill="#f3fbf7" stroke="#cfeade"/>
+    <text x="58" y="238" font-weight="600" fill="#2c6e54">子网二：192.168.1.64/26</text>
+    <text x="58" y="256" fill="#5b6b7b">子网号 01　网络地址 .64　广播地址 .127　可用主机 192.168.1.65 至 192.168.1.126</text>
+
+    <rect x="40" y="272" width="640" height="46" rx="6" fill="#f3fbf7" stroke="#cfeade"/>
+    <text x="58" y="292" font-weight="600" fill="#2c6e54">子网三：192.168.1.128/26</text>
+    <text x="58" y="310" fill="#5b6b7b">子网号 10　网络地址 .128　广播地址 .191　可用主机 192.168.1.129 至 192.168.1.190</text>
+
+    <rect x="40" y="326" width="640" height="46" rx="6" fill="#f3fbf7" stroke="#cfeade"/>
+    <text x="58" y="346" font-weight="600" fill="#2c6e54">子网四：192.168.1.192/26</text>
+    <text x="58" y="364" fill="#5b6b7b">子网号 11　网络地址 .192　广播地址 .255　可用主机 192.168.1.193 至 192.168.1.254</text>
+  </g>
+
+  <text x="360" y="396" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#8a97a4">每个子网有 2 的 6 次方等于 64 个地址，减去网络地址与广播地址，可用主机 62 个；四个子网共 248 个可用地址</text>
+  <text x="360" y="418" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#8a97a4">子网号全 0 与全 1 在 CIDR 下已可用（早期 RFC 950 曾保留），块大小的起点总是掩码边界值的整数倍</text>
+</svg>

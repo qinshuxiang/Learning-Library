@@ -7,6 +7,7 @@
   var DATA = JSON.parse(document.getElementById('ll-data').textContent);
   var TREE = DATA.tree;      // 递归 {type,name,path/children}
   var DOCS = DATA.docs;      // relPath(含空格/CJK) -> 原始 markdown
+  var ASSETS = DATA.assets || {};  // relPath(相对 doc/) -> data URI 内嵌图片
 
   // marked 配置
   marked.setOptions({ gfm: true, breaks: false, langPrefix: 'language-' });
@@ -294,7 +295,7 @@
       }
     });
 
-    // 3) 任务列表复选框（编写规范.md 自检清单）。marked 在 gfm 下会原生产出
+    // 3) 任务列表复选框（规范.md 自检清单）。marked 在 gfm 下会原生产出
     //    <li class="task-list-item"><input...>，故此处仅在未产出 input 时兜底。
     docEl.querySelectorAll('li').forEach(function (li) {
       if (li.querySelector('input[type="checkbox"]')) return;
@@ -317,8 +318,37 @@
     // 4) 站内 .md 链接点击委托（交给全局监听，此处不绑）
     decorateMdLinks(docEl, baseDir, path);
 
+    // 4.5) 图片：把 ./assets/x.jpg 之类的相对路径解析为内嵌 data URI
+    resolveImages(docEl, baseDir, path);
+
     // 5) 依据已生成 id 的标题，重建右侧目录
     buildToc();
+  }
+
+  /* 图片解析：正文里的相对图片路径 → 构建期内嵌的 data URI
+     规范 S8 约定图片位于 主题名/assets/，正文写法为 ./assets/文件名 */
+  function resolveImages(container, baseDir) {
+    var imgs = container.querySelectorAll('img');
+    for (var i = 0; i < imgs.length; i++) {
+      var img = imgs[i];
+      var src = img.getAttribute('src') || '';
+      if (/^(data:|https?:|blob:)/i.test(src)) continue;
+      var t = src.split('#')[0].split('?')[0];
+      try { t = decodeURIComponent(t); } catch (e) {}
+      var key = resolveRel(baseDir, t);
+      if (ASSETS[key]) {
+        img.setAttribute('src', ASSETS[key]);
+        img.setAttribute('loading', 'lazy');
+        img.setAttribute('decoding', 'async');
+      } else {
+        img.classList.add('img-missing');
+        img.removeAttribute('src');
+        var tip = document.createElement('span');
+        tip.className = 'img-missing-tip';
+        tip.textContent = '图片缺失：' + t + (img.getAttribute('alt') ? '（' + img.getAttribute('alt') + '）' : '');
+        img.parentNode.insertBefore(tip, img.nextSibling);
+      }
+    }
   }
 
   /* ============================================================
@@ -950,7 +980,8 @@
     initHighlightNav();
     buildTree();
     var init = routeFromHash();
-    var docToOpen = init || (DOCS['编写规范.md'] ? '编写规范.md' : firstDoc(TREE));
+    var docToOpen = init || (DOCS['目录.md'] ? '目录.md' :
+      (DOCS['规范.md'] ? '规范.md' : firstDoc(TREE)));
     if (init) expandTo(init);
     openDoc(docToOpen);   // openDoc 内 replaceState 记 hash，不触发 hashchange
     var i = setTimeout(function () {

@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 470" width="720" height="470" role="img" aria-label="图的邻接矩阵与邻接表存储示意">
+  <rect width="720" height="470" fill="#ffffff"/>
+  <text x="360" y="26" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="15" font-weight="600" fill="#2c3e50">图的两种存储结构：邻接矩阵与邻接表</text>
+
+  <!-- 左：无向图 -->
+  <rect x="24" y="52" width="230" height="250" rx="8" fill="#fbfcfd" stroke="#e3e8ee"/>
+  <text x="139" y="74" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12.5" font-weight="600" fill="#5b6b7b">无向图 G（4 个顶点、3 条边）</text>
+
+  <g stroke="#9fb3c8" stroke-width="2">
+    <line x1="95" y1="125" x2="190" y2="125"/>
+    <line x1="95" y1="125" x2="95" y2="235"/>
+    <line x1="190" y1="125" x2="190" y2="235"/>
+  </g>
+  <g font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12.5" text-anchor="middle">
+    <circle cx="95" cy="125" r="20" fill="#eaf7f1" stroke="#7cc6a5" stroke-width="1.6"/><text x="95" y="130" fill="#24674d" font-weight="600">V1</text>
+    <circle cx="190" cy="125" r="20" fill="#eaf7f1" stroke="#7cc6a5" stroke-width="1.6"/><text x="190" y="130" fill="#24674d" font-weight="600">V2</text>
+    <circle cx="95" cy="235" r="20" fill="#eaf7f1" stroke="#7cc6a5" stroke-width="1.6"/><text x="95" y="240" fill="#24674d" font-weight="600">V3</text>
+    <circle cx="190" cy="235" r="20" fill="#eaf7f1" stroke="#7cc6a5" stroke-width="1.6"/><text x="190" y="240" fill="#24674d" font-weight="600">V4</text>
+  </g>
+
+  <!-- 右上：邻接矩阵 -->
+  <text x="316" y="74" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12.5" font-weight="600" fill="#5b6b7b">邻接矩阵 A（n × n）</text>
+
+  <g font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" text-anchor="middle">
+    <!-- 表头 -->
+    <rect x="316" y="86" width="34" height="30" fill="#f4f5f7" stroke="#dfe4ea"/>
+    <rect x="350" y="86" width="34" height="30" fill="#eef3fb" stroke="#c3d6f0"/><text x="367" y="106" fill="#2b5d9e">V1</text>
+    <rect x="384" y="86" width="34" height="30" fill="#eef3fb" stroke="#c3d6f0"/><text x="401" y="106" fill="#2b5d9e">V2</text>
+    <rect x="418" y="86" width="34" height="30" fill="#eef3fb" stroke="#c3d6f0"/><text x="435" y="106" fill="#2b5d9e">V3</text>
+    <rect x="452" y="86" width="34" height="30" fill="#eef3fb" stroke="#c3d6f0"/><text x="469" y="106" fill="#2b5d9e">V4</text>
+
+    <rect x="316" y="116" width="34" height="30" fill="#eef3fb" stroke="#c3d6f0"/><text x="333" y="136" fill="#2b5d9e">V1</text>
+    <rect x="350" y="116" width="34" height="30" fill="#fff" stroke="#dfe4ea"/><text x="367" y="136" fill="#5b6b7b">0</text>
+    <rect x="384" y="116" width="34" height="30" fill="#eaf7f1" stroke="#b7e0cd"/><text x="401" y="136" fill="#24674d" font-weight="600">1</text>
+    <rect x="418" y="116" width="34" height="30" fill="#eaf7f1" stroke="#b7e0cd"/><text x="435" y="136" fill="#24674d" font-weight="600">1</text>
+    <rect x="452" y="116" width="34" height="30" fill="#fff" stroke="#dfe4ea"/><text x="469" y="136" fill="#5b6b7b">0</text>
+
+    <rect x="316" y="146" width="34" height="30" fill="#eef3fb" stroke="#c3d6f0"/><text x="333" y="166" fill="#2b5d9e">V2</text>
+    <rect x="350" y="146" width="34" height="30" fill="#eaf7f1" stroke="#b7e0cd"/><text x="367" y="166" fill="#24674d" font-weight="600">1</text>
+    <rect x="384" y="146" width="34" height="30" fill="#fff" stroke="#dfe4ea"/><text x="401" y="166" fill="#5b6b7b">0</text>
+    <rect x="418" y="146" width="34" height="30" fill="#fff" stroke="#dfe4ea"/><text x="435" y="166" fill="#5b6b7b">0</text>
+    <rect x="452" y="146" width="34" height="30" fill="#eaf7f1" stroke="#b7e0cd"/><text x="469" y="166" fill="#24674d" font-weight="600">1</text>
+
+    <rect x="316" y="176" width="34" height="30" fill="#eef3fb" stroke="#c3d6f0"/><text x="333" y="196" fill="#2b5d9e">V3</text>
+    <rect x="350" y="176" width="34" height="30" fill="#eaf7f1" stroke="#b7e0cd"/><text x="367" y="196" fill="#24674d" font-weight="600">1</text>
+    <rect x="384" y="176" width="34" height="30" fill="#fff" stroke="#dfe4ea"/><text x="401" y="196" fill="#5b6b7b">0</text>
+    <rect x="418" y="176" width="34" height="30" fill="#fff" stroke="#dfe4ea"/><text x="435" y="196" fill="#5b6b7b">0</text>
+    <rect x="452" y="176" width="34" height="30" fill="#fff" stroke="#dfe4ea"/><text x="469" y="196" fill="#5b6b7b">0</text>
+
+    <rect x="316" y="206" width="34" height="30" fill="#eef3fb" stroke="#c3d6f0"/><text x="333" y="226" fill="#2b5d9e">V4</text>
+    <rect x="350" y="206" width="34" height="30" fill="#fff" stroke="#dfe4ea"/><text x="367" y="226" fill="#5b6b7b">0</text>
+    <rect x="384" y="206" width="34" height="30" fill="#eaf7f1" stroke="#b7e0cd"/><text x="401" y="226" fill="#24674d" font-weight="600">1</text>
+    <rect x="418" y="206" width="34" height="30" fill="#fff" stroke="#dfe4ea"/><text x="435" y="226" fill="#5b6b7b">0</text>
+    <rect x="452" y="206" width="34" height="30" fill="#fff" stroke="#dfe4ea"/><text x="469" y="226" fill="#5b6b7b">0</text>
+  </g>
+  <text x="316" y="256" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11.5" fill="#8a97a4">无向图的矩阵沿主对角线对称，对角元全为 0</text>
+  <text x="316" y="274" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11.5" fill="#8a97a4">查边快（O(1)），但空间固定 O(n²)，稀疏图浪费</text>
+
+  <!-- 右下：邻接表 -->
+  <text x="316" y="306" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12.5" font-weight="600" fill="#5b6b7b">邻接表（顶点表 + 边表）</text>
+
+  <g font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11.5" text-anchor="middle">
+    <rect x="316" y="318" width="40" height="26" rx="4" fill="#eef3fb" stroke="#c3d6f0"/><text x="336" y="335" fill="#2b5d9e">V1</text>
+    <rect x="368" y="318" width="40" height="26" rx="4" fill="#fff" stroke="#dfe4ea"/><text x="388" y="335" fill="#5b6b7b">2</text>
+    <rect x="418" y="318" width="40" height="26" rx="4" fill="#fff" stroke="#dfe4ea"/><text x="438" y="335" fill="#5b6b7b">3</text>
+    <text x="358" y="335" fill="#b0b7bf">→</text><text x="408" y="335" fill="#b0b7bf">→</text><text x="462" y="335" fill="#b0b7bf">∧</text>
+
+    <rect x="316" y="350" width="40" height="26" rx="4" fill="#eef3fb" stroke="#c3d6f0"/><text x="336" y="367" fill="#2b5d9e">V2</text>
+    <rect x="368" y="350" width="40" height="26" rx="4" fill="#fff" stroke="#dfe4ea"/><text x="388" y="367" fill="#5b6b7b">1</text>
+    <rect x="418" y="350" width="40" height="26" rx="4" fill="#fff" stroke="#dfe4ea"/><text x="438" y="367" fill="#5b6b7b">4</text>
+    <text x="358" y="367" fill="#b0b7bf">→</text><text x="408" y="367" fill="#b0b7bf">→</text><text x="462" y="367" fill="#b0b7bf">∧</text>
+
+    <rect x="316" y="382" width="40" height="26" rx="4" fill="#eef3fb" stroke="#c3d6f0"/><text x="336" y="399" fill="#2b5d9e">V3</text>
+    <rect x="368" y="382" width="40" height="26" rx="4" fill="#fff" stroke="#dfe4ea"/><text x="388" y="399" fill="#5b6b7b">1</text>
+    <text x="358" y="399" fill="#b0b7bf">→</text><text x="412" y="399" fill="#b0b7bf">∧</text>
+
+    <rect x="316" y="414" width="40" height="26" rx="4" fill="#eef3fb" stroke="#c3d6f0"/><text x="336" y="431" fill="#2b5d9e">V4</text>
+    <rect x="368" y="414" width="40" height="26" rx="4" fill="#fff" stroke="#dfe4ea"/><text x="388" y="431" fill="#5b6b7b">2</text>
+    <text x="358" y="431" fill="#b0b7bf">→</text><text x="412" y="431" fill="#b0b7bf">∧</text>
+  </g>
+
+  <text x="500" y="335" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11.5" fill="#8a97a4">顶点表 vertexes</text>
+  <text x="500" y="353" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11.5" fill="#8a97a4">保存全部顶点，</text>
+  <text x="500" y="371" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11.5" fill="#8a97a4">同时决定遍历起点</text>
+  <text x="500" y="399" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11.5" fill="#8a97a4">∧ 表示链表结束</text>
+  <text x="500" y="431" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11.5" fill="#8a97a4">空间 O(n + e)，稀疏图首选</text>
+
+  <text x="360" y="458" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11.5" fill="#8a97a4">无向图中每条边在邻接表里出现两次（Vi 的表中有 Vj，Vj 的表中也有 Vi）</text>
+</svg>

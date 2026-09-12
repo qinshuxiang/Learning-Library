@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 440" width="720" height="440" role="img" aria-label="进程状态转换图">
+  <defs>
+    <marker id="ps-g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#3aa76d"/>
+    </marker>
+    <marker id="ps-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#d99b23"/>
+    </marker>
+    <marker id="ps-b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#3a7bd5"/>
+    </marker>
+    <marker id="ps-h" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#8a97a4"/>
+    </marker>
+  </defs>
+
+  <rect width="720" height="440" fill="#ffffff"/>
+  <text x="360" y="26" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="15" font-weight="600" fill="#2c3e50">进程状态转换图（含挂起状态）</text>
+
+  <g font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="13" text-anchor="middle">
+    <rect x="40" y="60" width="120" height="46" rx="8" fill="#f4f5f7" stroke="#dfe4ea"/><text x="100" y="88" fill="#5b6b7b">创建态</text>
+    <rect x="250" y="60" width="130" height="46" rx="8" fill="#eaf7f1" stroke="#b7e0cd"/><text x="315" y="88" fill="#2c6e54" font-weight="600">就绪态</text>
+    <rect x="480" y="60" width="130" height="46" rx="8" fill="#e6f6ef" stroke="#9fd6bd"/><text x="545" y="88" fill="#24674d" font-weight="600">运行态</text>
+    <rect x="250" y="180" width="130" height="46" rx="8" fill="#eef3fb" stroke="#c3d6f0" stroke-dasharray="5 4"/><text x="315" y="208" fill="#2b5d9e">就绪挂起</text>
+    <rect x="40" y="300" width="130" height="46" rx="8" fill="#eef3fb" stroke="#c3d6f0" stroke-dasharray="5 4"/><text x="105" y="328" fill="#2b5d9e">阻塞挂起</text>
+    <rect x="250" y="300" width="130" height="46" rx="8" fill="#fdf5e6" stroke="#f0d9a8"/><text x="315" y="328" fill="#9a6b16" font-weight="600">阻塞态</text>
+    <rect x="480" y="300" width="130" height="46" rx="8" fill="#f4f5f7" stroke="#dfe4ea"/><text x="545" y="328" fill="#5b6b7b">终止态</text>
+  </g>
+
+  <!-- 创建 → 就绪 -->
+  <line x1="160" y1="83" x2="244" y2="83" stroke="#8a97a4" stroke-width="1.6" marker-end="url(#ps-h)"/>
+  <text x="202" y="72" text-anchor="middle" font-family="'PingFang SC',sans-serif" font-size="11" fill="#8a97a4">创建完成</text>
+
+  <!-- 就绪 ⇄ 运行 -->
+  <line x1="380" y1="83" x2="474" y2="83" stroke="#3aa76d" stroke-width="1.8" marker-end="url(#ps-g)"/>
+  <text x="427" y="72" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11.5" font-weight="600" fill="#2c6e54">① 调度</text>
+  <path d="M 495,106 C 495,152 390,152 390,108" fill="none" stroke="#3aa76d" stroke-width="1.8" marker-end="url(#ps-g)"/>
+  <text x="442" y="166" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11.5" fill="#2c6e54">② 时间片到 / 被抢占</text>
+
+  <!-- 运行 → 阻塞 -->
+  <path d="M 545,106 C 545,240 400,250 382,322" fill="none" stroke="#d99b23" stroke-width="1.8" marker-end="url(#ps-a)"/>
+  <text x="556" y="180" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11.5" fill="#9a6b16">③ 等待事件</text>
+  <text x="556" y="196" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11.5" fill="#9a6b16">（I/O 请求、等资源）</text>
+
+  <!-- 阻塞 → 就绪 -->
+  <path d="M 258,296 C 200,250 205,160 258,112" fill="none" stroke="#d99b23" stroke-width="1.8" marker-end="url(#ps-a)"/>
+  <text x="150" y="200" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11.5" fill="#9a6b16">④ 事件发生</text>
+
+  <!-- 运行 → 终止 -->
+  <line x1="580" y1="106" x2="580" y2="294" stroke="#8a97a4" stroke-width="1.6" marker-end="url(#ps-h)"/>
+  <text x="592" y="230" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11.5" fill="#8a97a4">⑤ 结束 / 异常退出</text>
+
+  <!-- 就绪 ⇄ 就绪挂起 -->
+  <line x1="280" y1="106" x2="280" y2="175" stroke="#3a7bd5" stroke-width="1.6" stroke-dasharray="4 3" marker-end="url(#ps-b)"/>
+  <line x1="350" y1="175" x2="350" y2="111" stroke="#3a7bd5" stroke-width="1.6" stroke-dasharray="4 3" marker-end="url(#ps-b)"/>
+  <text x="272" y="145" text-anchor="end" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11.5" fill="#2b5d9e">挂起</text>
+  <text x="358" y="145" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11.5" fill="#2b5d9e">激活</text>
+
+  <!-- 阻塞 ⇄ 阻塞挂起 -->
+  <line x1="170" y1="312" x2="245" y2="312" stroke="#3a7bd5" stroke-width="1.6" stroke-dasharray="4 3" marker-end="url(#ps-b)"/>
+  <line x1="245" y1="335" x2="175" y2="335" stroke="#3a7bd5" stroke-width="1.6" stroke-dasharray="4 3" marker-end="url(#ps-b)"/>
+  <text x="207" y="302" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11.5" fill="#2b5d9e">挂起</text>
+  <text x="207" y="355" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11.5" fill="#2b5d9e">激活</text>
+
+  <text x="360" y="388" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#8a97a4">唯一进入运行态的通道是「就绪 → 运行」的调度；阻塞只能由运行态主动进入，不能自己回到运行态</text>
+  <text x="360" y="410" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#8a97a4">灰底为不可逆或单向状态，蓝色虚线框为挂起态（不占内存，可由进程自身或系统主动发起）</text>
+</svg>

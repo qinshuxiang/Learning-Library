@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 540" width="720" height="540" role="img" aria-label="TCP 四次挥手时序图">
+  <defs>
+    <marker id="tc-g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#3aa76d"/>
+    </marker>
+    <marker id="tc-b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#3a7bd5"/>
+    </marker>
+  </defs>
+
+  <rect width="720" height="540" fill="#ffffff"/>
+  <text x="360" y="26" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="15" font-weight="600" fill="#2c3e50">TCP 四次挥手（连接释放）</text>
+
+  <rect x="80" y="44" width="140" height="30" rx="6" fill="#eaf7f1" stroke="#b7e0cd"/>
+  <text x="150" y="64" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="13.5" font-weight="600" fill="#2c6e54">客户端（主动关闭）</text>
+  <rect x="500" y="44" width="140" height="30" rx="6" fill="#eef3fb" stroke="#c3d6f0"/>
+  <text x="570" y="64" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="13.5" font-weight="600" fill="#2b5d9e">服务器（被动关闭）</text>
+
+  <line x1="150" y1="74" x2="150" y2="500" stroke="#c8d2db" stroke-width="1.5" stroke-dasharray="4 4"/>
+  <line x1="570" y1="74" x2="570" y2="500" stroke="#c8d2db" stroke-width="1.5" stroke-dasharray="4 4"/>
+  <circle cx="150" cy="88" r="3.2" fill="#3aa76d"/>
+  <circle cx="570" cy="88" r="3.2" fill="#3a7bd5"/>
+
+  <rect x="26" y="86" width="110" height="24" rx="12" fill="#e6f6ef" stroke="#9fd6bd"/>
+  <text x="81" y="102" text-anchor="middle" font-family="'PingFang SC',sans-serif" font-size="11.5" font-weight="600" fill="#24674d">ESTABLISHED</text>
+  <rect x="584" y="86" width="110" height="24" rx="12" fill="#e6f6ef" stroke="#9fd6bd"/>
+  <text x="639" y="102" text-anchor="middle" font-family="'PingFang SC',sans-serif" font-size="11.5" font-weight="600" fill="#24674d">ESTABLISHED</text>
+
+  <line x1="150" y1="106" x2="566" y2="144" stroke="#3aa76d" stroke-width="1.8" marker-end="url(#tc-g)"/>
+  <text x="358" y="118" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12.5" font-weight="600" fill="#2c6e54">① FIN=1, seq=u（客户端发完数据，请求关闭）</text>
+
+  <rect x="26" y="140" width="110" height="24" rx="12" fill="#eaf7f1" stroke="#b7e0cd"/>
+  <text x="81" y="156" text-anchor="middle" font-family="'PingFang SC',sans-serif" font-size="11.5" fill="#2c6e54">FIN-WAIT-1</text>
+
+  <line x1="570" y1="182" x2="154" y2="220" stroke="#3a7bd5" stroke-width="1.8" marker-end="url(#tc-b)"/>
+  <text x="362" y="194" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12.5" font-weight="600" fill="#2b5d9e">② ACK=1, seq=v, ack=u+1</text>
+
+  <rect x="584" y="182" width="110" height="24" rx="12" fill="#eef3fb" stroke="#c3d6f0"/>
+  <text x="639" y="198" text-anchor="middle" font-family="'PingFang SC',sans-serif" font-size="11.5" fill="#2b5d9e">CLOSE-WAIT</text>
+  <rect x="26" y="222" width="110" height="24" rx="12" fill="#eaf7f1" stroke="#b7e0cd"/>
+  <text x="81" y="238" text-anchor="middle" font-family="'PingFang SC',sans-serif" font-size="11.5" fill="#2c6e54">FIN-WAIT-2</text>
+
+  <rect x="150" y="258" width="420" height="30" rx="6" fill="#f7f9fb" stroke="#e3e8ee"/>
+  <text x="360" y="278" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12.5" fill="#5b6b7b">半关闭（half-close）：客户端不再发送数据，服务器仍可继续发送剩余数据</text>
+
+  <line x1="570" y1="302" x2="154" y2="340" stroke="#3a7bd5" stroke-width="1.8" marker-end="url(#tc-b)"/>
+  <text x="362" y="314" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12.5" font-weight="600" fill="#2b5d9e">③ FIN=1, ACK=1, seq=w, ack=u+1（服务器数据发完）</text>
+
+  <rect x="584" y="302" width="110" height="24" rx="12" fill="#eef3fb" stroke="#c3d6f0"/>
+  <text x="639" y="318" text-anchor="middle" font-family="'PingFang SC',sans-serif" font-size="11.5" fill="#2b5d9e">LAST-ACK</text>
+
+  <line x1="150" y1="364" x2="566" y2="402" stroke="#3aa76d" stroke-width="1.8" marker-end="url(#tc-g)"/>
+  <text x="358" y="376" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12.5" font-weight="600" fill="#2c6e54">④ ACK=1, seq=u+1, ack=w+1</text>
+
+  <rect x="26" y="378" width="110" height="24" rx="12" fill="#fdf5e6" stroke="#f0d9a8"/>
+  <text x="81" y="394" text-anchor="middle" font-family="'PingFang SC',sans-serif" font-size="11.5" font-weight="600" fill="#9a6b16">TIME-WAIT</text>
+  <rect x="584" y="420" width="110" height="24" rx="12" fill="#f4f5f7" stroke="#dfe4ea"/>
+  <text x="639" y="436" text-anchor="middle" font-family="'PingFang SC',sans-serif" font-size="11.5" fill="#5b6b7b">CLOSED</text>
+
+  <line x1="150" y1="404" x2="150" y2="456" stroke="#c8d2db" stroke-width="1.5" stroke-dasharray="3 3"/>
+  <rect x="26" y="456" width="110" height="24" rx="12" fill="#f4f5f7" stroke="#dfe4ea"/>
+  <text x="81" y="472" text-anchor="middle" font-family="'PingFang SC',sans-serif" font-size="11.5" fill="#5b6b7b">CLOSED</text>
+  <text x="188" y="470" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#9a6b16">等待 2MSL 后进入 CLOSED（保证最后的 ACK 能重传、旧报文段在网络中消亡）</text>
+
+  <text x="360" y="514" text-anchor="middle" font-family="'PingFang SC',sans-serif" font-size="12" fill="#8a97a4">服务器收到 FIN 时可能还有数据要发，故 ACK 与 FIN 分两次发送，这就是挥手比握手多一次的原因</text>
+</svg>

@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" width="720" height="420" role="img" aria-label="五段指令流水线时空图">
+  <rect width="720" height="420" fill="#ffffff"/>
+  <text x="360" y="26" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="15" font-weight="600" fill="#2c3e50">五段指令流水线的时空图</text>
+  <text x="360" y="48" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#8a97a4">横轴为时钟周期，纵轴为指令；每条指令依次经过 取指 → 译码 → 执行 → 访存 → 写回</text>
+
+  <!-- 网格 -->
+  <g stroke="#eef1f4" stroke-width="1">
+    <line x1="100" y1="64" x2="580" y2="64"/>
+    <line x1="100" y1="284" x2="580" y2="284"/>
+  </g>
+  <g font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11.5" text-anchor="middle" fill="#8a97a4">
+    <text x="124" y="80">t1</text><text x="172" y="80">t2</text><text x="220" y="80">t3</text><text x="268" y="80">t4</text><text x="316" y="80">t5</text>
+    <text x="364" y="80">t6</text><text x="412" y="80">t7</text><text x="460" y="80">t8</text><text x="508" y="80">t9</text><text x="556" y="80">t10</text>
+  </g>
+  <g font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" text-anchor="end" fill="#5b6b7b">
+    <text x="88" y="128">I1</text><text x="88" y="168">I2</text><text x="88" y="208">I3</text><text x="88" y="248">I4</text><text x="88" y="288">I5</text>
+  </g>
+
+  <defs>
+    <style>
+      .cif  { fill:#eaf7f1; stroke:#b7e0cd; }
+      .cid  { fill:#eef3fb; stroke:#c3d6f0; }
+      .cex  { fill:#fdf5e6; stroke:#f0d9a8; }
+      .cmem { fill:#f5effb; stroke:#dcc9f0; }
+      .cwb  { fill:#f4f5f7; stroke:#dfe4ea; }
+    </style>
+  </defs>
+
+  <g stroke-width="1.2">
+    <rect class="cif"  x="100" y="104" width="48" height="40" rx="3"/>
+    <rect class="cid"  x="148" y="104" width="48" height="40" rx="3"/>
+    <rect class="cex"  x="196" y="104" width="48" height="40" rx="3"/>
+    <rect class="cmem" x="244" y="104" width="48" height="40" rx="3"/>
+    <rect class="cwb"  x="292" y="104" width="48" height="40" rx="3"/>
+
+    <rect class="cif"  x="148" y="144" width="48" height="40" rx="3"/>
+    <rect class="cid"  x="196" y="144" width="48" height="40" rx="3"/>
+    <rect class="cex"  x="244" y="144" width="48" height="40" rx="3"/>
+    <rect class="cmem" x="292" y="144" width="48" height="40" rx="3"/>
+    <rect class="cwb"  x="340" y="144" width="48" height="40" rx="3"/>
+
+    <rect class="cif"  x="196" y="184" width="48" height="40" rx="3"/>
+    <rect class="cid"  x="244" y="184" width="48" height="40" rx="3"/>
+    <rect class="cex"  x="292" y="184" width="48" height="40" rx="3"/>
+    <rect class="cmem" x="340" y="184" width="48" height="40" rx="3"/>
+    <rect class="cwb"  x="388" y="184" width="48" height="40" rx="3"/>
+
+    <rect class="cif"  x="244" y="224" width="48" height="40" rx="3"/>
+    <rect class="cid"  x="292" y="224" width="48" height="40" rx="3"/>
+    <rect class="cex"  x="340" y="224" width="48" height="40" rx="3"/>
+    <rect class="cmem" x="388" y="224" width="48" height="40" rx="3"/>
+    <rect class="cwb"  x="436" y="224" width="48" height="40" rx="3"/>
+
+    <rect class="cif"  x="292" y="264" width="48" height="40" rx="3"/>
+    <rect class="cid"  x="340" y="264" width="48" height="40" rx="3"/>
+    <rect class="cex"  x="388" y="264" width="48" height="40" rx="3"/>
+    <rect class="cmem" x="436" y="264" width="48" height="40" rx="3"/>
+    <rect class="cwb"  x="484" y="264" width="48" height="40" rx="3"/>
+  </g>
+
+  <g font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10.5" text-anchor="middle" fill="#34495e">
+    <text x="124" y="129">取指</text><text x="172" y="129">译码</text><text x="220" y="129">执行</text><text x="268" y="129">访存</text><text x="316" y="129">写回</text>
+    <text x="172" y="169">取指</text><text x="220" y="169">译码</text><text x="268" y="169">执行</text><text x="316" y="169">访存</text><text x="364" y="169">写回</text>
+    <text x="220" y="209">取指</text><text x="268" y="209">译码</text><text x="316" y="209">执行</text><text x="364" y="209">访存</text><text x="412" y="209">写回</text>
+    <text x="268" y="249">取指</text><text x="316" y="249">译码</text><text x="364" y="249">执行</text><text x="412" y="249">访存</text><text x="460" y="249">写回</text>
+    <text x="316" y="289">取指</text><text x="364" y="289">译码</text><text x="412" y="289">执行</text><text x="460" y="289">访存</text><text x="508" y="289">写回</text>
+  </g>
+
+  <!-- 填满区标注 -->
+  <rect x="292" y="96" width="240" height="216" rx="6" fill="none" stroke="#7cc6a5" stroke-width="1.4" stroke-dasharray="6 4"/>
+  <text x="412" y="326" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11.5" fill="#2c6e54">虚线区：流水线填满后每个周期都有一条指令完成，进入稳定吞吐状态</text>
+
+  <!-- 图例 -->
+  <g font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11.5" fill="#5b6b7b">
+    <rect class="cif"  x="100" y="352" width="14" height="14" rx="3"/><text x="120" y="363">取指 IF</text>
+    <rect class="cid"  x="186" y="352" width="14" height="14" rx="3"/><text x="206" y="363">译码 ID</text>
+    <rect class="cex"  x="272" y="352" width="14" height="14" rx="3"/><text x="292" y="363">执行 EX</text>
+    <rect class="cmem" x="358" y="352" width="14" height="14" rx="3"/><text x="378" y="363">访存 MEM</text>
+    <rect class="cwb"  x="462" y="352" width="14" height="14" rx="3"/><text x="482" y="363">写回 WB</text>
+  </g>
+
+  <text x="360" y="392" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#8a97a4">5 条指令顺序执行需 25 个周期，流水线只需 9 个周期；流水线并不能缩短单条指令的时延，只提高吞吐率</text>
+  <text x="360" y="412" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#8a97a4">周期被最长一段决定，各段越均衡效率越高；数据相关、控制相关与结构相关都会使流水线停顿（气泡）</text>
+</svg>

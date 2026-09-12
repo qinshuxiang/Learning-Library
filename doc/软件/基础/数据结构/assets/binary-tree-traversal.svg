@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 410" width="720" height="410" role="img" aria-label="二叉树及先序、中序、后序、层次遍历顺序">
+  <rect width="720" height="410" fill="#ffffff"/>
+  <text x="360" y="26" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="15" font-weight="600" fill="#2c3e50">同一棵二叉树的四种遍历顺序</text>
+
+  <rect x="30" y="46" width="400" height="300" rx="8" fill="#fbfcfd" stroke="#e3e8ee"/>
+  <text x="230" y="68" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12.5" font-weight="600" fill="#5b6b7b">二叉树</text>
+
+  <g stroke="#9fb3c8" stroke-width="2">
+    <line x1="240" y1="100" x2="160" y2="180"/>
+    <line x1="240" y1="100" x2="340" y2="180"/>
+    <line x1="150" y1="196" x2="115" y2="266"/>
+    <line x1="165" y1="192" x2="212" y2="262"/>
+    <line x1="340" y1="196" x2="400" y2="264"/>
+  </g>
+  <g font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="13.5" text-anchor="middle" font-weight="600">
+    <circle cx="240" cy="94" r="24" fill="#e6f6ef" stroke="#7cc6a5" stroke-width="1.8"/><text x="240" y="99" fill="#24674d">A</text>
+    <circle cx="155" cy="188" r="24" fill="#eaf7f1" stroke="#7cc6a5" stroke-width="1.8"/><text x="155" y="193" fill="#2c6e54">B</text>
+    <circle cx="340" cy="188" r="24" fill="#eaf7f1" stroke="#7cc6a5" stroke-width="1.8"/><text x="340" y="193" fill="#2c6e54">C</text>
+    <circle cx="105" cy="278" r="24" fill="#eef3fb" stroke="#8fb3e0" stroke-width="1.8"/><text x="105" y="283" fill="#2b5d9e">D</text>
+    <circle cx="220" cy="274" r="24" fill="#eef3fb" stroke="#8fb3e0" stroke-width="1.8"/><text x="220" y="279" fill="#2b5d9e">E</text>
+    <circle cx="408" cy="276" r="24" fill="#eef3fb" stroke="#8fb3e0" stroke-width="1.8"/><text x="408" y="281" fill="#2b5d9e">F</text>
+  </g>
+  <text x="230" y="330" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11.5" fill="#8a97a4">A 的左子树含 B、D、E，右子树含 C、F</text>
+
+  <!-- 遍历结果 -->
+  <rect x="450" y="46" width="250" height="300" rx="8" fill="#fbfcfd" stroke="#e3e8ee"/>
+  <text x="575" y="68" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12.5" font-weight="600" fill="#5b6b7b">遍历序列</text>
+
+  <g font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif">
+    <text x="470" y="100" font-size="12.5" font-weight="600" fill="#2c6e54">先序遍历（根 → 左 → 右）</text>
+    <text x="470" y="122" font-size="14" fill="#34495e">A  B  D  E  C  F</text>
+
+    <text x="470" y="158" font-size="12.5" font-weight="600" fill="#2b5d9e">中序遍历（左 → 根 → 右）</text>
+    <text x="470" y="180" font-size="14" fill="#34495e">D  B  E  A  C  F</text>
+
+    <text x="470" y="216" font-size="12.5" font-weight="600" fill="#6b3fa0">后序遍历（左 → 右 → 根）</text>
+    <text x="470" y="238" font-size="14" fill="#34495e">D  E  B  F  C  A</text>
+
+    <text x="470" y="274" font-size="12.5" font-weight="600" fill="#9a6b16">层次遍历（逐层从左到右）</text>
+    <text x="470" y="296" font-size="14" fill="#34495e">A  B  C  D  E  F</text>
+  </g>
+  <line x1="470" y1="140" x2="680" y2="140" stroke="#eef1f4" stroke-width="1"/>
+  <line x1="470" y1="198" x2="680" y2="198" stroke="#eef1f4" stroke-width="1"/>
+  <line x1="470" y1="256" x2="680" y2="256" stroke="#eef1f4" stroke-width="1"/>
+
+  <text x="360" y="370" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#8a97a4">口诀：先序「根左右」、中序「左根右」、后序「左右根」——三者的区别只在根被访问的时机</text>
+  <text x="360" y="392" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#8a97a4">已知「中序 + 先序」或「中序 + 后序」可唯一还原二叉树；只知先序与后序则不能</text>
+</svg>

@@ -2,8 +2,11 @@
 /**
  * build-docs.mjs — 学习库 Markdown 单文件浏览器生成器
  *
- * 扫描 临公/常识/法律/软件 四文件夹 + 根《编写规范.md》，将全部 md 原始内容与文件树
+ * 扫描 临公/常识/法律/软件 四文件夹 + doc 根的《目录.md》《规范.md》，将全部 md 原始内容与文件树
  * 内嵌进单个自包含 HTML（marked + highlight.js 也一并内嵌），产物双击 file:// 即用。
+ *
+ * 副作用：会顺手重写 doc/目录.md（全库总目录，规范 1.4）。该文件由本脚本按侧栏顺序生成，
+ * 不要手工编辑——手改的内容会在下次构建时被覆盖。内容无变化时不写盘。
  *
  * 用法：npm run build   （或 node build-docs.mjs）
  */
@@ -17,10 +20,11 @@ const OUT = path.join(ROOT, '学习库.html');
 /* ---------------- 顶层领域与优先级 ---------------- */
 // 文档库实际位于 doc/ 目录下；页面逻辑路径相对 doc/ 根，不暴露 doc/ 前缀
 const DOC_ROOT = 'doc';
-// 顶层顺序：文件夹在前（临公/常识/法律/软件），规则文档《编写规范.md》放最后
-const TOP_ORDER = ['临公', '常识', '法律', '软件', '编写规范.md'];
+// 顶层顺序：全库总目录《目录.md》置首，其后是四领域文件夹，规则文档《规范.md》置末
+const TOP_ORDER = ['目录.md', '临公', '常识', '法律', '软件', '规范.md'];
 const SCAN_DIRS = ['临公', '常识', '法律', '软件']; // doc/ 下递归扫描的目录
-const ROOT_FILE = '编写规范.md';
+const ROOT_FILES = ['目录.md', '规范.md']; // doc/ 根下的元文件（不递归扫描）
+const TOC_FILE = '目录.md'; // 全库总目录：由本脚本按侧栏顺序自动生成，不要手改
 
 /* ---------------- 扫描与树构建 ---------------- */
 // 自然排序：先比数字前缀（1,2,…,10），无前缀/后缀再按中文词典序
@@ -70,31 +74,108 @@ async function collectMdInDir(absDir, relPrefix, docs) {
 
 async function buildData() {
   const docs = {};
-  const tree = [];
-  // 顶层显式排序
+  const assets = {};
+  // 顶层显式排序（目录.md 由 writeToc 生成，此处跳过、不从磁盘读）
   const topItems = [];
   for (const name of TOP_ORDER) {
-    if (name === ROOT_FILE) {
-      const abs = path.join(ROOT, DOC_ROOT, ROOT_FILE);
+    if (name === TOC_FILE) continue;
+    if (ROOT_FILES.includes(name)) {
+      const abs = path.join(ROOT, DOC_ROOT, name);
       if (await fileExists(abs)) {
-        docs[ROOT_FILE] = await fs.readFile(abs, 'utf8');
-        topItems.push({ type: 'file', name: ROOT_FILE, path: ROOT_FILE });
+        docs[name] = await fs.readFile(abs, 'utf8');
+        topItems.push({ type: 'file', name, path: name });
       }
     } else if (SCAN_DIRS.includes(name)) {
       const abs = path.join(ROOT, DOC_ROOT, name);
       if (await fileExists(abs)) {
         const children = await collectMdInDir(abs, name, docs);
+        await collectAssets(abs, name, assets);
         if (children.length) topItems.push({ type: 'folder', name, children });
       }
     }
   }
-  // 顶层按 TOP_ORDER 顺序（先文件夹常识/法律/软件，再编写规范.md）
+  // 全库总目录（规范 1.4）：按侧栏顺序生成并写盘，再把同一份内容并入文档表
+  const toc = await writeToc(topItems);
+  docs[TOC_FILE] = toc;
+  topItems.push({ type: 'file', name: TOC_FILE, path: TOC_FILE });
+  // 顶层按 TOP_ORDER 顺序（目录.md 置首，四领域居中，规范.md 置末）
   topItems.sort((a, b) => TOP_ORDER.indexOf(a.name) - TOP_ORDER.indexOf(b.name));
-  tree.push(...topItems);
-  return { tree, docs };
+  return { tree: topItems, docs, assets };
+}
+
+/* ---------------- 全库总目录（目录.md）自动生成 ---------------- */
+// 规范 1.4：条目指向各主题的索引 0. 主题.md，显示名取主题名、不带 0. 编号，
+// 顺序与学习库侧栏一致（即下面这次遍历的顺序），因此无需手工维护。
+async function writeToc(topItems) {
+  const topics = [];
+  (function collect(nodes, prefix) {
+    for (const node of nodes) {
+      if (node.type === 'folder') collect(node.children, `${prefix}${node.name}/`);
+      else if (/^0\. .+\.md$/.test(node.name)) topics.push(prefix + node.name);
+    }
+  })(topItems, '');
+
+  // S3：凡含正文的目录都应有索引，缺了就是漏建。分组目录只含子目录，不会误报。
+  const missing = [];
+  (function check(nodes, prefix) {
+    for (const node of nodes) {
+      if (node.type !== 'folder') continue;
+      const files = node.children.filter((c) => c.type === 'file');
+      if (files.length && !files.some((c) => /^0\. /.test(c.name))) missing.push(prefix + node.name);
+      check(node.children, `${prefix}${node.name}/`);
+    }
+  })(topItems, '');
+  if (missing.length) {
+    console.warn(`⚠ 以下目录含正文却缺少索引 0. 主题.md，未计入总目录：\n  ${missing.join('\n  ')}`);
+  }
+
+  const body = topics
+    .map((p) => ` [${p.slice(p.lastIndexOf('/') + 4, -3)}](./${p}) `)
+    .join('\n\n');
+  const text = `## 目录\n\n${body}\n`;
+
+  const abs = path.join(ROOT, DOC_ROOT, TOC_FILE);
+  let before = null;
+  try { before = await fs.readFile(abs, 'utf8'); } catch {}
+  if (before !== text) {
+    await fs.writeFile(abs, text, 'utf8');
+    console.log(before === null
+      ? `✔ 已生成 ${TOC_FILE}（${topics.length} 条）`
+      : `✔ 已刷新 ${TOC_FILE}（${topics.length} 条，内容有变动）`);
+  }
+  return text;
 }
 async function fileExists(p) {
   try { await fs.access(p); return true; } catch { return false; }
+}
+
+/* ---------------- 图片资源内嵌（assets 目录） ---------------- */
+// 规范 S8：图片统一放在 主题名/assets 子目录。单文件浏览器需把图片转成
+// data URI 内嵌，否则相对路径 ./assets/x.jpg 会指向仓库根、在浏览器里显示为裂图。
+const IMG_MIME = {
+  '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.png': 'image/png',
+  '.gif': 'image/gif', '.webp': 'image/webp', '.svg': 'image/svg+xml',
+  '.avif': 'image/avif', '.bmp': 'image/bmp',
+};
+
+// 递归扫描，遇到名为 assets 的目录即读取其中的图片；键为相对 doc/ 根的路径
+async function collectAssets(absDir, relPrefix, assets) {
+  const entries = await fs.readdir(absDir, { withFileTypes: true });
+  for (const e of entries) {
+    if (e.name.startsWith('.')) continue;
+    if (!e.isDirectory()) continue;
+    const rel = relPrefix ? `${relPrefix}/${e.name}` : e.name;
+    const abs = path.join(absDir, e.name);
+    if (e.name !== 'assets') { await collectAssets(abs, rel, assets); continue; }
+    const files = await fs.readdir(abs, { withFileTypes: true });
+    for (const f of files) {
+      if (!f.isFile()) continue;
+      const mime = IMG_MIME[path.extname(f.name).toLowerCase()];
+      if (!mime) continue;
+      const buf = await fs.readFile(path.join(abs, f.name));
+      assets[`${rel}/${f.name}`] = `data:${mime};base64,${buf.toString('base64')}`;
+    }
+  }
 }
 
 /* ---------------- Vendor 库读取（内嵌） ---------------- */
@@ -140,7 +221,7 @@ async function readTemplate(name) {
 }
 
 async function main() {
-  const { tree, docs } = await buildData();
+  const { tree, docs, assets } = await buildData();
   const { markedJs, markedAlertJs, hljsCore, hljsLangs } = await loadVendors();
 
   const [headTpl, styleTpl, runtimeTpl, bodyTailTpl] = await Promise.all([
@@ -150,7 +231,7 @@ async function main() {
     readTemplate('body.html'),
   ]);
 
-  const dataJson = JSON.stringify({ tree, docs }).replace(/</g, '\\u003c');
+  const dataJson = JSON.stringify({ tree, docs, assets }).replace(/</g, '\\u003c');
 
   const html = `<!DOCTYPE html>
 <html lang="zh-CN">
@@ -175,8 +256,10 @@ ${bodyTailTpl}
   await fs.writeFile(OUT, html, 'utf8');
   const kb = (Buffer.byteLength(html, 'utf8') / 1024).toFixed(0);
   const count = Object.keys(docs).length;
+  const imgCount = Object.keys(assets).length;
+  const imgKb = (Object.values(assets).reduce((n, s) => n + s.length, 0) / 1024).toFixed(0);
   console.log(`✔ 已生成 ${OUT}`);
-  console.log(`  文档数：${count} 篇 | 数据源 ${(Buffer.byteLength(dataJson, 'utf8') / 1024).toFixed(0)} KB | 文件总大小 ${kb} KB`);
+  console.log(`  文档数：${count} 篇 | 内嵌图片：${imgCount} 张 / ${imgKb} KB | 数据源 ${(Buffer.byteLength(dataJson, 'utf8') / 1024).toFixed(0)} KB | 文件总大小 ${kb} KB`);
 }
 
 main().catch((e) => {
