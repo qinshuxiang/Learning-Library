@@ -29,6 +29,42 @@
     marked.use(markedAlert({ variants: zhVariants }));
   }
 
+  // 加粗兜底（中文标点贴边）：CommonMark 的 flanking 规则只按「空白 / 标点」判定星号串
+  // 能否开启或闭合，中文正文里两种极常见的写法会被判成不可用，星号原样显示：
+  //   闭合侧——前一个字是标点、后一个字既非空白也非标点，例如
+  //     **浏览器开发者工具（DevTools）**的 **自下而上分析（Bottom-Up Parsing）**是从
+  //   开启侧——前一个字既非空白也非标点、后一个字是引号，例如
+  //     transform 是实现**"丝滑移动/放大"**的首选
+  // 二者都不是 right-flanking / left-flanking，标记原样输出。此处补一个内联扩展专门兜住
+  // 这两种形态：正文首尾任一侧贴标点即自行切成 strong；两侧都不贴标点的普通写法一律
+  // 交回内置规则，行为不变。代码块与行内代码在标记阶段已先被消费，扩展看不到其中内容。
+  var RE_BOLD = /^\*\*((?:[^\n*]|\*(?!\*))+?)\*\*/u;
+  var RE_PUNCT = /[\p{P}\p{S}]/u;
+  marked.use({
+    extensions: [
+      {
+        name: 'cjkBold',
+        level: 'inline',
+        start: function (src) { return src.indexOf('**'); },
+        tokenizer: function (src) {
+          var m = RE_BOLD.exec(src);
+          if (!m) return;
+          var inner = m[1];
+          // 首尾带空白、内容以反斜杠收尾（形如 **] 与 \**，星号是被转义的字面量）、
+          // 内容里出现裸星号（如 ***粗斜体***），一律让内置规则去处理
+          if (/^\s|\s$/.test(inner)) return;
+          if (inner.charAt(inner.length - 1) === '\\') return;
+          var first = inner.charAt(0);
+          var last = inner.charAt(inner.length - 1);
+          if (first === '*' || last === '*') return;
+          var punctEdge = (first !== '*' && RE_PUNCT.test(first)) || (last !== '*' && RE_PUNCT.test(last));
+          if (!punctEdge) return;
+          return { type: 'strong', raw: m[0], text: inner, tokens: this.lexer.inlineTokens(inner) };
+        },
+      },
+    ],
+  });
+
   // 索引文件中的链接形如 [N. 名称.md](./N. 名称.md)，URL 含空格导致 CommonMark
   // 不识别为合法链接。预处理：仅对以 .md 结尾的相对链接 URL 部分做空格转义。
   function preProcessMdLinks(src) {
