@@ -94,14 +94,14 @@ async function buildData() {
       }
     }
   }
-  // 索引完整性提示（S3），不落盘、不进产物
+  // 索引完整性提示（B1／B4），不落盘、不进产物
   checkMissingIndexes(topItems);
   // 顶层按 TOP_ORDER 顺序
   topItems.sort((a, b) => TOP_ORDER.indexOf(a.name) - TOP_ORDER.indexOf(b.name));
   return { tree: topItems, docs, assets };
 }
 
-/* ---------------- 索引完整性检查（S3） ---------------- */
+/* ---------------- 索引完整性检查（B1／B4） ---------------- */
 // 凡含正文的目录都应有索引 0. 主题.md，缺了就是漏建。本脚本不再生成全库总目录文件，
 // 此项检查仅作构建期提示，不影响产物。
 function checkMissingIndexes(topItems) {
@@ -124,7 +124,7 @@ async function fileExists(p) {
 }
 
 /* ---------------- 图片资源内嵌（assets 目录） ---------------- */
-// 规范 S8：图片统一放在 主题名/assets 子目录。单文件浏览器需把图片转成
+// 规范 B7：图片统一放在 主题名/assets 子目录。单文件浏览器需把图片转成
 // data URI 内嵌，否则相对路径 ./assets/x.jpg 会指向仓库根、在浏览器里显示为裂图。
 const IMG_MIME = {
   '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.png': 'image/png',

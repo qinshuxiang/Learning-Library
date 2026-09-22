@@ -365,7 +365,7 @@
   }
 
   /* 图片解析：正文里的相对图片路径 → 构建期内嵌的 data URI
-     规范 S8 约定图片位于 主题名/assets/，正文写法为 ./assets/文件名 （条款见 规范/学习/目录规范.md） */
+     规范 B7 约定图片位于 主题名/assets/，正文写法为 ./assets/文件名 （条款见仓库根 文档规范.md） */
   function resolveImages(container, baseDir) {
     var imgs = container.querySelectorAll('img');
     for (var i = 0; i < imgs.length; i++) {
