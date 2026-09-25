@@ -9,8 +9,8 @@
   var DOCS = DATA.docs;      // relPath(含空格/CJK) -> 原始 markdown
   var ASSETS = DATA.assets || {};  // relPath(相对仓库根) -> data URI 内嵌图片
 
-  // 首页固定打开的篇目（AGENTS/AGENTS.md）；该路径不存在时回退到侧栏第一篇
-  var DEFAULT_DOC = 'AGENTS/AGENTS.md';
+  // 首页固定打开的篇目（规范/AGENTS.md）；该路径不存在时回退到侧栏第一篇
+  var DEFAULT_DOC = '规范/AGENTS.md';
 
   // marked 配置
   marked.setOptions({ gfm: true, breaks: false, langPrefix: 'language-' });
