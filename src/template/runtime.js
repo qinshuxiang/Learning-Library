@@ -399,9 +399,14 @@
   var tocFab = document.getElementById('toc-fab');
   var tocMask = document.getElementById('toc-mask');
   var tocClose = document.getElementById('toc-close');
+  var sideFab = document.getElementById('side-fab');
+  var sidebarEl = document.getElementById('sidebar');
 
   var NARROW_MQ = window.matchMedia ? window.matchMedia('(max-width: 1180px)') : null;
   function isNarrow() { return NARROW_MQ ? NARROW_MQ.matches : window.innerWidth <= 1180; }
+
+  var SIDE_MQ = window.matchMedia ? window.matchMedia('(max-width: 720px)') : null;
+  function isMobile() { return SIDE_MQ ? SIDE_MQ.matches : window.innerWidth <= 720; }
 
   var tocItems = [];        // { id, level, text, el, target }
   var SPY_OFFSET = 18;      // 判定“当前章节”的顶部容差
@@ -544,6 +549,7 @@
   /* 目录的展开 / 收起：宽屏为常驻栏可手动收起，窄屏自动折叠为抽屉 */
   function openTocDrawer() {
     if (isNarrow()) {
+      closeSideDrawer();               // 两个抽屉互斥，共用同一遮罩
       tocEl.classList.add('open');
       tocMask.hidden = false;
     } else {
@@ -558,17 +564,41 @@
       document.body.classList.add('toc-off');
     }
   }
+
+  /* 手机端左侧文章列表抽屉（≤720px），与右侧目录抽屉同一套交互 */
+  function openSideDrawer() {
+    if (!isMobile()) return;
+    if (isNarrow()) closeTocDrawer();  // 两个抽屉互斥，共用同一遮罩
+    sidebarEl.classList.add('open');
+    tocMask.hidden = false;
+  }
+  function closeSideDrawer() {
+    sidebarEl.classList.remove('open');
+    if (!tocEl.classList.contains('open')) tocMask.hidden = true;
+  }
+
   tocFab.addEventListener('click', function () { openTocDrawer(); });
   tocClose.addEventListener('click', function () { closeTocDrawer(); });
-  tocMask.addEventListener('click', function () { closeTocDrawer(); });
+  tocMask.addEventListener('click', function () {
+    // 共用遮罩：点遮罩关闭当前打开的抽屉
+    if (sidebarEl.classList.contains('open')) closeSideDrawer();
+    if (tocEl.classList.contains('open')) closeTocDrawer();
+  });
+  sideFab.addEventListener('click', function () { openSideDrawer(); });
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape' && tocEl.classList.contains('open')) closeTocDrawer();
+    if (e.key === 'Escape' && sidebarEl.classList.contains('open')) closeSideDrawer();
   });
   // 视口变化时清理抽屉状态（如从窄屏拉宽）
   if (NARROW_MQ && NARROW_MQ.addEventListener) {
     NARROW_MQ.addEventListener('change', function () {
       tocEl.classList.remove('open');
       tocMask.hidden = true;
+    });
+  }
+  if (SIDE_MQ && SIDE_MQ.addEventListener) {
+    SIDE_MQ.addEventListener('change', function () {
+      closeSideDrawer();
     });
   }
 
@@ -623,6 +653,7 @@
     if (!DOCS[path]) return;
     expandTo(path);
     openDoc(path);
+    if (isMobile()) closeSideDrawer();   // 手机端选中文章后收起列表，避免遮挡正文
   }
 
   /* ---------------- 搜索（文件名 + 正文全文） ---------------- */

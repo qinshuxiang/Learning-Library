@@ -180,7 +180,20 @@ body {
 #toc-fab:active { transform: translateY(0); }
 body.toc-off #toc-fab { display: flex; }
 
-/* 遮罩（仅窄屏抽屉态使用） */
+/* 手机端文章列表抽屉的悬浮按钮（仅 ≤720px 出现） */
+#side-fab {
+  display: none;
+  position: fixed; left: 20px; bottom: 24px; z-index: 25;
+  width: 42px; height: 42px; border: 0; border-radius: 50%;
+  background: #42b983; color: #fff; cursor: pointer;
+  align-items: center; justify-content: center;
+  box-shadow: 0 4px 14px rgba(66,185,131,.4);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+#side-fab:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(66,185,131,.5); }
+#side-fab:active { transform: translateY(0); }
+
+/* 遮罩（窄屏抽屉态共用：左侧文章列表 / 右侧目录） */
 #toc-mask {
   position: fixed; inset: 0; z-index: 28;
   background: rgba(20, 26, 34, .32);
@@ -464,9 +477,24 @@ body.toc-off #toc { flex-basis: 0; width: 0; border-left: 0; }
   #toc-fab, body.toc-off #toc-fab { display: flex; }
 }
 
-/* 窄屏回退（侧栏 overlay + 正文留白收窄） */
+/* 手机端（≤720px）：左侧文章列表改为抽屉（默认隐藏，悬浮按钮呼出），
+   右侧目录抽屉样式沿用上方 ≤1180px 规则 */
 @media (max-width: 720px) {
-  #sidebar { position: absolute; z-index: 10; box-shadow: 2px 0 12px rgba(0,0,0,.08); }
+  #sidebar {
+    position: fixed; top: 0; left: 0; bottom: 0; z-index: 30;
+    width: min(84vw, 320px); flex-basis: min(84vw, 320px);
+    border-right: 1px solid #e8e8e8;
+    box-shadow: 2px 0 12px rgba(0, 0, 0, .12);
+    transform: translateX(-102%);
+    visibility: hidden;
+    transition: transform .22s ease, visibility 0s linear .22s;
+  }
+  #sidebar.open {
+    transform: translateX(0);
+    visibility: visible;
+    transition: transform .22s ease, visibility 0s linear 0s;
+  }
+  #side-fab { display: flex; left: 14px; bottom: 16px; }
   .markdown-body { padding: 28px 20px 40px; }
   #foot { padding: 14px 20px 6px; }
   #toc, body.toc-off #toc { width: min(84vw, 320px); flex-basis: min(84vw, 320px); }
