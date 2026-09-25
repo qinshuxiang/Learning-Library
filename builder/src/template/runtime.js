@@ -286,6 +286,7 @@
     docEl.innerHTML = html;
 
     postProcess(path);
+    appendSeriesNav(path);
 
     // 更新 UI
     currentOpenPath = path;
@@ -305,6 +306,60 @@
   function renderMissing(path) {
     docEl.innerHTML = '<h2>未找到文档</h2><p>路径：<code>' + escapeHtml(path) + '</code></p>';
     document.title = '未找到 · ' + ROOT_LABEL;
+  }
+
+  /* ---------------- 同系列上一篇 / 下一篇 ---------------- */
+  // TREE 的 folder 节点只有 name 无 path，按路径段逐层下钻取目录 children
+  function folderChildrenByDir(dir) {
+    var nodes = TREE;
+    var segs = dir ? dir.split('/') : [];
+    for (var s = 0; s < segs.length; s++) {
+      var hit = null;
+      for (var i = 0; i < nodes.length; i++) {
+        var n = nodes[i];
+        if (n.type === 'folder' && n.name === segs[s]) { hit = n; break; }
+      }
+      if (!hit) return null;
+      nodes = hit.children;
+    }
+    return nodes;
+  }
+
+  function appendSeriesNav(path) {
+    var old = document.getElementById('series-nav');
+    if (old) old.remove();
+
+    var dir = dirOf(path);
+    if (!dir) return;                       // 根层单文件无系列概念
+    var siblings = folderChildrenByDir(dir);
+    if (!siblings) return;
+
+    var files = siblings.filter(function (n) { return n.type === 'file'; });
+    var idx = -1;
+    for (var i = 0; i < files.length; i++) {
+      if (files[i].path === path) { idx = i; break; }
+    }
+    if (idx < 0) return;
+    var prev = idx > 0 ? files[idx - 1] : null;
+    var next = idx < files.length - 1 ? files[idx + 1] : null;
+    if (!prev && !next) return;
+
+    var nav = document.createElement('div');
+    nav.id = 'series-nav';
+    nav.innerHTML =
+      (prev
+        ? '<a class="sn-item sn-prev" data-path="' + escapeHtml(prev.path) + '">' +
+          '<span class="sn-label">上一篇</span><span class="sn-title">' + escapeHtml(docTitle(prev.path)) + '</span></a>'
+        : '<span class="sn-item sn-ghost"></span>') +
+      (next
+        ? '<a class="sn-item sn-next" data-path="' + escapeHtml(next.path) + '">' +
+          '<span class="sn-label">下一篇</span><span class="sn-title">' + escapeHtml(docTitle(next.path)) + '</span></a>'
+        : '<span class="sn-item sn-ghost"></span>');
+    nav.addEventListener('click', function (e) {
+      var a = e.target.closest('.sn-item');
+      if (a && DOCS[a.dataset.path]) selectDoc(a.dataset.path);
+    });
+    docEl.appendChild(nav);
   }
 
   function postProcess(path) {

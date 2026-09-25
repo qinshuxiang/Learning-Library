@@ -500,3 +500,26 @@ body.toc-off #toc { flex-basis: 0; width: 0; border-left: 0; }
   #toc, body.toc-off #toc { width: min(84vw, 320px); flex-basis: min(84vw, 320px); }
   #toc-fab { right: 14px; bottom: 16px; }
 }
+
+/* ---------------- 同系列上一篇 / 下一篇 ---------------- */
+#series-nav {
+  display: flex; gap: 12px;
+  margin: 40px 0 8px;
+}
+#series-nav .sn-item {
+  flex: 1 1 0; min-width: 0;
+  display: flex; flex-direction: column; gap: 3px;
+  padding: 10px 14px;
+  border: 1px solid #e8e8e8; border-radius: 8px;
+  background: #fafafa;
+  text-decoration: none; cursor: pointer;
+  transition: border-color .15s, box-shadow .15s;
+}
+#series-nav .sn-item:hover { border-color: #42b983; box-shadow: 0 0 0 2px rgba(66,185,131,.12); }
+#series-nav .sn-ghost { visibility: hidden; }
+#series-nav .sn-next { text-align: right; }
+#series-nav .sn-label { font-size: 12px; color: #42b983; }
+#series-nav .sn-title {
+  font-size: 13px; color: #34495e;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
