@@ -71,7 +71,11 @@ async function collectMdInDir(absDir, relPrefix, docs) {
     if (childDocs.length) folderNodes.push({ type: 'folder', name: d.name, children: childDocs });
   }
   // 文件夹在前，文件在后；各自自然序
-  return sortEntries(fileNodes, folderNodes);
+  const sorted = sortEntries(fileNodes, folderNodes);
+  // AGENTS.md（目录说明/入口）固定排最前，优先于索引与其他篇目
+  const ai = sorted.findIndex((n) => n.type === 'file' && n.name === 'AGENTS.md');
+  if (ai > 0) sorted.unshift(...sorted.splice(ai, 1));
+  return sorted;
 }
 
 async function buildData() {
