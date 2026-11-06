@@ -1,0 +1,173 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 540" width="900" height="540" role="img" aria-label="三种交换方式的性能对比时间图">
+  <defs><linearGradient id="rib" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f5f5f5"/><stop offset="0.55" stop-color="#c9c9c9"/><stop offset="1" stop-color="#8b8b8b"/></linearGradient></defs>
+  <rect width="900" height="540" fill="#ffffff"/>
+  <text x="450.0" y="34" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="17" font-weight="600" fill="#4a6fa5">三种交换方式的性能对比</text>
+  <line x1="26" y1="56" x2="26" y2="462" stroke="#f4f7fa" stroke-width="1"/>
+  <line x1="48" y1="56" x2="48" y2="462" stroke="#f4f7fa" stroke-width="1"/>
+  <line x1="70" y1="56" x2="70" y2="462" stroke="#f4f7fa" stroke-width="1"/>
+  <line x1="92" y1="56" x2="92" y2="462" stroke="#f4f7fa" stroke-width="1"/>
+  <line x1="114" y1="56" x2="114" y2="462" stroke="#f4f7fa" stroke-width="1"/>
+  <line x1="136" y1="56" x2="136" y2="462" stroke="#f4f7fa" stroke-width="1"/>
+  <line x1="158" y1="56" x2="158" y2="462" stroke="#f4f7fa" stroke-width="1"/>
+  <line x1="180" y1="56" x2="180" y2="462" stroke="#f4f7fa" stroke-width="1"/>
+  <line x1="202" y1="56" x2="202" y2="462" stroke="#f4f7fa" stroke-width="1"/>
+  <line x1="224" y1="56" x2="224" y2="462" stroke="#f4f7fa" stroke-width="1"/>
+  <line x1="246" y1="56" x2="246" y2="462" stroke="#f4f7fa" stroke-width="1"/>
+  <line x1="268" y1="56" x2="268" y2="462" stroke="#f4f7fa" stroke-width="1"/>
+  <line x1="290" y1="56" x2="290" y2="462" stroke="#f4f7fa" stroke-width="1"/>
+  <line x1="312" y1="56" x2="312" y2="462" stroke="#f4f7fa" stroke-width="1"/>
+  <line x1="334" y1="56" x2="334" y2="462" stroke="#f4f7fa" stroke-width="1"/>
+  <line x1="356" y1="56" x2="356" y2="462" stroke="#f4f7fa" stroke-width="1"/>
+  <line x1="378" y1="56" x2="378" y2="462" stroke="#f4f7fa" stroke-width="1"/>
+  <line x1="400" y1="56" x2="400" y2="462" stroke="#f4f7fa" stroke-width="1"/>
+  <line x1="422" y1="56" x2="422" y2="462" stroke="#f4f7fa" stroke-width="1"/>
+  <line x1="444" y1="56" x2="444" y2="462" stroke="#f4f7fa" stroke-width="1"/>
+  <line x1="466" y1="56" x2="466" y2="462" stroke="#f4f7fa" stroke-width="1"/>
+  <line x1="488" y1="56" x2="488" y2="462" stroke="#f4f7fa" stroke-width="1"/>
+  <line x1="510" y1="56" x2="510" y2="462" stroke="#f4f7fa" stroke-width="1"/>
+  <line x1="532" y1="56" x2="532" y2="462" stroke="#f4f7fa" stroke-width="1"/>
+  <line x1="554" y1="56" x2="554" y2="462" stroke="#f4f7fa" stroke-width="1"/>
+  <line x1="576" y1="56" x2="576" y2="462" stroke="#f4f7fa" stroke-width="1"/>
+  <line x1="598" y1="56" x2="598" y2="462" stroke="#f4f7fa" stroke-width="1"/>
+  <line x1="620" y1="56" x2="620" y2="462" stroke="#f4f7fa" stroke-width="1"/>
+  <line x1="642" y1="56" x2="642" y2="462" stroke="#f4f7fa" stroke-width="1"/>
+  <line x1="664" y1="56" x2="664" y2="462" stroke="#f4f7fa" stroke-width="1"/>
+  <line x1="686" y1="56" x2="686" y2="462" stroke="#f4f7fa" stroke-width="1"/>
+  <line x1="708" y1="56" x2="708" y2="462" stroke="#f4f7fa" stroke-width="1"/>
+  <line x1="730" y1="56" x2="730" y2="462" stroke="#f4f7fa" stroke-width="1"/>
+  <line x1="752" y1="56" x2="752" y2="462" stroke="#f4f7fa" stroke-width="1"/>
+  <line x1="774" y1="56" x2="774" y2="462" stroke="#f4f7fa" stroke-width="1"/>
+  <line x1="796" y1="56" x2="796" y2="462" stroke="#f4f7fa" stroke-width="1"/>
+  <line x1="818" y1="56" x2="818" y2="462" stroke="#f4f7fa" stroke-width="1"/>
+  <line x1="840" y1="56" x2="840" y2="462" stroke="#f4f7fa" stroke-width="1"/>
+  <line x1="862" y1="56" x2="862" y2="462" stroke="#f4f7fa" stroke-width="1"/>
+  <line x1="884" y1="56" x2="884" y2="462" stroke="#f4f7fa" stroke-width="1"/>
+  <line x1="20" y1="58" x2="880" y2="58" stroke="#f4f7fa" stroke-width="1"/>
+  <line x1="20" y1="80" x2="880" y2="80" stroke="#f4f7fa" stroke-width="1"/>
+  <line x1="20" y1="102" x2="880" y2="102" stroke="#f4f7fa" stroke-width="1"/>
+  <line x1="20" y1="124" x2="880" y2="124" stroke="#f4f7fa" stroke-width="1"/>
+  <line x1="20" y1="146" x2="880" y2="146" stroke="#f4f7fa" stroke-width="1"/>
+  <line x1="20" y1="168" x2="880" y2="168" stroke="#f4f7fa" stroke-width="1"/>
+  <line x1="20" y1="190" x2="880" y2="190" stroke="#f4f7fa" stroke-width="1"/>
+  <line x1="20" y1="212" x2="880" y2="212" stroke="#f4f7fa" stroke-width="1"/>
+  <line x1="20" y1="234" x2="880" y2="234" stroke="#f4f7fa" stroke-width="1"/>
+  <line x1="20" y1="256" x2="880" y2="256" stroke="#f4f7fa" stroke-width="1"/>
+  <line x1="20" y1="278" x2="880" y2="278" stroke="#f4f7fa" stroke-width="1"/>
+  <line x1="20" y1="300" x2="880" y2="300" stroke="#f4f7fa" stroke-width="1"/>
+  <line x1="20" y1="322" x2="880" y2="322" stroke="#f4f7fa" stroke-width="1"/>
+  <line x1="20" y1="344" x2="880" y2="344" stroke="#f4f7fa" stroke-width="1"/>
+  <line x1="20" y1="366" x2="880" y2="366" stroke="#f4f7fa" stroke-width="1"/>
+  <line x1="20" y1="388" x2="880" y2="388" stroke="#f4f7fa" stroke-width="1"/>
+  <line x1="20" y1="410" x2="880" y2="410" stroke="#f4f7fa" stroke-width="1"/>
+  <line x1="20" y1="432" x2="880" y2="432" stroke="#f4f7fa" stroke-width="1"/>
+  <line x1="20" y1="454" x2="880" y2="454" stroke="#f4f7fa" stroke-width="1"/>
+  <text x="167" y="64" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12.5" font-weight="600" fill="#5b6b7b">电路交换</text>
+  <line x1="104" y1="92.0" x2="104" y2="433.0" stroke="#2c3e50" stroke-width="1.6"/>
+  <text x="104" y="453.0" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="13" font-weight="600" fill="#3a6ea5">A</text>
+  <line x1="158" y1="92.0" x2="158" y2="433.0" stroke="#2c3e50" stroke-width="1.6"/>
+  <text x="158" y="453.0" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="13" font-weight="600" fill="#3a6ea5">B</text>
+  <line x1="212" y1="92.0" x2="212" y2="433.0" stroke="#2c3e50" stroke-width="1.6"/>
+  <text x="212" y="453.0" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="13" font-weight="600" fill="#3a6ea5">C</text>
+  <line x1="266" y1="92.0" x2="266" y2="433.0" stroke="#2c3e50" stroke-width="1.6"/>
+  <text x="266" y="453.0" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="13" font-weight="600" fill="#3a6ea5">D</text>
+  <line x1="300" y1="92.0" x2="300" y2="400.0" stroke="#3a6ea5" stroke-width="1.4"/>
+  <path d="M 296 393.0 L 300 400.0 L 304 393.0" fill="none" stroke="#3a6ea5" stroke-width="1.4"/>
+  <text x="300" y="422.0" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10.5" fill="#3a6ea5">t</text>
+  <line x1="104" y1="92.0" x2="158" y2="103.0" stroke="#555" stroke-width="0.9"/>
+  <line x1="158" y1="103.0" x2="212" y2="114.0" stroke="#555" stroke-width="0.9"/>
+  <line x1="212" y1="114.0" x2="266" y2="125.0" stroke="#555" stroke-width="0.9"/>
+  <line x1="266" y1="136.0" x2="212" y2="147.0" stroke="#555" stroke-width="0.9"/>
+  <line x1="212" y1="147.0" x2="158" y2="158.0" stroke="#555" stroke-width="0.9"/>
+  <line x1="158" y1="158.0" x2="104" y2="169.0" stroke="#555" stroke-width="0.9"/>
+  <polygon points="104,202.0 266,235.0 266,323.0 104,290.0" fill="url(#rib)" stroke="#8f8f8f" stroke-width="0.6"/>
+  <text x="185.0" y="261.5" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" font-weight="600" fill="#3c3c3c">报文</text>
+  <text x="185.0" y="273.5" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" font-weight="700" fill="#ffffff">→</text>
+  <line x1="104" y1="334.0" x2="158" y2="345.0" stroke="#555" stroke-width="0.9"/>
+  <line x1="158" y1="345.0" x2="212" y2="356.0" stroke="#555" stroke-width="0.9"/>
+  <line x1="212" y1="356.0" x2="266" y2="367.0" stroke="#555" stroke-width="0.9"/>
+  <line x1="266" y1="378.0" x2="212" y2="389.0" stroke="#555" stroke-width="0.9"/>
+  <line x1="212" y1="389.0" x2="158" y2="400.0" stroke="#555" stroke-width="0.9"/>
+  <line x1="158" y1="400.0" x2="104" y2="411.0" stroke="#555" stroke-width="0.9"/>
+  <line x1="90" y1="92.0" x2="90" y2="202.0" stroke="#a2502f" stroke-width="1"/>
+  <line x1="90" y1="92.0" x2="94" y2="92.0" stroke="#a2502f" stroke-width="1"/>
+  <line x1="90" y1="202.0" x2="94" y2="202.0" stroke="#a2502f" stroke-width="1"/>
+  <text x="84" y="150.5" text-anchor="end" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9.5" fill="#a2502f">连接建立</text>
+  <line x1="90" y1="202.0" x2="90" y2="323.0" stroke="#a2502f" stroke-width="1"/>
+  <line x1="90" y1="202.0" x2="94" y2="202.0" stroke="#a2502f" stroke-width="1"/>
+  <line x1="90" y1="323.0" x2="94" y2="323.0" stroke="#a2502f" stroke-width="1"/>
+  <text x="84" y="266.0" text-anchor="end" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9.5" fill="#a2502f">数据传送</text>
+  <line x1="90" y1="323.0" x2="90" y2="433.0" stroke="#a2502f" stroke-width="1"/>
+  <line x1="90" y1="323.0" x2="94" y2="323.0" stroke="#a2502f" stroke-width="1"/>
+  <line x1="90" y1="433.0" x2="94" y2="433.0" stroke="#a2502f" stroke-width="1"/>
+  <text x="84" y="381.5" text-anchor="end" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9.5" fill="#a2502f">连接释放</text>
+  <text x="437" y="64" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12.5" font-weight="600" fill="#5b6b7b">报文交换</text>
+  <line x1="374" y1="92.0" x2="374" y2="433.0" stroke="#2c3e50" stroke-width="1.6"/>
+  <text x="374" y="453.0" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="13" font-weight="600" fill="#3a6ea5">A</text>
+  <line x1="428" y1="92.0" x2="428" y2="433.0" stroke="#2c3e50" stroke-width="1.6"/>
+  <text x="428" y="453.0" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="13" font-weight="600" fill="#3a6ea5">B</text>
+  <line x1="482" y1="92.0" x2="482" y2="433.0" stroke="#2c3e50" stroke-width="1.6"/>
+  <text x="482" y="453.0" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="13" font-weight="600" fill="#3a6ea5">C</text>
+  <line x1="536" y1="92.0" x2="536" y2="433.0" stroke="#2c3e50" stroke-width="1.6"/>
+  <text x="536" y="453.0" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="13" font-weight="600" fill="#3a6ea5">D</text>
+  <line x1="570" y1="92.0" x2="570" y2="400.0" stroke="#3a6ea5" stroke-width="1.4"/>
+  <path d="M 566 393.0 L 570 400.0 L 574 393.0" fill="none" stroke="#3a6ea5" stroke-width="1.4"/>
+  <text x="570" y="422.0" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10.5" fill="#3a6ea5">t</text>
+  <polygon points="374,92.0 428,103.0 428,191.0 374,180.0" fill="url(#rib)" stroke="#8f8f8f" stroke-width="0.6"/>
+  <text x="401.0" y="140.5" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" font-weight="600" fill="#3c3c3c">报文</text>
+  <text x="401.0" y="152.5" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" font-weight="700" fill="#ffffff">→</text>
+  <polygon points="428,213.0 482,224.0 482,312.0 428,301.0" fill="url(#rib)" stroke="#8f8f8f" stroke-width="0.6"/>
+  <text x="455.0" y="261.5" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" font-weight="600" fill="#3c3c3c">报文</text>
+  <text x="455.0" y="273.5" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" font-weight="700" fill="#ffffff">→</text>
+  <polygon points="482,334.0 536,345.0 536,433.0 482,422.0" fill="url(#rib)" stroke="#8f8f8f" stroke-width="0.6"/>
+  <text x="509.0" y="382.5" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" font-weight="600" fill="#3c3c3c">报文</text>
+  <text x="509.0" y="394.5" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" font-weight="700" fill="#ffffff">→</text>
+  <text x="707" y="64" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12.5" font-weight="600" fill="#5b6b7b">分组交换</text>
+  <line x1="644" y1="92.0" x2="644" y2="433.0" stroke="#2c3e50" stroke-width="1.6"/>
+  <text x="644" y="453.0" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="13" font-weight="600" fill="#3a6ea5">A</text>
+  <line x1="698" y1="92.0" x2="698" y2="433.0" stroke="#2c3e50" stroke-width="1.6"/>
+  <text x="698" y="453.0" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="13" font-weight="600" fill="#3a6ea5">B</text>
+  <line x1="752" y1="92.0" x2="752" y2="433.0" stroke="#2c3e50" stroke-width="1.6"/>
+  <text x="752" y="453.0" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="13" font-weight="600" fill="#3a6ea5">C</text>
+  <line x1="806" y1="92.0" x2="806" y2="433.0" stroke="#2c3e50" stroke-width="1.6"/>
+  <text x="806" y="453.0" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="13" font-weight="600" fill="#3a6ea5">D</text>
+  <line x1="840" y1="92.0" x2="840" y2="400.0" stroke="#3a6ea5" stroke-width="1.4"/>
+  <path d="M 836 393.0 L 840 400.0 L 844 393.0" fill="none" stroke="#3a6ea5" stroke-width="1.4"/>
+  <text x="840" y="422.0" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10.5" fill="#3a6ea5">t</text>
+  <polygon points="644,92.0 698,103.0 698,120.6 644,109.6" fill="url(#rib)" stroke="#8f8f8f" stroke-width="0.6"/>
+  <text x="671.0" y="105.30000000000001" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9" font-weight="600" fill="#3c3c3c">分组1</text>
+  <text x="671.0" y="117.30000000000001" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" font-weight="700" fill="#ffffff">→</text>
+  <polygon points="698,130.5 752,141.5 752,159.1 698,148.1" fill="url(#rib)" stroke="#8f8f8f" stroke-width="0.6"/>
+  <text x="725.0" y="143.8" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9" font-weight="600" fill="#3c3c3c">分组1</text>
+  <text x="725.0" y="155.8" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" font-weight="700" fill="#ffffff">→</text>
+  <polygon points="752,169.0 806,180.0 806,197.6 752,186.6" fill="url(#rib)" stroke="#8f8f8f" stroke-width="0.6"/>
+  <text x="779.0" y="182.3" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9" font-weight="600" fill="#3c3c3c">分组1</text>
+  <text x="779.0" y="194.3" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" font-weight="700" fill="#ffffff">→</text>
+  <polygon points="644,114.0 698,125.0 698,142.6 644,131.6" fill="url(#rib)" stroke="#8f8f8f" stroke-width="0.6"/>
+  <text x="671.0" y="127.30000000000001" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9" font-weight="600" fill="#3c3c3c">分组2</text>
+  <text x="671.0" y="139.3" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" font-weight="700" fill="#ffffff">→</text>
+  <polygon points="698,158.0 752,169.0 752,186.6 698,175.6" fill="url(#rib)" stroke="#8f8f8f" stroke-width="0.6"/>
+  <text x="725.0" y="171.3" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9" font-weight="600" fill="#3c3c3c">分组2</text>
+  <text x="725.0" y="183.3" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" font-weight="700" fill="#ffffff">→</text>
+  <polygon points="752,196.5 806,207.5 806,225.1 752,214.1" fill="url(#rib)" stroke="#8f8f8f" stroke-width="0.6"/>
+  <text x="779.0" y="209.8" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9" font-weight="600" fill="#3c3c3c">分组2</text>
+  <text x="779.0" y="221.8" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" font-weight="700" fill="#ffffff">→</text>
+  <polygon points="644,136.0 698,147.0 698,164.6 644,153.6" fill="url(#rib)" stroke="#8f8f8f" stroke-width="0.6"/>
+  <text x="671.0" y="149.3" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9" font-weight="600" fill="#3c3c3c">分组3</text>
+  <text x="671.0" y="161.3" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" font-weight="700" fill="#ffffff">→</text>
+  <polygon points="698,185.5 752,196.5 752,214.1 698,203.1" fill="url(#rib)" stroke="#8f8f8f" stroke-width="0.6"/>
+  <text x="725.0" y="198.8" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9" font-weight="600" fill="#3c3c3c">分组3</text>
+  <text x="725.0" y="210.8" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" font-weight="700" fill="#ffffff">→</text>
+  <polygon points="752,224.0 806,235.0 806,252.6 752,241.6" fill="url(#rib)" stroke="#8f8f8f" stroke-width="0.6"/>
+  <text x="779.0" y="237.3" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9" font-weight="600" fill="#3c3c3c">分组3</text>
+  <text x="779.0" y="249.3" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" font-weight="700" fill="#ffffff">→</text>
+  <polygon points="644,158.0 698,169.0 698,186.6 644,175.6" fill="url(#rib)" stroke="#8f8f8f" stroke-width="0.6"/>
+  <text x="671.0" y="171.3" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9" font-weight="600" fill="#3c3c3c">分组4</text>
+  <text x="671.0" y="183.3" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" font-weight="700" fill="#ffffff">→</text>
+  <polygon points="698,213.0 752,224.0 752,241.6 698,230.6" fill="url(#rib)" stroke="#8f8f8f" stroke-width="0.6"/>
+  <text x="725.0" y="226.3" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9" font-weight="600" fill="#3c3c3c">分组4</text>
+  <text x="725.0" y="238.3" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" font-weight="700" fill="#ffffff">→</text>
+  <polygon points="752,251.5 806,262.5 806,280.1 752,269.1" fill="url(#rib)" stroke="#8f8f8f" stroke-width="0.6"/>
+  <text x="779.0" y="264.8" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9" font-weight="600" fill="#3c3c3c">分组4</text>
+  <text x="779.0" y="276.8" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" font-weight="700" fill="#ffffff">→</text>
+  <text x="24" y="520" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10.5" fill="#8a97a4">报文 4 KB、速率 0.5 KB/ms、三跳、每跳传播 1 ms；报文交换每站处理 2 ms，分组交换每站处理 0.5 ms。纵轴为时间 t，横轴为结点。</text>
+</svg>

@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 566" width="900" height="566" role="img" aria-label="数据链路层所处的地位：主机与路由器各层协议栈，网络层的 IP 数据报被加上首部和尾部封装成帧，帧只在相邻结点之间传送，物理层以比特流传输">
+  <rect width="900" height="566" fill="#ffffff"/>
+  <text x="24" y="30" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="16" font-weight="600" fill="#2c3e50">数据链路层所处的地位</text>
+  <text x="24" y="50" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11.5" fill="#8a97a4">帧只在相邻结点之间传送；每经过一个结点，先拆掉旧帧，再按下一跳重新封装</text>
+  <rect x="64" y="120" width="104" height="42" rx="4" fill="#eaf7f1" stroke="#b7e0cd"/>
+  <text x="78" y="146" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" fill="#2c6e54" opacity="0.7">5</text>
+  <text x="126" y="146" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#2c6e54" font-weight="600">应用层</text>
+  <rect x="64" y="164" width="104" height="42" rx="4" fill="#eef3fb" stroke="#c3d6f0"/>
+  <text x="78" y="190" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" fill="#2b5d9e" opacity="0.7">4</text>
+  <text x="126" y="190" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#2b5d9e" font-weight="600">传输层</text>
+  <rect x="64" y="208" width="104" height="42" rx="4" fill="#fdf5e6" stroke="#f0d9a8"/>
+  <text x="78" y="234" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" fill="#9a6b16" opacity="0.7">3</text>
+  <text x="126" y="234" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#9a6b16" font-weight="600">网络层</text>
+  <rect x="64" y="252" width="104" height="42" rx="4" fill="#fdeee7" stroke="#f2c7b3"/>
+  <text x="78" y="278" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" fill="#a2502f" opacity="0.7">2</text>
+  <text x="126" y="278" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#a2502f" font-weight="600">数据链路层</text>
+  <rect x="64" y="296" width="104" height="42" rx="4" fill="#f4f5f7" stroke="#dfe4ea"/>
+  <text x="78" y="322" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" fill="#5b6b7b" opacity="0.7">1</text>
+  <text x="126" y="322" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#5b6b7b" font-weight="600">物理层</text>
+  <text x="116" y="100" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" fill="#5b6b7b">数据</text>
+  <path d="M 116 104 V 116" stroke="#8a97a4" stroke-width="1.4"/><path d="M 112 112 L 116 118 L 120 112" fill="none" stroke="#8a97a4" stroke-width="1.4"/>
+  <rect x="716" y="120" width="104" height="42" rx="4" fill="#eaf7f1" stroke="#b7e0cd"/>
+  <text x="730" y="146" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" fill="#2c6e54" opacity="0.7">5</text>
+  <text x="778" y="146" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#2c6e54" font-weight="600">应用层</text>
+  <rect x="716" y="164" width="104" height="42" rx="4" fill="#eef3fb" stroke="#c3d6f0"/>
+  <text x="730" y="190" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" fill="#2b5d9e" opacity="0.7">4</text>
+  <text x="778" y="190" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#2b5d9e" font-weight="600">传输层</text>
+  <rect x="716" y="208" width="104" height="42" rx="4" fill="#fdf5e6" stroke="#f0d9a8"/>
+  <text x="730" y="234" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" fill="#9a6b16" opacity="0.7">3</text>
+  <text x="778" y="234" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#9a6b16" font-weight="600">网络层</text>
+  <rect x="716" y="252" width="104" height="42" rx="4" fill="#fdeee7" stroke="#f2c7b3"/>
+  <text x="730" y="278" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" fill="#a2502f" opacity="0.7">2</text>
+  <text x="778" y="278" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#a2502f" font-weight="600">数据链路层</text>
+  <rect x="716" y="296" width="104" height="42" rx="4" fill="#f4f5f7" stroke="#dfe4ea"/>
+  <text x="730" y="322" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" fill="#5b6b7b" opacity="0.7">1</text>
+  <text x="778" y="322" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#5b6b7b" font-weight="600">物理层</text>
+  <text x="768" y="100" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" fill="#5b6b7b">数据</text>
+  <path d="M 768 104 V 116" stroke="#8a97a4" stroke-width="1.4"/><path d="M 764 112 L 768 118 L 772 112" fill="none" stroke="#8a97a4" stroke-width="1.4"/>
+  <rect x="380" y="208" width="104" height="42" rx="4" fill="#fdf5e6" stroke="#f0d9a8"/>
+  <text x="394" y="234" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" fill="#9a6b16" opacity="0.7">3</text>
+  <text x="442" y="234" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#9a6b16" font-weight="600">网络层</text>
+  <rect x="380" y="252" width="104" height="42" rx="4" fill="#fdeee7" stroke="#f2c7b3"/>
+  <text x="394" y="278" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" fill="#a2502f" opacity="0.7">2</text>
+  <text x="442" y="278" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#a2502f" font-weight="600">数据链路层</text>
+  <rect x="380" y="296" width="104" height="42" rx="4" fill="#f4f5f7" stroke="#dfe4ea"/>
+  <text x="394" y="322" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" fill="#5b6b7b" opacity="0.7">1</text>
+  <text x="442" y="322" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#5b6b7b" font-weight="600">物理层</text>
+  <rect x="182" y="262" width="190" height="30" rx="3" fill="#f1f4f7" stroke="#cfd8e2"/>
+  <rect x="224" y="262" width="114" height="30" fill="#eaf7f1" stroke="#b7e0cd"/>
+  <rect x="338" y="262" width="34" height="30" rx="3" fill="#f1f4f7" stroke="#cfd8e2"/>
+  <text x="203.0" y="282" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#5b6b7b">首部</text>
+  <text x="281.0" y="282" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#2c6e54">数据（IP 数据报）</text>
+  <text x="355.0" y="282" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#5b6b7b">尾部</text>
+  <rect x="180" y="244" width="34" height="18" rx="9" fill="#ffffff" stroke="#f2c7b3"/>
+  <text x="197" y="257" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10.5" font-weight="600" fill="#a2502f">帧</text>
+  <rect x="496" y="262" width="210" height="30" rx="3" fill="#f1f4f7" stroke="#cfd8e2"/>
+  <rect x="538" y="262" width="134" height="30" fill="#eaf7f1" stroke="#b7e0cd"/>
+  <rect x="672" y="262" width="34" height="30" rx="3" fill="#f1f4f7" stroke="#cfd8e2"/>
+  <text x="517.0" y="282" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#5b6b7b">首部</text>
+  <text x="605.0" y="282" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#2c6e54">数据（IP 数据报）</text>
+  <text x="689.0" y="282" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#5b6b7b">尾部</text>
+  <rect x="494" y="244" width="34" height="18" rx="9" fill="#ffffff" stroke="#f2c7b3"/>
+  <text x="511" y="257" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10.5" font-weight="600" fill="#a2502f">帧</text>
+  <text x="277" y="312" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10.5" fill="#8a97a4">比特流 110100……0101</text>
+  <text x="601" y="312" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10.5" fill="#8a97a4">比特流 110100……0101</text>
+  <line x1="168" y1="320" x2="380" y2="320" stroke="#dfe4ea" stroke-width="1.5"/>
+  <line x1="484" y1="320" x2="716" y2="320" stroke="#dfe4ea" stroke-width="1.5"/>
+  <text x="116" y="360" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11.5" font-weight="600" fill="#5b6b7b">主机 A</text>
+  <text x="432" y="360" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11.5" font-weight="600" fill="#5b6b7b">路由器</text>
+  <text x="768" y="360" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11.5" font-weight="600" fill="#5b6b7b">主机 B</text>
+  <rect x="24" y="386" width="414" height="84" rx="8" fill="#f7f9fb" stroke="#e3e9ef"/>
+  <text x="44" y="410" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" font-weight="600" fill="#2c3e50">物理链路 = 传输介质（0 层）＋ 物理层（1 层）</text>
+  <text x="44" y="432" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10.5" fill="#8a97a4">只有比特通路，没有协议，只能保证比特送到，不能保证内容正确。</text>
+  <text x="44" y="452" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10.5" fill="#8a97a4">它让相邻结点之间在物理上「连得上」。</text>
+  <rect x="462" y="386" width="414" height="84" rx="8" fill="#f7f9fb" stroke="#e3e9ef"/>
+  <text x="482" y="410" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" font-weight="600" fill="#2c3e50">逻辑链路 = 物理链路 ＋ 数据链路层协议</text>
+  <text x="482" y="432" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10.5" fill="#8a97a4">在物理链路之上加帧定界、差错控制与流量控制。</text>
+  <text x="482" y="452" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10.5" fill="#8a97a4">它让相邻结点之间「传得对」，即逻辑上无差错的数据链路。</text>
+  <text x="24" y="500" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" fill="#5b6b7b">职责边界：数据链路层使用物理层的比特传输服务，为网络层提供帧传输服务；路由器只解封装到网络层，转发时逐跳重新封装，端到端的可靠性不归本层负责。</text>
+  <text x="24" y="522" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10.5" fill="#8a97a4">图中 5—1 为五层模型的层次编号：应用层 5、传输层 4、网络层 3、数据链路层 2、物理层 1。</text>
+</svg>
