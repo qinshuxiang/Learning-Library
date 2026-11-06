@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 556" width="900" height="556" role="img" aria-label="计算机由软件、操作系统与硬件三层构成，计算机网络把多台计算机连接起来，组成信息化世界">
+  <rect width="900" height="556" fill="#ffffff"/>
+  <text x="24" y="32" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="16" font-weight="600" fill="#2c3e50">计算机网络在计算机学科中的位置</text>
+  <text x="24" y="53" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11.5" fill="#8a97a4">先有单机的三层，再有把多台机器连起来的网络</text>
+  <ellipse cx="450" cy="270" rx="420" ry="192" fill="none" stroke="#9dc3e6" stroke-width="1.4" stroke-dasharray="6 5"/>
+  <text x="450" y="488" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#2f5597" font-weight="600">信息化世界</text>
+  <rect x="116" y="150" width="222" height="228" rx="16" fill="#e8f1fb" stroke="#9dc3e6" stroke-width="1.6"/>
+  <rect x="136" y="168" width="182" height="54" rx="4" fill="#2f5597" stroke="#8fb4dd"/>
+  <text x="227" y="201" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11.5" fill="#ffffff" font-weight="600">C、数据结构（软件）</text>
+  <rect x="136" y="232" width="182" height="54" rx="4" fill="#b9cfe9" stroke="#9dc3e6"/>
+  <text x="227" y="265" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11.5" fill="#1f3864" font-weight="600">操作系统</text>
+  <rect x="136" y="296" width="182" height="54" rx="4" fill="#2f5597" stroke="#8fb4dd"/>
+  <text x="227" y="329" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11.5" fill="#ffffff" font-weight="600">计组（硬件）</text>
+  <text x="227" y="404" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11.5" fill="#2c3e50">计算机 / 手机</text>
+  <rect x="632" y="150" width="126" height="72" rx="8" fill="#e8f1fb" stroke="#9dc3e6" stroke-width="1.6"/>
+  <text x="695" y="182" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11.5" fill="#2f5597" font-weight="600">其他</text>
+  <text x="695" y="200" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11.5" fill="#2f5597" font-weight="600">计算机</text>
+  <rect x="632" y="306" width="126" height="72" rx="8" fill="#e8f1fb" stroke="#9dc3e6" stroke-width="1.6"/>
+  <text x="695" y="338" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11.5" fill="#2f5597" font-weight="600">其他</text>
+  <text x="695" y="356" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11.5" fill="#2f5597" font-weight="600">计算机</text>
+  <defs>
+    <marker id="ab" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#2f5597"/></marker>
+  </defs>
+  <line x1="342" y1="232" x2="632" y2="186" stroke="#2f5597" stroke-width="1.6" marker-start="url(#ab)" marker-end="url(#ab)"/>
+  <line x1="342" y1="296" x2="632" y2="342" stroke="#2f5597" stroke-width="1.6" marker-start="url(#ab)" marker-end="url(#ab)"/>
+  <text x="492" y="196" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" fill="#2f5597">计算机网络</text>
+  <text x="492" y="318" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" fill="#2f5597">计算机网络</text>
+  <line x1="758" y1="222" x2="758" y2="306" stroke="#2f5597" stroke-width="1.4" marker-start="url(#ab)" marker-end="url(#ab)"/>
+  <text x="772" y="268" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9.6" fill="#8a97a4">计算机网络</text>
+  <text x="24" y="514" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10.6" fill="#5b6b7b">单机内部：C 与数据结构解决「怎么算」，操作系统管「怎么调度资源」，计组讲「硬件怎么跑」。三层都学完，一台机器才算讲透。</text>
+  <text x="24" y="534" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10.6" fill="#8a97a4">但孤立的机器只能自己算。计算机网络把多台计算机连起来，才有资源共享、远程通信，也才有今天的互联网。</text>
+</svg>
