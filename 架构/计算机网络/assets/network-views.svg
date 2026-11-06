@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 656" width="900" height="656" role="img" aria-label="三种划分视角对照：按组成要素分硬件软件协议，按工作方式分边缘与核心，按逻辑功能分资源子网与通信子网">
+  <rect width="900" height="656" fill="#ffffff"/>
+  <text x="24" y="30" text-anchor="start" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="16" fill="#2c3e50" font-weight="600">计算机网络的三种划分视角</text>
+  <text x="24" y="51" text-anchor="start" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11.5" fill="#8a97a4">同一个网络，换一种切法就得到一组术语——三组之间可以互相换算</text>
+  <defs>
+  <marker id="a1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#8a97a4"/></marker>
+  </defs>
+  <rect x="24" y="76" width="852" height="176" rx="10" fill="#f7f9fb" stroke="#e3e9ef" stroke-width="1"/>
+  <rect x="24" y="76" width="132" height="176" rx="10" fill="#eef3fb" stroke="#c3d6f0" stroke-width="1"/>
+  <text x="40" y="110" text-anchor="start" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11.5" fill="#2b5d9e" font-weight="600">按组成要素</text>
+  <text x="40" y="130" text-anchor="start" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9.6" fill="#5b6b7b">硬件</text>
+  <text x="40" y="146" text-anchor="start" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9.6" fill="#5b6b7b">软件</text>
+  <rect x="24" y="262" width="852" height="176" rx="10" fill="#f7f9fb" stroke="#e3e9ef" stroke-width="1"/>
+  <rect x="24" y="262" width="132" height="176" rx="10" fill="#eaf7f1" stroke="#b7e0cd" stroke-width="1"/>
+  <text x="40" y="296" text-anchor="start" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11.5" fill="#2c6e54" font-weight="600">按工作方式</text>
+  <text x="40" y="316" text-anchor="start" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9.6" fill="#5b6b7b">边缘部分</text>
+  <text x="40" y="332" text-anchor="start" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9.6" fill="#5b6b7b">核心部分</text>
+  <rect x="24" y="448" width="852" height="176" rx="10" fill="#f7f9fb" stroke="#e3e9ef" stroke-width="1"/>
+  <rect x="24" y="448" width="132" height="176" rx="10" fill="#f0eefb" stroke="#d6cff0" stroke-width="1"/>
+  <text x="40" y="482" text-anchor="start" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11.5" fill="#5b4b8a" font-weight="600">按逻辑功能</text>
+  <text x="40" y="502" text-anchor="start" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9.6" fill="#5b6b7b">资源子网</text>
+  <text x="40" y="518" text-anchor="start" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9.6" fill="#5b6b7b">通信子网</text>
+  <rect x="196" y="102" width="132" height="74" rx="6" fill="#ffffff" stroke="#c3d6f0" stroke-width="1"/>
+  <text x="262" y="120" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9.8" fill="#2b5d9e" font-weight="600">主机（端系统）</text>
+  <rect x="212" y="130" width="44" height="18" rx="3" fill="#eef3fb" stroke="#c3d6f0" stroke-width="1"/>
+  <text x="234" y="143" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="8.5" fill="#2b5d9e">网卡</text>
+  <text x="268" y="143" text-anchor="start" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="8.5" fill="#8a97a4">应用软件</text>
+  <rect x="268" y="152" width="48" height="16" rx="3" fill="#eaf7f1" stroke="#b7e0cd" stroke-width="1"/>
+  <text x="292" y="163" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="8.2" fill="#2c6e54" font-weight="600">固件</text>
+  <text x="262" y="188" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="8.8" fill="#8a97a4">网卡 = 网络适配器</text>
+  <rect x="404" y="114" width="76" height="40" rx="5" fill="#ffffff" stroke="#c3d6f0" stroke-width="1"/>
+  <text x="442" y="139" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9.5" fill="#2b5d9e" font-weight="600">路由器</text>
+  <line x1="328" y1="140" x2="404" y2="134" stroke="#cfd8e0" stroke-width="1.4"/>
+  <text x="366" y="124" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="8.8" fill="#8a97a4">链路</text>
+  <rect x="380" y="172" width="60" height="20" rx="10" fill="#ffffff" stroke="#f2c7b3" stroke-width="1" stroke-dasharray="3 2"/>
+  <text x="410" y="186" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="8.6" fill="#a2502f" font-weight="600">协议</text>
+  <line x1="410" y1="172" x2="410" y2="154" stroke="#f2c7b3" stroke-width="1" stroke-dasharray="3 2"/>
+  <circle cx="530" cy="118" r="3.5" fill="#2b5d9e" stroke="none" stroke-width="1"/>
+  <text x="542" y="122" text-anchor="start" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10.2" fill="#2b5d9e" font-weight="600">硬件</text>
+  <text x="582" y="122" text-anchor="start" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10.2" fill="#5b6b7b">：主机、通信设备、通信链路——看得见摸得着</text>
+  <circle cx="530" cy="150" r="3.5" fill="#2c6e54" stroke="none" stroke-width="1"/>
+  <text x="542" y="154" text-anchor="start" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10.2" fill="#2c6e54" font-weight="600">软件</text>
+  <text x="582" y="154" text-anchor="start" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10.2" fill="#5b6b7b">：端系统上的程序；路由器里也跑着系统软件</text>
+  <circle cx="530" cy="182" r="3.5" fill="#a2502f" stroke="none" stroke-width="1"/>
+  <text x="542" y="186" text-anchor="start" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10.2" fill="#a2502f" font-weight="600">协议</text>
+  <text x="582" y="186" text-anchor="start" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10.2" fill="#5b6b7b">：两端约定的通信规则，由硬件与软件共同实现</text>
+  <text x="196" y="216" text-anchor="start" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9.6" fill="#8a97a4">「网络适配器 + 固件」正好说明：协议不是纯软件，而是硬件与软件合起来实现的一套规则。</text>
+  <rect x="196" y="284" width="84" height="22" rx="4" fill="#ffffff" stroke="#b7e0cd" stroke-width="1"/>
+  <text x="238" y="299" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9" fill="#2c6e54">主机 1</text>
+  <line x1="280" y1="295" x2="352" y2="324" stroke="#b7e0cd" stroke-width="1"/>
+  <rect x="196" y="312" width="84" height="22" rx="4" fill="#ffffff" stroke="#b7e0cd" stroke-width="1"/>
+  <text x="238" y="327" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9" fill="#2c6e54">主机 2</text>
+  <line x1="280" y1="323" x2="352" y2="324" stroke="#b7e0cd" stroke-width="1"/>
+  <rect x="196" y="340" width="84" height="22" rx="4" fill="#ffffff" stroke="#b7e0cd" stroke-width="1"/>
+  <text x="238" y="355" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9" fill="#2c6e54">主机 3</text>
+  <line x1="280" y1="351" x2="352" y2="324" stroke="#b7e0cd" stroke-width="1"/>
+  <line x1="346" y1="278" x2="346" y2="408" stroke="#9bb8ad" stroke-width="1.2" stroke-dasharray="5 4"/>
+  <text x="240" y="390" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9.8" fill="#2c6e54" font-weight="600">边缘：直接为人服务</text>
+  <text x="240" y="405" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9" fill="#8a97a4">主机 + 装在上面的软件</text>
+  <rect x="364" y="308" width="56" height="26" rx="4" fill="#ffffff" stroke="#b7e0cd" stroke-width="1"/>
+  <rect x="452" y="292" width="56" height="26" rx="4" fill="#ffffff" stroke="#b7e0cd" stroke-width="1"/>
+  <rect x="452" y="350" width="56" height="26" rx="4" fill="#ffffff" stroke="#b7e0cd" stroke-width="1"/>
+  <rect x="540" y="322" width="56" height="26" rx="4" fill="#ffffff" stroke="#b7e0cd" stroke-width="1"/>
+  <line x1="420" y1="321" x2="452" y2="305" stroke="#b7e0cd" stroke-width="1.4"/>
+  <line x1="420" y1="321" x2="452" y2="363" stroke="#b7e0cd" stroke-width="1.4"/>
+  <line x1="508" y1="305" x2="540" y2="332" stroke="#b7e0cd" stroke-width="1.4"/>
+  <line x1="508" y1="363" x2="540" y2="338" stroke="#b7e0cd" stroke-width="1.4"/>
+  <text x="392" y="325" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9" fill="#2c6e54" font-weight="600">R</text>
+  <text x="480" y="309" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9" fill="#2c6e54" font-weight="600">R</text>
+  <text x="480" y="367" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9" fill="#2c6e54" font-weight="600">R</text>
+  <text x="568" y="339" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9" fill="#2c6e54" font-weight="600">R</text>
+  <text x="540" y="390" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9.8" fill="#2c6e54" font-weight="600">核心：连通性与交换服务</text>
+  <text x="540" y="405" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9" fill="#8a97a4">交换服务 = 逐包动态选路，动态配置网络资源</text>
+  <rect x="196" y="468" width="148" height="104" rx="6" fill="#ffffff" stroke="#d6cff0" stroke-width="1"/>
+  <rect x="196" y="468" width="148" height="52" rx="6" fill="#f0eefb" stroke="none" stroke-width="1"/>
+  <text x="270" y="490" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9.6" fill="#5b4b8a" font-weight="600">资源子网</text>
+  <text x="270" y="506" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="8.6" fill="#5b6b7b">CPU、磁盘、应用与数据</text>
+  <rect x="210" y="528" width="54" height="20" rx="3" fill="#ffffff" stroke="#d6cff0" stroke-width="1"/>
+  <text x="237" y="542" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="8.4" fill="#5b4b8a">网卡</text>
+  <rect x="272" y="528" width="58" height="20" rx="3" fill="#ffffff" stroke="#d6cff0" stroke-width="1"/>
+  <text x="301" y="542" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="8.4" fill="#5b4b8a">底层协议</text>
+  <text x="270" y="564" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9.6" fill="#5b4b8a" font-weight="600">通信子网</text>
+  <rect x="376" y="494" width="72" height="40" rx="5" fill="#ffffff" stroke="#d6cff0" stroke-width="1"/>
+  <text x="412" y="519" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9.4" fill="#5b4b8a" font-weight="600">路由器</text>
+  <line x1="344" y1="514" x2="376" y2="514" stroke="#d6cff0" stroke-width="1.4"/>
+  <text x="360" y="506" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="8.6" fill="#8a97a4">链路</text>
+  <text x="492" y="504" text-anchor="start" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10.2" fill="#5b6b7b">资源子网 = 主机上半部分（与通信无关的硬件与软件）</text>
+  <text x="492" y="526" text-anchor="start" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10.2" fill="#5b6b7b">通信子网 = 所有通信设备与介质 + 主机里的网卡和底层协议</text>
+  <text x="492" y="548" text-anchor="start" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10.2" fill="#5b4b8a">与「边缘 / 核心」的唯一差别：网卡与底层协议算进通信子网</text>
+  <text x="196" y="592" text-anchor="start" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9.6" fill="#8a97a4">两个子网的分界不在机箱外面，而在主机内部——同一台主机被一分为二。</text>
+  <text x="24" y="642" text-anchor="start" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10.4" fill="#8a97a4">三组术语各回答一个问题：由什么构成（要素）、谁为谁服务（工作方式）、哪些部分只管传输（逻辑功能）。</text>
+</svg>

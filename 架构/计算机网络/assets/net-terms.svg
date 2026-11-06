@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 566" width="900" height="566" role="img" aria-label="三个层次的网络示意图：一个计算机网络由结点和链路组成，互连网由路由器连接多个计算机网络，互联网是全球规模、必须使用 TCP/IP 的互连网">
+  <rect width="900" height="566" fill="#ffffff"/>
+  <text x="24" y="30" text-anchor="start" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="16" fill="#2c3e50" font-weight="600">计算机网络、互连网与互联网</text>
+  <text x="24" y="51" text-anchor="start" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11.5" fill="#8a97a4">三个词不是同义词：往上加一层路由器，才升一级</text>
+  <defs>
+  <marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#8a97a4"/></marker>
+  <marker id="ab" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#2b5d9e"/></marker>
+  </defs>
+  <rect x="24" y="76" width="252" height="352" rx="10" fill="#f7f9fb" stroke="#e3e9ef" stroke-width="1"/>
+  <rect x="40" y="90" width="4" height="16" rx="2" fill="#2b5d9e" stroke="none" stroke-width="1"/>
+  <text x="52" y="103" text-anchor="start" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="13" fill="#2b5d9e" font-weight="600">① 计算机网络</text>
+  <text x="52" y="121" text-anchor="start" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9.8" fill="#8a97a4">network（一个网络）</text>
+  <text x="42" y="298" text-anchor="start" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10.2" fill="#5b6b7b">由结点和链路组成</text>
+  <text x="42" y="319" text-anchor="start" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10.2" fill="#5b6b7b">设备彼此自治：一台坏了</text>
+  <text x="42" y="340" text-anchor="start" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10.2" fill="#5b6b7b">不影响其它设备运行</text>
+  <text x="42" y="361" text-anchor="start" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10.2" fill="#5b6b7b">通信协议由自己决定</text>
+  <text x="42" y="388" text-anchor="start" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#8a97a4">典型：家庭网 · 宿舍网 · 校园网</text>
+  <rect x="312" y="76" width="252" height="352" rx="10" fill="#f7f9fb" stroke="#e3e9ef" stroke-width="1"/>
+  <rect x="328" y="90" width="4" height="16" rx="2" fill="#2c6e54" stroke="none" stroke-width="1"/>
+  <text x="340" y="103" text-anchor="start" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="13" fill="#2c6e54" font-weight="600">② 互连网</text>
+  <text x="340" y="121" text-anchor="start" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9.8" fill="#8a97a4">internet（小写 i）</text>
+  <text x="330" y="298" text-anchor="start" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10.2" fill="#5b6b7b">路由器把两个或多个计算机网络</text>
+  <text x="330" y="319" text-anchor="start" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10.2" fill="#5b6b7b">连接起来，成为更大的网</text>
+  <text x="330" y="340" text-anchor="start" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10.2" fill="#5b6b7b">路由器可以再接路由器，规模继续扩大</text>
+  <text x="330" y="361" text-anchor="start" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10.2" fill="#5b6b7b">协议仍可自定，各网谈得拢即可</text>
+  <text x="330" y="388" text-anchor="start" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#8a97a4">典型：银行总行与分行的内网</text>
+  <rect x="600" y="76" width="252" height="352" rx="10" fill="#f7f9fb" stroke="#e3e9ef" stroke-width="1"/>
+  <rect x="616" y="90" width="4" height="16" rx="2" fill="#a2502f" stroke="none" stroke-width="1"/>
+  <text x="628" y="103" text-anchor="start" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="13" fill="#a2502f" font-weight="600">③ 互联网</text>
+  <text x="628" y="121" text-anchor="start" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9.8" fill="#8a97a4">Internet（大写 I，又称因特网）</text>
+  <text x="618" y="298" text-anchor="start" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10.2" fill="#5b6b7b">覆盖全球，由 ISP 与国际机构共建</text>
+  <text x="618" y="319" text-anchor="start" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10.2" fill="#5b6b7b">交网费即可接入，对公众开放</text>
+  <text x="618" y="340" text-anchor="start" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10.2" fill="#5b6b7b">所有结点必须遵守 TCP/IP 协议族</text>
+  <text x="618" y="361" text-anchor="start" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10.2" fill="#5b6b7b">任意两台主机之间都能互通</text>
+  <text x="618" y="388" text-anchor="start" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#8a97a4">典型：平时说的「上网」</text>
+  <rect x="46" y="146" width="208" height="128" rx="8" fill="#ffffff" stroke="#e3e9ef" stroke-width="1" stroke-dasharray="4 3"/>
+  <text x="58" y="165" text-anchor="start" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9.5" fill="#8a97a4">一个内部网络</text>
+  <rect x="72" y="180" width="40" height="28" rx="3" fill="#ffffff" stroke="#c3d6f0" stroke-width="1"/>
+  <line x1="80" y1="194" x2="104" y2="194" stroke="#c3d6f0" stroke-width="1"/>
+  <rect x="130" y="180" width="40" height="28" rx="3" fill="#ffffff" stroke="#c3d6f0" stroke-width="1"/>
+  <line x1="138" y1="194" x2="162" y2="194" stroke="#c3d6f0" stroke-width="1"/>
+  <rect x="188" y="180" width="40" height="28" rx="3" fill="#ffffff" stroke="#c3d6f0" stroke-width="1"/>
+  <line x1="196" y1="194" x2="220" y2="194" stroke="#c3d6f0" stroke-width="1"/>
+  <line x1="92" y1="208" x2="130" y2="246" stroke="#cfd8e0" stroke-width="1.2"/>
+  <line x1="150" y1="208" x2="150" y2="246" stroke="#cfd8e0" stroke-width="1.2"/>
+  <line x1="208" y1="208" x2="170" y2="246" stroke="#cfd8e0" stroke-width="1.2"/>
+  <rect x="116" y="246" width="68" height="22" rx="4" fill="#eef3fb" stroke="#c3d6f0" stroke-width="1"/>
+  <text x="150" y="261" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9.8" fill="#2b5d9e" font-weight="600">交换机</text>
+  <rect x="330" y="146" width="84" height="46" rx="6" fill="#ffffff" stroke="#b7e0cd" stroke-width="1"/>
+  <text x="372" y="167" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9.8" fill="#2c6e54" font-weight="600">网络 A</text>
+  <text x="372" y="181" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="8.8" fill="#8a97a4">自治的一张小网</text>
+  <rect x="462" y="146" width="84" height="46" rx="6" fill="#ffffff" stroke="#b7e0cd" stroke-width="1"/>
+  <text x="504" y="167" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9.8" fill="#2c6e54" font-weight="600">网络 B</text>
+  <text x="504" y="181" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="8.8" fill="#8a97a4">协议可以不同</text>
+  <rect x="396" y="226" width="84" height="40" rx="6" fill="#ffffff" stroke="#b7e0cd" stroke-width="1"/>
+  <text x="438" y="244" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9.8" fill="#2c6e54" font-weight="600">网络 C</text>
+  <text x="438" y="258" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="8.8" fill="#8a97a4">再接路由器还能扩</text>
+  <rect x="416" y="196" width="44" height="20" rx="4" fill="#eaf7f1" stroke="#b7e0cd" stroke-width="1"/>
+  <text x="438" y="210" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="8.8" fill="#2c6e54" font-weight="600">路由器</text>
+  <line x1="372" y1="192" x2="418" y2="201" stroke="#cfd8e0" stroke-width="1.2"/>
+  <line x1="504" y1="192" x2="458" y2="201" stroke="#cfd8e0" stroke-width="1.2"/>
+  <line x1="438" y1="216" x2="438" y2="226" stroke="#cfd8e0" stroke-width="1.2"/>
+  <text x="726" y="146" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9.5" fill="#8a97a4">ISP 骨干</text>
+  <rect x="664" y="186" width="28" height="20" rx="4" fill="#fdf3ee" stroke="#f2c7b3" stroke-width="1"/>
+  <text x="678" y="200" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9.5" fill="#a2502f" font-weight="600">R</text>
+  <rect x="754" y="186" width="28" height="20" rx="4" fill="#fdf3ee" stroke="#f2c7b3" stroke-width="1"/>
+  <text x="768" y="200" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9.5" fill="#a2502f" font-weight="600">R</text>
+  <rect x="664" y="236" width="28" height="20" rx="4" fill="#fdf3ee" stroke="#f2c7b3" stroke-width="1"/>
+  <text x="678" y="250" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9.5" fill="#a2502f" font-weight="600">R</text>
+  <rect x="754" y="236" width="28" height="20" rx="4" fill="#fdf3ee" stroke="#f2c7b3" stroke-width="1"/>
+  <text x="768" y="250" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9.5" fill="#a2502f" font-weight="600">R</text>
+  <line x1="678" y1="206" x2="678" y2="236" stroke="#f2c7b3" stroke-width="1.1"/>
+  <line x1="768" y1="206" x2="768" y2="236" stroke="#f2c7b3" stroke-width="1.1"/>
+  <line x1="678" y1="196" x2="754" y2="196" stroke="#f2c7b3" stroke-width="1.1"/>
+  <line x1="678" y1="246" x2="754" y2="246" stroke="#f2c7b3" stroke-width="1.1"/>
+  <text x="726" y="225" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9.8" fill="#a2502f" font-weight="600">TCP/IP</text>
+  <line x1="638" y1="186" x2="666" y2="188" stroke="#cfd8e0" stroke-width="1"/>
+  <line x1="810" y1="186" x2="776" y2="188" stroke="#cfd8e0" stroke-width="1"/>
+  <line x1="638" y1="278" x2="666" y2="250" stroke="#cfd8e0" stroke-width="1"/>
+  <line x1="810" y1="278" x2="776" y2="250" stroke="#cfd8e0" stroke-width="1"/>
+  <rect x="618" y="160" width="40" height="26" rx="4" fill="#ffffff" stroke="#e3e9ef" stroke-width="1" stroke-dasharray="3 2"/>
+  <text x="638" y="177" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="8.8" fill="#8a97a4">家</text>
+  <rect x="790" y="160" width="40" height="26" rx="4" fill="#ffffff" stroke="#e3e9ef" stroke-width="1" stroke-dasharray="3 2"/>
+  <text x="810" y="177" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="8.8" fill="#8a97a4">公司</text>
+  <rect x="618" y="252" width="40" height="26" rx="4" fill="#ffffff" stroke="#e3e9ef" stroke-width="1" stroke-dasharray="3 2"/>
+  <text x="638" y="269" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="8.8" fill="#8a97a4">学校</text>
+  <rect x="790" y="252" width="40" height="26" rx="4" fill="#ffffff" stroke="#e3e9ef" stroke-width="1" stroke-dasharray="3 2"/>
+  <text x="810" y="269" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="8.8" fill="#8a97a4">移动网</text>
+  <rect x="24" y="446" width="852" height="100" rx="8" fill="#f7f9fb" stroke="#e3e9ef" stroke-width="1"/>
+  <text x="44" y="470" text-anchor="start" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#2c3e50" font-weight="600">一句话判定</text>
+  <text x="44" y="492" text-anchor="start" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10.6" fill="#5b6b7b">单位内部的一张网 → 计算机网络；几张网经路由器连成一体、不对外开放 → 互连网；接出去能访问全世界、且遵守 TCP/IP → 互联网。</text>
+  <text x="44" y="514" text-anchor="start" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10.6" fill="#8a97a4">判据不是「有没有连到别的网络」，而是「这一层的边界在哪」：断网后仍能互相通信的，就是一张计算机网络。</text>
+  <text x="44" y="536" text-anchor="start" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10.6" fill="#8a97a4">「投屏要求手机和电视在同一个网络」——这里说的是同一张计算机网络，落在同一台交换机的端口下。</text>
+</svg>
