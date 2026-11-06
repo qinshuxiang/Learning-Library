@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 660" width="900" height="660" role="img" aria-label="五种基带编码对同一串比特 1 1 1 1 0 0 1 0 1 的波形对照：NRZ、RZ、NRZI、曼彻斯特与差分曼彻斯特">
+  <rect width="900" height="660" fill="#ffffff"/>
+  <text x="24" y="30" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="16" font-weight="600" fill="#2c3e50">五种基带编码的波形对照</text>
+  <text x="24" y="50" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11.5" fill="#8a97a4">同一位序 1 1 1 1 0 0 1 0 1；两条虚线之间为一位，左线是比特起点，两线中点为比特中点</text>
+  <rect x="288" y="72" width="68" height="484" fill="#f7f9fb"/>
+  <rect x="424" y="72" width="68" height="484" fill="#f7f9fb"/>
+  <rect x="560" y="72" width="68" height="484" fill="#f7f9fb"/>
+  <rect x="696" y="72" width="68" height="484" fill="#f7f9fb"/>
+  <line x1="220" y1="72" x2="220" y2="556" stroke="#d8e0e8" stroke-width="1" stroke-dasharray="3 4"/>
+  <line x1="288" y1="72" x2="288" y2="556" stroke="#d8e0e8" stroke-width="1" stroke-dasharray="3 4"/>
+  <line x1="356" y1="72" x2="356" y2="556" stroke="#d8e0e8" stroke-width="1" stroke-dasharray="3 4"/>
+  <line x1="424" y1="72" x2="424" y2="556" stroke="#d8e0e8" stroke-width="1" stroke-dasharray="3 4"/>
+  <line x1="492" y1="72" x2="492" y2="556" stroke="#d8e0e8" stroke-width="1" stroke-dasharray="3 4"/>
+  <line x1="560" y1="72" x2="560" y2="556" stroke="#d8e0e8" stroke-width="1" stroke-dasharray="3 4"/>
+  <line x1="628" y1="72" x2="628" y2="556" stroke="#d8e0e8" stroke-width="1" stroke-dasharray="3 4"/>
+  <line x1="696" y1="72" x2="696" y2="556" stroke="#d8e0e8" stroke-width="1" stroke-dasharray="3 4"/>
+  <line x1="764" y1="72" x2="764" y2="556" stroke="#d8e0e8" stroke-width="1" stroke-dasharray="3 4"/>
+  <line x1="832" y1="72" x2="832" y2="556" stroke="#d8e0e8" stroke-width="1" stroke-dasharray="3 4"/>
+  <text x="254.0" y="66" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="13" font-weight="600" fill="#2c3e50">1</text>
+  <text x="322.0" y="66" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="13" font-weight="600" fill="#2c3e50">1</text>
+  <text x="390.0" y="66" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="13" font-weight="600" fill="#2c3e50">1</text>
+  <text x="458.0" y="66" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="13" font-weight="600" fill="#2c3e50">1</text>
+  <text x="526.0" y="66" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="13" font-weight="600" fill="#2c3e50">0</text>
+  <text x="594.0" y="66" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="13" font-weight="600" fill="#2c3e50">0</text>
+  <text x="662.0" y="66" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="13" font-weight="600" fill="#2c3e50">1</text>
+  <text x="730.0" y="66" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="13" font-weight="600" fill="#2c3e50">0</text>
+  <text x="798.0" y="66" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="13" font-weight="600" fill="#2c3e50">1</text>
+  <text x="12" y="110" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12.5" font-weight="600" fill="#2c3e50">不归零编码（NRZ）</text>
+  <text x="12" y="130" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#8a97a4">低 0 高 1，中不变</text>
+  <path d="M 190 94 H 254.0 H 288.0 H 322.0 H 356.0 H 390.0 H 424.0 H 458.0 H 492.0 V 136 H 526.0 H 560.0 H 594.0 H 628.0 V 94 H 662.0 H 696.0 V 136 H 730.0 H 764.0 V 94 H 798.0 H 832.0 H 840" fill="none" stroke="#2f4358" stroke-width="2.2"/>
+  <text x="12" y="206" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12.5" font-weight="600" fill="#2c3e50">归零编码（RZ）</text>
+  <text x="12" y="226" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#8a97a4">低 0 高 1，中归零</text>
+  <path d="M 190 190 H 254.0 V 232 H 288.0 V 190 H 322.0 V 232 H 356.0 V 190 H 390.0 V 232 H 424.0 V 190 H 458.0 V 232 H 492.0 H 526.0 H 560.0 H 594.0 H 628.0 V 190 H 662.0 V 232 H 696.0 H 730.0 H 764.0 V 190 H 798.0 V 232 H 832.0 H 840" fill="none" stroke="#2f4358" stroke-width="2.2"/>
+  <text x="12" y="302" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12.5" font-weight="600" fill="#2c3e50">反向非归零（NRZI）</text>
+  <text x="12" y="322" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#8a97a4">起点跳 0、不跳 1，中不变</text>
+  <path d="M 190 328 H 254.0 H 288.0 H 322.0 H 356.0 H 390.0 H 424.0 H 458.0 H 492.0 V 286 H 526.0 H 560.0 V 328 H 594.0 H 628.0 H 662.0 H 696.0 V 286 H 730.0 H 764.0 H 798.0 H 832.0 H 840" fill="none" stroke="#2f4358" stroke-width="2.2"/>
+  <text x="12" y="398" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12.5" font-weight="600" fill="#2c3e50">曼彻斯特编码</text>
+  <text x="12" y="418" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#8a97a4">中必变：低→高为 0，高→低为 1（IEEE）</text>
+  <path d="M 190 382 H 254.0 V 424 H 288.0 V 382 H 322.0 V 424 H 356.0 V 382 H 390.0 V 424 H 424.0 V 382 H 458.0 V 424 H 492.0 H 526.0 V 382 H 560.0 V 424 H 594.0 V 382 H 628.0 H 662.0 V 424 H 696.0 H 730.0 V 382 H 764.0 H 798.0 V 424 H 832.0 H 840" fill="none" stroke="#2f4358" stroke-width="2.2"/>
+  <text x="12" y="494" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12.5" font-weight="600" fill="#2c3e50">差分曼彻斯特编码</text>
+  <text x="12" y="514" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#8a97a4">起点跳 0、不跳 1，中必变</text>
+  <path d="M 190 478 H 254.0 V 520 H 288.0 H 322.0 V 478 H 356.0 H 390.0 V 520 H 424.0 H 458.0 V 478 H 492.0 V 520 H 526.0 V 478 H 560.0 V 520 H 594.0 V 478 H 628.0 H 662.0 V 520 H 696.0 V 478 H 730.0 V 520 H 764.0 H 798.0 V 478 H 832.0 H 840" fill="none" stroke="#2f4358" stroke-width="2.2"/>
+  <rect x="24" y="578" width="852" height="56" rx="8" fill="#f7f9fb" stroke="#e3e9ef"/>
+  <text x="44" y="601" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11.5" fill="#5b6b7b">读法：先看比特中间有无跳变——必变的是曼彻斯特与差分曼彻斯特；再看比特起点有无跳变——起点跳为 0、不跳为 1 的是 NRZI 与差分曼彻斯特。</text>
+  <text x="44" y="622" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" fill="#8a97a4">波形左侧多出的一小段是初始电平：NRZ、RZ、NRZI 取低，差分曼彻斯特取高；NRZI 前四位全为 1 时没有跳变，正是它无法自同步的原因。</text>
+</svg>
