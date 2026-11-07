@@ -6,7 +6,7 @@
   <text x="450" y="488" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#2f5597" font-weight="600">信息化世界</text>
   <rect x="116" y="150" width="222" height="228" rx="16" fill="#e8f1fb" stroke="#9dc3e6" stroke-width="1.6"/>
   <rect x="136" y="168" width="182" height="54" rx="4" fill="#2f5597" stroke="#8fb4dd"/>
-  <text x="227" y="201" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11.5" fill="#ffffff" font-weight="600">C、数据结构（软件）</text>
+  <text x="227" y="201" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11.5" fill="#ffffff" font-weight="600">数据结构（软件）</text>
   <rect x="136" y="232" width="182" height="54" rx="4" fill="#b9cfe9" stroke="#9dc3e6"/>
   <text x="227" y="265" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11.5" fill="#1f3864" font-weight="600">操作系统</text>
   <rect x="136" y="296" width="182" height="54" rx="4" fill="#2f5597" stroke="#8fb4dd"/>
@@ -27,6 +27,6 @@
   <text x="492" y="318" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" fill="#2f5597">计算机网络</text>
   <line x1="758" y1="222" x2="758" y2="306" stroke="#2f5597" stroke-width="1.4" marker-start="url(#ab)" marker-end="url(#ab)"/>
   <text x="772" y="268" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9.6" fill="#8a97a4">计算机网络</text>
-  <text x="24" y="514" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10.6" fill="#5b6b7b">单机内部：C 与数据结构解决「怎么算」，操作系统管「怎么调度资源」，计组讲「硬件怎么跑」。三层都学完，一台机器才算讲透。</text>
+  <text x="24" y="514" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10.6" fill="#5b6b7b">单机内部：数据结构解决「怎么算」，操作系统管「怎么调度资源」，计组讲「硬件怎么跑」。三层都学完，一台机器才算讲透。</text>
   <text x="24" y="534" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10.6" fill="#8a97a4">但孤立的机器只能自己算。计算机网络把多台计算机连起来，才有资源共享、远程通信，也才有今天的互联网。</text>
 </svg>
