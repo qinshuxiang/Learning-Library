@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 730" width="900" height="730" role="img" aria-label="双绞线、同轴电缆与光纤三种导向型传输介质的结构对照">
+<rect width="900" height="730" fill="#ffffff"/>
+<text x="24" y="32" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="16" fill="#2c3e50" font-weight="600" text-anchor="start">三种导向型传输介质的结构</text>
+<text x="24" y="52" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11.5" fill="#8a97a4" font-weight="400" text-anchor="start">从上到下：抗干扰依次增强，传输损耗依次减小，造价依次升高</text>
+<line x1="24" y1="272" x2="876" y2="272" stroke="#e3e9ef" stroke-width="1"/>
+<line x1="24" y1="478" x2="876" y2="478" stroke="#e3e9ef" stroke-width="1"/>
+<text x="24" y="102" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="13" fill="#2c3e50" font-weight="600" text-anchor="start">双绞线（TP）</text>
+<text x="24" y="126" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9.5" fill="#5b6b7b" font-weight="400" text-anchor="start">两根绝缘铜线绞合成麻花状</text>
+<text x="24" y="144" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9.5" fill="#5b6b7b" font-weight="400" text-anchor="start">绞合抵消共模干扰，绞得越密越强</text>
+<text x="24" y="162" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9.5" fill="#5b6b7b" font-weight="400" text-anchor="start">一根网线 = 4 组 × 2 根 = 8 根</text>
+<text x="24" y="180" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9.5" fill="#5b6b7b" font-weight="400" text-anchor="start">电话线只用 1 对</text>
+<path d="M 270.0 168.0 L 271.8 170.9 L 273.7 173.8 L 275.5 176.6 L 277.3 179.2 L 279.2 181.8 L 281.0 184.1 L 282.8 186.3 L 284.7 188.3 L 286.5 190.0 L 288.3 191.4 L 290.2 192.5 L 292.0 193.3 L 293.8 193.8 L 295.7 194.0 L 297.5 193.9 L 299.3 193.4 L 301.2 192.6 L 303.0 191.5 L 304.8 190.1 L 306.7 188.5 L 308.5 186.6 L 310.3 184.4 L 312.2 182.1 L 314.0 179.6 L 315.8 176.9 L 317.7 174.1 L 319.5 171.3 L 321.3 168.4 L 323.2 165.5 L 325.0 162.6 L 326.8 159.8 L 328.7 157.1 L 330.5 154.5 L 332.3 152.1 L 334.2 149.9 L 336.0 148.0 L 337.8 146.2 L 339.7 144.8 L 341.5 143.6 L 343.3 142.8 L 345.2 142.2 L 347.0 142.0 L 348.8 142.1 L 350.7 142.5 L 352.5 143.3 L 354.3 144.3 L 356.2 145.7 L 358.0 147.3 L 359.8 149.2 L 361.7 151.3 L 363.5 153.6 L 365.3 156.1 L 367.2 158.8 L 369.0 161.5 L 370.8 164.4 L 372.7 167.3 L 374.5 170.2 L 376.3 173.1 L 378.2 175.9 L 380.0 178.6 L 381.8 181.2 L 383.7 183.6 L 385.5 185.8 L 387.3 187.8 L 389.2 189.6 L 391.0 191.0 L 392.8 192.2 L 394.7 193.1 L 396.5 193.7 L 398.3 194.0 L 400.2 193.9 L 402.0 193.5 L 403.8 192.8 L 405.7 191.8 L 407.5 190.5 L 409.3 188.9 L 411.2 187.1 L 413.0 185.0 L 414.8 182.7 L 416.7 180.2 L 418.5 177.6 L 420.3 174.8 L 422.2 172.0 L 424.0 169.1 L 425.8 166.2 L 427.7 163.3 L 429.5 160.5 L 431.3 157.8 L 433.2 155.2 L 435.0 152.7 L 436.8 150.5 L 438.7 148.4 L 440.5 146.7 L 442.3 145.1 L 444.2 143.9 L 446.0 143.0 L 447.8 142.3 L 449.7 142.0 L 451.5 142.1 L 453.3 142.4 L 455.2 143.1 L 457.0 144.0 L 458.8 145.3 L 460.7 146.9 L 462.5 148.7 L 464.3 150.7 L 466.2 153.0 L 468.0 155.5 L 469.8 158.1 L 471.7 160.8 L 473.5 163.7 L 475.3 166.5 L 477.2 169.5 L 479.0 172.3 L 480.8 175.2 L 482.7 177.9 L 484.5 180.5 L 486.3 183.0 L 488.2 185.3 L 490.0 187.3 L 491.8 189.1 L 493.7 190.7 L 495.5 192.0 L 497.3 192.9 L 499.2 193.6 L 501.0 193.9 L 502.8 194.0 L 504.7 193.7 L 506.5 193.0 L 508.3 192.1 L 510.2 190.9 L 512.0 189.3 L 513.8 187.6 L 515.7 185.5 L 517.5 183.3 L 519.3 180.8 L 521.2 178.2 L 523.0 175.5 L 524.8 172.7 L 526.7 169.8 L 528.5 166.9 L 530.3 164.0 L 532.2 161.2 L 534.0 158.4 L 535.8 155.8 L 537.7 153.3 L 539.5 151.0 L 541.3 148.9 L 543.2 147.1 L 545.0 145.5 L 546.8 144.2 L 548.7 143.2 L 550.5 142.5 L 552.3 142.1 L 554.2 142.0 L 556.0 142.3 L 557.8 142.9 L 559.7 143.8 L 561.5 145.0 L 563.3 146.4 L 565.2 148.2 L 567.0 150.2 L 568.8 152.4 L 570.7 154.8 L 572.5 157.4 L 574.3 160.1 L 576.2 162.9 L 578.0 165.8 L 579.8 168.7 L 581.7 171.6 L 583.5 174.5 L 585.3 177.2 L 587.2 179.9 L 589.0 182.4 L 590.8 184.7 L 592.7 186.8 L 594.5 188.7 L 596.3 190.3 L 598.2 191.7 L 600.0 192.7" fill="none" stroke="#3f6ea8" stroke-width="2"/>
+<path d="M 270.0 168.0 L 271.8 165.1 L 273.7 162.2 L 275.5 159.4 L 277.3 156.8 L 279.2 154.2 L 281.0 151.9 L 282.8 149.7 L 284.7 147.7 L 286.5 146.0 L 288.3 144.6 L 290.2 143.5 L 292.0 142.7 L 293.8 142.2 L 295.7 142.0 L 297.5 142.1 L 299.3 142.6 L 301.2 143.4 L 303.0 144.5 L 304.8 145.9 L 306.7 147.5 L 308.5 149.4 L 310.3 151.6 L 312.2 153.9 L 314.0 156.4 L 315.8 159.1 L 317.7 161.9 L 319.5 164.7 L 321.3 167.6 L 323.2 170.5 L 325.0 173.4 L 326.8 176.2 L 328.7 178.9 L 330.5 181.5 L 332.3 183.9 L 334.2 186.1 L 336.0 188.0 L 337.8 189.8 L 339.7 191.2 L 341.5 192.4 L 343.3 193.2 L 345.2 193.8 L 347.0 194.0 L 348.8 193.9 L 350.7 193.5 L 352.5 192.7 L 354.3 191.7 L 356.2 190.3 L 358.0 188.7 L 359.8 186.8 L 361.7 184.7 L 363.5 182.4 L 365.3 179.9 L 367.2 177.2 L 369.0 174.5 L 370.8 171.6 L 372.7 168.7 L 374.5 165.8 L 376.3 162.9 L 378.2 160.1 L 380.0 157.4 L 381.8 154.8 L 383.7 152.4 L 385.5 150.2 L 387.3 148.2 L 389.2 146.4 L 391.0 145.0 L 392.8 143.8 L 394.7 142.9 L 396.5 142.3 L 398.3 142.0 L 400.2 142.1 L 402.0 142.5 L 403.8 143.2 L 405.7 144.2 L 407.5 145.5 L 409.3 147.1 L 411.2 148.9 L 413.0 151.0 L 414.8 153.3 L 416.7 155.8 L 418.5 158.4 L 420.3 161.2 L 422.2 164.0 L 424.0 166.9 L 425.8 169.8 L 427.7 172.7 L 429.5 175.5 L 431.3 178.2 L 433.2 180.8 L 435.0 183.3 L 436.8 185.5 L 438.7 187.6 L 440.5 189.3 L 442.3 190.9 L 444.2 192.1 L 446.0 193.0 L 447.8 193.7 L 449.7 194.0 L 451.5 193.9 L 453.3 193.6 L 455.2 192.9 L 457.0 192.0 L 458.8 190.7 L 460.7 189.1 L 462.5 187.3 L 464.3 185.3 L 466.2 183.0 L 468.0 180.5 L 469.8 177.9 L 471.7 175.2 L 473.5 172.3 L 475.3 169.5 L 477.2 166.5 L 479.0 163.7 L 480.8 160.8 L 482.7 158.1 L 484.5 155.5 L 486.3 153.0 L 488.2 150.7 L 490.0 148.7 L 491.8 146.9 L 493.7 145.3 L 495.5 144.0 L 497.3 143.1 L 499.2 142.4 L 501.0 142.1 L 502.8 142.0 L 504.7 142.3 L 506.5 143.0 L 508.3 143.9 L 510.2 145.1 L 512.0 146.7 L 513.8 148.4 L 515.7 150.5 L 517.5 152.7 L 519.3 155.2 L 521.2 157.8 L 523.0 160.5 L 524.8 163.3 L 526.7 166.2 L 528.5 169.1 L 530.3 172.0 L 532.2 174.8 L 534.0 177.6 L 535.8 180.2 L 537.7 182.7 L 539.5 185.0 L 541.3 187.1 L 543.2 188.9 L 545.0 190.5 L 546.8 191.8 L 548.7 192.8 L 550.5 193.5 L 552.3 193.9 L 554.2 194.0 L 556.0 193.7 L 557.8 193.1 L 559.7 192.2 L 561.5 191.0 L 563.3 189.6 L 565.2 187.8 L 567.0 185.8 L 568.8 183.6 L 570.7 181.2 L 572.5 178.6 L 574.3 175.9 L 576.2 173.1 L 578.0 170.2 L 579.8 167.3 L 581.7 164.4 L 583.5 161.5 L 585.3 158.8 L 587.2 156.1 L 589.0 153.6 L 590.8 151.3 L 592.7 149.2 L 594.5 147.3 L 596.3 145.7 L 598.2 144.3 L 600.0 143.3" fill="none" stroke="#a8485c" stroke-width="2"/>
+<text x="270" y="214" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9" fill="#8a97a4" font-weight="400" text-anchor="start">两根线互绞，两条曲线始终反相</text>
+<circle cx="676" cy="150" r="34" fill="#ffffff" stroke="#b9c3cd" stroke-width="1.2"/>
+<circle cx="693.0" cy="141.5" r="4.6" fill="#cfe0f2" stroke="#7fa3c9" stroke-width="0.8"/>
+<circle cx="684.5" cy="133.0" r="4.6" fill="#cfe0f2" stroke="#7fa3c9" stroke-width="0.8"/>
+<circle cx="667.5" cy="133.0" r="4.6" fill="#cfe0f2" stroke="#7fa3c9" stroke-width="0.8"/>
+<circle cx="659.0" cy="141.5" r="4.6" fill="#cfe0f2" stroke="#7fa3c9" stroke-width="0.8"/>
+<circle cx="659.0" cy="158.5" r="4.6" fill="#cfe0f2" stroke="#7fa3c9" stroke-width="0.8"/>
+<circle cx="667.5" cy="167.0" r="4.6" fill="#cfe0f2" stroke="#7fa3c9" stroke-width="0.8"/>
+<circle cx="684.5" cy="167.0" r="4.6" fill="#cfe0f2" stroke="#7fa3c9" stroke-width="0.8"/>
+<circle cx="693.0" cy="158.5" r="4.6" fill="#cfe0f2" stroke="#7fa3c9" stroke-width="0.8"/>
+<text x="676" y="214" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9" fill="#5b6b7b" font-weight="400" text-anchor="middle">UTP 非屏蔽</text>
+<circle cx="806" cy="150" r="43" fill="#eef2f6" stroke="#9fb0bd" stroke-width="1.2" stroke-dasharray="4 3"/>
+<circle cx="806" cy="150" r="34" fill="#ffffff" stroke="#b9c3cd" stroke-width="1.2"/>
+<circle cx="823.0" cy="141.5" r="4.6" fill="#cfe0f2" stroke="#7fa3c9" stroke-width="0.8"/>
+<circle cx="814.5" cy="133.0" r="4.6" fill="#cfe0f2" stroke="#7fa3c9" stroke-width="0.8"/>
+<circle cx="797.5" cy="133.0" r="4.6" fill="#cfe0f2" stroke="#7fa3c9" stroke-width="0.8"/>
+<circle cx="789.0" cy="141.5" r="4.6" fill="#cfe0f2" stroke="#7fa3c9" stroke-width="0.8"/>
+<circle cx="789.0" cy="158.5" r="4.6" fill="#cfe0f2" stroke="#7fa3c9" stroke-width="0.8"/>
+<circle cx="797.5" cy="167.0" r="4.6" fill="#cfe0f2" stroke="#7fa3c9" stroke-width="0.8"/>
+<circle cx="814.5" cy="167.0" r="4.6" fill="#cfe0f2" stroke="#7fa3c9" stroke-width="0.8"/>
+<circle cx="823.0" cy="158.5" r="4.6" fill="#cfe0f2" stroke="#7fa3c9" stroke-width="0.8"/>
+<text x="806" y="214" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9" fill="#5b6b7b" font-weight="400" text-anchor="middle">STP 加屏蔽层</text>
+<text x="24" y="308" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="13" fill="#2c3e50" font-weight="600" text-anchor="start">同轴电缆</text>
+<text x="24" y="332" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9.5" fill="#5b6b7b" font-weight="400" text-anchor="start">内导体传信号，屏蔽层抗干扰</text>
+<text x="24" y="350" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9.5" fill="#5b6b7b" font-weight="400" text-anchor="start">由内到外：铜芯 → 绝缘层 → 屏蔽层 → 保护套</text>
+<text x="24" y="368" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9.5" fill="#5b6b7b" font-weight="400" text-anchor="start">铜芯越粗，电阻越小、衰减越小、传得越远</text>
+<text x="24" y="386" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9.5" fill="#5b6b7b" font-weight="400" text-anchor="start">早期以太网与 2012 年前的有线电视用它</text>
+<circle cx="390" cy="378" r="92" fill="#dbe3ea" stroke="#b9c3cd" stroke-width="1.2"/>
+<circle cx="390" cy="378" r="82" fill="#ffffff"/>
+<circle cx="390" cy="378" r="82" fill="none" stroke="#7b8a99" stroke-width="7" stroke-dasharray="6 3"/>
+<circle cx="390" cy="378" r="22" fill="#c9a227" stroke="#a8861f" stroke-width="1"/>
+<line x1="367.2" y1="293.0" x2="516" y2="296" stroke="#9fb0bd" stroke-width="1"/>
+<circle cx="367.2" cy="293.0" r="2.4" fill="#7b8a99"/>
+<text x="524" y="300" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#5b6b7b" font-weight="400" text-anchor="start">① 保护套</text>
+<line x1="428.5" y1="305.6" x2="516" y2="322" stroke="#9fb0bd" stroke-width="1"/>
+<circle cx="428.5" cy="305.6" r="2.4" fill="#7b8a99"/>
+<text x="524" y="326" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#5b6b7b" font-weight="400" text-anchor="start">② 屏蔽层（金属网）</text>
+<line x1="440.7" y1="359.5" x2="516" y2="348" stroke="#9fb0bd" stroke-width="1"/>
+<circle cx="440.7" cy="359.5" r="2.4" fill="#7b8a99"/>
+<text x="524" y="352" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#5b6b7b" font-weight="400" text-anchor="start">③ 绝缘层</text>
+<line x1="411.3" y1="383.3" x2="516" y2="374" stroke="#9fb0bd" stroke-width="1"/>
+<circle cx="411.3" cy="383.3" r="2.4" fill="#7b8a99"/>
+<text x="524" y="378" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#5b6b7b" font-weight="400" text-anchor="start">④ 内导体（铜芯）</text>
+<text x="24" y="514" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="13" fill="#2c3e50" font-weight="600" text-anchor="start">光纤</text>
+<text x="24" y="538" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9.5" fill="#5b6b7b" font-weight="400" text-anchor="start">纤芯折射率高，包层折射率低</text>
+<text x="24" y="556" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9.5" fill="#5b6b7b" font-weight="400" text-anchor="start">入射角足够大 → 全反射，光被困在纤芯里</text>
+<text x="24" y="574" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9.5" fill="#5b6b7b" font-weight="400" text-anchor="start">抗干扰最强、损耗最小、线径最细</text>
+<rect x="270" y="528" width="330" height="80" fill="#f7f9fb"/>
+<line x1="270" y1="528" x2="600" y2="528" stroke="#c3ccd6" stroke-width="2"/>
+<line x1="270" y1="608" x2="600" y2="608" stroke="#c3ccd6" stroke-width="2"/>
+<polyline points="270 600 330 528 390 608 450 528 510 608 570 528 600 574" fill="none" stroke="#3f6ea8" stroke-width="2"/>
+<text x="270" y="516" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9" fill="#8a97a4" font-weight="400" text-anchor="start">光在纤芯内壁不断全反射前进</text>
+<circle cx="700" cy="568" r="52" fill="#eef3fb" stroke="#9fb6cc" stroke-width="1.4"/>
+<circle cx="700" cy="568" r="26" fill="#cfe3f5" stroke="#7fa3c9" stroke-width="1.2"/>
+<text x="700" y="571" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9" fill="#2f5c8a" font-weight="600" text-anchor="middle">纤芯</text>
+<line x1="743" y1="598" x2="768" y2="620" stroke="#9fb0bd" stroke-width="1"/>
+<circle cx="743" cy="598" r="2.4" fill="#7b8a99"/>
+<text x="772" y="624" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9.5" fill="#5b6b7b" font-weight="400" text-anchor="start">包层（折射率低）</text>
+<text x="24" y="706" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#8a97a4" font-weight="400" text-anchor="start">三者的共同目标都是对抗信道噪声：抗干扰越强，噪声功率越低，按香农定理可用的极限速率越高。</text>
+</svg>
