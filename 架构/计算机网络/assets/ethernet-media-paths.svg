@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 620" width="900" height="620" role="img" aria-label="以太网三种传输介质的技术路线：同轴电缆为总线形共享介质用 CSMA/CD，双绞线经集线器仍需 CSMA/CD、经交换机可全双工免用，光纤为点对点全双工无需介质访问控制">
+<rect width="900" height="620" fill="#ffffff"/>
+<text x="28" y="32" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="16" fill="#2c3e50" font-weight="600" text-anchor="start">以太网的三条介质支线：介质决定拓扑，拓扑决定要不要争信道</text>
+<text x="28" y="56" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11.5" fill="#8a97a4" font-weight="400" text-anchor="start">同为 10 Mbps 基带以太网，三种介质演化出三种组网形态；是否需要介质访问控制，只看链路能否被独占</text>
+
+<rect x="330" y="84" width="240" height="44" rx="6" fill="#2c3e50"/>
+<text x="450" y="103" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12.5" fill="#ffffff" font-weight="600" text-anchor="middle">10 Mbps 基带以太网</text>
+<text x="450" y="119" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#c3ccd6" font-weight="400" text-anchor="middle">IEEE 802.3 · 曼彻斯特编码</text>
+
+<line x1="450" y1="128" x2="450" y2="152" stroke="#8a97a4" stroke-width="1.2"/>
+<line x1="166" y1="152" x2="734" y2="152" stroke="#8a97a4" stroke-width="1.2"/>
+<line x1="166" y1="152" x2="166" y2="176" stroke="#8a97a4" stroke-width="1.2"/>
+<line x1="450" y1="152" x2="450" y2="176" stroke="#8a97a4" stroke-width="1.2"/>
+<line x1="734" y1="152" x2="734" y2="176" stroke="#8a97a4" stroke-width="1.2"/>
+
+<rect x="36" y="176" width="260" height="308" rx="6" fill="#ffffff" stroke="#d8e0e8" stroke-width="1"/>
+<rect x="36" y="176" width="260" height="5" rx="2" fill="#8a6d3b"/>
+<text x="56" y="206" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="14" fill="#2c3e50" font-weight="600" text-anchor="start">同轴电缆</text>
+<text x="56" y="226" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10.5" fill="#8a97a4" font-weight="400" text-anchor="start">10BASE5（1982）· 10BASE2</text>
+<line x1="56" y1="240" x2="276" y2="240" stroke="#eef2f6" stroke-width="1"/>
+
+<text x="56" y="260" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#8a97a4" font-weight="400" text-anchor="start">拓扑</text>
+<text x="56" y="277" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11.5" fill="#2c3e50" font-weight="400" text-anchor="start">总线形，物理与逻辑一致</text>
+
+<text x="56" y="305" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#8a97a4" font-weight="400" text-anchor="start">介质</text>
+<text x="56" y="322" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11.5" fill="#2c3e50" font-weight="400" text-anchor="start">粗 / 细同轴，单段 500 m / 200 m</text>
+
+<text x="56" y="350" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#8a97a4" font-weight="400" text-anchor="start">介质访问控制</text>
+<text x="56" y="367" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11.5" fill="#c0392b" font-weight="600" text-anchor="start">CSMA/CD（半双工）</text>
+
+<line x1="56" y1="386" x2="276" y2="386" stroke="#eef2f6" stroke-width="1"/>
+<text x="56" y="406" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10.5" fill="#5b6b7b" font-weight="400" text-anchor="start">全线共享一条电缆，任一时刻</text>
+<text x="56" y="422" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10.5" fill="#5b6b7b" font-weight="400" text-anchor="start">只能一个站发送，必须争信道</text>
+<text x="56" y="446" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10.5" fill="#8a6d3b" font-weight="600" text-anchor="start">覆盖范围受 543 原则限制</text>
+
+<rect x="320" y="176" width="260" height="308" rx="6" fill="#ffffff" stroke="#d8e0e8" stroke-width="1"/>
+<rect x="320" y="176" width="260" height="5" rx="2" fill="#3f6ea8"/>
+<text x="340" y="206" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="14" fill="#2c3e50" font-weight="600" text-anchor="start">双绞线</text>
+<text x="340" y="226" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10.5" fill="#8a97a4" font-weight="400" text-anchor="start">10BASE-T（1990）· 一线一段</text>
+<line x1="340" y1="240" x2="560" y2="240" stroke="#eef2f6" stroke-width="1"/>
+
+<text x="340" y="260" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#8a97a4" font-weight="400" text-anchor="start">拓扑</text>
+<text x="340" y="277" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11.5" fill="#2c3e50" font-weight="400" text-anchor="start">集线器：物理星形 / 逻辑总线</text>
+<text x="340" y="293" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11.5" fill="#2c3e50" font-weight="400" text-anchor="start">交换机：物理与逻辑均为星形</text>
+
+<text x="340" y="315" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#8a97a4" font-weight="400" text-anchor="start">介质</text>
+<text x="340" y="332" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11.5" fill="#2c3e50" font-weight="400" text-anchor="start">双绞线，两端各接一个节点</text>
+
+<text x="340" y="356" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#8a97a4" font-weight="400" text-anchor="start">介质访问控制</text>
+<text x="340" y="373" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11.5" fill="#c0392b" font-weight="600" text-anchor="start">集线器：CSMA/CD（半双工）</text>
+<text x="340" y="390" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11.5" fill="#2e8b74" font-weight="600" text-anchor="start">交换机：半双工需、全双工免</text>
+
+<line x1="340" y1="406" x2="560" y2="406" stroke="#eef2f6" stroke-width="1"/>
+<text x="340" y="426" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10.5" fill="#5b6b7b" font-weight="400" text-anchor="start">网线对数决定能否全双工：四对</text>
+<text x="340" y="442" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10.5" fill="#5b6b7b" font-weight="400" text-anchor="start">可收发分离，一对只能轮流用</text>
+<text x="340" y="466" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10.5" fill="#3f6ea8" font-weight="600" text-anchor="start">1994 年后交换机取代集线器</text>
+
+<rect x="604" y="176" width="260" height="308" rx="6" fill="#ffffff" stroke="#d8e0e8" stroke-width="1"/>
+<rect x="604" y="176" width="260" height="5" rx="2" fill="#2e8b74"/>
+<text x="624" y="206" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="14" fill="#2c3e50" font-weight="600" text-anchor="start">光纤</text>
+<text x="624" y="226" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10.5" fill="#8a97a4" font-weight="400" text-anchor="start">10BASE-F（1993）· F = fiber</text>
+<line x1="624" y1="240" x2="844" y2="240" stroke="#eef2f6" stroke-width="1"/>
+
+<text x="624" y="260" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#8a97a4" font-weight="400" text-anchor="start">拓扑</text>
+<text x="624" y="277" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11.5" fill="#2c3e50" font-weight="400" text-anchor="start">点对点，只连中间节点（中继器、</text>
+<text x="624" y="293" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11.5" fill="#2c3e50" font-weight="400" text-anchor="start">集线器、交换机），不接终端</text>
+
+<text x="624" y="315" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#8a97a4" font-weight="400" text-anchor="start">介质</text>
+<text x="624" y="332" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11.5" fill="#2c3e50" font-weight="400" text-anchor="start">光纤，一芯发一芯收</text>
+
+<text x="624" y="356" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#8a97a4" font-weight="400" text-anchor="start">介质访问控制</text>
+<text x="624" y="373" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11.5" fill="#2e8b74" font-weight="600" text-anchor="start">无（全双工，无信道争用）</text>
+
+<line x1="624" y1="386" x2="844" y2="386" stroke="#eef2f6" stroke-width="1"/>
+<text x="624" y="406" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10.5" fill="#5b6b7b" font-weight="400" text-anchor="start">收发各走一芯，天然全双工，</text>
+<text x="624" y="422" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10.5" fill="#5b6b7b" font-weight="400" text-anchor="start">不存在谁先谁后的问题</text>
+<text x="624" y="446" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10.5" fill="#2e8b74" font-weight="600" text-anchor="start">用于延长距离与骨干连接</text>
+
+<rect x="36" y="508" width="828" height="76" rx="6" fill="#eef3f8" stroke="#3f6ea8" stroke-width="1"/>
+<text x="56" y="532" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11.5" fill="#2c3e50" font-weight="600" text-anchor="start">一条判据管全部：看链路是否被独占</text>
+<text x="56" y="553" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" fill="#5b6b7b" font-weight="400" text-anchor="start">共享介质 → 只能半双工 → 必须 CSMA/CD；独占的双向链路 → 全双工 → 不需要介质访问控制。</text>
+<text x="56" y="571" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" fill="#5b6b7b" font-weight="400" text-anchor="start">所以同轴必用、光纤必不用，双绞线取决于用集线器还是交换机、用几对线。</text>
+</svg>
